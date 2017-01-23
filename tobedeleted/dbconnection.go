@@ -13,9 +13,18 @@ func main(){
 	if err != nil {		
 			log.Fatal(err)
 	}
+	insertlist(db)
 	getlist(db)
 	defer db.Close()
 
+}
+func insertlist(db *sql.DB)	{
+rows, err := db.Query("insert into registration_table(Registration_id,First_Name,Last_name,Phone_no,Email_id) values(129,'sweta1','vahia1','9892098920','s@rapidqube.com')")
+if err != nil {
+	log.Fatal(err)
+	}
+defer rows.Close()
+err = rows.Err()
 }
 func getlist(db *sql.DB){
 var(
@@ -25,7 +34,7 @@ var(
 		Phone_no int
 		Email_id string
 	)
-rows, err := db.Query("select * from registration_table where Registration_id = 1221")
+rows, err := db.Query("select * from registration_table")
 if err != nil {
 	log.Fatal(err)
 }
@@ -42,3 +51,6 @@ if err != nil {
 		log.Fatal(err)
 }
 }
+
+
+
