@@ -52,25 +52,27 @@ c.JSON(http.StatusOK, result)
 
 // GET all persons
 router.GET("/persons", func(c *gin.Context) {
-	var (
+	/*var (
 		person  Person
 		persons []Person
-	)
-rows, err := db.Query("select * from registration_table;")
+	)*/
+	var person []Person
+/*rows, err := db.Query("select * from registration_table;")
 if err != nil {
 	fmt.Print(err.Error())
-}
-for rows.Next() {
+}*/
+/*for rows.Next() {
 	err = rows.Scan(&person.id, &person.first_name, &person.last_name, &person.phone_no, &person.email_id)
 	persons = append(persons, person)
 	if err != nil {
 		fmt.Print(err.Error())
 	}
-}
-defer rows.Close()
+}*/
+//defer rows.Close()
+db.Find(&person)
 c.JSON(http.StatusOK, gin.H{
-	"result": persons,
-	"count":  len(persons),
+	"result": person,
+	"count":  len(person),
 })	
 })
 
