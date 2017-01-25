@@ -2,11 +2,11 @@ package models
  
  
 var(
-		Registration_id int
-		First_Name string
-		Last_name string
-		Phone_no int
-		Email_id string
+		id int
+		first_name string
+		last_name string
+		phone_no int
+		email_id string
 	)
 
 
