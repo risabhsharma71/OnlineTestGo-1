@@ -60,7 +60,7 @@ if err != nil {
 for rows.Next() {
 	var person Person
 	err = rows.Scan(&person.id, &person.first_name, &person.last_name, &person.phone_no, &person.email_id)
-	persons = append(persons, person)
+	persons = append(persons, Person{id: person.id, first_name: person.first_name, last_name: person.last_name, phone_no: person.phone_no, email_id: person.email_id})
 	if err != nil {
 		fmt.Print(err.Error())
 	}
