@@ -8,7 +8,7 @@ _"github.com/go-sql-driver/mysql"
 )
 func main() {
 	db, err := sql.Open("mysql",
-			"rakesh:root@tcp(192.168.0.8:3306)/interview_test1")
+			"Rakesh:Root12345$@tcp(rpqb.centralindia.cloudapp.azure.com:3306)/interview_test")
 if err != nil {
 	fmt.Print(err.Error())
 }
@@ -19,11 +19,11 @@ if err != nil {
 	fmt.Print(err.Error())
 	}
 type Person struct {
-    id int
-	first_name string
-	last_name  string
-	phone_no string
-	email_id string
+    	Id int `json:"id"`
+	Fname string `json:"fname"`
+	Lname  string `json:"lname"`
+	Phone string `json:"phone"`
+	Email string `json:"email"`
 }
 router := gin.Default()
 // GET a person detail
@@ -34,7 +34,7 @@ router.GET("/person/:id", func(c *gin.Context) {
 		)
 id := c.Param("id")
 row := db.QueryRow("select * from registration_table where id =?;",id)
-err = row.Scan(&person.id, &person.first_name, &person.last_name, &person.phone_no, &person.email_id)
+err = row.Scan(&person.Id, &person.Fname, &person.Lname, &person.Phone, &person.Email)
 if err != nil {
 		// If no results send null
 		result = gin.H{
@@ -53,14 +53,15 @@ c.JSON(http.StatusOK, result)
 // GET all persons
 router.GET("/persons", func(c *gin.Context) {
 	var persons []Person
-rows, err := db.Query("select * from registration_table;")
+rows, err := db.Query("select * from registration;")
 if err != nil {
 	fmt.Print(err.Error())
 }
 for rows.Next() {
 	var person Person
-	err = rows.Scan(&person.id, &person.first_name, &person.last_name, &person.phone_no, &person.email_id)
-	persons = append(persons, Person{id: person.id, first_name: person.first_name, last_name: person.last_name, phone_no: person.phone_no, email_id: person.email_id})
+	err = rows.Scan(&person.Id, &person.Fname, &person.Lname, &person.Phone, &person.Email)
+	//persons = append(persons, Person{id: person.id, fname: person.Fname, lname: person.lname, phone: person.phone, email: person.email})
+	persons = append(persons, Person{person.Id, person.Fname, person.Lname, person.Phone, person.Email})
 	if err != nil {
 		fmt.Print(err.Error())
 	}
@@ -76,23 +77,23 @@ c.JSON(http.StatusOK, gin.H{
 router.POST("/person", func(c *gin.Context) {
 	var buffer bytes.Buffer
 	id := c.PostForm("id")
-	first_name := c.PostForm("first_name")
-	last_name := c.PostForm("last_name")
-	phone_no := c.PostForm("phone_no")
-	email_id := c.PostForm("email_id")
-	stmt, err := db.Prepare("insert into registration_table(id, first_name, last_name, phone_no, email_id) values(?,?,?,?,?);")
+	fname := c.PostForm("fname")
+	lname := c.PostForm("lname")
+	phone := c.PostForm("phone")
+	email := c.PostForm("email")
+	stmt, err := db.Prepare("insert into registration_table(id, fname, lname, phone, email) values(?,?,?,?,?);")
 	if err != nil {
 		fmt.Print(err.Error())
 	}
-	_, err = stmt.Exec(id, first_name, last_name, phone_no, email_id)
+	_, err = stmt.Exec(id, fname, lname, phone, email)
 
 if err != nil {
 	fmt.Print(err.Error())
 }
 // Fastest way to append strings
-buffer.WriteString(first_name)
+buffer.WriteString(fname)
 buffer.WriteString(" ")
-buffer.WriteString(last_name)
+buffer.WriteString(lname)
 defer stmt.Close()
 name := buffer.String()
 c.JSON(http.StatusOK, gin.H{
@@ -104,23 +105,23 @@ c.JSON(http.StatusOK, gin.H{
 router.PUT("/person", func(c *gin.Context) {
 	var buffer bytes.Buffer
 	id := c.Query("id")
-	first_name := c.PostForm("first_name")
-	last_name := c.PostForm("last_name")
-    /*phone_no := c.PostForm("phone_no")
-	email_id := c.PostForm("email_id")*/
-	stmt, err := db.Prepare("update registration_table set first_name= ?, last_name= ? where id= ?;")
+	fname := c.PostForm("fname")
+	lname := c.PostForm("lname")
+   // phone := c.PostForm("phone")
+	// email := c.PostForm("email")
+	stmt, err := db.Prepare("update registration_table set fname= ?, lname= ? where id= ?;")
 if err != nil {
 	fmt.Print(err.Error())
 	}
-_, err = stmt.Exec(first_name,last_name, id)
+_, err = stmt.Exec(fname,lname, id)
 if err != nil {
 	fmt.Print(err.Error())
 }
 
 // Fastest way to append strings
-buffer.WriteString(first_name)
+buffer.WriteString(fname)
 buffer.WriteString(" ")
-buffer.WriteString(last_name)
+buffer.WriteString(lname)
 defer stmt.Close()
 name := buffer.String()
 c.JSON(http.StatusOK, gin.H{
