@@ -1,61 +1,4 @@
 <<<<<<< HEAD
-package main 
-import(
-//"fmt"
-"log"
-"database/sql"
- _"github.com/go-sql-driver/mysql"
-)
-
- 
-func main(){
- 	db, err := sql.Open("mysql",
-			"rakesh:root@tcp(192.168.0.8:3306)/interview_test1")
-	if err != nil {		
-			log.Fatal(err)
-	}
-	insertlist(db)
-	getlist(db)
-	defer db.Close()
-
-}
-func insertlist(db *sql.DB)	{
-rows, err := db.Query("insert into registration_table(id,first_name,last_name,phone_no,email_id) values(129,'sweta1','vahia1','9892098920','s@rapidqube.com')")
-if err != nil {
-	log.Fatal(err)
-	}
-defer rows.Close()
-err = rows.Err()
-}
-func getlist(db *sql.DB){
-var(
-		id int
-		first_name string
-		last_name string
-		phone_no int
-		email_id string
-	)
-rows, err := db.Query("select * from registration_table")
-if err != nil {
-	log.Fatal(err)
-}
-defer rows.Close()
-for rows.Next() {
-	err := rows.Scan(&id, &first_name, &last_name, &phone_no, &email_id)
-	if err != nil { 
-		log.Fatal(err)
-	}
-	log.Println(id, first_name, last_name, phone_no, email_id)
-}
-err = rows.Err()
-if err != nil {
-		log.Fatal(err)
-}
-}
-
-
-
-=======
 package main
 
 import (
@@ -67,7 +10,7 @@ import (
 
 func main() {
 	db, err := sql.Open("mysql",
-		"rakesh:root@tcp(192.168.0.8:3306)/interview_test1")
+		"Rakesh:Root12345$@tcp(rpqb.centralindia.cloudapp.azure.com:3306)/interview_test")
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -77,7 +20,7 @@ func main() {
 
 }
 func insertlist(db *sql.DB) {
-	rows, err := db.Query("insert into registration_table(id,first_name,last_name,phone_no,email_id) values(129,'sweta1','vahia1','9892098920','s@rapidqube.com')")
+	rows, err := db.Query("insert into registration(id,fname,lname,phone,email) values(129,'Rakesh','kumar','9681817926','r@rapidqube.com')")
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -87,22 +30,22 @@ func insertlist(db *sql.DB) {
 func getlist(db *sql.DB) {
 	var (
 		id         int
-		first_name string
-		last_name  string
-		phone_no   int
-		email_id   string
+		fname string
+		lname  string
+		phone   int
+		email   string
 	)
-	rows, err := db.Query("select * from registration_table")
+	rows, err := db.Query("select * from registration")
 	if err != nil {
 		log.Fatal(err)
 	}
 	defer rows.Close()
 	for rows.Next() {
-		err := rows.Scan(&id, &first_name, &last_name, &phone_no, &email_id)
+		err := rows.Scan(&id, &fname, &lname, &phone, &email)
 		if err != nil {
 			log.Fatal(err)
 		}
-		log.Println(id, first_name, last_name, phone_no, email_id)
+		log.Println(id, fname, lname, phone, email)
 	}
 	err = rows.Err()
 	if err != nil {
