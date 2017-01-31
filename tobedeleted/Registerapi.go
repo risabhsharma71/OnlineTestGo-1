@@ -33,7 +33,7 @@ router.GET("/person/:id", func(c *gin.Context) {
 		result gin.H
 		)
 id := c.Param("id")
-row := db.QueryRow("select * from registration_table where id =?;",id)
+row := db.QueryRow("select * from registration where id =?;",id)
 err = row.Scan(&person.Id, &person.Fname, &person.Lname, &person.Phone, &person.Email)
 if err != nil {
 		// If no results send null
@@ -59,7 +59,7 @@ if err != nil {
 }
 for rows.Next() {
 	var person Person
-	err = rows.Scan(&person.Id, &person.Fname, &person.Lname, &person.Phone, &person.Email)
+	err = 	rows.Scan(&person.Id, &person.Fname, &person.Lname, &person.Phone, &person.Email)
 	//persons = append(persons, Person{id: person.id, fname: person.Fname, lname: person.lname, phone: person.phone, email: person.email})
 	persons = append(persons, Person{person.Id, person.Fname, person.Lname, person.Phone, person.Email})
 	if err != nil {
@@ -76,24 +76,24 @@ c.JSON(http.StatusOK, gin.H{
 // POST new person details
 router.POST("/person", func(c *gin.Context) {
 	var buffer bytes.Buffer
-	id := c.PostForm("id")
-	fname := c.PostForm("fname")
-	lname := c.PostForm("lname")
-	phone := c.PostForm("phone")
-	email := c.PostForm("email")
-	stmt, err := db.Prepare("insert into registration_table(id, fname, lname, phone, email) values(?,?,?,?,?);")
+	Id := c.PostForm("id")
+	Fname := c.PostForm("fname")
+	Lname := c.PostForm("lname")
+	Phone := c.PostForm("phone")
+	Email := c.PostForm("email")
+	stmt, err := db.Prepare("insert into registration(id, fname, lname, phone, email) values(?,?,?,?,?);")
 	if err != nil {
 		fmt.Print(err.Error())
 	}
-	_, err = stmt.Exec(id, fname, lname, phone, email)
+	_, err = stmt.Exec(Id, Fname, Lname, Phone, Email)
 
 if err != nil {
 	fmt.Print(err.Error())
 }
 // Fastest way to append strings
-buffer.WriteString(fname)
+buffer.WriteString(Fname)
 buffer.WriteString(" ")
-buffer.WriteString(lname)
+buffer.WriteString(Lname)
 defer stmt.Close()
 name := buffer.String()
 c.JSON(http.StatusOK, gin.H{
@@ -104,24 +104,24 @@ c.JSON(http.StatusOK, gin.H{
 // PUT - update a person details
 router.PUT("/person", func(c *gin.Context) {
 	var buffer bytes.Buffer
-	id := c.Query("id")
-	fname := c.PostForm("fname")
-	lname := c.PostForm("lname")
+	Id := c.Query("id")
+	Fname := c.PostForm("fname")
+	Lname := c.PostForm("lname")
    // phone := c.PostForm("phone")
 	// email := c.PostForm("email")
-	stmt, err := db.Prepare("update registration_table set fname= ?, lname= ? where id= ?;")
+	stmt, err := db.Prepare("update registration set fname= ?, lname= ? where id= ?;")
 if err != nil {
 	fmt.Print(err.Error())
 	}
-_, err = stmt.Exec(fname,lname, id)
+_, err = stmt.Exec(Fname,Lname,Id)
 if err != nil {
 	fmt.Print(err.Error())
 }
 
 // Fastest way to append strings
-buffer.WriteString(fname)
+buffer.WriteString(Fname)
 buffer.WriteString(" ")
-buffer.WriteString(lname)
+buffer.WriteString(Lname)
 defer stmt.Close()
 name := buffer.String()
 c.JSON(http.StatusOK, gin.H{
@@ -132,7 +132,7 @@ c.JSON(http.StatusOK, gin.H{
 // Delete resources
 router.DELETE("/person", func(c *gin.Context) {
 	id := c.Query("id")
-	stmt, err := db.Prepare("delete from registration_table where id= ?;")
+	stmt, err := db.Prepare("delete from registration where id= ?;")
 	if err != nil {
 		fmt.Print(err.Error())
 		}

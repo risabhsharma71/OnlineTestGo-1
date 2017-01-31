@@ -10,7 +10,7 @@ import (
 )
 
 func main() {
-	db, err := sql.Open("mysql", "rakesh:root@tcp(192.168.0.8:3306)/interview_test1")
+	db, err := sql.Open("mysql", "Rakesh:Root12345$@tcp(rpqb.centralindia.cloudapp.azure.com:3306)/interview_test")
 	if err != nil {
 		fmt.Print(err.Error())
 	}
@@ -22,15 +22,15 @@ func main() {
 	}
 
 	type Question struct {
-		id     int
-		t_type string
-		que    string
-		op1    string
-		op2    string
-		op3    string
-		op4    string
-		choice string
-		ans    string
+		Id int `json:"id"`
+		Question string `json:"question"`
+		Option1    string `json:"option1"`
+		Option2    string `json:"option2"`
+		Option3    string `json:"option3"`
+		Option4    string `json:"option4"`
+		Option5    string `json:"option5"`
+		Answer string `json:"answer"`
+		Type    string `json:"type"`
 	}
 	router := gin.Default()
 	//Get one question
@@ -40,8 +40,8 @@ func main() {
 			result   gin.H
 		)
 		id := c.Param("id")
-		row := db.QueryRow("select * from question_table where id=?;", id)
-		err = row.Scan(&question_table.id, &question_table.t_type, &question_table.que, &question_table.op1, &question_table.op2, &question_table.op3, &question_table.op4, &question_table.choice, &question_table.ans)
+		row := db.QueryRow("select * from questions where id=?;", id)
+		err = row.Scan(&question.Id, &question.Question, &question.Option1, &question.Option2, &question.Option3, &question.Option4, &question.Option5, &question.Answer, &question.Type)
 		if err != nil {
 			result = gin.H{
 				"result": nil,
@@ -56,23 +56,24 @@ func main() {
 		c.JSON(http.StatusOK, result)
 	})
 	//Get all questions
-	router.GET("/question", func(c *gin.Context) {
-		var (
-			question  Question
-			questions []Question
-		)
-		rows, err := db.Query("select * from question_table")
+	router.GET("/questions", func(c *gin.Context) {
+		var questions []Question
+		rows, err := db.Query("select * from questions")
 		if err != nil {
 			fmt.Print(err.Error())
 		}
 		for rows.Next() {
-			err = rows.Scan(&question_table.id, &question_table.t_type, &question_table.que, &question_table.op1, &question_table.op2, &question_table.op3, &question_table.op4, &question_table.choice, &question_table.ans)
-			questions = append(questions, question)
+			var question Question
+			err = rows.Scan( &question.Id, &question.Question, &question.Option1, &question.Option2, &question.Option3, &question.Option4, &question.Option5, &question.Answer, &question.Type)
+			questions = append(questions, Question{ question.Id,question.Question, question.Option1, question.Option2, question.Option3, question.Option4, question.Option5, question.Answer, question.Type})
+
 			if err != nil {
 				fmt.Print(err.Error())
 			}
 		}
+
 		defer rows.Close()
+
 		c.JSON(http.StatusOK, gin.H{
 			"result": questions,
 			"count":  len(questions),
@@ -82,27 +83,37 @@ func main() {
 	//Post New Question
 	router.POST("/question", func(c *gin.Context) {
 		var buffer bytes.Buffer
-		id := c.PostForm("id")
-		t_type := c.PostForm("t_type")
-		que := c.PostForm("que")
-		op1 := c.PostForm("op1")
-		op2 := c.PostForm("op2")
-		op3 := c.PostForm("op3")
-		op4 := c.PostForm("op4")
-		choice := c.PostForm("choice")
-		ans := c.PostForm("ans")
-		stmt, err := db.Prepare("insert into question_table(id, t_type, que, op1, op2, op3, op4, choice, ans values(?,?,?,?,?,?,?,?,?);")
+		Id := c.PostForm("id")
+		Question := c.PostForm("question")
+		Option1 := c.PostForm("option1")
+		Option2 := c.PostForm("option2")
+		Option3 := c.PostForm("option3")
+		Option4 := c.PostForm("option4")
+		Option5 := c.PostForm("option5")
+		Answer := c.PostForm("answer")
+		Type := c.PostForm("type")
+		stmt, err := db.Prepare("insert into questions(id, question, option1, option2, option3, option4, option5, answer, type values(?,?,?,?,?,?,?,?,?);")
 		if err != nil {
 			fmt.Print(err.Error())
 		}
-		_, err = stmt.Exec(id, t_type, que, op1, op2, op3, op4, choice, ans)
+		_, err = stmt.Exec(Id,Question,Option1,Option2,Option3,Option4,Option5,Answer,Type)
+
 		if err != nil {
 			fmt.Print(err.Error())
 		}
 		// Fastest way to append strings
-		buffer.WriteString(t_type)
-		buffer.WriteString("que ")
-		buffer.WriteString(que)
+		buffer.WriteString(Question)
+		buffer.WriteString("\n")
+		buffer.WriteString("Option1 ")
+		buffer.WriteString(Option1)
+		buffer.WriteString("\nOption2 ")
+		buffer.WriteString(Option2)
+		buffer.WriteString("\nOption3 ")
+		buffer.WriteString(Option3)
+		buffer.WriteString("\nOption4 ")
+		buffer.WriteString(Option4)
+		buffer.WriteString("\nOption5 ")
+		buffer.WriteString(Option5)
 		defer stmt.Close()
 		que := buffer.String()
 		c.JSON(http.StatusOK, gin.H{
@@ -113,31 +124,35 @@ func main() {
 	// PUT - update a question
 	router.PUT("/question", func(c *gin.Context) {
 		var buffer bytes.Buffer
-		id := c.Query("id")
-		que := c.PostForm("que")
-		op1 := c.PostForm("op1")
-		op2 := c.PostForm("op2")
-		op3 := c.PostForm("op3")
-		op4 := c.PostForm("op4")
-		stmt, err := db.Prepare("update question_table set que= ?, op1= ?, op2=?, op3=?, op4=? where id= ?;")
+		Id := c.Query("id")
+		Question := c.PostForm("question")
+		Option1 := c.PostForm("option1")
+		Option2 := c.PostForm("option2")
+		Option3 := c.PostForm("option3")
+		Option4 := c.PostForm("option4")
+		Option5 := c.PostForm("option5")
+		stmt, err := db.Prepare("update questions set question=?, option1= ?, option2=?, option3=?, option4=?, option5=? where id= ?;")
 		if err != nil {
 			fmt.Print(err.Error())
 		}
-		_, err = stmt.Exec(que, op1, op2, op3, op4, id)
+		_, err = stmt.Exec(Question, Option1, Option2, Option3, Option4, Option5, Id)
 		if err != nil {
 			fmt.Print(err.Error())
 		}
 
 		// Fastest way to append strings
-		buffer.WriteString(que)
-		buffer.WriteString("op1")
-		buffer.WriteString(op1)
-		buffer.WriteString("op2")
-		buffer.WriteString(op2)
-		buffer.WriteString("op3")
-		buffer.WriteString(op3)
-		buffer.WriteString("op4")
-		buffer.WriteString(op4)
+		buffer.WriteString(Question)
+		buffer.WriteString("\n")
+		buffer.WriteString("Option1 ")
+		buffer.WriteString(Option1)
+		buffer.WriteString("\nOption2 ")
+		buffer.WriteString(Option2)
+		buffer.WriteString("\nOption3 ")
+		buffer.WriteString(Option3)
+		buffer.WriteString("\nOption4 ")
+		buffer.WriteString(Option4)
+		buffer.WriteString("\nOption5 ")
+		buffer.WriteString(Option5)
 		defer stmt.Close()
 		que := buffer.String()
 		c.JSON(http.StatusOK, gin.H{
@@ -148,7 +163,7 @@ func main() {
 	// Delete resources
 	router.DELETE("/question", func(c *gin.Context) {
 		id := c.Query("id")
-		stmt, err := db.Prepare("delete from question_table where id= ?;")
+		stmt, err := db.Prepare("delete from questions where id= ?;")
 		if err != nil {
 			fmt.Print(err.Error())
 		}
@@ -160,5 +175,5 @@ func main() {
 			"message": fmt.Sprintf("Successfully deleted question: %s", id),
 		})
 	})
-	router.Run(":3000")
+	router.Run(":9092")
 }
