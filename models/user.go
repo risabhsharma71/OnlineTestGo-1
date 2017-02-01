@@ -1,14 +1,12 @@
-package models 
+package main 
  
  
-var(
-		id int
-		first_name string
-		last_name string
-		phone_no int
-		email_id string
-	)
-
-
+type Answer struct {
+		Id   			int		`json:"id"`
+		Userid     		int		`json:"userid"`
+		Questionid      int		`json:"questionid"`
+		Answer      	string	`json:"answer"`
+		Correctness 	string	`json:"correctness"`
+	}
 
 

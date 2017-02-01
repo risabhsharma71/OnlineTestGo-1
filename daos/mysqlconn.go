@@ -9,7 +9,7 @@ import(
  
 func main(){
  	db, err := sql.Open("mysql",
-			"rakesh:root@tcp(192.168.0.8:3306)/interview_test1")
+			"Rakesh:Root12345$@tcp(rpqb.centralindia.cloudapp.azure.com:3306)/interview_test")
 	if err != nil {		
 			log.Fatal(err)
 	}
