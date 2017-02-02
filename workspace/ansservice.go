@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 package main
 
 import (
@@ -18,18 +17,18 @@ func main() {
 
 	defer db.Close()
 
-// make sure connection is available
+	// make sure connection is available
 
 	err = db.Ping()
 	if err != nil {
 		fmt.Print(err.Error())
 	}
 	type Answer struct {
-		Id   		int	`json:"id"`
-		Userid     	int	`json:"userid"`
-		Questionid      int	`json:"questionid"`
-		Answer      	string	`json:"answer"`
-		Correctness 	string	`json:"correctness"`
+		Id          int    `json:"id"`
+		Userid      int    `json:"userid"`
+		Questionid  int    `json:"questionid"`
+		Answer      string `json:"answer"`
+		Correctness string `json:"correctness"`
 	}
 	router := gin.Default()
 
@@ -68,7 +67,7 @@ func main() {
 		}
 		for rows.Next() {
 			err = rows.Scan(&answer.Id, &answer.Userid, &answer.Questionid, &answer.Answer, &answer.Correctness)
-			answers = append(answers, Answer{answer.Id, answer.Userid, answer.Questionid, answer.Answer, answer.Correctness}) 
+			answers = append(answers, Answer{answer.Id, answer.Userid, answer.Questionid, answer.Answer, answer.Correctness})
 			if err != nil {
 				fmt.Print(err.Error())
 			}
@@ -126,4 +125,3 @@ func main() {
 
 	router.Run(":9091")
 }
->>>>>>> 05d3d8968880bc019f3911c983208a2bf0ca93ae

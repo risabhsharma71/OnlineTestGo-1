@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 package main
 
 import (
@@ -29,11 +28,11 @@ func insertlist(db *sql.DB) {
 }
 func getlist(db *sql.DB) {
 	var (
-		id         int
+		id    int
 		fname string
-		lname  string
-		phone   int
-		email   string
+		lname string
+		phone int
+		email string
 	)
 	rows, err := db.Query("select * from registration")
 	if err != nil {
@@ -52,4 +51,3 @@ func getlist(db *sql.DB) {
 		log.Fatal(err)
 	}
 }
->>>>>>> 05d3d8968880bc019f3911c983208a2bf0ca93ae

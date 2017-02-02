@@ -22,15 +22,15 @@ func main() {
 	}
 
 	type Question struct {
-		Id int `json:"id"`
+		Id       int    `json:"id"`
 		Question string `json:"question"`
-		Option1    string `json:"option1"`
-		Option2    string `json:"option2"`
-		Option3    string `json:"option3"`
-		Option4    string `json:"option4"`
-		Option5    string `json:"option5"`
-		Answer string `json:"answer"`
-		Type    string `json:"type"`
+		Option1  string `json:"option1"`
+		Option2  string `json:"option2"`
+		Option3  string `json:"option3"`
+		Option4  string `json:"option4"`
+		Option5  string `json:"option5"`
+		Answer   string `json:"answer"`
+		Type     string `json:"type"`
 	}
 	router := gin.Default()
 	//Get one question
@@ -64,8 +64,8 @@ func main() {
 		}
 		for rows.Next() {
 			var question Question
-			err = rows.Scan( &question.Id, &question.Question, &question.Option1, &question.Option2, &question.Option3, &question.Option4, &question.Option5, &question.Answer, &question.Type)
-			questions = append(questions, Question{ question.Id,question.Question, question.Option1, question.Option2, question.Option3, question.Option4, question.Option5, question.Answer, question.Type})
+			err = rows.Scan(&question.Id, &question.Question, &question.Option1, &question.Option2, &question.Option3, &question.Option4, &question.Option5, &question.Answer, &question.Type)
+			questions = append(questions, Question{question.Id, question.Question, question.Option1, question.Option2, question.Option3, question.Option4, question.Option5, question.Answer, question.Type})
 
 			if err != nil {
 				fmt.Print(err.Error())
@@ -96,7 +96,7 @@ func main() {
 		if err != nil {
 			fmt.Print(err.Error())
 		}
-		_, err = stmt.Exec(Id,Question,Option1,Option2,Option3,Option4,Option5,Answer,Type)
+		_, err = stmt.Exec(Id, Question, Option1, Option2, Option3, Option4, Option5, Answer, Type)
 
 		if err != nil {
 			fmt.Print(err.Error())

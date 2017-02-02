@@ -1,4 +1,5 @@
 package daos
+
 import(
 //"fmt"
 "log"
@@ -7,7 +8,7 @@ import(
 )
 
  
-func main(){
+func Connection() *DB{
  	db, err := sql.Open("mysql",
 			"Rakesh:Root12345$@tcp(rpqb.centralindia.cloudapp.azure.com:3306)/interview_test")
 	if err != nil {		
@@ -16,5 +17,7 @@ func main(){
 	insertlist(db)
 	getlist(db)
 	defer db.Close()
+
+	return db
 
 }

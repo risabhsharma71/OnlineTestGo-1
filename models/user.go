@@ -1,9 +1,11 @@
-package userModels
+package models
 
+//Person indicates the person model
 type Person struct {
-    	Id int `json:"id"`
+	ID    int    `json:"id"`
 	Fname string `json:"fname"`
-	Lname  string `json:"lname"`
+	Lname string `json:"lname"`
 	Phone string `json:"phone"`
 	Email string `json:"email"`
+	Test  string `json:"test"`
 }

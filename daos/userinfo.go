@@ -1,4 +1,4 @@
-package main
+package daos
 import ("bytes"
 "database/sql"
 "fmt"
