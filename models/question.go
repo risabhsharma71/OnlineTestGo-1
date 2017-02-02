@@ -10,5 +10,5 @@ type Question struct {
 	Option4  string `json:"option4"`
 	Option5  string `json:"option5"`
 	Answer   string `json:"answer"`
-	Type     string `json:"type"`
+	Type     int64  `json:"type"`
 }
