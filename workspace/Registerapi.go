@@ -75,29 +75,14 @@ c.JSON(http.StatusOK, gin.H{
 
 // POST new person details
 router.POST("/person", func(c *gin.Context) {
-	var buffer bytes.Buffer
-	Id := c.PostForm("id")
-	Fname := c.PostForm("fname")
-	Lname := c.PostForm("lname")
-	Phone := c.PostForm("phone")
-	Email := c.PostForm("email")
-	stmt, err := db.Prepare("insert into registration(id, fname, lname, phone, email) values(?,?,?,?,?);")
-	if err != nil {
-		fmt.Print(err.Error())
-	}
-	_, err = stmt.Exec(Id, Fname, Lname, Phone, Email)
-
+	var person Person
+	c.BindJSON(&person)
+	_, err := db.Prepare("insert into registration(id, fname, lname, phone, email) values(?,?,?,?,?);")
 if err != nil {
 	fmt.Print(err.Error())
 }
-// Fastest way to append strings
-buffer.WriteString(Fname)
-buffer.WriteString(" ")
-buffer.WriteString(Lname)
-defer stmt.Close()
-name := buffer.String()
 c.JSON(http.StatusOK, gin.H{
-	"message": fmt.Sprintf(" %s successfully created", name),
+	"message": fmt.Sprintf("successfully created"),
 	})
 })
 
