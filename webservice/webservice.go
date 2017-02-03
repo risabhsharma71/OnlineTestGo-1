@@ -23,7 +23,7 @@ func RegisterUser(c *gin.Context) {
 	//println statements should be replaced with logs
 	fmt.Println("questionlist", questionlist)
 
-	//response should return theh question and answer list
+	//response should return then question and answer list
 	c.JSON(200, gin.H{
 		"status":  "success",
 		"message": questionlist,
