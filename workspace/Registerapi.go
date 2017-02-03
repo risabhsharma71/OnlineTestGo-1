@@ -23,6 +23,7 @@ func main() {
 		fmt.Print(err.Error())
 	}
 	type Person struct {
+		Id string `json:"id"`
 		Fname string `json:"fname"`
 		Lname string `json:"lname"`
 		Phone string `json:"phone"`
@@ -80,10 +81,17 @@ func main() {
 	router.POST("/person", func(c *gin.Context) {
 		var person Person
 		c.BindJSON(&person)
-		stmt, err := db.Prepare("insert into registration(id, fname, lname, phone, email) values(?,?,?,?,?);")
+		stmt, err := db.Prepare("insert into registration(fname, lname, phone, email) values(?,?,?,?);")
 		if err != nil {
 			fmt.Print(err.Error())
 		}
+		_, err = stmt.Exec(person.Fname,person.Lname,person.Phone,person.Email) 
+
+ 
+ 		if err != nil { 
+			fmt.Print(err.Error()) 
+ 		} 
+
 		c.JSON(http.StatusOK, gin.H{
 			"message": fmt.Sprintf("successfully created %v", person.Fname),
 		})

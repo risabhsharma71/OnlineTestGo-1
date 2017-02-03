@@ -31,3 +31,18 @@ func Register(user models.User) []models.Question {
 
 	return questions
 }
+
+func Answer(answer models.Answer) {
+	log.Println("calling Answer manager")
+
+	var answers []models.Answer
+	answerDao := daoimpl.AnswerImpl{}
+	
+	//insert Answers of user
+	insertedid, err := answerDao.SaveAnswer(answer)
+	if err != nil {
+		log.Println("error occured", err)
+	}
+	log.Println(insertedid)
+	return "successful"
+}
