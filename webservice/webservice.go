@@ -45,4 +45,3 @@ func AnswerList(c *gin.Context) {
 })
 }
 
-	
