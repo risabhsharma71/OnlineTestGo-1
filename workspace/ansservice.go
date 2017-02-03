@@ -1,3 +1,4 @@
+
 package main
 
 import (
@@ -17,18 +18,18 @@ func main() {
 
 	defer db.Close()
 
-	// make sure connection is available
+// make sure connection is available
 
 	err = db.Ping()
 	if err != nil {
 		fmt.Print(err.Error())
 	}
 	type Answer struct {
-		Id          int    `json:"id"`
-		Userid      int    `json:"userid"`
-		Questionid  int    `json:"questionid"`
-		Answer      string `json:"answer"`
-		Correctness string `json:"correctness"`
+		Id   		int	`json:"id"`
+		Userid     	int	`json:"userid"`
+		Questionid      int	`json:"questionid"`
+		Answer      	string	`json:"answer"`
+		Correctness 	string	`json:"correctness"`
 	}
 	router := gin.Default()
 
@@ -67,7 +68,7 @@ func main() {
 		}
 		for rows.Next() {
 			err = rows.Scan(&answer.Id, &answer.Userid, &answer.Questionid, &answer.Answer, &answer.Correctness)
-			answers = append(answers, Answer{answer.Id, answer.Userid, answer.Questionid, answer.Answer, answer.Correctness})
+			answers = append(answers, Answer{answer.Id, answer.Userid, answer.Questionid, answer.Answer, answer.Correctness}) 
 			if err != nil {
 				fmt.Print(err.Error())
 			}
@@ -82,31 +83,17 @@ func main() {
 	//Inserting new answers to database
 
 	router.POST("/answer", func(c *gin.Context) {
-		//var buffer bytes.Buffer
-		Id := c.PostForm("id")
-		Userid := c.PostForm("userid")
-		Questionid := c.PostForm("questionid)")
-		Answer := c.PostForm("answer")
-		Correctness := c.PostForm("correctness")
-		stmt, err := db.Prepare("insert into answers(id, userid, questionid, answer, correctness) values(?,?,?,?,?);")
+		var answer Answer 		
+		c.BindJSON(&answer)
+		stmt, err := db.Prepare("insert into answers( userid, questionid, answer, correctness) values(?,?,?,?);")
 		if err != nil {
 			fmt.Print(err.Error())
 		}
-		_, err = stmt.Exec(Id, Userid, Questionid, Answer, Correctness)
-
-		/*if err != nil {
-		      fmt.Print(err.Error())
-		  }
-		  buffer.WriteString(ans)
-		  buffer.WriteString(" ")
-		  buffer.WriteString(id)
-		  defer stmt.Close()
-		  name := buffer.String()
-		     c.JSON(http.StatusOK, gin.H{
-		         "message": fmt.Sprintf(" %s successfully created", name),
-		     })*/
+		_, err = stmt.Exec(answer.Userid,answer.Questionid,answer.Answer,answer.Correctness)
+	     c.JSON(http.StatusOK, gin.H{
+		         "message": fmt.Sprintf("Answer successfully created"),
+		})
 	})
-
 	// Delete resources
 	router.DELETE("/answer", func(c *gin.Context) {
 		id := c.Query("id")
@@ -125,3 +112,4 @@ func main() {
 
 	router.Run(":9091")
 }
+
