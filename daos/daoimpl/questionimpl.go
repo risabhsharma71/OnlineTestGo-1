@@ -1,8 +1,6 @@
 package daoimpl
 
 import (
-	"github.com/MIghtykukulkan/OnlineTestGo/models"
-	"github.com/MIghtykukulkan/OnlineTestGo/webservice"
 	"github.com/gin-gonic/gin"
 	"fmt"
 	"net/http"
