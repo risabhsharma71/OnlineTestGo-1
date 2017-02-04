@@ -2,11 +2,8 @@ package daoimpl
 
 import (
 	"github.com/gin-gonic/gin"
-	"fmt"
-	"net/http"
-	"database/sql"
-	_ "github.com/go-sql-driver/mysql"
-	"encoding/json"
+	"github.com/MIghtykukulkan/OnlineTestGo/models"
+
 )	
 
 //QuestionImpl struct for Questions implementattion
