@@ -11,7 +11,8 @@ func main() {
 
 	router.POST("/registerUser", webservice.RegisterUser)
 	router.POST("/userAnswer",webservice.AnswerList)
+	router.POST("/userQuestion",webservice.QuestionList)
 	//define other service here
 
-	router.Run(":9090")
+	router.Run(":9091")
 }

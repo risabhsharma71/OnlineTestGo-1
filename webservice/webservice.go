@@ -45,3 +45,20 @@ func AnswerList(c *gin.Context) {
 })
 }
 
+func QuestionList(c *gin.Context){
+	
+	var question models.Question
+	c.BindJSON(&question)
+
+	questionlist:=manager.Question(question)
+
+	fmt.Println("questionlist",questionlist)
+
+	c.JSON(200, gin.H{
+		"status":  "success",
+		"message": questionlist,
+})
+}
+
+
+

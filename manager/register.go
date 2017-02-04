@@ -46,3 +46,18 @@ func Answer(answer models.Answer) {
 	log.Println(insertedid)
 	return "successful"
 }
+
+func Question(question models.Question) {
+	log.Println("calling Question manager")
+
+	var questions []models.question
+	questionDao := daoimpl.QuestionImpl{}
+	
+	//insert Question of user
+	insertedid, err := questionDao.SaveQuestion(question)
+	if err != nil {
+		log.Println("error occured", err)
+	}
+	log.Println(insertedid)
+	return "successful"
+}
