@@ -1,14 +1,7 @@
 package main
 
-import (
-	"github.com/MIghtykukulkan/OnlineTestGo/webservice"
-	"github.com/MIghtykukulkan/OnlineTestGo/models"
+import ("github.com/MIghtykukulkan/OnlineTestGo/webservice"
 	"github.com/gin-gonic/gin"
-	"fmt"
-	"net/http"
-	"database/sql"
-	_ "github.com/go-sql-driver/mysql"
-	"encoding/json"
 )
 
 func main() {
