@@ -7,7 +7,6 @@ import (
 	"database/sql"
 	_ "github.com/go-sql-driver/mysql"
 	"encoding/json"
-)
 )	
 
 //QuestionImpl struct for Questions implementattion
