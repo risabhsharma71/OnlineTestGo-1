@@ -15,5 +15,5 @@ func main() {
 	router.GET("/testService", webservice.TestService)
 	//define other service here
 
-	router.Run(":9090")
+	router.Run(":8080")
 }
