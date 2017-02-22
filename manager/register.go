@@ -55,7 +55,7 @@ func Answer(answer models.Answer) string {
 
 func Question(question models.Question) string {
 	log.Println("calling Question manager")
-
+	
 	//insert Question of user
 
 	return "successful"
