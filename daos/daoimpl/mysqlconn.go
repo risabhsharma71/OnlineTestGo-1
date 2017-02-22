@@ -10,7 +10,7 @@ import (
 
 func connection() *sql.DB {
 	db, err := sql.Open("mysql",
-		"Rakesh:Root12345$@tcp(rpqb.centralindia.cloudapp.azure.com:3306)/interview_test")
+		"umashankar:Rpqb123$@tcp(db4free.net:3306)/rpqbmysql")
 	if err != nil {
 		log.Fatal(err)
 	}
