@@ -1,7 +1,8 @@
 package main
 
 import (
-	"github.com/MIghtykukulkan/OnlineTestGo/webservice"
+	"OnlineTestGo/webservice"
+
 	"github.com/gin-gonic/gin"
 )
 

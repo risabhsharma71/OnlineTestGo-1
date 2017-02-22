@@ -1,6 +1,6 @@
 package interfaces
 
-import "github.com/MIghtykukulkan/OnlineTestGo/models"
+import "OnlineTestGo/models"
 
 //UserDao interface to be implemented by userdaoimpl
 type UserDao interface {

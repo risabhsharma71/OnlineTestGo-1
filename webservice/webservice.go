@@ -6,10 +6,11 @@ import (
 	//"database/sql"
 	"fmt"
 
-	"github.com/MIghtykukulkan/OnlineTestGo/manager"
+	"OnlineTestGo/manager"
+
 	"github.com/gin-gonic/gin"
 	//"net/http"
-	"github.com/MIghtykukulkan/OnlineTestGo/models"
+	"OnlineTestGo/models"
 )
 
 func RegisterUser(c *gin.Context) {

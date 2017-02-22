@@ -3,7 +3,7 @@ package daoimpl
 import (
 	"log"
 
-	"github.com/MIghtykukulkan/OnlineTestGo/models"
+	"OnlineTestGo/models"
 )
 
 type UserImpl struct{}

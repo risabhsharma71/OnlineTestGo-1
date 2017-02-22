@@ -3,7 +3,7 @@ package daoimpl
 import (
 	"fmt"
 
-	"github.com/MIghtykukulkan/OnlineTestGo/models"
+	"OnlineTestGo/models"
 )
 
 //QuestionImpl struct for Questions implementattion

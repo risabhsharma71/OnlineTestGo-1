@@ -3,9 +3,9 @@ package manager
 import (
 	"log"
 
-	"github.com/MIghtykukulkan/OnlineTestGo/daos/daoimpl"
-	"github.com/MIghtykukulkan/OnlineTestGo/daos/interfaces"
-	"github.com/MIghtykukulkan/OnlineTestGo/models"
+	"OnlineTestGo/daos/daoimpl"
+	"OnlineTestGo/daos/interfaces"
+	"OnlineTestGo/models"
 )
 
 var userDao interfaces.UserDao
@@ -55,7 +55,7 @@ func Answer(answer models.Answer) string {
 
 func Question(question models.Question) string {
 	log.Println("calling Question manager")
-	
+
 	//insert Question of user
 
 	return "successful"
