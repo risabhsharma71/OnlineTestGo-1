@@ -35,30 +35,35 @@ func AnswerList(c *gin.Context) {
 	var answer models.Answer
 	c.BindJSON(&answer)
 
-	answerlist:=manager.Answer(answer)
+	answerlist := manager.Answer(answer)
 
-	fmt.Println("answerlist",answerlist)
+	fmt.Println("answerlist", answerlist)
 
 	c.JSON(200, gin.H{
 		"status":  "success",
 		"message": answerlist,
-})
+	})
 }
 
-func QuestionList(c *gin.Context){
-	
+func QuestionList(c *gin.Context) {
+
 	var question models.Question
 	c.BindJSON(&question)
 
-	questionlist:=manager.Question(question)
+	questionlist := manager.Question(question)
 
-	fmt.Println("questionlist",questionlist)
+	fmt.Println("questionlist", questionlist)
 
 	c.JSON(200, gin.H{
 		"status":  "success",
 		"message": questionlist,
-})
+	})
 }
 
+func TestService(c *gin.Context) {
 
-
+	c.JSON(200, gin.H{
+		"status":  "success",
+		"message": "your webserivce is reachable",
+	})
+}
