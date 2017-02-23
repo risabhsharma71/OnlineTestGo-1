@@ -13,29 +13,18 @@ var typeDao interfaces.TypeDao
 var questionDao interfaces.QuestionDao
 
 //Register manager takes care of business logic like calling daos
-func Register(user models.User) []models.Question {
+func Register(user models.User) int64 {
 	log.Println("calling register manager")
 
-	var questions []models.Question
-
 	userDao = daoimpl.UserImpl{}
-	typeDao = daoimpl.TypeImpl{}
-	questionDao = daoimpl.QuestionImpl{}
-
+	
 	//insert user info first
 	insertedid, err := userDao.SaveNewUser(user)
 	if err != nil {
 		log.Println("error occured", err)
 	}
 	log.Println(insertedid)
-
-	//get the type ID
-	testID := typeDao.GetIdfromType(user.Test)
-
-	//now get the questions from Questions table
-	questions = questionDao.GetQuesions(testID)
-
-	return questions
+	return insertedid
 }
 
 func Answer(answer models.Answer) string {
