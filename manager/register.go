@@ -42,10 +42,12 @@ func Answer(answer models.Answer) string {
 	return "successful"
 }
 
-func Question(question models.Question) string {
+func FetchQuestion(question models.Question,testtype string) []models.Question {
 	log.Println("calling Question manager")
+        questionDao := daoimpl.QuestionImpl{}
+        questionlist := questionDao.GetQuesions(testtype)
 
 	//insert Question of user
 
-	return "successful"
+	return questionlist
 }
