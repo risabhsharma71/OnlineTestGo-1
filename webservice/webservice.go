@@ -45,8 +45,8 @@ func QuestionList(c *gin.Context) {
 
 	var question models.Question
 	c.BindJSON(&question)
-
-	questionlist := manager.Question(question)
+        testtype :=c.Query("type")
+	questionlist := manager.FetchQuestion(question,testtype) 
 
 	fmt.Println("questionlist", questionlist)
 
