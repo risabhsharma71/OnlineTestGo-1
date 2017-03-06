@@ -10,8 +10,12 @@ import (
 
 type Name struct {
 	ID     string `json:"id,omitempty"`
-	F_Name string `json:"fname,omitempty"`
-	L_Name string `json:"lname,omitempty"`
+	FName string `json:"fname,omitempty"`
+	LName string `json:"lname,omitempty"`
+	Phone int `json:"phone,omitempty"`
+	Email string `json:"email,omitempty"`
+	Test string `json:"test,omitempty"`
+
 }
 
 var name []Name
@@ -53,12 +57,13 @@ func DeleteName(w http.ResponseWriter, req *http.Request) {
 
 func main() {
 	router := mux.NewRouter()
-	name = append(name, Name{ID: "1", F_Name: "Sweta", L_Name: "Vahia"})
-	name = append(name, Name{ID: "2", F_Name: "Shishir", L_Name: "Vahia"})
-	name = append(name, Name{ID: "3", F_Name: "Aadya", L_Name: "Vahia"})
+	name = append(name, Name{ID: "1", FName: "Sweta", LName: "Vahia",Phone:42423,Email:"ewe@fsd",Test:"java"})
+	name = append(name, Name{ID: "2", FName: "Shishir", LName: "Vahia",Phone:42423,Email:"ewe@fsd",Test:"java"})
+	name = append(name, Name{ID: "3", FName: "Aadya", LName: "Vahia",Phone:42423,Email:"ewe@fsd"})
 	router.HandleFunc("/name", GetNames).Methods("GET")
 	router.HandleFunc("/name/{id}", GetName).Methods("GET")
 	router.HandleFunc("/name/{id}", PostName).Methods("POST")
 	router.HandleFunc("/name/{id}", DeleteName).Methods("DELETE")
 	log.Fatal(http.ListenAndServe(":8080", router))
 }
+

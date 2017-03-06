@@ -39,7 +39,9 @@ func Answer(answer models.Answer) string {
 		log.Println("error occured", err)
 	}
 	log.Println(insertedid)
-	return "successful"
+	 
+        return ("succesful")       
+	
 }
 
 func Question(question models.Question) string {
@@ -48,4 +50,5 @@ func Question(question models.Question) string {
 	//insert Question of user
 
 	return "successful"
+    
 }

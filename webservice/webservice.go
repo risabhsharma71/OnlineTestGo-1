@@ -19,15 +19,10 @@ func RegisterUser(c *gin.Context) {
 	c.BindJSON(&user)
 	//function should be calling this manager class
 
-	questionlist := manager.Register(user)
-
-	//println statements should be replaced with logs
-	fmt.Println("questionlist", questionlist)
-
-	//response should return then question and answer list
+	insertedid := manager.Register(user)
 	c.JSON(200, gin.H{
 		"status":  "success",
-		"message": questionlist,
+		"message": insertedid,
 	})
 }
 
