@@ -4,5 +4,12 @@ package models
 type Question struct {
 	ID       int    `json:"id"`
 	Question string `json:"question"`
-	Type     string  `json:"type"`
+        Choices  []*Options `json:"choices"`
+	
+        Type     string  `json:"type"`
+       
+
+        
+
+
 }

@@ -10,7 +10,7 @@ import (
 
 var userDao interfaces.UserDao
 var typeDao interfaces.TypeDao
-var questionDao interfaces.QuestionDao
+var totalquestionDao interfaces.TotalQuestionDao
 
 //Register manager takes care of business logic like calling daos
 func Register(user models.User) int64 {
@@ -42,10 +42,10 @@ func Answer(answer models.Answer) string {
 	return "successful"
 }
 
-func FetchQuestion(question models.Question,testtype string) []models.Question {
+func FetchQuestion(totalquestion models.TotalQuestion,testtype string) []models.TotalQuestion {
 	log.Println("calling Question manager")
-        questionDao := daoimpl.QuestionImpl{}
-        questionlist := questionDao.GetQuesions(testtype)
+        totalquestionDao := daoimpl.TotalQuestionImpl{}
+        questionlist := totalquestionDao.GetQuesions(testtype)
 
 	//insert Question of user
 
