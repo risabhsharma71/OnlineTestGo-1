@@ -1,10 +1,11 @@
-package webservice
+	package webservice
 
 import (
 
 	//"bytes"
 	//"database/sql"
 	"fmt"
+        "log"
 
 	"OnlineTestGo/manager"
 
@@ -17,16 +18,23 @@ func RegisterUser(c *gin.Context) {
 
 	var user models.User
 	c.BindJSON(&user)
+        log.Println("Fname: " ,user.Fname)
+	  log.Println("Lname: " ,user.Lname)
+  		log.Println("phone: " ,user.Phone)
+ 	 log.Println("email: " ,user.Email)
+   
+
 	//function should be calling this manager class
 
 	insertedid := manager.Register(user)
+        c.Header("Access-Control-Allow-Headers", "access-control-allow-origin, access-control-allow-headers")
 	c.JSON(200, gin.H{
 		"status":  "success",
 		"message": insertedid,
 	})
 }
 
-func AnswerList(c *gin.Context) {
+ func AnswerList(c *gin.Context) {
 
 	var answer models.Answer
 	c.BindJSON(&answer)
@@ -41,7 +49,7 @@ func AnswerList(c *gin.Context) {
 	})
 }
 
-func QuestionList(c *gin.Context) {
+/*func QuestionList(c *gin.Context) {
 
 	var question models.Question
 	c.BindJSON(&question)
@@ -63,3 +71,4 @@ func TestService(c *gin.Context) {
 		"message": "your webserivce is reachable",
 	})
 }
+*/

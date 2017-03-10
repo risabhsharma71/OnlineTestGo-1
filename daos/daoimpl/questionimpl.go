@@ -1,16 +1,16 @@
 package daoimpl
 
 import (
-	"fmt"
-	"log"
-	"OnlineTestGo/models"
+//	"fmt"
+//	"log"
+//	"OnlineTestGo/models"
 )
 
 //QuestionImpl struct for Questions implementattion
 type QuestionImpl struct{}
 
 //GetQuestions fetched the questions from quesions table takes testId as input
-func (dao QuestionImpl) GetQuesions(testtype string) []models.Question {
+/*func (dao QuestionImpl) GetQuesions(testtype string) []models.Question {
         var totalquestions []models.TotalQuestion
 	var questions []models.Question
         var choice  []models.Options
@@ -49,4 +49,4 @@ func (dao QuestionImpl) GetQuesions(testtype string) []models.Question {
 	defer rows.Close()
 
 	return questions
-}
+}*/

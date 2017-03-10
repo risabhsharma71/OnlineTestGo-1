@@ -4,6 +4,6 @@ package models
 type Answer struct {
 	ID          int64  `json:"id"`
 	Uid      int    `json:"uid"`
-	Qid  int    `json:"qid"`
-	Correctness int `json:"correctness"`
+	Q_type string    `json:"q_type"`
+	Score int `json:"score"`
 }

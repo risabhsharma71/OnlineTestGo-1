@@ -1,3 +1,4 @@
+
 package daoimpl
 
 import (
@@ -9,88 +10,73 @@ import (
 
     var (
     sum int=0
-	 correctness[]int
-	 answer[]int
-        
+	 Tanswer []models.Options
+         answers models.Options
+	 tanswer models.Options
+         Tuser_answers =[]string {"java","0","0","0","java","0","0","0","java","0","0","0","java","0","0","0"}
+
 
 )
 type AnswerImpl struct{}
 
-func (dao AnswerImpl) SaveAnswer(answer models.Answer) (int64, error){
-
-	query := "insert into answers(uid,qid,correctness) values(?,?,?)"
-	db := connection()
-	defer db.Close()
-
-	stmt, err := db.Prepare(query)
-
-	if err != nil {
-		return 0, err
-	}
-
-	defer stmt.Close()
-
-	res, err := stmt.Exec(answer.Uid, answer.Qid, answer.Correctness)
-
-	if err != nil {
-		log.Panic("Exec err:", err.Error())
-	}
-
-	id, err := res.LastInsertId()
-	if err != nil {
-		log.Println("Exec err:", err.Error())
-	}
-
+ func (dao AnswerImpl) SaveAnswer(answer models.Answer) (int64, error){
 // fetching correctness//
-rows, err := db.Query("select correctness from answers where qid = ?", 1)
+db := connection()
+rows, err := db.Query("select answer from Options")
 if err != nil {
 	log.Fatal(err)
 }
 defer rows.Close()
 for rows.Next() {
-	err := rows.Scan(correctness)
+        err := rows.Scan(&tanswer)
+        Tanswer=append(Tanswer,tanswer)
 	if (err != nil) {
 		log.Fatal(err)
 	}
-	log.Println(correctness)
 }
 err = rows.Err()
 if err != nil {
 	log.Fatal(err)
 }
 
-//fetching user answer//
-rows, err = db.Query("select answers from options where qid = ?", 1)
-if err != nil {
-	log.Fatal(err)
-}
-defer rows.Close()
-for rows.Next() {
-	err := rows.Scan(answer)
-	if err != nil {
-		log.Fatal(err)
-	}
-	log.Println(answer)
-}
-err = rows.Err()
-if err != nil {
-	log.Fatal(err)
-}
-  
-return id ,err
 
-}
+//removeing redundant zeros in correctness array//
 
-func IntArrayEquals(correctness[] int , answer[] int ) bool {
-    if len(correctness) != len(answer) {
-        return false
-    }
-    for i, v := range correctness{
-        if v != answer[i] {
-            return false
+remove := []string{"0"}
+
+loop:
+for a := 0; a < len(Tanswer); a++ {
+    url :=  Tanswer 
+    for _, rem := range remove {
+        if url == rem {
+            Tanswer = append(Tanswer[:a], Tanswer[a+1:]...)
+            a-- // Important: decrease index
+            continue loop
         }
     }
-	sum++
-    return true
 }
+
+log.Println(Tanswer)
+return 1,err
+}
+
+
+
+
+
+
+	func ArrayCompare(Tuser_answers[] string , Tanswer []models.Options ){
+    var score int=0
+
+    // Loop over  ints and print them.
+    for i := 0; i < len(Tuser_answers); i++ {
+        if(Tuser_answers[i]==Tanswer[i]){
+        score=score+1
+    }
+        
+    }
+    log.Println(score)
+
+}
+
 
