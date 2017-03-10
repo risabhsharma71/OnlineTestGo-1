@@ -9,8 +9,13 @@ import (
 )
 
 var userDao interfaces.UserDao
+<<<<<<< HEAD
 var typeDao interfaces.TypeDao
 var totalquestionDao interfaces.TotalQuestionDao
+=======
+//var typeDao interfaces.TypeDao
+//var questionDao interfaces.QuestionDao
+>>>>>>> 97c3febc037c9c7f2a2f3a7b89708240fa055d19
 
 //Register manager takes care of business logic like calling daos
 func Register(user models.User) int64 {
@@ -39,10 +44,16 @@ func Answer(answer models.Answer) string {
 		log.Println("error occured", err)
 	}
 	log.Println(insertedid)
-	return "successful"
+	 
+        return ("succesful")       
+	
 }
 
+<<<<<<< HEAD
 func FetchQuestion(totalquestion models.TotalQuestion,testtype string) []models.TotalQuestion {
+=======
+/*func FetchQuestion(question models.Question,testtype string) []models.Question {
+>>>>>>> 97c3febc037c9c7f2a2f3a7b89708240fa055d19
 	log.Println("calling Question manager")
         totalquestionDao := daoimpl.TotalQuestionImpl{}
         questionlist := totalquestionDao.GetQuesions(testtype)
@@ -50,4 +61,6 @@ func FetchQuestion(totalquestion models.TotalQuestion,testtype string) []models.
 	//insert Question of user
 
 	return questionlist
+
 }
+*/

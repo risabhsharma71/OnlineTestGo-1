@@ -1,11 +1,15 @@
-package webservice
+	package webservice
 
 import (
 
 	//"bytes"
 	//"database/sql"
 	"fmt"
+<<<<<<< HEAD
        // "net/http"
+=======
+        "log"
+>>>>>>> 97c3febc037c9c7f2a2f3a7b89708240fa055d19
 
 	"OnlineTestGo/manager"
 
@@ -22,21 +26,27 @@ func RegisterUser(c *gin.Context) {
 
 	var user models.User
 	c.BindJSON(&user)
+        log.Println("Fname: " ,user.Fname)
+	  log.Println("Lname: " ,user.Lname)
+  		log.Println("phone: " ,user.Phone)
+ 	 log.Println("email: " ,user.Email)
+   
+
 	//function should be calling this manager class
 
-	questionlist := manager.Register(user)
-
-	//println statements should be replaced with logs
-	fmt.Println("questionlist", questionlist)
-
-	//response should return then question and answer list
+	insertedid := manager.Register(user)
+        c.Header("Access-Control-Allow-Headers", "access-control-allow-origin, access-control-allow-headers")
 	c.JSON(200, gin.H{
 		"status":  "success",
-		"message": questionlist,
+		"message": insertedid,
 	})
 }
 
+<<<<<<< HEAD
 /*func AnswerList(c *gin.Context) {
+=======
+ func AnswerList(c *gin.Context) {
+>>>>>>> 97c3febc037c9c7f2a2f3a7b89708240fa055d19
 
 	var answer models.Answer
 	c.BindJSON(&answer)
@@ -50,8 +60,13 @@ func RegisterUser(c *gin.Context) {
 		"message": answerlist,
 	})
 }
+<<<<<<< HEAD
 */
 func QuestionList(c *gin.Context) {
+=======
+
+/*func QuestionList(c *gin.Context) {
+>>>>>>> 97c3febc037c9c7f2a2f3a7b89708240fa055d19
 
 	var totalquestion models.TotalQuestion
 	c.BindJSON(&totalquestion)
@@ -97,3 +112,4 @@ func TestService(c *gin.Context) {
 		"message": "your webserivce is reachable",
 	})
 }
+*/
