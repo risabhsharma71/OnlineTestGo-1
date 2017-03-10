@@ -30,28 +30,19 @@ var totalquestions []models.TotalQuestion
 	    
 
 			err = rows.Scan(&totalquestion.ID, &totalquestion.Question ,&totalquestion.Choices)
-                        encountered := map[models.Question]bool{}
-
-                       for v:= range totalquestion {
-        encountered[totalquestion[v]] = true
-    }
-              result := []models.Question{}
-                        for key, _ := range encountered {
-        result = append(result, key)
-    }
-   
-}
-			totalquestions = append(totalquestions,result)
+                        
+			totalquestions = append(totalquestions,totalquestion)
                         
 			if err != nil {
 				fmt.Print(err.Error())
 			}
 		}
           
-	defer rows.Close()
+	
+         defer rows.Close()
 
 	return totalquestions
-
-
-
 }
+
+
+

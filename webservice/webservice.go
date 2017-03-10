@@ -5,11 +5,11 @@ import (
 	//"bytes"
 	//"database/sql"
 	"fmt"
-<<<<<<< HEAD
+
        // "net/http"
-=======
+
         "log"
->>>>>>> 97c3febc037c9c7f2a2f3a7b89708240fa055d19
+
 
 	"OnlineTestGo/manager"
 
@@ -21,7 +21,7 @@ import (
 	
 
 )
-
+/*
 func RegisterUser(c *gin.Context) {
 
 	var user models.User
@@ -42,11 +42,11 @@ func RegisterUser(c *gin.Context) {
 	})
 }
 
-<<<<<<< HEAD
-/*func AnswerList(c *gin.Context) {
-=======
+
+
+
  func AnswerList(c *gin.Context) {
->>>>>>> 97c3febc037c9c7f2a2f3a7b89708240fa055d19
+
 
 	var answer models.Answer
 	c.BindJSON(&answer)
@@ -60,13 +60,13 @@ func RegisterUser(c *gin.Context) {
 		"message": answerlist,
 	})
 }
-<<<<<<< HEAD
-*/
-func QuestionList(c *gin.Context) {
-=======
 
-/*func QuestionList(c *gin.Context) {
->>>>>>> 97c3febc037c9c7f2a2f3a7b89708240fa055d19
+*/
+
+
+
+func QuestionList(c *gin.Context) {
+
 
 	var totalquestion models.TotalQuestion
 	c.BindJSON(&totalquestion)
@@ -82,7 +82,8 @@ func QuestionList(c *gin.Context) {
 }
 
 
-/*func GetQuestion(w http.ResponseWriter, req *http.Request,c *gin.Context) {
+/*
+func GetQuestion(w http.ResponseWriter, req *http.Request,c *gin.Context) {
 var questions []models.TotalQuestion
 //c.BindJSON(&questions)
 questions = append(questions,models.TotalQuestion{ID: "1", Question: "which of these is necesary condn for automatic type conversion?", Option1: "a", Option2: "b",Option3: "c", Option4: "d",Option5: "e",Type :"java"})
@@ -112,4 +113,3 @@ func TestService(c *gin.Context) {
 		"message": "your webserivce is reachable",
 	})
 }
-*/

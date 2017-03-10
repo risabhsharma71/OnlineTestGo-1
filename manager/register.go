@@ -8,15 +8,14 @@ import (
 	"OnlineTestGo/models"
 )
 
-var userDao interfaces.UserDao
-<<<<<<< HEAD
-var typeDao interfaces.TypeDao
+//var userDao interfaces.UserDa
+//var typeDao interfaces.TypeDao
 var totalquestionDao interfaces.TotalQuestionDao
-=======
+
 //var typeDao interfaces.TypeDao
 //var questionDao interfaces.QuestionDao
->>>>>>> 97c3febc037c9c7f2a2f3a7b89708240fa055d19
 
+/*
 //Register manager takes care of business logic like calling daos
 func Register(user models.User) int64 {
 	log.Println("calling register manager")
@@ -36,10 +35,10 @@ func Answer(answer models.Answer) string {
 	log.Println("calling Answer manager")
 
 	//var answers []models.Answer
-	answerDao := daoimpl.AnswerImpl{}
+	//answerDao := daoimpl.AnswerImpl{}
 
 	//insert Answers of user
-	insertedid, err := answerDao.SaveAnswer(answer)
+	//insertedid, err := answerDao.SaveAnswer(answer)
 	if err != nil {
 		log.Println("error occured", err)
 	}
@@ -49,11 +48,9 @@ func Answer(answer models.Answer) string {
 	
 }
 
-<<<<<<< HEAD
-func FetchQuestion(totalquestion models.TotalQuestion,testtype string) []models.TotalQuestion {
-=======
-/*func FetchQuestion(question models.Question,testtype string) []models.Question {
->>>>>>> 97c3febc037c9c7f2a2f3a7b89708240fa055d19
+*/
+func FetchQuestion(question models.Question,testtype string) []models.Question {
+
 	log.Println("calling Question manager")
         totalquestionDao := daoimpl.TotalQuestionImpl{}
         questionlist := totalquestionDao.GetQuesions(testtype)
@@ -63,4 +60,3 @@ func FetchQuestion(totalquestion models.TotalQuestion,testtype string) []models.
 	return questionlist
 
 }
-*/
