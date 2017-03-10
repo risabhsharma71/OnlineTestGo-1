@@ -82,29 +82,6 @@ func QuestionList(c *gin.Context) {
 }
 
 
-/*
-func GetQuestion(w http.ResponseWriter, req *http.Request,c *gin.Context) {
-var questions []models.TotalQuestion
-//c.BindJSON(&questions)
-questions = append(questions,models.TotalQuestion{ID: "1", Question: "which of these is necesary condn for automatic type conversion?", Option1: "a", Option2: "b",Option3: "c", Option4: "d",Option5: "e",Type :"java"})
-//questions = append(questions,models.TotalQuestion{ID: "2", Question: "what is the output of this program?", Option1: "a", Option2: "b",Option3: "c", Option4: "d",Option5: "e",Type :"java"})
-
-
-	params := mux.Vars(req)
-	for _, item := range questions {
-		if item.Type == params["type"] {
-			json.NewEncoder(w).Encode(item)
-			return
-		}
-	}
-	json.NewEncoder(w).Encode(models.TotalQuestion{})
-}
-
-func GetQuestions(w http.ResponseWriter, req *http.Request,c *gin.Context) {
-	json.NewEncoder(w).Encode(questions)
-}
-*/
-
 
 func TestService(c *gin.Context) {
 				
