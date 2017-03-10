@@ -8,10 +8,14 @@ import (
 	"OnlineTestGo/models"
 )
 
-var userDao interfaces.UserDao
+//var userDao interfaces.UserDa
+//var typeDao interfaces.TypeDao
+var totalquestionDao interfaces.TotalQuestionDao
+
 //var typeDao interfaces.TypeDao
 //var questionDao interfaces.QuestionDao
 
+/*
 //Register manager takes care of business logic like calling daos
 func Register(user models.User) int64 {
 	log.Println("calling register manager")
@@ -31,10 +35,10 @@ func Answer(answer models.Answer) string {
 	log.Println("calling Answer manager")
 
 	//var answers []models.Answer
-	answerDao := daoimpl.AnswerImpl{}
+	//answerDao := daoimpl.AnswerImpl{}
 
 	//insert Answers of user
-	insertedid, err := answerDao.SaveAnswer(answer)
+	//insertedid, err := answerDao.SaveAnswer(answer)
 	if err != nil {
 		log.Println("error occured", err)
 	}
@@ -44,14 +48,15 @@ func Answer(answer models.Answer) string {
 	
 }
 
-/*func FetchQuestion(question models.Question,testtype string) []models.Question {
+*/
+func FetchQuestion(question models.Question,testtype string) []models.Question {
+
 	log.Println("calling Question manager")
-        questionDao := daoimpl.QuestionImpl{}
-        questionlist := questionDao.GetQuesions(testtype)
+        totalquestionDao := daoimpl.TotalQuestionImpl{}
+        questionlist := totalquestionDao.GetQuesions(testtype)
 
 	//insert Question of user
 
 	return questionlist
 
 }
-*/
