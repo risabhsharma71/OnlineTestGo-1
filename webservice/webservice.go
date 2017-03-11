@@ -21,7 +21,7 @@ import (
 	
 
 )
-/*
+
 func RegisterUser(c *gin.Context) {
 
 	var user models.User
@@ -61,10 +61,10 @@ func RegisterUser(c *gin.Context) {
 	})
 }
 
-*/
 
 
 
+/*
 func QuestionList(c *gin.Context) {
 
 
@@ -82,7 +82,7 @@ func QuestionList(c *gin.Context) {
 }
 
 
-/*
+
 func GetQuestion(w http.ResponseWriter, req *http.Request,c *gin.Context) {
 var questions []models.TotalQuestion
 //c.BindJSON(&questions)
@@ -103,7 +103,7 @@ questions = append(questions,models.TotalQuestion{ID: "1", Question: "which of t
 func GetQuestions(w http.ResponseWriter, req *http.Request,c *gin.Context) {
 	json.NewEncoder(w).Encode(questions)
 }
-*/
+
 
 
 func TestService(c *gin.Context) {
@@ -113,3 +113,4 @@ func TestService(c *gin.Context) {
 		"message": "your webserivce is reachable",
 	})
 }
+*/

@@ -15,7 +15,7 @@ import (
 	 Tanswer []models.Options
          answers models.Options
 	 tanswer models.Options
-       //  Tuser_answers =[]string {"java","0","0","0","java","0","0","0","java","0","0","0","java","0","0","0"}
+         Tuser_answers =[]string {"java","0","0","0","java","0","0","0","java","0","0","0","java","0","0","0"}
          
 
 )
@@ -45,7 +45,7 @@ if err != nil {
 	log.Fatal(err)
 }
 
-/*
+
 //removeing redundant zeros in correctness array//
 
 remove := []string{"0"}
@@ -62,7 +62,7 @@ for a := 0; a < len(Tanswer); a++ {
     }
 }
 
-log.Println(Tanswer)*/
+log.Println(Tanswer)
 return 1,err
 }
 
@@ -71,7 +71,7 @@ return 1,err
 
 
 
-/*	func ArrayCompare(Tuser_answers[] string , Tanswer []models.Options ){
+	func ArrayCompare(Tuser_answers[] string , Tanswer []models.Options ){
     var score int=0
 
     // Loop over  ints and print them.
@@ -84,5 +84,5 @@ return 1,err
     log.Println(score)
 
 }
-*/
+
 
