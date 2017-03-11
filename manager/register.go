@@ -49,7 +49,7 @@ func Answer(answer models.Answer) string {
 }
 
 */
-func FetchQuestion(question models.Question,testtype string) []models.Question {
+func FetchQuestion(question models.TotalQuestion,testtype string) []models.TotalQuestion {
 
 	log.Println("calling Question manager")
         totalquestionDao := daoimpl.TotalQuestionImpl{}
