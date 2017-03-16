@@ -2,10 +2,10 @@ package daoimpl
 
 import (
 	"log"
-
+        "fmt"
 	"OnlineTestGo/models"
 )
-
+       
 type UserImpl struct{}
 
 func (dao UserImpl) SaveNewUser(user models.User) (int64, error) {
@@ -13,11 +13,7 @@ func (dao UserImpl) SaveNewUser(user models.User) (int64, error) {
 	query := "insert into registration(fname, lname, phone, email) values(?,?,?,?)"
 	db := connection()
 	defer db.Close()
-        log.Println("Fname: " ,user.Fname)
-	  log.Println("Lname: " ,user.Lname)
-  		log.Println("phone: " ,user.Phone)
- 	 log.Println("email: " ,user.Email)
-   
+          
 	stmt, err := db.Prepare(query)
 
 	if err != nil {
@@ -38,4 +34,34 @@ func (dao UserImpl) SaveNewUser(user models.User) (int64, error) {
 	}
 
 	return id, err
+}
+
+    func (dao UserImpl) checkUser(user models.User) (int, error) {
+                
+	        id:=0
+query := "select phone from registration where phone = 9176061985"
+                   db:= connection()
+	     
+ 	  rows, err := db.Query(query)	
+          if err != nil {
+	  log.Fatal(err)
+              defer rows.Close()
+}
+
+for rows.Next() {
+         var  no[] models.User
+	err := rows.Scan(&user.Phone)
+	if err != nil {
+		log.Fatal(err)
+	}
+           no= append(no,user) 
+
+
+           if len(no)!=0{
+          return id,err
+         }
+	fmt.Println(id)
+}
+
+     return 0,err;
 }
