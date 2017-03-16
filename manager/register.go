@@ -5,15 +5,20 @@ import (
 	"OnlineTestGo/daos/interfaces"
 	"OnlineTestGo/models"
 	"log"
+<<<<<<< HEAD
+	"fmt"
+       )
+=======
         "OnlineTestGo/utility"
         
 )
+>>>>>>> 8843adccf7a8bb21b2fe429f6ce26120fb216cd1
 
 var userDao interfaces.UserDao
 
+
 //var typeDao interfaces.TypeDao
 var questionDao interfaces.QuestionDao
-
 //var typeDao interfaces.TypeDao
 //var questionDao interfaces.QuestionDao
 
@@ -21,17 +26,25 @@ var questionDao interfaces.QuestionDao
 func Register(user models.User) int64 {
         utility.GetLogger()
 	log.Println("calling register manager")
-
-	userDao = daoimpl.UserImpl{}
-
+	 userDao = daoimpl.UserImpl{}
+     		id:=userDao.checkUser(user)
+         
+               if id!=0{
+		return id
+                fmt.Println("checked phone number")
+                       }
+         
 	//insert user info first
 	insertedid, err := userDao.SaveNewUser(user)
-	if err != nil {
+          if err != nil {
 		log.Println("error occured", err)
 	}
 	log.Println(insertedid)
+	
 	return insertedid
-}
+       }
+
+
 
 func CalculateScore(answerList []models.Answer) int {
 utility.GetLogger()
@@ -45,7 +58,7 @@ utility.GetLogger()
 	for _, answer := range answerList {
 		//checck if given answer is right
 		log.Println("Fetching the right answer...")
-		correctAnswer := questionDao.GetAnswerById(answer.Qid)
+		correctAnswer := questionDao.GetAnswerById(answer.Q_type)
 
 		log.Println("actual vs correct", answer.Selected, correctAnswer)
 		if answer.Selected == correctAnswer {
@@ -70,4 +83,12 @@ utility.GetLogger()
 	return questionDao.FetchQuestionsByType(testtype)
 
 }
+<<<<<<< HEAD
+func FetchData() []models.Admin {
+	adminDao := daoimpl.AdminImpl{}
+	return adminDao.FetchData()
 
+}
+=======
+
+>>>>>>> 8843adccf7a8bb21b2fe429f6ce26120fb216cd1

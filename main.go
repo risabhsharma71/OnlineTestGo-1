@@ -24,12 +24,13 @@ func main() {
 	router.GET("/questions", webservice.QuestionList)
 	//router.HandleFunc("/questions", webservice.GetQuestion).Methods("GET")
 	//router.GET("/questions", webservice.GetQuestions)
-
 	router.GET("/testService", webservice.TestService)
+    	 router.GET("/admin",webservice.Admin)
 	//define other service here
 	//log.Println("First log message!")
 
 	router.Run(":8080")
+
 
 }
 
@@ -43,3 +44,4 @@ func GetPort() string {
 	}
 	return ":" + port
 }
+
