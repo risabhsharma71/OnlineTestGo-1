@@ -1,0 +1,50 @@
+TRACE: 2017/03/14 13:03:13 debug.go:45: [GIN-debug] [WARNING] Running in "debug" mode. Switch to "release" mode in production.
+ - using env:	export GIN_MODE=release
+ - using code:	gin.SetMode(gin.ReleaseMode)
+
+TRACE: 2017/03/14 13:03:13 debug.go:45: [GIN-debug] POST   /registerUser             --> OnlineTestGo/webservice.RegisterUser (3 handlers)
+TRACE: 2017/03/14 13:03:13 debug.go:45: [GIN-debug] POST   /userAnswer               --> OnlineTestGo/webservice.AnswerList (3 handlers)
+TRACE: 2017/03/14 13:03:13 debug.go:45: [GIN-debug] GET    /questions                --> OnlineTestGo/webservice.QuestionList (3 handlers)
+TRACE: 2017/03/14 13:03:13 debug.go:45: [GIN-debug] GET    /testService              --> OnlineTestGo/webservice.TestService (3 handlers)
+TRACE: 2017/03/14 13:03:13 main.go:35: First log message!
+TRACE: 2017/03/14 13:03:13 debug.go:45: [GIN-debug] Listening and serving HTTP on :8081
+TRACE: 2017/03/14 13:03:31 debug.go:45: [GIN-debug] [WARNING] Running in "debug" mode. Switch to "release" mode in production.
+ - using env:	export GIN_MODE=release
+ - using code:	gin.SetMode(gin.ReleaseMode)
+
+TRACE: 2017/03/14 13:03:31 debug.go:45: [GIN-debug] POST   /registerUser             --> OnlineTestGo/webservice.RegisterUser (3 handlers)
+TRACE: 2017/03/14 13:03:31 debug.go:45: [GIN-debug] POST   /userAnswer               --> OnlineTestGo/webservice.AnswerList (3 handlers)
+TRACE: 2017/03/14 13:03:31 debug.go:45: [GIN-debug] GET    /questions                --> OnlineTestGo/webservice.QuestionList (3 handlers)
+TRACE: 2017/03/14 13:03:31 debug.go:45: [GIN-debug] GET    /testService              --> OnlineTestGo/webservice.TestService (3 handlers)
+TRACE: 2017/03/14 13:03:31 main.go:35: First log message!
+TRACE: 2017/03/14 13:03:31 debug.go:45: [GIN-debug] Listening and serving HTTP on :8081
+TRACE: 2017/03/14 13:06:35 debug.go:45: [GIN-debug] [WARNING] Running in "debug" mode. Switch to "release" mode in production.
+ - using env:	export GIN_MODE=release
+ - using code:	gin.SetMode(gin.ReleaseMode)
+
+TRACE: 2017/03/14 13:06:35 debug.go:45: [GIN-debug] POST   /registerUser             --> OnlineTestGo/webservice.RegisterUser (3 handlers)
+TRACE: 2017/03/14 13:06:35 debug.go:45: [GIN-debug] POST   /userAnswer               --> OnlineTestGo/webservice.AnswerList (3 handlers)
+TRACE: 2017/03/14 13:06:35 debug.go:45: [GIN-debug] GET    /questions                --> OnlineTestGo/webservice.QuestionList (3 handlers)
+TRACE: 2017/03/14 13:06:35 debug.go:45: [GIN-debug] GET    /testService              --> OnlineTestGo/webservice.TestService (3 handlers)
+TRACE: 2017/03/14 13:06:35 main.go:35: First log message!
+TRACE: 2017/03/14 13:06:35 debug.go:45: [GIN-debug] Listening and serving HTTP on :8081
+TRACE: 2017/03/14 13:07:12 register.go:68: calling Question manager
+TRACE: 2017/03/14 13:07:13 questionimpl.go:42: totalquestions: [{1 which of these handles the exception when no catch is used? default handler} {1 which of these handles the exception when no catch is used? finally} {1 which of these handles the exception when no catch is used? throw handler} {1 which of these handles the exception when no catch is used? java runtime system} {2 which of these methods are used to implement runable interface? stop()} {2 which of these methods are used to implement runable interface? start()} {2 which of these methods are used to implement runable interface? runThread()} {2 which of these methods are used to implement runable interface? stopThread()}]
+TRACE: 2017/03/14 13:09:54 register.go:68: calling Question manager
+TRACE: 2017/03/14 13:09:56 questionimpl.go:42: totalquestions: [{5 to be badgered is to be flattered} {5 to be badgered is to be tormented} {5 to be badgered is to be made angry} {5 to be badgered is to be null} {6 if you were inundated with work you would be very busy} {6 if you were inundated with work you would be not busy} {6 if you were inundated with work you would be irritated} {6 if you were inundated with work you would be null}]
+TRACE: 2017/03/14 13:11:44 register.go:68: calling Question manager
+TRACE: 2017/03/14 13:11:45 questionimpl.go:42: totalquestions: [{1 which of these handles the exception when no catch is used? default handler} {1 which of these handles the exception when no catch is used? finally} {1 which of these handles the exception when no catch is used? throw handler} {1 which of these handles the exception when no catch is used? java runtime system} {2 which of these methods are used to implement runable interface? stop()} {2 which of these methods are used to implement runable interface? start()} {2 which of these methods are used to implement runable interface? runThread()} {2 which of these methods are used to implement runable interface? stopThread()}]
+TRACE: 2017/03/14 13:13:36 register.go:68: calling Question manager
+TRACE: 2017/03/14 13:13:38 questionimpl.go:42: totalquestions: [{1 which of these handles the exception when no catch is used? default handler} {1 which of these handles the exception when no catch is used? finally} {1 which of these handles the exception when no catch is used? throw handler} {1 which of these handles the exception when no catch is used? java runtime system} {2 which of these methods are used to implement runable interface? stop()} {2 which of these methods are used to implement runable interface? start()} {2 which of these methods are used to implement runable interface? runThread()} {2 which of these methods are used to implement runable interface? stopThread()}]
+TRACE: 2017/03/14 13:18:41 debug.go:45: [GIN-debug] [WARNING] Running in "debug" mode. Switch to "release" mode in production.
+ - using env:	export GIN_MODE=release
+ - using code:	gin.SetMode(gin.ReleaseMode)
+
+TRACE: 2017/03/14 13:18:41 debug.go:45: [GIN-debug] POST   /registerUser             --> OnlineTestGo/webservice.RegisterUser (3 handlers)
+TRACE: 2017/03/14 13:18:41 debug.go:45: [GIN-debug] POST   /userAnswer               --> OnlineTestGo/webservice.AnswerList (3 handlers)
+TRACE: 2017/03/14 13:18:41 debug.go:45: [GIN-debug] GET    /questions                --> OnlineTestGo/webservice.QuestionList (3 handlers)
+TRACE: 2017/03/14 13:18:41 debug.go:45: [GIN-debug] GET    /testService              --> OnlineTestGo/webservice.TestService (3 handlers)
+TRACE: 2017/03/14 13:18:41 main.go:35: First log message!
+TRACE: 2017/03/14 13:18:41 debug.go:45: [GIN-debug] Listening and serving HTTP on :8081
+TRACE: 2017/03/14 13:18:50 register.go:68: calling Question manager
+TRACE: 2017/03/14 13:18:52 questionimpl.go:42: totalquestions: [{5 to be badgered is to be flattered} {5 to be badgered is to be tormented} {5 to be badgered is to be made angry} {5 to be badgered is to be null} {6 if you were inundated with work you would be very busy} {6 if you were inundated with work you would be not busy} {6 if you were inundated with work you would be irritated} {6 if you were inundated with work you would be null}]

@@ -4,11 +4,10 @@ import (
 	"OnlineTestGo/models"
 	"database/sql"
 	"log"
+        "OnlineTestGo/utility"
 )
 
-//	"fmt"
-//	"log"
-//	"OnlineTestGo/models"
+
 
 type QuestionImpl struct{}
 
@@ -16,7 +15,7 @@ type QuestionImpl struct{}
 func (dao QuestionImpl) FetchQuestionsByType(testtype string) []models.Question {
 	var totalquestions []models.TotalQuestion
 	var questionList []models.Question
-
+        utility.GetLogger()
 	query := "SELECT A.id, A.question, B.choices FROM rpqbmysql.questions as A right join rpqbmysql.Options as B on A.id = B.qid where type = ?"
 
 	db := connection()
@@ -77,6 +76,7 @@ func (dao QuestionImpl) FetchQuestionsByType(testtype string) []models.Question 
 }
 
 func (dao QuestionImpl) GetAnswerById(ID int64) string {
+utility.GetLogger()
 	db := connection()
 	defer db.Close()
 	answer := ""

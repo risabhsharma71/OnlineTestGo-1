@@ -1,18 +1,24 @@
 package main
 
 import (
+	"OnlineTestGo/utility"
 	"OnlineTestGo/webservice"
-	//"encoding/json"
-	//"log"
+	"log"
+	"os"
 
-	// "github.com/itsjamie/gin-cors"
+	"fmt"
 
 	"github.com/gin-gonic/gin"
-	//"net/http"
-	//"github.com/gorilla/mux"
+	"github.com/goinggo/tracelog"
 )
 
 func main() {
+	utility.GetLogger()
+	tracelog.Start(tracelog.LevelTrace)
+	tracelog.Trace("main", "main", " Trace")
+	tracelog.Info("main", "main", " Info")
+	tracelog.Warning("main", "main", " Warn")
+	tracelog.Errorf(fmt.Errorf("Exception At..."), "main", "main", " Error")
 
 	router := gin.Default()
 
@@ -22,9 +28,23 @@ func main() {
 	//router.HandleFunc("/questions",webservice.GetQuestion).Methods("GET")
 	//router.GET("/questions", webservice.GetQuestions)
 	router.GET("/testService", webservice.TestService)
-     router.GET("/admin",webservice.Admin)
+    	 router.GET("/admin",webservice.Admin)
+	//define other service here
+	log.Println("First log message!")
 
+	router.Run(GetPort())
 
-	router.Run(":8080")
 
 }
+
+//Get port method gets the OS env variable for the port, if not available, it will se the default port
+func GetPort() string {
+	var port = os.Getenv("PORT")
+	// Set a default port if there is nothing in the environment
+	if port == "" {
+		port = "8080"
+		fmt.Println("INFO: No PORT environment variable detected, defaulting to " + port)
+	}
+	return ":" + port
+}
+

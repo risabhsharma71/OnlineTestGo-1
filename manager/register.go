@@ -5,8 +5,14 @@ import (
 	"OnlineTestGo/daos/interfaces"
 	"OnlineTestGo/models"
 	"log"
+<<<<<<< HEAD
 	"fmt"
        )
+=======
+        "OnlineTestGo/utility"
+        
+)
+>>>>>>> 8843adccf7a8bb21b2fe429f6ce26120fb216cd1
 
 var userDao interfaces.UserDao
 
@@ -18,6 +24,7 @@ var questionDao interfaces.QuestionDao
 
 //Register manager takes care of business logic like calling daos
 func Register(user models.User) int64 {
+        utility.GetLogger()
 	log.Println("calling register manager")
 	 userDao = daoimpl.UserImpl{}
      		id:=userDao.checkUser(user)
@@ -40,6 +47,7 @@ func Register(user models.User) int64 {
 
 
 func CalculateScore(answerList []models.Answer) int {
+utility.GetLogger()
 	log.Println("calling Answer manager")
 	questionDao := daoimpl.QuestionImpl{}
 	answerDao := daoimpl.AnswerImpl{}
@@ -69,12 +77,18 @@ func CalculateScore(answerList []models.Answer) int {
 }
 
 func FetchQuestion(testtype string) []models.Question {
+utility.GetLogger()
+    log.Println("calling Question manager")
 	questionDao := daoimpl.QuestionImpl{}
 	return questionDao.FetchQuestionsByType(testtype)
 
 }
+<<<<<<< HEAD
 func FetchData() []models.Admin {
 	adminDao := daoimpl.AdminImpl{}
 	return adminDao.FetchData()
 
 }
+=======
+
+>>>>>>> 8843adccf7a8bb21b2fe429f6ce26120fb216cd1
