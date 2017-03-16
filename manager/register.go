@@ -6,6 +6,7 @@ import (
 	"OnlineTestGo/models"
 	"log"
         "OnlineTestGo/utility"
+"fmt"
         
 )
 
@@ -45,9 +46,11 @@ utility.GetLogger()
 	for _, answer := range answerList {
 		//checck if given answer is right
 		log.Println("Fetching the right answer...")
-		correctAnswer := questionDao.GetAnswerById(answer.Qid)
+		correctAnswer := questionDao.GetAnswerById(answer.Q_type)
 
 		log.Println("actual vs correct", answer.Selected, correctAnswer)
+                fmt.Println("actual vs correct", answer.Selected, correctAnswer)
+
 		if answer.Selected == correctAnswer {
 			//if right increment the score
 			score++
@@ -71,3 +74,17 @@ utility.GetLogger()
 
 }
 
+func AddQuestion(question models.Question) int64 {
+        utility.GetLogger()
+	log.Println("calling addquestion manager", question )
+
+	questionDao := daoimpl.QuestionImpl{}
+
+	//insert user info first
+	           
+	 insertedid, err := questionDao.AddQuestion(question)
+	if err != nil {
+		log.Println("error occured", err)
+	}
+	return   insertedid
+}
