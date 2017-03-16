@@ -5,14 +5,12 @@ import (
 	"OnlineTestGo/daos/interfaces"
 	"OnlineTestGo/models"
 	"log"
-<<<<<<< HEAD
 	"fmt"
-       )
-=======
+
         "OnlineTestGo/utility"
         
 )
->>>>>>> 8843adccf7a8bb21b2fe429f6ce26120fb216cd1
+
 
 var userDao interfaces.UserDao
 
@@ -27,7 +25,7 @@ func Register(user models.User) int64 {
         utility.GetLogger()
 	log.Println("calling register manager")
 	 userDao = daoimpl.UserImpl{}
-     		id:=userDao.checkUser(user)
+     		id,err:=userDao.CheckUser(user)
          
                if id!=0{
 		return id
@@ -83,12 +81,10 @@ utility.GetLogger()
 	return questionDao.FetchQuestionsByType(testtype)
 
 }
-<<<<<<< HEAD
+
+
 func FetchData() []models.Admin {
 	adminDao := daoimpl.AdminImpl{}
 	return adminDao.FetchData()
 
 }
-=======
-
->>>>>>> 8843adccf7a8bb21b2fe429f6ce26120fb216cd1
