@@ -8,7 +8,7 @@ import (
        
 type UserImpl struct{}
 
-func (dao UserImpl) SaveNewUser(user models.User) (int64, error) {
+func (dao UserImpl) SaveNewUser(user models.User) (int, error) {
 
 	query := "insert into registration(fname, lname, phone, email) values(?,?,?,?)"
 	db := connection()
@@ -28,15 +28,16 @@ func (dao UserImpl) SaveNewUser(user models.User) (int64, error) {
 		log.Panic("Exec err:", err.Error())
 	}
 
-	id, err := res.LastInsertId()
+	_, err := res.LastInsertId()
+
+	fmt.Printf("%T",id);
 	if err != nil {
 		log.Println("Exec err:", err.Error())
 	}
-
-	return id, err
+	
+	return 0, err
 }
-
-    func (dao UserImpl) checkUser(user models.User) (int, error) {
+func (dao UserImpl) CheckUser(user models.User) (int, error) {
                 
 	        id:=0
 query := "select phone from registration where phone = 9176061985"
