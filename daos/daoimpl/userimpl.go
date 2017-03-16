@@ -1,19 +1,19 @@
 package daoimpl
 
 import (
-	"log"
-        "fmt"
 	"OnlineTestGo/models"
+	"fmt"
+	"log"
 )
-       
+
 type UserImpl struct{}
 
-func (dao UserImpl) SaveNewUser(user models.User) (int, error) {
+func (dao UserImpl) SaveNewUser(user models.User) (int64, error) {
 
 	query := "insert into registration(fname, lname, phone, email) values(?,?,?,?)"
 	db := connection()
 	defer db.Close()
-          
+
 	stmt, err := db.Prepare(query)
 
 	if err != nil {
@@ -28,41 +28,37 @@ func (dao UserImpl) SaveNewUser(user models.User) (int, error) {
 		log.Panic("Exec err:", err.Error())
 	}
 
-	_, err := res.LastInsertId()
+	id, err := res.LastInsertId()
 
-	fmt.Printf("%T",id);
+	fmt.Printf("%T", id)
 	if err != nil {
 		log.Println("Exec err:", err.Error())
 	}
-	
-	return 0, err
-}
-func (dao UserImpl) CheckUser(user models.User) (int, error) {
-                
-	        id:=0
-query := "select phone from registration where phone = 9176061985"
-                   db:= connection()
-	     
- 	  rows, err := db.Query(query)	
-          if err != nil {
-	  log.Fatal(err)
-              defer rows.Close()
+
+	return id, err
 }
 
-for rows.Next() {
-         var  no[] models.User
-	err := rows.Scan(&user.Phone)
+func (dao UserImpl) CheckUser(user models.User) (int64, error) {
+
+	var id int64
+	phone := user.Phone
+	query := "select phone from registration where phone = ?"
+	db := connection()
+
+	rows, err := db.Query(query, phone)
 	if err != nil {
 		log.Fatal(err)
+		defer rows.Close()
 	}
-           no= append(no,user) 
 
+	for rows.Next() {
 
-           if len(no)!=0{
-          return id,err
-         }
-	fmt.Println(id)
-}
+		err := rows.Scan(&id)
+		if err != nil {
+			fmt.Println(err)
+		}
+		fmt.Println(id)
+	}
 
-     return 0,err;
+	return id, err
 }
