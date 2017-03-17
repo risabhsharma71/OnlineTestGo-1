@@ -77,7 +77,21 @@ func FetchQuestion(testtype string) []models.Question {
 	return questionDao.FetchQuestionsByType(testtype)
 
 }
+func AddQuestion(question models.Question) int64 {
+	utility.GetLogger()
+	log.Println("calling register manager")
+	questionDao := daoimpl.QuestionImpl{}
+	
 
+	
+	insertedid, err := questionDao.AddQuestion(question)
+	if err != nil {
+		log.Println("error occured", err)
+	}
+	log.Println(insertedid)
+
+	return insertedid
+}
 func FetchData() []models.Admin {
 	adminDao := daoimpl.AdminImpl{}
 	return adminDao.FetchData()
