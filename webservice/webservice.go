@@ -17,14 +17,13 @@ func RegisterUser(c *gin.Context) {
 
 	var user models.User
 	c.BindJSON(&user)
-	
 
 	//function should be calling this manager class
 
 	insertedid := manager.Register(user)
 	c.Header("Access-Control-Allow-Origin", "*")
-    c.Header("Access-Control-Allow-Headers", "access-control-allow-origin, access-control-allow-headers")	
-    c.JSON(200, gin.H{
+  	 c.Header("Access-Control-Allow-Headers", "access-control-allow-origin, access-control-allow-headers")
+        c.JSON(200, gin.H{
 		"status":  "success",
 		"message": insertedid,
 	})
@@ -42,9 +41,10 @@ func AnswerList(c *gin.Context) {
 
 	c.Header("Access-Control-Allow-Origin", "*")
     c.Header("Access-Control-Allow-Headers", "access-control-allow-origin, access-control-allow-headers")		
-c.JSON(200, gin.H{
+	c.JSON(200, gin.H{
 
-"status": "success",
+		"status": "success",
+
 		"score":  score,
 	})
 }
@@ -55,7 +55,8 @@ func QuestionList(c *gin.Context) {
 
 	Qlist := manager.FetchQuestion(testtype)
 	c.Header("Access-Control-Allow-Origin", "*")
-    c.Header("Access-Control-Allow-Headers", "access-control-allow-origin, access-control-allow-headers")
+	c.Header("Access-Control-Allow-Headers", "access-control-allow-origin, access-control-allow-headers")
+
 	c.JSON(200, gin.H{
 		"status":  "success",
 		"message": Qlist,
@@ -89,4 +90,17 @@ func TestService(c *gin.Context) {
 		"status":  "success",
 		"message": "your webserivce is reachable",
 	})
-}
+
+}  
+
+   func Admin(c *gin.Context){ 
+       dlist:=manager.FetchData()
+        c.Header("Access-Control-Allow-Headers", "access-control-allow-origin, access-control-allow-headers")
+        c.JSON(200,gin.H{
+                     "status":"sucess",
+                     "score":dlist,
+             })
+
+    }
+
+
