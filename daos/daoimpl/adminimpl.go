@@ -10,7 +10,7 @@ type AdminImpl struct{}
 func (dao AdminImpl) FetchData() []models.Admin {
 	var datas []models.Admin
 	
-	query := "select r.fname,r.lname,a.uid,a.score from rpqbmysql.registration r join rpqbmysql.answers a on r.id=a.uid"
+	query := "select c.uid,a.fname,a.lname,b.type,c.score from rpqbmysql.registration a,rpqbmysql.questions b,rpqbmysql.answers c where b.id=c.uid"
 
 	db := connection()
 	defer db.Close()
@@ -23,7 +23,7 @@ func (dao AdminImpl) FetchData() []models.Admin {
 
 	for rows.Next() {
 		var data models.Admin
-		err = rows.Scan(&data.Fname, &data.Lname, &data.Uid,&data.Score)
+		err = rows.Scan(&data.Uid,&data.Fname, &data.Lname, &data.Type,&data.Score)
 
 		if err != nil {
 			log.Fatal(err)
