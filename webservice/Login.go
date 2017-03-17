@@ -6,14 +6,14 @@ import (
 	"github.com/gin-gonic/gin"
 )
 
-func Mocklogin(c *gin.Context) {
+func Login(c *gin.Context) {
 
 	var login models.Login
 	var login1 models.Login
 
 	c.BindJSON(&login)
 
-	if login.Email == "test@t.com" {
+	if login.Fname == "testuser" {
 		login1 = models.Login{Uid: 10, Fname: "dj", Token: "ghctfdtf", UserType: "admin"}
 	}
 
