@@ -24,11 +24,10 @@ func main() {
 	router.POST("/userAnswer", webservice.AnswerList)
 	router.GET("/questions", webservice.QuestionList)
 	//router.HandleFunc("/questions", webservice.GetQuestion).Methods("GET")
-	webservice.
-		router.POST("/addquestions", webservice.AddQuestions)
+	router.POST("/addquestions", webservice.AddQuestions)
 	router.GET("/testService", webservice.TestService)
 	//router.GET("/admin", webservice.Admin)
-	router.POST("/login", webservice.Mocklogin)
+	router.POST("/mocklogin", webservice.Mocklogin)
 	//log.Println("First log message!")
 
 	router.Run(GetPort())

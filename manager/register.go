@@ -13,7 +13,6 @@ import (
 var userDao interfaces.UserDao
 
 //Register manager takes care of business logic like calling daos
-
 func Register(user models.User) int64 {
 	utility.GetLogger()
 	log.Println("calling register manager")

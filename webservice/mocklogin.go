@@ -6,7 +6,7 @@ import (
 	"github.com/gin-gonic/gin"
 )
 
-func mocklogin(c *gin.Context) {
+func Mocklogin(c *gin.Context) {
 
 	var login models.Login
 	login1 := models.Login{Uid: 10, Fname: "dj", Token: "ghctfdtf", UserType: "admin"}
