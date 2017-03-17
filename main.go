@@ -1,13 +1,13 @@
 package main
 
 import (
+	"OnlineTestGo/utility"
 	"OnlineTestGo/webservice"
-	"os"
-        "OnlineTestGo/utility"
 	"fmt"
-        "github.com/goinggo/tracelog"
-	"github.com/gin-gonic/gin"
+	"os"
 
+	"github.com/gin-gonic/gin"
+	"github.com/goinggo/tracelog"
 )
 
 func main() {
@@ -24,10 +24,11 @@ func main() {
 	router.POST("/userAnswer", webservice.AnswerList)
 	router.GET("/questions", webservice.QuestionList)
 	//router.HandleFunc("/questions", webservice.GetQuestion).Methods("GET")
-	router.POST("/addquestions", webservice.AddQuestions)
+	webservice.
+		router.POST("/addquestions", webservice.AddQuestions)
 	router.GET("/testService", webservice.TestService)
 	//router.GET("/admin", webservice.Admin)
-	router.POST("/login", webservice.login)
+	router.POST("/login", webservice.Mocklogin)
 	//log.Println("First log message!")
 
 	router.Run(GetPort())
