@@ -1,39 +1,38 @@
 package daoimpl
 
 import(
-    "OnlineTestGo/models"
-    "log"
-     )
+	"OnlineTestGo/models"
+	"log"
+      )
 
 type AdminImpl struct{}
 
 func (dao AdminImpl) FetchData() []models.Admin {
-    var datas []models.Admin
-    
-    query := "select c.uid,a.fname,a.lname,b.type,c.score from rpqbmysql.registration a,rpqbmysql.questions b,rpqbmysql.answers c where b.id=c.uid"
-    db := connection()
-    defer db.Close()
+	var datas []models.Admin
+	
+	query := "select r.fname,r.lname,a.uid,a.score from rpqbmysql.registration r join rpqbmysql.answers a on r.id=a.uid"
 
-    rows, err := db.Query(query)
+	db := connection()
+	defer db.Close()
 
-    if err != nil {
-        log.Fatal(err)
-    }
+	rows, err := db.Query(query)
 
-    for rows.Next() {
-        var data models.Admin
-        err = rows.Scan(&data.Uid,&data.Fname, &data.Lname,&data.Type ,&data.Score)
+	if err != nil {
+		log.Fatal(err)
+	}
 
-        if err != nil {
-            log.Fatal(err)
-        }
+	for rows.Next() {
+		var data models.Admin
+		err = rows.Scan(&data.Fname, &data.Lname, &data.Uid,&data.Score)
 
-        datas = append(datas, data)
+		if err != nil {
+			log.Fatal(err)
+		}
 
-    }
-    //log.Println("data:",data)
+		datas = append(datas, data)
 
-     return datas
+	}
+	//log.Println("data:",data)
+
+      return datas
 }
-
-

@@ -2,13 +2,10 @@ package daoimpl
 
 import (
 	"OnlineTestGo/models"
+	"OnlineTestGo/utility"
 	"database/sql"
 	"log"
 )
-
-//	"fmt"
-//	"log"
-//	"OnlineTestGo/models"
 
 type QuestionImpl struct{}
 
@@ -16,7 +13,7 @@ type QuestionImpl struct{}
 func (dao QuestionImpl) FetchQuestionsByType(testtype string) []models.Question {
 	var totalquestions []models.TotalQuestion
 	var questionList []models.Question
-
+	utility.GetLogger()
 	query := "SELECT A.id, A.question, B.choices FROM rpqbmysql.questions as A right join rpqbmysql.Options as B on A.id = B.qid where type = ?"
 
 	db := connection()
@@ -77,6 +74,7 @@ func (dao QuestionImpl) FetchQuestionsByType(testtype string) []models.Question 
 }
 
 func (dao QuestionImpl) GetAnswerById(ID int64) string {
+	utility.GetLogger()
 	db := connection()
 	defer db.Close()
 	answer := ""
@@ -93,4 +91,67 @@ func (dao QuestionImpl) GetAnswerById(ID int64) string {
 
 	log.Println("correct Answer fir ID", ID, answer)
 	return answer
+}
+
+func  addOption(id int64, options string, answer string) error{
+	db := connection()
+	defer db.Close()
+
+	utility.GetLogger()
+	log.Println("calling addoption function")
+	query := "INSERT INTO Options (qid,choices,answers) VALUES(?,?,?)"
+	log.Println("after query execution")
+
+	stmt, err := db.Prepare(query)
+
+	if err != nil {
+		log.Println(err)
+	}
+
+	defer stmt.Close()
+	log.Println("reached to execution")
+	res, err := stmt.Exec(id, options , answer )
+	log.Println(res)
+	val, err := res.LastInsertId()
+	if err != nil {
+		return err
+	}
+	log.Println(val, err)
+	return nil
+
+}
+
+
+func (dao QuestionImpl) AddQuestion(question models.Question) (int64, error) {
+	db := connection()
+	defer db.Close()
+
+	utility.GetLogger()
+	log.Println("calling addquestion function")
+	query := "INSERT INTO questions (question,type) VALUES (?, ?)"
+
+	stmt, err := db.Prepare(query)
+
+	if err != nil {
+		return 0, err
+	}
+
+	defer stmt.Close()
+
+	res, err := stmt.Exec(question.Question, question.Type)
+	log.Println(res)
+
+	id, err := res.LastInsertId()
+	if err != nil {
+		log.Println("Exec err:", err.Error())
+	}
+	log.Println(id)
+	//return id, err
+	Options := question.Options
+	log.Println("options",Options)
+	for i := 0; i < len(Options); i++ {
+		addOption(id, Options[i], question.UserAnswer)
+	}
+
+	return id, err
 }

@@ -4,7 +4,10 @@ import (
 	"OnlineTestGo/daos/daoimpl"
 	"OnlineTestGo/daos/interfaces"
 	"OnlineTestGo/models"
+	"fmt"
 	"log"
+
+	"OnlineTestGo/utility"
 )
 
 var userDao interfaces.UserDao
@@ -17,9 +20,15 @@ var questionDao interfaces.QuestionDao
 
 //Register manager takes care of business logic like calling daos
 func Register(user models.User) int64 {
+	utility.GetLogger()
 	log.Println("calling register manager")
-
 	userDao = daoimpl.UserImpl{}
+	id, err := userDao.CheckUser(user)
+
+	if id != 0 {
+		return id
+		fmt.Println("checked phone number")
+	}
 
 	//insert user info first
 	insertedid, err := userDao.SaveNewUser(user)
@@ -27,10 +36,12 @@ func Register(user models.User) int64 {
 		log.Println("error occured", err)
 	}
 	log.Println(insertedid)
+
 	return insertedid
 }
 
 func CalculateScore(answerList []models.Answer) int {
+	utility.GetLogger()
 	log.Println("calling Answer manager")
 	questionDao := daoimpl.QuestionImpl{}
 	answerDao := daoimpl.AnswerImpl{}
@@ -41,7 +52,7 @@ func CalculateScore(answerList []models.Answer) int {
 	for _, answer := range answerList {
 		//checck if given answer is right
 		log.Println("Fetching the right answer...")
-		correctAnswer := questionDao.GetAnswerById(answer.Qid)
+		correctAnswer := questionDao.GetAnswerById(answer.Q_type)
 
 		log.Println("actual vs correct", answer.Selected, correctAnswer)
 		if answer.Selected == correctAnswer {
@@ -60,12 +71,29 @@ func CalculateScore(answerList []models.Answer) int {
 }
 
 func FetchQuestion(testtype string) []models.Question {
+	utility.GetLogger()
+	log.Println("calling Question manager")
 	questionDao := daoimpl.QuestionImpl{}
 	return questionDao.FetchQuestionsByType(testtype)
 
 }
+func AddQuestion(question models.Question) int64 {
+	utility.GetLogger()
+	log.Println("calling register manager")
+	questionDao := daoimpl.QuestionImpl{}
+	
+
+	
+	insertedid, err := questionDao.AddQuestion(question)
+	if err != nil {
+		log.Println("error occured", err)
+	}
+	log.Println(insertedid)
+
+	return insertedid
+}
 func FetchData() []models.Admin {
-    adminDao := daoimpl.AdminImpl{}
-    return adminDao.FetchData()
+	adminDao := daoimpl.AdminImpl{}
+	return adminDao.FetchData()
 
 }

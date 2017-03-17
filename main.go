@@ -2,30 +2,45 @@ package main
 
 import (
 	"OnlineTestGo/webservice"
-	//"encoding/json"
-	//"log"
-
-	// "github.com/itsjamie/gin-cors"
-
+	"os"
+        "OnlineTestGo/utility"
+	"fmt"
+        "github.com/goinggo/tracelog"
 	"github.com/gin-gonic/gin"
-	//"net/http"
-	//"github.com/gorilla/mux"
+
 )
 
 func main() {
+	utility.GetLogger()
+	tracelog.Start(tracelog.LevelTrace)
+	tracelog.Trace("main", "main", " Trace")
+	tracelog.Info("main", "main", " Info")
+	tracelog.Warning("main", "main", " Warn")
+	tracelog.Errorf(fmt.Errorf("Exception At..."), "main", "main", " Error")
 
 	router := gin.Default()
 
 	router.POST("/registerUser", webservice.RegisterUser)
 	router.POST("/userAnswer", webservice.AnswerList)
 	router.GET("/questions", webservice.QuestionList)
-	//router.HandleFunc("/questions",webservice.GetQuestion).Methods("GET")
-	//router.GET("/questions", webservice.GetQuestions)
-	router.GET("/admin",webservice.Admin)
-
+	//router.HandleFunc("/questions", webservice.GetQuestion).Methods("GET")
+	router.POST("/addquestions", webservice.AddQuestions)
 	router.GET("/testService", webservice.TestService)
-	//define other service here
+	//router.GET("/admin", webservice.Admin)
+	router.POST("/login", webservice.login)
+	//log.Println("First log message!")
 
-	router.Run(":8084")
+	router.Run(GetPort())
 
+}
+
+//Getport() method gets the OS env variable for the port, if not available, it will se the default port
+func GetPort() string {
+	var port = os.Getenv("PORT")
+	// Set a default port if there is nothing in the environment
+	if port == "" {
+		port = "8084"
+		fmt.Println("INFO: No PORT environment variable detected, defaulting to " + port)
+	}
+	return ":" + port
 }
