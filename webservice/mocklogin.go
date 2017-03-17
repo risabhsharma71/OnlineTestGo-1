@@ -8,20 +8,22 @@ import (
 
 func Mocklogin(c *gin.Context) {
 
-	var login models.Login
+	var user models.User
 	var login1 models.Login
+	message := "failure"
 
-	c.BindJSON(&login)
+	c.BindJSON(&user)
 
-	if login.Email == "test@t.com" {
+	if user.Email == "test@t.com" {
 		login1 = models.Login{Uid: 10, Fname: "dj", Token: "ghctfdtf", UserType: "admin"}
+		message = "success"
 	}
 
 	//function should be calling this manager class
 	c.Header("Access-Control-Allow-Origin", "*")
 	c.Header("Access-Control-Allow-Headers", "access-control-allow-origin, access-control-allow-headers")
 	c.JSON(200, gin.H{
-		"status":  "success",
+		"status":  message,
 		"message": login1,
 	})
 }
