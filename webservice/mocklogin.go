@@ -15,7 +15,7 @@ func Mocklogin(c *gin.Context) {
 	c.BindJSON(&user)
 
 	if user.Email == "test@t.com" {
-		login1 = models.Login{Uid: 10, Fname: "dj", Token: "ghctfdtf", UserType: "admin"}
+		login1 = models.Login{Uid: 10, Fname: "dj", Token: "ghctfdtf", UserType: "user"}
 		message = "success"
 	}
 
