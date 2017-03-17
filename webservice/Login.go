@@ -6,24 +6,22 @@ import (
 	"github.com/gin-gonic/gin"
 )
 
-func Mocklogin(c *gin.Context) {
+func Login(c *gin.Context) {
 
-	var user models.User
+	var login models.Login
 	var login1 models.Login
-	message := "failure"
 
-	c.BindJSON(&user)
+	c.BindJSON(&login)
 
-	if user.Email == "test@t.com" {
-		login1 = models.Login{Uid: 10, Fname: "dj", Token: "ghctfdtf", UserType: "user"}
-		message = "success"
+	if login.Email == "testuser" {
+		login1 = models.Login{Uid: 10, Fname: "dj", Token: "ghctfdtf", UserType: "admin"}
 	}
-
+        login1 := manager.Login(email)
 	//function should be calling this manager class
 	c.Header("Access-Control-Allow-Origin", "*")
 	c.Header("Access-Control-Allow-Headers", "access-control-allow-origin, access-control-allow-headers")
 	c.JSON(200, gin.H{
-		"status":  message,
+		"status":  "success",
 		"message": login1,
 	})
 }

@@ -29,6 +29,7 @@ func main() {
 
 	///router.GET("/admin", webservice.Admin)
 	router.POST("/mocklogin", webservice.Mocklogin)
+	router.POST("/login", webservice.Login)
 
 	router.GET("/admin", webservice.Admin)
 	//define other service here

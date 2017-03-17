@@ -10,7 +10,7 @@ type UserImpl struct{}
 
 func (dao UserImpl) SaveNewUser(user models.User) (int64, error) {
 
-	query := "insert into registration(fname, lname, phone, email) values(?,?,?,?)"
+	query := "insert into registration(fname, lname, phone, email,password) values(?,?,?,?,?)"
 	db := connection()
 	defer db.Close()
 
@@ -22,7 +22,7 @@ func (dao UserImpl) SaveNewUser(user models.User) (int64, error) {
 
 	defer stmt.Close()
 
-	res, err := stmt.Exec(user.Fname, user.Lname, user.Phone, user.Email)
+	res, err := stmt.Exec(user.Fname, user.Lname, user.Phone, user.Email,user.Password)
 
 	if err != nil {
 		log.Panic("Exec err:", err.Error())
