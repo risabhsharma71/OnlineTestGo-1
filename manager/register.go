@@ -64,3 +64,8 @@ func FetchQuestion(testtype string) []models.Question {
 	return questionDao.FetchQuestionsByType(testtype)
 
 }
+func FetchData() []models.Admin {
+    adminDao := daoimpl.AdminImpl{}
+    return adminDao.FetchData()
+
+}

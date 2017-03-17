@@ -67,3 +67,13 @@ func TestService(c *gin.Context) {
 		"message": "your webserivce is reachable",
 	})
 }
+
+func Admin(c *gin.Context){
+      dlist:=manager.FetchData()
+       c.Header("Access-Control-Allow-Headers", "access-control-allow-origin, access-control-allow-headers")
+       c.JSON(200,gin.H{
+                    "status":"sucess",
+                    "score":dlist,
+            })
+
+   }

@@ -21,10 +21,11 @@ func main() {
 	router.GET("/questions", webservice.QuestionList)
 	//router.HandleFunc("/questions",webservice.GetQuestion).Methods("GET")
 	//router.GET("/questions", webservice.GetQuestions)
+	router.GET("/admin",webservice.Admin)
 
 	router.GET("/testService", webservice.TestService)
 	//define other service here
 
-	router.Run(":8080")
+	router.Run(":8084")
 
 }
