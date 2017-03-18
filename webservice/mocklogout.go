@@ -21,8 +21,8 @@ func Mocklogout(c *gin.Context) {
 	c.Header("Access-Control-Allow-Origin", "*")
 	c.Header("Access-Control-Allow-Headers", "access-control-allow-origin, access-control-allow-headers")
 	c.JSON(200, gin.H{
-		"status": message,
-		message:  "logout",
+		"status":  message,
+		"message": "logout",
 	})
 
 }
