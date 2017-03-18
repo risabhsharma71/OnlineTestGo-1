@@ -25,11 +25,11 @@ func main() {
 	//router.POST("/registerUser", webservice.RegisterUser)
 	//router.POST("/userAnswer", webservice.AnswerList)
 	//router.GET("/questions", webservice.QuestionList)
-	//router.HandleFunc("/questions", webservice.GetQuestion).Methods("GET")
+
 	router.POST("/addquestions", webservice.AddQuestions)
 	//router.GET("/testService", webservice.TestService)
 
-	///router.GET("/admin", webservice.Admin)
+	//router.GET("/admin", webservice.Admin)
 	//router.POST("/mocklogin", webservice.Mocklogin)
 	//router.GET("/mocklogout", webservice.Mocklogout)
 	//router.POST("/login", webservice.Login)
@@ -39,6 +39,7 @@ func main() {
 
 	//log.Println("First log message!")
 
+	router.GET("/logout", webservice.Logout)
 	router.Run(GetPort())
 
 }

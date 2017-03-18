@@ -3,16 +3,17 @@ package webservice
 import (
 	"OnlineTestGo/manager"
 	"OnlineTestGo/models"
-	"OnlineTestGo/utility"
-
+	// /"OnlineTestGo/utility"
+    //"OnlineTestGo/authenticationfilter"
 	"github.com/gin-gonic/gin"
 )
 
 func AddQuestions(c *gin.Context) {
 
-	token := c.Request.Header.Get("Authorization")
-	utility.GetToken(token)
-
+	//token := c.Request.Header.Get("Authorization")
+	// aunthenticationfilter.authenticateToken(token)
+	//utility.GetToken(token)
+    
 	var question models.Question
 
 	c.BindJSON(&question)
