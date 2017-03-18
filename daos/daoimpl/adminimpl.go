@@ -7,7 +7,7 @@ import(
 
 type AdminImpl struct{}
 
-func (dao AdminImpl) FetchData() []models.Admin {
+func (dao AdminImpl) FetchData() []models.Admin (error){
 	var datas []models.Admin
 	
 	query := "select c.uid,a.fname,a.lname,b.type,c.score from rpqbmysql.registration a,rpqbmysql.questions b,rpqbmysql.answers c where b.id=c.uid"
@@ -34,5 +34,5 @@ func (dao AdminImpl) FetchData() []models.Admin {
 	}
 	//log.Println("data:",data)
 
-      return datas
+      return datas,error
 }
