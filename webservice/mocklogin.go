@@ -8,7 +8,7 @@ import (
 
 func Mocklogin(c *gin.Context) {
 
-	var logib models.Login
+	var login models.Login
 	var login1 models.Login
 	
 
