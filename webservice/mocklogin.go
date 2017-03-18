@@ -11,13 +11,17 @@ func Mocklogin(c *gin.Context) {
 	var login models.Login
 	var login1 models.Login
 	
+	if user.Email == "test@t.com" {
+	login1 = models.Login{Uid: 10, Fname: "dj", Token: "ghctfdtf", UserType: "user"}
+		
+	}
 
 	c.BindJSON(&login)
 
-	if user.Email == "test@t.com" {
-		login1 = models.Login{Uid: 10, Fname: "dj", Token: "ghctfdtf", UserType: "user"}
+	//if user.Email == "test@t.com" {
+	//	login1 = models.Login{Uid: 10, Fname: "dj", Token: "ghctfdtf", UserType: "user"}
 		
-	}
+	//}
 
 	//function should be calling this manager class
 	c.Header("Access-Control-Allow-Origin", "*")
