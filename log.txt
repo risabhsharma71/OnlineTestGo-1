@@ -86,6 +86,7 @@ TRACE: 2017/03/18 15:36:55 debug.go:45: [GIN-debug] [WARNING] Running in "debug"
 
 TRACE: 2017/03/18 15:36:55 debug.go:45: [GIN-debug] POST   /addquestions             --> OnlineTestGo/webservice.AddQuestions (3 handlers)
 TRACE: 2017/03/18 15:36:55 debug.go:45: [GIN-debug] Listening and serving HTTP on :8082
+<<<<<<< HEAD
 TRACE: 2017/03/18 16:15:31 debug.go:45: [GIN-debug] [WARNING] Running in "debug" mode. Switch to "release" mode in production.
  - using env:	export GIN_MODE=release
  - using code:	gin.SetMode(gin.ReleaseMode)
@@ -153,3 +154,11 @@ TRACE: 2017/03/18 20:35:28 logoutimpl.go:22: xyzabc
 TRACE: 2017/03/18 20:35:28 logoutimpl.go:28: 0x62f410
 TRACE: 2017/03/18 20:35:28 logoutimpl.go:22: xyzabc
 TRACE: 2017/03/18 20:35:29 logoutimpl.go:28: 0x62f410
+=======
+TRACE: 2017/03/18 17:10:11 debug.go:45: [GIN-debug] [WARNING] Running in "debug" mode. Switch to "release" mode in production.
+ - using env:	export GIN_MODE=release
+ - using code:	gin.SetMode(gin.ReleaseMode)
+
+TRACE: 2017/03/18 17:10:11 debug.go:45: [GIN-debug] POST   /addquestions             --> OnlineTestGo/webservice.AddQuestions (3 handlers)
+TRACE: 2017/03/18 17:10:11 debug.go:45: [GIN-debug] Listening and serving HTTP on :8082
+>>>>>>> 17fdb08a1980373dbb70bf30e138139a618b50e6
