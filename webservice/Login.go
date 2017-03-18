@@ -1,5 +1,6 @@
 package webservice
 
+/*
 import (
 	"OnlineTestGo/models"
 
@@ -12,6 +13,7 @@ func Login(c *gin.Context) {
 	var login1 models.Login
 
 
+<<<<<<< HEAD
 	login1:= c.Query("email")
 	login1:=c.Query("password")
 
@@ -24,6 +26,12 @@ func Login(c *gin.Context) {
 	login1 := manager.FetchUser(Token)
 
 	
+=======
+	if login.Email == "testuser" {
+		login = models.Login{Uid: 10, Fname: "dj", Token: "ghctfdtf", UserType: "admin"}
+	}
+	login := manager.Login(email)
+>>>>>>> badebbc94363f263ea44db9fd705a93ce14a94ce
 	//function should be calling this manager class
 	c.Header("Access-Control-Allow-Origin", "*")
 	c.Header("Access-Control-Allow-Headers", "access-control-allow-origin, access-control-allow-headers")
@@ -32,3 +40,4 @@ func Login(c *gin.Context) {
 		"message": login1,
 	})
 }
+*/

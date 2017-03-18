@@ -8,9 +8,9 @@ import (
 
 func Mocklogin(c *gin.Context) {
 
-	var user models.User
+	var logib models.Login
 	var login1 models.Login
-	message := "failure"
+	
 
 	c.BindJSON(&user)
 
