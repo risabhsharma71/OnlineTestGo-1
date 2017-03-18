@@ -9,7 +9,7 @@ import (
 
 func (dao LoginImpl) SaveNewUser(login models.Login) (int64, error) {
 
-	query := "insert into registration(email,password) values(?,?)"
+	query := "select from registration(email,password) values(?,?)"
 	db := connection()
 	defer db.Close()
 
