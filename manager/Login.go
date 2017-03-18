@@ -1,12 +1,17 @@
 package manager
 
 import (
-   
+	"OnlineTestGo/models"
+	"OnlineTestGo/tos"
 )
 
-func (dao LoginImpl) authenticateUser(user models.User) (models.Token) {
+func AuthenticateUser(user models.User) tos.Tokento {
 
-//call dao
+	var token tos.Tokento
 
-return 0, err
+	//call dao
+	//do business logic
+	//copy values from model token tos token
+
+	return token
 }

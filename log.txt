@@ -80,3 +80,9 @@ TRACE: 2017/03/18 10:54:14 debug.go:45: [GIN-debug] POST   /mocklogin           
 TRACE: 2017/03/18 10:54:14 debug.go:45: [GIN-debug] GET    /mocklogout               --> OnlineTestGo/webservice.Mocklogout (3 handlers)
 TRACE: 2017/03/18 10:54:14 debug.go:45: [GIN-debug] GET    /admin                    --> OnlineTestGo/webservice.Admin (3 handlers)
 TRACE: 2017/03/18 10:54:14 debug.go:45: [GIN-debug] Listening and serving HTTP on :8082
+TRACE: 2017/03/18 15:36:55 debug.go:45: [GIN-debug] [WARNING] Running in "debug" mode. Switch to "release" mode in production.
+ - using env:	export GIN_MODE=release
+ - using code:	gin.SetMode(gin.ReleaseMode)
+
+TRACE: 2017/03/18 15:36:55 debug.go:45: [GIN-debug] POST   /addquestions             --> OnlineTestGo/webservice.AddQuestions (3 handlers)
+TRACE: 2017/03/18 15:36:55 debug.go:45: [GIN-debug] Listening and serving HTTP on :8082
