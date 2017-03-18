@@ -55,3 +55,28 @@ TRACE: 2017/03/17 09:53:20 debug.go:45: [GIN-debug] GET    /testService         
 TRACE: 2017/03/17 09:53:20 debug.go:45: [GIN-debug] POST   /mocklogin                --> OnlineTestGo/webservice.Mocklogin (3 handlers)
 TRACE: 2017/03/17 09:53:20 debug.go:45: [GIN-debug] GET    /admin                    --> OnlineTestGo/webservice.Admin (3 handlers)
 TRACE: 2017/03/17 09:53:20 debug.go:45: [GIN-debug] Listening and serving HTTP on :8082
+TRACE: 2017/03/18 10:29:42 debug.go:45: [GIN-debug] [WARNING] Running in "debug" mode. Switch to "release" mode in production.
+ - using env:	export GIN_MODE=release
+ - using code:	gin.SetMode(gin.ReleaseMode)
+
+TRACE: 2017/03/18 10:29:42 debug.go:45: [GIN-debug] POST   /registerUser             --> OnlineTestGo/webservice.RegisterUser (3 handlers)
+TRACE: 2017/03/18 10:29:42 debug.go:45: [GIN-debug] POST   /userAnswer               --> OnlineTestGo/webservice.AnswerList (3 handlers)
+TRACE: 2017/03/18 10:29:42 debug.go:45: [GIN-debug] GET    /questions                --> OnlineTestGo/webservice.QuestionList (3 handlers)
+TRACE: 2017/03/18 10:29:42 debug.go:45: [GIN-debug] POST   /addquestions             --> OnlineTestGo/webservice.AddQuestions (3 handlers)
+TRACE: 2017/03/18 10:29:42 debug.go:45: [GIN-debug] GET    /testService              --> OnlineTestGo/webservice.TestService (3 handlers)
+TRACE: 2017/03/18 10:29:42 debug.go:45: [GIN-debug] POST   /mocklogin                --> OnlineTestGo/webservice.Mocklogin (3 handlers)
+TRACE: 2017/03/18 10:29:42 debug.go:45: [GIN-debug] GET    /mocklogout               --> OnlineTestGo/webservice.Mocklogout (3 handlers)
+TRACE: 2017/03/18 10:29:42 debug.go:45: [GIN-debug] GET    /admin                    --> OnlineTestGo/webservice.Admin (3 handlers)
+TRACE: 2017/03/18 10:29:42 debug.go:45: [GIN-debug] Listening and serving HTTP on :8082
+TRACE: 2017/03/18 10:54:14 debug.go:45: [GIN-debug] [WARNING] Running in "debug" mode. Switch to "release" mode in production.
+ - using env:	export GIN_MODE=release
+ - using code:	gin.SetMode(gin.ReleaseMode)
+
+TRACE: 2017/03/18 10:54:14 debug.go:45: [GIN-debug] POST   /registerUser             --> OnlineTestGo/webservice.RegisterUser (3 handlers)
+TRACE: 2017/03/18 10:54:14 debug.go:45: [GIN-debug] POST   /userAnswer               --> OnlineTestGo/webservice.AnswerList (3 handlers)
+TRACE: 2017/03/18 10:54:14 debug.go:45: [GIN-debug] GET    /questions                --> OnlineTestGo/webservice.QuestionList (3 handlers)
+TRACE: 2017/03/18 10:54:14 debug.go:45: [GIN-debug] GET    /testService              --> OnlineTestGo/webservice.TestService (3 handlers)
+TRACE: 2017/03/18 10:54:14 debug.go:45: [GIN-debug] POST   /mocklogin                --> OnlineTestGo/webservice.Mocklogin (3 handlers)
+TRACE: 2017/03/18 10:54:14 debug.go:45: [GIN-debug] GET    /mocklogout               --> OnlineTestGo/webservice.Mocklogout (3 handlers)
+TRACE: 2017/03/18 10:54:14 debug.go:45: [GIN-debug] GET    /admin                    --> OnlineTestGo/webservice.Admin (3 handlers)
+TRACE: 2017/03/18 10:54:14 debug.go:45: [GIN-debug] Listening and serving HTTP on :8082

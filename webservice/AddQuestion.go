@@ -4,11 +4,14 @@ import (
 	"OnlineTestGo/manager"
     "OnlineTestGo/utility"
 	"github.com/gin-gonic/gin"
-
+ "OnlineTestGo/utility"
 	"OnlineTestGo/models"
 ) 
 func AddQuestions(c *gin.Context) {
+
 utility. GetToken(c *gin.Context,token models.Token)
+
+
     var question models.Question
        
     c.BindJSON(&question)
