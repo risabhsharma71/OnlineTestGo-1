@@ -2,45 +2,52 @@ package aunthenticationfilter
 
 import (
 	
-	//"log"
+	"log"
 	"OnlineTestGo/daos/daoimpl"
-	"github.com/gin-gonic/gin"
+	//"github.com/gin-gonic/gin"
 	"time"
+	//"OnlineTestGo/models"
 )
 
-type TokenImpl struct{}
 
-var tokenEncodeString string = "xyzabc"
+
 //var token string ="bsdhugcgdh"
-func  authenticateToken(c *gin.Context) {
+func  authenticateToken(token string) {
 	//return answer
-	utility.GetLogger()
+
+	var tokenEncodeString string 
+
+	if len(token)<=0 {
+		tokenEncodeString = token
+	}
+	// /utility.GetLogger()
     log.Println("calling register manager")
     tokenDao := daoimpl.TokenImpl{}
-    
-var uid int64=1;
-    
-    token, lastaccesstime := tokenDao.AunthenticateToken(token models.Token,uid)
-    log.Println(lastaccesstime)
-   // return insertedid
-	if tokenEncodeString == token {
-	currenttime := time.Now().Format(time.RFC850)
-		tokenDao.ModifyLastAccessTime(token models.Token,currenttime)
-		log.Println(currenttime)
-	} else if(currenttime-lastaccesstime)>{
-
-tokenDao.DeleteToken(token models.Token,uid)
-
-
-	}else{
-
-	  c.JSON(401, gin.H{
-        "status":  "failure",
-        "message":  "you dont have the acces ",
-    })
 	
     
-	}
+//var uid int64=1;
+    
+    tokens, lastaccesstime :=  tokenDao.AunthenticateToken(tokenEncodeString)
+    log.Println(lastaccesstime)
+   // return insertedid
+  // testtime:=time.Hour().Minute().Second()
+  lastaccesstime1 := lastaccesstime.Format(time.RFC850)
+  log.Println(lastaccesstime1)
+   currenttime := time.Now().Format(time.RFC850)
+   log.Println(currenttime)
+	if tokenEncodeString == tokens {
+	//currenttime := time.Now().Format(time.RFC850)
+		//tokenDao.ModifyLastAccessTime(currenttime,tokenEncodeString)
+		log.Println(currenttime)
+	} 
+	//else if(currenttime-lastaccesstime)>(testtime.){
 
-}
+//tokenDao.DeleteToken(token models.Token,uid)
+
+
+	}
+    
+	
+
+
 
