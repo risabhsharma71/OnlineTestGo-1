@@ -22,7 +22,7 @@ func (dao UserImpl) SaveNewUser(user models.User) (int64, error) {
 
 	defer stmt.Close()
 
-	res, err := stmt.Exec(user.Fname, user.Lname, user.Phone, user.Email,user.Password)
+	res, err := stmt.Exec(user.Fname, user.Lname, user.Phone, user.Email, user.Password)
 
 	if err != nil {
 		log.Panic("Exec err:", err.Error())
@@ -61,4 +61,30 @@ func (dao UserImpl) CheckUser(user models.User) (int64, error) {
 	}
 
 	return id, err
+}
+
+func (dao UserImpl) AuthenticateUser(user models.User) models.User {
+
+	query := "select id, fname, lname, usertype from registration where email=? and password = ?"
+	db := connection()
+	defer db.Close()
+
+	rows, err := db.Query(query, user.Email, user.Password)
+
+	if err != nil {
+		log.Fatal(err)
+		defer rows.Close()
+	}
+
+	var newuser models.User
+	for rows.Next() {
+
+		err := rows.Scan(&newuser.ID, &newuser.Fname, &newuser.Lname, &newuser.UserType)
+		if err != nil {
+			fmt.Println(err)
+		}
+		fmt.Println(newuser)
+	}
+
+	return newuser
 }
