@@ -22,17 +22,17 @@ func main() {
 
 	router := gin.Default()
 
-	//router.POST("/registerUser", webservice.RegisterUser)
-	//router.POST("/userAnswer", webservice.AnswerList)
-	//router.GET("/questions", webservice.QuestionList)
-	//router.HandleFunc("/questions", webservice.GetQuestion).Methods("GET")
-	router.POST("/addquestions", webservice.AddQuestions)
-	//router.GET("/testService", webservice.TestService)
+	router.POST("/registerUser", webservice.RegisterUser)
+	router.POST("/userAnswer", webservice.AnswerList)
+	router.GET("/questions", webservice.QuestionList)
 
-	///router.GET("/admin", webservice.Admin)
-	//router.POST("/mocklogin", webservice.Mocklogin)
-	//router.GET("/mocklogout", webservice.Mocklogout)
-	//router.POST("/login", webservice.Login)
+	router.POST("/addquestions", webservice.AddQuestions)
+	router.GET("/testService", webservice.TestService)
+
+	router.GET("/admin", webservice.Admin)
+	router.POST("/mocklogin", webservice.Mocklogin)
+	router.GET("/mocklogout", webservice.Mocklogout)
+	router.POST("/login", webservice.Login)
 
 	//router.GET("/admin", webservice.Admin)
 	//define other service here
