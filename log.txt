@@ -1,0 +1,57 @@
+TRACE: 2017/03/17 09:21:23 debug.go:45: [GIN-debug] POST   /registerUser             --> OnlineTestGo/webservice.RegisterUser (3 handlers)
+TRACE: 2017/03/17 09:21:23 debug.go:45: [GIN-debug] POST   /userAnswer               --> OnlineTestGo/webservice.AnswerList (3 handlers)
+TRACE: 2017/03/17 09:21:23 debug.go:45: [GIN-debug] GET    /questions                --> OnlineTestGo/webservice.QuestionList (3 handlers)
+TRACE: 2017/03/17 09:21:23 debug.go:45: [GIN-debug] POST   /addquestions             --> OnlineTestGo/webservice.AddQuestions (3 handlers)
+TRACE: 2017/03/17 09:21:23 debug.go:45: [GIN-debug] GET    /testService              --> OnlineTestGo/webservice.TestService (3 handlers)
+TRACE: 2017/03/17 09:21:23 debug.go:45: [GIN-debug] GET    /admin                    --> OnlineTestGo/webservice.Admin (3 handlers)
+TRACE: 2017/03/17 09:21:23 debug.go:45: [GIN-debug] Listening and serving HTTP on :8082
+TRACE: 2017/03/17 09:21:45 AddQuestion.go:13: calling register manager
+TRACE: 2017/03/17 09:21:45 questionimpl.go:130: calling addquestion function
+TRACE: 2017/03/17 09:21:46 questionimpl.go:142: {0xc420186e00 0xc420198440}
+TRACE: 2017/03/17 09:21:46 questionimpl.go:148: 32
+TRACE: 2017/03/17 09:21:46 questionimpl.go:151: options [public protected private all of the mentioned]
+TRACE: 2017/03/17 09:21:46 questionimpl.go:101: calling addoption function
+TRACE: 2017/03/17 09:21:46 questionimpl.go:103: after query execution
+TRACE: 2017/03/17 09:21:49 questionimpl.go:112: reached to execution
+TRACE: 2017/03/17 09:21:49 questionimpl.go:114: {0xc420187030 0xc420198810}
+TRACE: 2017/03/17 09:21:49 questionimpl.go:119: 65 <nil>
+TRACE: 2017/03/17 09:21:49 questionimpl.go:101: calling addoption function
+TRACE: 2017/03/17 09:21:49 questionimpl.go:103: after query execution
+TRACE: 2017/03/17 09:21:50 questionimpl.go:112: reached to execution
+TRACE: 2017/03/17 09:21:51 questionimpl.go:114: {0xc420187260 0xc420198ba0}
+TRACE: 2017/03/17 09:21:51 questionimpl.go:119: 66 <nil>
+TRACE: 2017/03/17 09:21:51 questionimpl.go:101: calling addoption function
+TRACE: 2017/03/17 09:21:51 questionimpl.go:103: after query execution
+TRACE: 2017/03/17 09:22:05 questionimpl.go:112: reached to execution
+TRACE: 2017/03/17 09:22:05 questionimpl.go:114: {0xc420187490 0xc420198f40}
+TRACE: 2017/03/17 09:22:05 questionimpl.go:119: 67 <nil>
+TRACE: 2017/03/17 09:22:05 questionimpl.go:101: calling addoption function
+TRACE: 2017/03/17 09:22:05 questionimpl.go:103: after query execution
+TRACE: 2017/03/17 09:22:09 questionimpl.go:112: reached to execution
+TRACE: 2017/03/17 09:22:09 questionimpl.go:114: {0xc4201876c0 0xc4201992e0}
+TRACE: 2017/03/17 09:22:09 questionimpl.go:119: 68 <nil>
+TRACE: 2017/03/17 09:22:09 AddQuestion.go:22: 32
+TRACE: 2017/03/17 14:57:04 debug.go:45: [GIN-debug] [WARNING] Running in "debug" mode. Switch to "release" mode in production.
+ - using env:	export GIN_MODE=release
+ - using code:	gin.SetMode(gin.ReleaseMode)
+
+TRACE: 2017/03/17 14:57:04 debug.go:45: [GIN-debug] POST   /registerUser             --> OnlineTestGo/webservice.RegisterUser (3 handlers)
+TRACE: 2017/03/17 14:57:04 debug.go:45: [GIN-debug] POST   /userAnswer               --> OnlineTestGo/webservice.AnswerList (3 handlers)
+TRACE: 2017/03/17 14:57:04 debug.go:45: [GIN-debug] GET    /questions                --> OnlineTestGo/webservice.QuestionList (3 handlers)
+TRACE: 2017/03/17 14:57:04 debug.go:45: [GIN-debug] POST   /addquestions             --> OnlineTestGo/webservice.AddQuestions (3 handlers)
+TRACE: 2017/03/17 14:57:04 debug.go:45: [GIN-debug] GET    /testService              --> OnlineTestGo/webservice.TestService (3 handlers)
+TRACE: 2017/03/17 14:57:04 debug.go:45: [GIN-debug] POST   /mocklogin                --> OnlineTestGo/webservice.Mocklogin (3 handlers)
+TRACE: 2017/03/17 14:57:04 debug.go:45: [GIN-debug] GET    /admin                    --> OnlineTestGo/webservice.Admin (3 handlers)
+TRACE: 2017/03/17 14:57:04 debug.go:45: [GIN-debug] Listening and serving HTTP on :8082
+TRACE: 2017/03/17 09:53:20 debug.go:45: [GIN-debug] [WARNING] Running in "debug" mode. Switch to "release" mode in production.
+ - using env:	export GIN_MODE=release
+ - using code:	gin.SetMode(gin.ReleaseMode)
+
+TRACE: 2017/03/17 09:53:20 debug.go:45: [GIN-debug] POST   /registerUser             --> OnlineTestGo/webservice.RegisterUser (3 handlers)
+TRACE: 2017/03/17 09:53:20 debug.go:45: [GIN-debug] POST   /userAnswer               --> OnlineTestGo/webservice.AnswerList (3 handlers)
+TRACE: 2017/03/17 09:53:20 debug.go:45: [GIN-debug] GET    /questions                --> OnlineTestGo/webservice.QuestionList (3 handlers)
+TRACE: 2017/03/17 09:53:20 debug.go:45: [GIN-debug] POST   /addquestions             --> OnlineTestGo/webservice.AddQuestions (3 handlers)
+TRACE: 2017/03/17 09:53:20 debug.go:45: [GIN-debug] GET    /testService              --> OnlineTestGo/webservice.TestService (3 handlers)
+TRACE: 2017/03/17 09:53:20 debug.go:45: [GIN-debug] POST   /mocklogin                --> OnlineTestGo/webservice.Mocklogin (3 handlers)
+TRACE: 2017/03/17 09:53:20 debug.go:45: [GIN-debug] GET    /admin                    --> OnlineTestGo/webservice.Admin (3 handlers)
+TRACE: 2017/03/17 09:53:20 debug.go:45: [GIN-debug] Listening and serving HTTP on :8082
