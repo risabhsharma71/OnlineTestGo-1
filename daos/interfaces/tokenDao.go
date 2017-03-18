@@ -1,10 +1,12 @@
 package interfaces
 
-import "OnlineTestGo/models"
+import (
+	"OnlineTestGo/models"
 
-//QuestionDao interface to be implemented by Questionimpl
-type QuestionDao interface {
-	FetchQuestionsByType(testtype string) ([]models.Question, error)
-       AddQuestion(question models.Question) (int64,error)
-       //AddOption(ID ,Options models.Question,userAnswer models,Question)(int64,error)
+	"github.com/gin-gonic/gin"
+)
+
+//tokenDao interface to be implemented by tokenimpl
+type TokenDao interface {
+	GetToken(c *gin.Context, token models.Token)
 }
