@@ -13,4 +13,5 @@ type TokenDao interface {
 	AunthenticateToken(tokenEncodeString string) (string,time.Time)
 	ModifyLastAccessTime(currentime time.Time,tokenEncodeString string,) error
 	DeleteToken(token models.Token,uid int64) error
+
 }

@@ -39,6 +39,7 @@ func main() {
 
 	//log.Println("First log message!")
 
+	router.GET("/logout", webservice.Logout)
 	router.Run(GetPort())
 
 }
