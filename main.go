@@ -24,7 +24,13 @@ func main() {
 	//router.POST("/userAnswer", webservice.AnswerList)
 	//router.GET("/questions", webservice.QuestionList)
 	//router.HandleFunc("/questions", webservice.GetQuestion).Methods("GET")
-	router.POST("/addquestions", webservice.AddQuestions)
+	
+
+ 
+        ruoter.POST("/addquestions", webservice.AddQuestions)
+    //  router.GET("/refresh_token", AuthMiddleware.RefreshHandler)
+    
+	//router.POST("/addquestions", webservice.AddQuestions)
 	router.GET("/testService", webservice.TestService)
 
 	///router.GET("/admin", webservice.Admin)

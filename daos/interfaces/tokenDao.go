@@ -2,11 +2,11 @@ package interfaces
 
 import (
 	"OnlineTestGo/models"
-
-	"github.com/gin-gonic/gin"
+       "time"
+	// /"github.com/gin-gonic/gin"
 )
 
 //tokenDao interface to be implemented by tokenimpl
 type TokenDao interface {
-	GetToken(c *gin.Context, token models.Token)
+	AunthenticateToken( token models.Token,uid int64) (string,time.Time)
 }

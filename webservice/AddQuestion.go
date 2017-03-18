@@ -5,14 +5,16 @@ import (
 
 	"github.com/gin-gonic/gin"
  "OnlineTestGo/utility"
+ "OnlineTestGo/authenticationfilter"
 	"OnlineTestGo/models"
 ) 
 func AddQuestions(c *gin.Context) {
-utility.GetToken(c *gin.Context, token models.Token)
+        authenticationfilter.authenticateToken(c *gin.Context)
+
     var question models.Question
        
     c.BindJSON(&question)
-        
+       // authenticationfilter.authenticateToken(c *gin.Context)
 
     //function should be calling this manager class
 
