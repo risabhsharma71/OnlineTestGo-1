@@ -1,10 +1,10 @@
-package main
+package daoimpl
 
 import (
     "fmt"
     "time"
 
-    "github.com/dgrijalva/jwt-go"
+   // "github.com/dgrijalva/jwt-go"
 )
 
 func (dao LoginImpl) SaveNewUser(login models.Login) (int64, error) {

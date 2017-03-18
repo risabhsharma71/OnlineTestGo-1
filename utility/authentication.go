@@ -1,10 +1,10 @@
 package utility
 
-/*import (
+import (
 	"OnlineTestGo/models"
 	"database/sql"
 	"log"
-
+	"OnlineTestGo/daos/daoimpl"
 	"github.com/gin-gonic/gin"
 )
 
@@ -16,7 +16,7 @@ func (dao TokenImpl) GetToken(c *gin.Context, token models.Token) {
 
 	db := connection()
 	defer db.Close()
-	token := ""
+	tokens :=token.Token
 	err := db.QueryRow("select token from rpqbmysql.Token where uid=1").Scan(&token)
 
 	switch {
@@ -30,15 +30,16 @@ func (dao TokenImpl) GetToken(c *gin.Context, token models.Token) {
 
 	log.Println("tokenid", token)
 	//return answer
-	if tokenEncodeString == token {
+	if tokenEncodeString == tokens {
 		return
 	} else {
 
-		c.JSON(code, gin.H{
-			"code":    401,
-			"message": "you dnt have permisssion to access",
-		})
+	  c.JSON(401, gin.H{
+        "status":  "failure",
+        "message":  "you dont have the acces ",
+    })
+    
 	}
 
 }
-*/
+
