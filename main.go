@@ -33,13 +33,13 @@ func main() {
 	router.POST("/mocklogin", webservice.Mocklogin)
 	router.GET("/mocklogout", webservice.Mocklogout)
 	router.POST("/login", webservice.Login)
+	router.GET("/logout", webservice.Logout)
 
 	//router.GET("/admin", webservice.Admin)
 	//define other service here
 
 	//log.Println("First log message!")
 
-	router.GET("/logout", webservice.Logout)
 	router.Run(GetPort())
 
 }

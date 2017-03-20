@@ -4,7 +4,6 @@ import (
 	"OnlineTestGo/daos/daoimpl"
 	"OnlineTestGo/daos/interfaces"
 	"OnlineTestGo/models"
-	"fmt"
 	"log"
 
 	"OnlineTestGo/utility"
@@ -21,7 +20,7 @@ func Register(user models.User) int64 {
 
 	if id != 0 {
 		return id
-		fmt.Println("checked phone number")
+		log.Println(id)
 	}
 
 	//insert user info first
