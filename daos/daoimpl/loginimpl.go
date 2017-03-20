@@ -1,34 +1,42 @@
 package daoimpl
 
 import (
+	"OnlineTestGo/models"
 	"fmt"
 	"log"
+	"time"
 )
 
 type LoginImpl struct{}
 
-func (dao LoginImpl) SaveToken(token string, uid int64) (int64, error) {
-	query := "insert str into Token where uid= ?"
+func (dao LoginImpl) SaveToken(token models.Token) (int64, error) {
+	query := "insert  into Token(uid,token,lastaccesstime) values (?,?,?)"
 	db := connection()
-	rows, err := db.Query(query, token)
+	defer db.Close()
+
+	stmt, err := db.Prepare(query)
 	if err != nil {
-		log.Fatal(err)
-		defer rows.Close()
+		return 0, err
 	}
 
-	for rows.Next() {
+	defer stmt.Close()
 
-		err := rows.Scan(&token)
-		if err != nil {
-			fmt.Println(err)
-		}
-		fmt.Println(token)
+	res, err := stmt.Exec(token.Uid, token.Token, token.LastAccessTime)
+
+	if err != nil {
+		log.Panic("Exec err:", err.Error())
 	}
-	return 0, nil
+
+	id, err := res.LastInsertId()
+	if err != nil {
+		log.Println("Exec err:", err.Error())
+	}
+
+	return id, err
 }
 
-func (dao LoginImpl) GetToken(token string, uid int64) (int64, error) {
-	query := "select token from token where uid= ?"
+func (dao LoginImpl) GetToken(uid int64, fname string, token string, lastaccestime time.Time) (int64, error) {
+	query := "select  uid, token, lastaccesstime from token where  id= ?"
 	db := connection()
 	rows, err := db.Query(query, token)
 	if err != nil {

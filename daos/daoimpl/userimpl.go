@@ -2,6 +2,7 @@ package daoimpl
 
 import (
 	"OnlineTestGo/models"
+	"OnlineTestGo/utility"
 	"fmt"
 	"log"
 )
@@ -65,7 +66,12 @@ func (dao UserImpl) CheckUser(user models.User) (int64, error) {
 
 func (dao UserImpl) AuthenticateUser(user models.User) models.User {
 
-	query := "select id, fname, lname, usertype from registration where email=? and password = ?"
+	utility.GetLogger()
+
+	log.Println("entering AuthenticateUser Impl")
+
+	log.Println("Executing query..")
+	query := "select id, fname, lname, phone, usertype from registration where email=? and password = ?"
 	db := connection()
 	defer db.Close()
 
@@ -79,12 +85,14 @@ func (dao UserImpl) AuthenticateUser(user models.User) models.User {
 	var newuser models.User
 	for rows.Next() {
 
-		err := rows.Scan(&newuser.ID, &newuser.Fname, &newuser.Lname, &newuser.UserType)
+		err := rows.Scan(&newuser.ID, &newuser.Fname, &newuser.Lname, &newuser.Phone, &newuser.UserType)
 		if err != nil {
 			fmt.Println(err)
 		}
 		fmt.Println(newuser)
 	}
+
+	log.Println("Response user Obj : ", user)
 
 	return newuser
 }

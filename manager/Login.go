@@ -1,6 +1,7 @@
 package manager
 
 import (
+	"OnlineTestGo/daos/daoimpl"
 	"OnlineTestGo/models"
 	"OnlineTestGo/tos"
 	"OnlineTestGo/utility"
@@ -10,19 +11,47 @@ import (
 	"time"
 )
 
-func AuthenticateUser(user models.User) tos.Tokento {
-
-	var tokenTo tos.Tokento
-	//if user==
+func Login(user models.User) tos.Tokento {
 	utility.GetLogger()
-	log.Println("calling Login manager")
-	//token := GenerateToken()
-	//tokenDao := daoimpl.TokenImpl{}
+	log.Println("entering login manager...")
+	var tokenObj tos.Tokento
+	var tokenModel models.Token
 
-	//tokenTo = tokenDao.GetToken(token, uid)
+	//check user esxists or not
+	userDao := daoimpl.UserImpl{}
+	tokenDao := daoimpl.LoginImpl{}
 
-	//copy values fron user and generate token method to tokento and return it
-	return tokenTo
+	userObj := userDao.AuthenticateUser(user)
+
+	if userObj.ID != 0 {
+		//genereate a token for the user and save it in DB
+		token := GenerateToken()
+
+		//insert token to table
+		tokenModel.LastAccessTime = time.Now()
+		tokenModel.Token = token
+		tokenModel.Uid = userObj.ID
+
+		id, err := tokenDao.SaveToken(tokenModel)
+		if err != nil {
+			log.Println(err)
+		}
+
+		//copy the valuuse to tokenObj if insertion intoken table is successful
+		if id == 0 {
+			tokenObj.Token = token
+			tokenObj.Fname = userObj.Fname
+			tokenObj.Uid = userObj.ID
+			tokenObj.UserType = userObj.UserType
+		}
+
+		log.Println(tokenObj)
+
+	}
+
+	//return the tokenObj back
+	return tokenObj
+
 }
 
 func GenerateToken() string {
