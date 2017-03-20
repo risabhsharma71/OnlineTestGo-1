@@ -24,9 +24,9 @@ func main() {
 
 	//router.POST("/registerUser", webservice.RegisterUser)
 	//router.POST("/userAnswer", webservice.AnswerList)
-	//router.GET("/questions", webservice.QuestionList)
+	router.GET("/questions", webservice.QuestionList)
 
-	router.POST("/addquestions", webservice.AddQuestions)
+	//router.POST("/addquestions", webservice.AddQuestions)
 	//router.GET("/testService", webservice.TestService)
 
 	//router.GET("/admin", webservice.Admin)
@@ -39,7 +39,7 @@ func main() {
 
 	//log.Println("First log message!")
 
-	router.GET("/logout", webservice.Logout)
+	//router.GET("/logout", webservice.Logout)
 	router.Run(GetPort())
 
 }

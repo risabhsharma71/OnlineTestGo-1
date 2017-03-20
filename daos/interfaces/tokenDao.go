@@ -2,7 +2,7 @@ package interfaces
 
 
 import (
-	"OnlineTestGo/models"
+	// /"OnlineTestGo/models"
        "time"
 	// /"github.com/gin-gonic/gin"
 )
@@ -11,7 +11,7 @@ import (
 type TokenDao interface {
 	GetToken(token string)
 	AunthenticateToken(tokenEncodeString string) (string,time.Time)
-	ModifyLastAccessTime(currentime time.Time,tokenEncodeString string,) error
-	DeleteToken(token models.Token,uid int64) error
+	ModifyLastAccessTime(currentime time.Time,tokenEncodeString string) error
+	DeleteToken(tokenEncodeString string) (bool)
 
 }
