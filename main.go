@@ -37,7 +37,9 @@ func main() {
 
 	//log.Println("First log message!")
 
+	//	router.POST("/login", webservice.Login)
 	router.GET("/logout", webservice.Logout)
+
 	router.Run(GetPort())
 
 }
@@ -48,6 +50,7 @@ func GetPort() string {
 	// Set a default port if there is nothing in the environment
 	if port == "" {
 		port = "7082"
+		port = "8083"
 		fmt.Println("INFO: No PORT environment variable detected, defaulting to " + port)
 	}
 	return ":" + port
