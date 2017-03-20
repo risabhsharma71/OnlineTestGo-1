@@ -10,15 +10,13 @@ import (
 func Login(c *gin.Context) {
 
 	var user models.User // request obj
-
+	//var token tos.Tokento
 	c.BindJSON(&user)
-
-	token := manager.AuthenticateUser(user)
-
-	c.Header("Access-Control-Allow-Origin", "*")
+	//token = c.Request.Header.Get("Authorization")
+	message := manager.AuthenticateUser(user)
 	c.Header("Access-Control-Allow-Headers", "access-control-allow-origin, access-control-allow-headers")
 	c.JSON(200, gin.H{
-		"status":  "success",
-		"message": token,
+		"status":  "sucess",
+		"message": message,
 	})
 }
