@@ -1,14 +1,13 @@
 package daoimpl
 
 import (
-	"OnlineTestGo/models"
 	"fmt"
 	"log"
 )
 
 type LoginImpl struct{}
 
-func (dao LoginImpl) chcktoken(token models.Token) (int64, error) {
+func (dao LoginImpl) GetToken(token string, uid int64) (int64, error) {
 	query := "select token from token where uid= ?"
 	db := connection()
 	rows, err := db.Query(query, token)

@@ -13,7 +13,7 @@ func Login(c *gin.Context) {
 	//var token tos.Tokento
 	c.BindJSON(&user)
 	//token = c.Request.Header.Get("Authorization")
-	message := manager.GenerateToken()
+	message := manager.AuthenticateUser(user)
 	c.Header("Access-Control-Allow-Headers", "access-control-allow-origin, access-control-allow-headers")
 	c.JSON(200, gin.H{
 		"status":  "sucess",
