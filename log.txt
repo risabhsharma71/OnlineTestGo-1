@@ -241,3 +241,244 @@ TRACE: 2017/03/20 12:06:53 debug.go:45: [GIN-debug] GET    /logout              
 TRACE: 2017/03/20 12:06:53 debug.go:45: [GIN-debug] Listening and serving HTTP on :8082
 TRACE: 2017/03/20 12:06:53 debug.go:45: [GIN-debug] [ERROR] listen tcp :8082: bind: Only one usage of each socket address (protocol/network address/port) is normally permitted.
 >>>>>>> a3feecc5d30378336fc8c7e14413ed46e876d668
+TRACE: 2017/03/20 12:25:41 debug.go:45: [GIN-debug] [WARNING] Running in "debug" mode. Switch to "release" mode in production.
+ - using env:	export GIN_MODE=release
+ - using code:	gin.SetMode(gin.ReleaseMode)
+
+TRACE: 2017/03/20 12:25:41 debug.go:45: [GIN-debug] POST   /registerUser             --> OnlineTestGo/webservice.RegisterUser (3 handlers)
+TRACE: 2017/03/20 12:25:41 debug.go:45: [GIN-debug] POST   /userAnswer               --> OnlineTestGo/webservice.AnswerList (3 handlers)
+TRACE: 2017/03/20 12:25:41 debug.go:45: [GIN-debug] GET    /questions                --> OnlineTestGo/webservice.QuestionList (3 handlers)
+TRACE: 2017/03/20 12:25:41 debug.go:45: [GIN-debug] POST   /addquestions             --> OnlineTestGo/webservice.AddQuestions (3 handlers)
+TRACE: 2017/03/20 12:25:41 debug.go:45: [GIN-debug] GET    /testService              --> OnlineTestGo/webservice.TestService (3 handlers)
+TRACE: 2017/03/20 12:25:41 debug.go:45: [GIN-debug] GET    /admin                    --> OnlineTestGo/webservice.Admin (3 handlers)
+TRACE: 2017/03/20 12:25:41 debug.go:45: [GIN-debug] POST   /mocklogin                --> OnlineTestGo/webservice.Mocklogin (3 handlers)
+TRACE: 2017/03/20 12:25:41 debug.go:45: [GIN-debug] GET    /mocklogout               --> OnlineTestGo/webservice.Mocklogout (3 handlers)
+TRACE: 2017/03/20 12:25:41 debug.go:45: [GIN-debug] GET    /logout                   --> OnlineTestGo/webservice.Logout (3 handlers)
+TRACE: 2017/03/20 12:25:41 debug.go:45: [GIN-debug] Listening and serving HTTP on :8082
+TRACE: 2017/03/20 13:06:15 debug.go:45: [GIN-debug] [WARNING] Running in "debug" mode. Switch to "release" mode in production.
+ - using env:	export GIN_MODE=release
+ - using code:	gin.SetMode(gin.ReleaseMode)
+
+TRACE: 2017/03/20 13:06:15 debug.go:45: [GIN-debug] POST   /registerUser             --> OnlineTestGo/webservice.RegisterUser (3 handlers)
+TRACE: 2017/03/20 13:06:15 debug.go:45: [GIN-debug] POST   /userAnswer               --> OnlineTestGo/webservice.AnswerList (3 handlers)
+TRACE: 2017/03/20 13:06:15 debug.go:45: [GIN-debug] GET    /questions                --> OnlineTestGo/webservice.QuestionList (3 handlers)
+TRACE: 2017/03/20 13:06:15 debug.go:45: [GIN-debug] POST   /addquestions             --> OnlineTestGo/webservice.AddQuestions (3 handlers)
+TRACE: 2017/03/20 13:06:15 debug.go:45: [GIN-debug] GET    /testService              --> OnlineTestGo/webservice.TestService (3 handlers)
+TRACE: 2017/03/20 13:06:15 debug.go:45: [GIN-debug] GET    /admin                    --> OnlineTestGo/webservice.Admin (3 handlers)
+TRACE: 2017/03/20 13:06:15 debug.go:45: [GIN-debug] POST   /mocklogin                --> OnlineTestGo/webservice.Mocklogin (3 handlers)
+TRACE: 2017/03/20 13:06:15 debug.go:45: [GIN-debug] GET    /mocklogout               --> OnlineTestGo/webservice.Mocklogout (3 handlers)
+TRACE: 2017/03/20 13:06:15 debug.go:45: [GIN-debug] GET    /logout                   --> OnlineTestGo/webservice.Logout (3 handlers)
+TRACE: 2017/03/20 13:06:15 debug.go:45: [GIN-debug] Listening and serving HTTP on :8082
+TRACE: 2017/03/20 15:15:01 FetchQuestion.go:16: calling Question manager
+TRACE: 2017/03/20 15:15:33 FetchQuestion.go:16: calling Question manager
+TRACE: 2017/03/20 15:15:43 questionimpl.go:40: totalquestions: []
+TRACE: 2017/03/20 15:15:43 questionimpl.go:40: totalquestions: []
+TRACE: 2017/03/20 15:23:24 FetchQuestion.go:16: calling Question manager
+TRACE: 2017/03/20 15:24:07 questionimpl.go:40: totalquestions: []
+TRACE: 2017/03/20 15:27:07 FetchQuestion.go:16: calling Question manager
+TRACE: 2017/03/20 15:27:35 questionimpl.go:40: totalquestions: [{1 which of these handles the exception when no catch is used? default handler} {1 which of these handles the exception when no catch is used? finally} {1 which of these handles the exception when no catch is used? throw handler} {1 which of these handles the exception when no catch is used? java runtime system} {2 which of these methods are used to implement runable interface? stop()} {2 which of these methods are used to implement runable interface? start()} {2 which of these methods are used to implement runable interface? runThread()} {2 which of these methods are used to implement runable interface? stopThread()} {7 which keyword is used by method to refer to object that invoked it? import} {7 which keyword is used by method to refer to object that invoked it? catch} {7 which keyword is used by method to refer to object that invoked it? abstract} {7 which keyword is used by method to refer to object that invoked it? this} {29 which of these access specifier can be used for an interface? public} {29 which of these access specifier can be used for an interface? protected} {29 which of these access specifier can be used for an interface? private} {29 which of these access specifier can be used for an interface? all of the mentioned} {30 which of these access specifier can be used for an interface? public} {30 which of these access specifier can be used for an interface? protected} {30 which of these access specifier can be used for an interface? private} {30 which of these access specifier can be used for an interface? all of the mentioned} {31 which of these access specifier can be used for an interface? public} {31 which of these access specifier can be used for an interface? protected} {31 which of these access specifier can be used for an interface? private} {31 which of these access specifier can be used for an interface? all of the mentioned} {32 which of these access specifier can be used for an interface? public} {32 which of these access specifier can be used for an interface? protected} {32 which of these access specifier can be used for an interface? private} {32 which of these access specifier can be used for an interface? all of the mentioned}]
+TRACE: 2017/03/20 15:29:44 debug.go:45: [GIN-debug] [WARNING] Running in "debug" mode. Switch to "release" mode in production.
+ - using env:	export GIN_MODE=release
+ - using code:	gin.SetMode(gin.ReleaseMode)
+
+TRACE: 2017/03/20 15:29:44 debug.go:45: [GIN-debug] POST   /registerUser             --> OnlineTestGo/webservice.RegisterUser (3 handlers)
+TRACE: 2017/03/20 15:29:44 debug.go:45: [GIN-debug] POST   /userAnswer               --> OnlineTestGo/webservice.AnswerList (3 handlers)
+TRACE: 2017/03/20 15:29:44 debug.go:45: [GIN-debug] GET    /questions                --> OnlineTestGo/webservice.QuestionList (3 handlers)
+TRACE: 2017/03/20 15:29:44 debug.go:45: [GIN-debug] POST   /addquestions             --> OnlineTestGo/webservice.AddQuestions (3 handlers)
+TRACE: 2017/03/20 15:29:44 debug.go:45: [GIN-debug] GET    /testService              --> OnlineTestGo/webservice.TestService (3 handlers)
+TRACE: 2017/03/20 15:29:44 debug.go:45: [GIN-debug] GET    /admin                    --> OnlineTestGo/webservice.Admin (3 handlers)
+TRACE: 2017/03/20 15:29:44 debug.go:45: [GIN-debug] POST   /mocklogin                --> OnlineTestGo/webservice.Mocklogin (3 handlers)
+TRACE: 2017/03/20 15:29:44 debug.go:45: [GIN-debug] GET    /mocklogout               --> OnlineTestGo/webservice.Mocklogout (3 handlers)
+TRACE: 2017/03/20 15:29:44 debug.go:45: [GIN-debug] GET    /logout                   --> OnlineTestGo/webservice.Logout (3 handlers)
+TRACE: 2017/03/20 15:29:44 debug.go:45: [GIN-debug] Listening and serving HTTP on :8082
+TRACE: 2017/03/20 15:32:21 FetchQuestion.go:16: calling Question manager
+TRACE: 2017/03/20 15:32:21 questionimpl.go:25: dial onlinetestuser:Rpqb_123: unknown network onlinetestuser:Rpqb_123
+TRACE: 2017/03/20 15:43:24 debug.go:45: [GIN-debug] [WARNING] Running in "debug" mode. Switch to "release" mode in production.
+ - using env:	export GIN_MODE=release
+ - using code:	gin.SetMode(gin.ReleaseMode)
+
+TRACE: 2017/03/20 15:43:24 debug.go:45: [GIN-debug] POST   /registerUser             --> OnlineTestGo/webservice.RegisterUser (3 handlers)
+TRACE: 2017/03/20 15:43:24 debug.go:45: [GIN-debug] POST   /userAnswer               --> OnlineTestGo/webservice.AnswerList (3 handlers)
+TRACE: 2017/03/20 15:43:24 debug.go:45: [GIN-debug] GET    /questions                --> OnlineTestGo/webservice.QuestionList (3 handlers)
+TRACE: 2017/03/20 15:43:24 debug.go:45: [GIN-debug] POST   /addquestions             --> OnlineTestGo/webservice.AddQuestions (3 handlers)
+TRACE: 2017/03/20 15:43:24 debug.go:45: [GIN-debug] GET    /testService              --> OnlineTestGo/webservice.TestService (3 handlers)
+TRACE: 2017/03/20 15:43:24 debug.go:45: [GIN-debug] GET    /admin                    --> OnlineTestGo/webservice.Admin (3 handlers)
+TRACE: 2017/03/20 15:43:24 debug.go:45: [GIN-debug] POST   /mocklogin                --> OnlineTestGo/webservice.Mocklogin (3 handlers)
+TRACE: 2017/03/20 15:43:24 debug.go:45: [GIN-debug] GET    /mocklogout               --> OnlineTestGo/webservice.Mocklogout (3 handlers)
+TRACE: 2017/03/20 15:43:24 debug.go:45: [GIN-debug] GET    /logout                   --> OnlineTestGo/webservice.Logout (3 handlers)
+TRACE: 2017/03/20 15:43:24 debug.go:45: [GIN-debug] Listening and serving HTTP on :8082
+TRACE: 2017/03/20 15:43:24 debug.go:45: [GIN-debug] [ERROR] listen tcp :8082: bind: Only one usage of each socket address (protocol/network address/port) is normally permitted.
+TRACE: 2017/03/20 15:48:02 debug.go:45: [GIN-debug] [WARNING] Running in "debug" mode. Switch to "release" mode in production.
+ - using env:	export GIN_MODE=release
+ - using code:	gin.SetMode(gin.ReleaseMode)
+
+TRACE: 2017/03/20 15:48:02 debug.go:45: [GIN-debug] POST   /registerUser             --> OnlineTestGo/webservice.RegisterUser (3 handlers)
+TRACE: 2017/03/20 15:48:02 debug.go:45: [GIN-debug] POST   /userAnswer               --> OnlineTestGo/webservice.AnswerList (3 handlers)
+TRACE: 2017/03/20 15:48:02 debug.go:45: [GIN-debug] GET    /questions                --> OnlineTestGo/webservice.QuestionList (3 handlers)
+TRACE: 2017/03/20 15:48:02 debug.go:45: [GIN-debug] POST   /addquestions             --> OnlineTestGo/webservice.AddQuestions (3 handlers)
+TRACE: 2017/03/20 15:48:02 debug.go:45: [GIN-debug] GET    /testService              --> OnlineTestGo/webservice.TestService (3 handlers)
+TRACE: 2017/03/20 15:48:02 debug.go:45: [GIN-debug] GET    /admin                    --> OnlineTestGo/webservice.Admin (3 handlers)
+TRACE: 2017/03/20 15:48:02 debug.go:45: [GIN-debug] POST   /mocklogin                --> OnlineTestGo/webservice.Mocklogin (3 handlers)
+TRACE: 2017/03/20 15:48:02 debug.go:45: [GIN-debug] GET    /mocklogout               --> OnlineTestGo/webservice.Mocklogout (3 handlers)
+TRACE: 2017/03/20 15:48:02 debug.go:45: [GIN-debug] GET    /logout                   --> OnlineTestGo/webservice.Logout (3 handlers)
+TRACE: 2017/03/20 15:48:02 debug.go:45: [GIN-debug] Listening and serving HTTP on :8082
+TRACE: 2017/03/20 15:48:02 debug.go:45: [GIN-debug] [ERROR] listen tcp :8082: bind: Only one usage of each socket address (protocol/network address/port) is normally permitted.
+TRACE: 2017/03/20 17:59:12 debug.go:45: [GIN-debug] [WARNING] Running in "debug" mode. Switch to "release" mode in production.
+ - using env:	export GIN_MODE=release
+ - using code:	gin.SetMode(gin.ReleaseMode)
+
+TRACE: 2017/03/20 17:59:12 debug.go:45: [GIN-debug] POST   /registerUser             --> OnlineTestGo/webservice.RegisterUser (3 handlers)
+TRACE: 2017/03/20 17:59:12 debug.go:45: [GIN-debug] POST   /userAnswer               --> OnlineTestGo/webservice.AnswerList (3 handlers)
+TRACE: 2017/03/20 17:59:12 debug.go:45: [GIN-debug] GET    /questions                --> OnlineTestGo/webservice.QuestionList (3 handlers)
+TRACE: 2017/03/20 17:59:12 debug.go:45: [GIN-debug] POST   /addquestions             --> OnlineTestGo/webservice.AddQuestions (3 handlers)
+TRACE: 2017/03/20 17:59:12 debug.go:45: [GIN-debug] GET    /testService              --> OnlineTestGo/webservice.TestService (3 handlers)
+TRACE: 2017/03/20 17:59:12 debug.go:45: [GIN-debug] GET    /admin                    --> OnlineTestGo/webservice.Admin (3 handlers)
+TRACE: 2017/03/20 17:59:12 debug.go:45: [GIN-debug] POST   /mocklogin                --> OnlineTestGo/webservice.Mocklogin (3 handlers)
+TRACE: 2017/03/20 17:59:12 debug.go:45: [GIN-debug] GET    /mocklogout               --> OnlineTestGo/webservice.Mocklogout (3 handlers)
+TRACE: 2017/03/20 17:59:12 debug.go:45: [GIN-debug] GET    /logout                   --> OnlineTestGo/webservice.Logout (3 handlers)
+TRACE: 2017/03/20 17:59:12 debug.go:45: [GIN-debug] Listening and serving HTTP on :8082
+TRACE: 2017/03/20 18:00:26 FetchQuestion.go:16: calling Question manager
+TRACE: 2017/03/20 18:00:29 questionimpl.go:25: ssh: unexpected packet in response to channel open: <nil>
+TRACE: 2017/03/20 18:12:24 debug.go:45: [GIN-debug] [WARNING] Running in "debug" mode. Switch to "release" mode in production.
+ - using env:	export GIN_MODE=release
+ - using code:	gin.SetMode(gin.ReleaseMode)
+
+TRACE: 2017/03/20 18:12:24 debug.go:45: [GIN-debug] POST   /registerUser             --> OnlineTestGo/webservice.RegisterUser (3 handlers)
+TRACE: 2017/03/20 18:12:24 debug.go:45: [GIN-debug] POST   /userAnswer               --> OnlineTestGo/webservice.AnswerList (3 handlers)
+TRACE: 2017/03/20 18:12:24 debug.go:45: [GIN-debug] GET    /questions                --> OnlineTestGo/webservice.QuestionList (3 handlers)
+TRACE: 2017/03/20 18:12:24 debug.go:45: [GIN-debug] POST   /addquestions             --> OnlineTestGo/webservice.AddQuestions (3 handlers)
+TRACE: 2017/03/20 18:12:24 debug.go:45: [GIN-debug] GET    /testService              --> OnlineTestGo/webservice.TestService (3 handlers)
+TRACE: 2017/03/20 18:12:24 debug.go:45: [GIN-debug] GET    /admin                    --> OnlineTestGo/webservice.Admin (3 handlers)
+TRACE: 2017/03/20 18:12:24 debug.go:45: [GIN-debug] POST   /mocklogin                --> OnlineTestGo/webservice.Mocklogin (3 handlers)
+TRACE: 2017/03/20 18:12:24 debug.go:45: [GIN-debug] GET    /mocklogout               --> OnlineTestGo/webservice.Mocklogout (3 handlers)
+TRACE: 2017/03/20 18:12:24 debug.go:45: [GIN-debug] GET    /logout                   --> OnlineTestGo/webservice.Logout (3 handlers)
+TRACE: 2017/03/20 18:12:24 debug.go:45: [GIN-debug] Listening and serving HTTP on :8082
+TRACE: 2017/03/20 18:12:24 debug.go:45: [GIN-debug] [ERROR] listen tcp :8082: bind: Only one usage of each socket address (protocol/network address/port) is normally permitted.
+TRACE: 2017/03/20 18:15:06 debug.go:45: [GIN-debug] [WARNING] Running in "debug" mode. Switch to "release" mode in production.
+ - using env:	export GIN_MODE=release
+ - using code:	gin.SetMode(gin.ReleaseMode)
+
+TRACE: 2017/03/20 18:15:06 debug.go:45: [GIN-debug] POST   /registerUser             --> OnlineTestGo/webservice.RegisterUser (3 handlers)
+TRACE: 2017/03/20 18:15:06 debug.go:45: [GIN-debug] POST   /userAnswer               --> OnlineTestGo/webservice.AnswerList (3 handlers)
+TRACE: 2017/03/20 18:15:06 debug.go:45: [GIN-debug] GET    /questions                --> OnlineTestGo/webservice.QuestionList (3 handlers)
+TRACE: 2017/03/20 18:15:06 debug.go:45: [GIN-debug] POST   /addquestions             --> OnlineTestGo/webservice.AddQuestions (3 handlers)
+TRACE: 2017/03/20 18:15:06 debug.go:45: [GIN-debug] GET    /testService              --> OnlineTestGo/webservice.TestService (3 handlers)
+TRACE: 2017/03/20 18:15:06 debug.go:45: [GIN-debug] GET    /admin                    --> OnlineTestGo/webservice.Admin (3 handlers)
+TRACE: 2017/03/20 18:15:06 debug.go:45: [GIN-debug] POST   /mocklogin                --> OnlineTestGo/webservice.Mocklogin (3 handlers)
+TRACE: 2017/03/20 18:15:06 debug.go:45: [GIN-debug] GET    /mocklogout               --> OnlineTestGo/webservice.Mocklogout (3 handlers)
+TRACE: 2017/03/20 18:15:06 debug.go:45: [GIN-debug] GET    /logout                   --> OnlineTestGo/webservice.Logout (3 handlers)
+TRACE: 2017/03/20 18:15:06 debug.go:45: [GIN-debug] Listening and serving HTTP on :8083
+TRACE: 2017/03/20 18:31:51 register.go:17: calling register manager
+TRACE: 2017/03/20 18:31:54 userimpl.go:50: ssh: unexpected packet in response to channel open: <nil>
+TRACE: 2017/03/20 18:36:07 debug.go:45: [GIN-debug] [WARNING] Running in "debug" mode. Switch to "release" mode in production.
+ - using env:	export GIN_MODE=release
+ - using code:	gin.SetMode(gin.ReleaseMode)
+
+TRACE: 2017/03/20 18:36:07 debug.go:45: [GIN-debug] POST   /registerUser             --> OnlineTestGo/webservice.RegisterUser (3 handlers)
+TRACE: 2017/03/20 18:36:07 debug.go:45: [GIN-debug] POST   /userAnswer               --> OnlineTestGo/webservice.AnswerList (3 handlers)
+TRACE: 2017/03/20 18:36:07 debug.go:45: [GIN-debug] GET    /questions                --> OnlineTestGo/webservice.QuestionList (3 handlers)
+TRACE: 2017/03/20 18:36:07 debug.go:45: [GIN-debug] POST   /addquestions             --> OnlineTestGo/webservice.AddQuestions (3 handlers)
+TRACE: 2017/03/20 18:36:07 debug.go:45: [GIN-debug] GET    /testService              --> OnlineTestGo/webservice.TestService (3 handlers)
+TRACE: 2017/03/20 18:36:07 debug.go:45: [GIN-debug] GET    /admin                    --> OnlineTestGo/webservice.Admin (3 handlers)
+TRACE: 2017/03/20 18:36:07 debug.go:45: [GIN-debug] POST   /mocklogin                --> OnlineTestGo/webservice.Mocklogin (3 handlers)
+TRACE: 2017/03/20 18:36:07 debug.go:45: [GIN-debug] GET    /mocklogout               --> OnlineTestGo/webservice.Mocklogout (3 handlers)
+TRACE: 2017/03/20 18:36:07 debug.go:45: [GIN-debug] GET    /logout                   --> OnlineTestGo/webservice.Logout (3 handlers)
+TRACE: 2017/03/20 18:36:07 debug.go:45: [GIN-debug] Listening and serving HTTP on :8083
+TRACE: 2017/03/20 18:36:11 register.go:17: calling register manager
+TRACE: 2017/03/20 18:36:15 userimpl.go:50: ssh: unexpected packet in response to channel open: <nil>
+TRACE: 2017/03/20 18:45:24 debug.go:45: [GIN-debug] [WARNING] Running in "debug" mode. Switch to "release" mode in production.
+ - using env:	export GIN_MODE=release
+ - using code:	gin.SetMode(gin.ReleaseMode)
+
+TRACE: 2017/03/20 18:45:24 debug.go:45: [GIN-debug] POST   /registerUser             --> OnlineTestGo/webservice.RegisterUser (3 handlers)
+TRACE: 2017/03/20 18:45:24 debug.go:45: [GIN-debug] POST   /userAnswer               --> OnlineTestGo/webservice.AnswerList (3 handlers)
+TRACE: 2017/03/20 18:45:24 debug.go:45: [GIN-debug] GET    /questions                --> OnlineTestGo/webservice.QuestionList (3 handlers)
+TRACE: 2017/03/20 18:45:24 debug.go:45: [GIN-debug] POST   /addquestions             --> OnlineTestGo/webservice.AddQuestions (3 handlers)
+TRACE: 2017/03/20 18:45:24 debug.go:45: [GIN-debug] GET    /testService              --> OnlineTestGo/webservice.TestService (3 handlers)
+TRACE: 2017/03/20 18:45:24 debug.go:45: [GIN-debug] GET    /admin                    --> OnlineTestGo/webservice.Admin (3 handlers)
+TRACE: 2017/03/20 18:45:24 debug.go:45: [GIN-debug] POST   /mocklogin                --> OnlineTestGo/webservice.Mocklogin (3 handlers)
+TRACE: 2017/03/20 18:45:24 debug.go:45: [GIN-debug] GET    /mocklogout               --> OnlineTestGo/webservice.Mocklogout (3 handlers)
+TRACE: 2017/03/20 18:45:24 debug.go:45: [GIN-debug] GET    /logout                   --> OnlineTestGo/webservice.Logout (3 handlers)
+TRACE: 2017/03/20 18:45:24 debug.go:45: [GIN-debug] Listening and serving HTTP on :8083
+TRACE: 2017/03/20 18:45:30 register.go:17: calling register manager
+TRACE: 2017/03/20 18:45:34 userimpl.go:50: write tcp 192.168.0.8:56870->54.218.55.72:22: use of closed network connection
+TRACE: 2017/03/20 19:52:16 debug.go:45: [GIN-debug] [WARNING] Running in "debug" mode. Switch to "release" mode in production.
+ - using env:	export GIN_MODE=release
+ - using code:	gin.SetMode(gin.ReleaseMode)
+
+TRACE: 2017/03/20 19:52:16 debug.go:45: [GIN-debug] POST   /registerUser             --> OnlineTestGo/webservice.RegisterUser (3 handlers)
+TRACE: 2017/03/20 19:52:16 debug.go:45: [GIN-debug] POST   /userAnswer               --> OnlineTestGo/webservice.AnswerList (3 handlers)
+TRACE: 2017/03/20 19:52:16 debug.go:45: [GIN-debug] GET    /questions                --> OnlineTestGo/webservice.QuestionList (3 handlers)
+TRACE: 2017/03/20 19:52:16 debug.go:45: [GIN-debug] POST   /addquestions             --> OnlineTestGo/webservice.AddQuestions (3 handlers)
+TRACE: 2017/03/20 19:52:16 debug.go:45: [GIN-debug] GET    /testService              --> OnlineTestGo/webservice.TestService (3 handlers)
+TRACE: 2017/03/20 19:52:16 debug.go:45: [GIN-debug] GET    /admin                    --> OnlineTestGo/webservice.Admin (3 handlers)
+TRACE: 2017/03/20 19:52:16 debug.go:45: [GIN-debug] POST   /mocklogin                --> OnlineTestGo/webservice.Mocklogin (3 handlers)
+TRACE: 2017/03/20 19:52:16 debug.go:45: [GIN-debug] GET    /mocklogout               --> OnlineTestGo/webservice.Mocklogout (3 handlers)
+TRACE: 2017/03/20 19:52:16 debug.go:45: [GIN-debug] GET    /logout                   --> OnlineTestGo/webservice.Logout (3 handlers)
+TRACE: 2017/03/20 19:52:16 debug.go:45: [GIN-debug] Listening and serving HTTP on :8083
+TRACE: 2017/03/20 19:52:21 register.go:17: calling register manager
+TRACE: 2017/03/20 19:52:25 userimpl.go:50: write tcp 192.168.0.8:59063->54.218.55.72:22: use of closed network connection
+TRACE: 2017/03/20 20:09:32 debug.go:45: [GIN-debug] [WARNING] Running in "debug" mode. Switch to "release" mode in production.
+ - using env:	export GIN_MODE=release
+ - using code:	gin.SetMode(gin.ReleaseMode)
+
+TRACE: 2017/03/20 20:09:32 debug.go:45: [GIN-debug] POST   /registerUser             --> OnlineTestGo/webservice.RegisterUser (3 handlers)
+TRACE: 2017/03/20 20:09:32 debug.go:45: [GIN-debug] POST   /userAnswer               --> OnlineTestGo/webservice.AnswerList (3 handlers)
+TRACE: 2017/03/20 20:09:32 debug.go:45: [GIN-debug] GET    /questions                --> OnlineTestGo/webservice.QuestionList (3 handlers)
+TRACE: 2017/03/20 20:09:32 debug.go:45: [GIN-debug] POST   /addquestions             --> OnlineTestGo/webservice.AddQuestions (3 handlers)
+TRACE: 2017/03/20 20:09:32 debug.go:45: [GIN-debug] GET    /testService              --> OnlineTestGo/webservice.TestService (3 handlers)
+TRACE: 2017/03/20 20:09:32 debug.go:45: [GIN-debug] GET    /admin                    --> OnlineTestGo/webservice.Admin (3 handlers)
+TRACE: 2017/03/20 20:09:32 debug.go:45: [GIN-debug] POST   /mocklogin                --> OnlineTestGo/webservice.Mocklogin (3 handlers)
+TRACE: 2017/03/20 20:09:32 debug.go:45: [GIN-debug] GET    /mocklogout               --> OnlineTestGo/webservice.Mocklogout (3 handlers)
+TRACE: 2017/03/20 20:09:32 debug.go:45: [GIN-debug] GET    /logout                   --> OnlineTestGo/webservice.Logout (3 handlers)
+TRACE: 2017/03/20 20:09:32 debug.go:45: [GIN-debug] Listening and serving HTTP on :8083
+TRACE: 2017/03/20 20:09:47 register.go:17: calling register manager
+TRACE: 2017/03/20 20:09:49 userimpl.go:50: read tcp 192.168.0.8:60513->54.218.55.72:22: use of closed network connection
+TRACE: 2017/03/20 20:11:53 debug.go:45: [GIN-debug] [WARNING] Running in "debug" mode. Switch to "release" mode in production.
+ - using env:	export GIN_MODE=release
+ - using code:	gin.SetMode(gin.ReleaseMode)
+
+TRACE: 2017/03/20 20:11:53 debug.go:45: [GIN-debug] POST   /registerUser             --> OnlineTestGo/webservice.RegisterUser (3 handlers)
+TRACE: 2017/03/20 20:11:53 debug.go:45: [GIN-debug] POST   /userAnswer               --> OnlineTestGo/webservice.AnswerList (3 handlers)
+TRACE: 2017/03/20 20:11:53 debug.go:45: [GIN-debug] GET    /questions                --> OnlineTestGo/webservice.QuestionList (3 handlers)
+TRACE: 2017/03/20 20:11:53 debug.go:45: [GIN-debug] POST   /addquestions             --> OnlineTestGo/webservice.AddQuestions (3 handlers)
+TRACE: 2017/03/20 20:11:53 debug.go:45: [GIN-debug] GET    /testService              --> OnlineTestGo/webservice.TestService (3 handlers)
+TRACE: 2017/03/20 20:11:53 debug.go:45: [GIN-debug] GET    /admin                    --> OnlineTestGo/webservice.Admin (3 handlers)
+TRACE: 2017/03/20 20:11:53 debug.go:45: [GIN-debug] POST   /mocklogin                --> OnlineTestGo/webservice.Mocklogin (3 handlers)
+TRACE: 2017/03/20 20:11:53 debug.go:45: [GIN-debug] GET    /mocklogout               --> OnlineTestGo/webservice.Mocklogout (3 handlers)
+TRACE: 2017/03/20 20:11:53 debug.go:45: [GIN-debug] GET    /logout                   --> OnlineTestGo/webservice.Logout (3 handlers)
+TRACE: 2017/03/20 20:11:53 debug.go:45: [GIN-debug] Listening and serving HTTP on :8083
+TRACE: 2017/03/20 20:11:56 register.go:17: calling register manager
+TRACE: 2017/03/20 20:11:58 userimpl.go:50: read tcp 192.168.0.8:60701->54.218.55.72:22: use of closed network connection
+TRACE: 2017/03/20 20:14:13 debug.go:45: [GIN-debug] [WARNING] Running in "debug" mode. Switch to "release" mode in production.
+ - using env:	export GIN_MODE=release
+ - using code:	gin.SetMode(gin.ReleaseMode)
+
+TRACE: 2017/03/20 20:14:13 debug.go:45: [GIN-debug] POST   /registerUser             --> OnlineTestGo/webservice.RegisterUser (3 handlers)
+TRACE: 2017/03/20 20:14:13 debug.go:45: [GIN-debug] POST   /userAnswer               --> OnlineTestGo/webservice.AnswerList (3 handlers)
+TRACE: 2017/03/20 20:14:13 debug.go:45: [GIN-debug] GET    /questions                --> OnlineTestGo/webservice.QuestionList (3 handlers)
+TRACE: 2017/03/20 20:14:13 debug.go:45: [GIN-debug] POST   /addquestions             --> OnlineTestGo/webservice.AddQuestions (3 handlers)
+TRACE: 2017/03/20 20:14:13 debug.go:45: [GIN-debug] GET    /testService              --> OnlineTestGo/webservice.TestService (3 handlers)
+TRACE: 2017/03/20 20:14:13 debug.go:45: [GIN-debug] GET    /admin                    --> OnlineTestGo/webservice.Admin (3 handlers)
+TRACE: 2017/03/20 20:14:13 debug.go:45: [GIN-debug] POST   /mocklogin                --> OnlineTestGo/webservice.Mocklogin (3 handlers)
+TRACE: 2017/03/20 20:14:13 debug.go:45: [GIN-debug] GET    /mocklogout               --> OnlineTestGo/webservice.Mocklogout (3 handlers)
+TRACE: 2017/03/20 20:14:13 debug.go:45: [GIN-debug] GET    /logout                   --> OnlineTestGo/webservice.Logout (3 handlers)
+TRACE: 2017/03/20 20:14:13 debug.go:45: [GIN-debug] Listening and serving HTTP on :8083
+TRACE: 2017/03/20 20:14:20 register.go:17: calling register manager
+TRACE: 2017/03/20 20:14:22 userimpl.go:50: ssh: unexpected packet in response to channel open: <nil>
+TRACE: 2017/03/20 20:18:34 debug.go:45: [GIN-debug] [WARNING] Running in "debug" mode. Switch to "release" mode in production.
+ - using env:	export GIN_MODE=release
+ - using code:	gin.SetMode(gin.ReleaseMode)
+
+TRACE: 2017/03/20 20:18:34 debug.go:45: [GIN-debug] POST   /registerUser             --> OnlineTestGo/webservice.RegisterUser (3 handlers)
+TRACE: 2017/03/20 20:18:34 debug.go:45: [GIN-debug] POST   /userAnswer               --> OnlineTestGo/webservice.AnswerList (3 handlers)
+TRACE: 2017/03/20 20:18:34 debug.go:45: [GIN-debug] GET    /questions                --> OnlineTestGo/webservice.QuestionList (3 handlers)
+TRACE: 2017/03/20 20:18:34 debug.go:45: [GIN-debug] POST   /addquestions             --> OnlineTestGo/webservice.AddQuestions (3 handlers)
+TRACE: 2017/03/20 20:18:34 debug.go:45: [GIN-debug] GET    /testService              --> OnlineTestGo/webservice.TestService (3 handlers)
+TRACE: 2017/03/20 20:18:34 debug.go:45: [GIN-debug] GET    /admin                    --> OnlineTestGo/webservice.Admin (3 handlers)
+TRACE: 2017/03/20 20:18:34 debug.go:45: [GIN-debug] POST   /mocklogin                --> OnlineTestGo/webservice.Mocklogin (3 handlers)
+TRACE: 2017/03/20 20:18:34 debug.go:45: [GIN-debug] GET    /mocklogout               --> OnlineTestGo/webservice.Mocklogout (3 handlers)
+TRACE: 2017/03/20 20:18:34 debug.go:45: [GIN-debug] GET    /logout                   --> OnlineTestGo/webservice.Logout (3 handlers)
+TRACE: 2017/03/20 20:18:34 debug.go:45: [GIN-debug] Listening and serving HTTP on :8083
+TRACE: 2017/03/20 20:18:39 register.go:17: calling register manager
+TRACE: 2017/03/20 20:18:41 userimpl.go:50: read tcp 192.168.0.8:61461->54.218.55.72:22: use of closed network connection

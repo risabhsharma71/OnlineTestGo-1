@@ -17,12 +17,12 @@ func Register(user models.User) int64 {
 	log.Println("calling register manager")
 	userDao := daoimpl.UserImpl{}
 	id, err := userDao.CheckUser(user)
-
-	if id != 0 {
-		return id
-		log.Println(id)
+	{
+		if id != 0 {
+			return id
+			log.Println(id)
+		}
 	}
-
 	//insert user info first
 	insertedid, err := userDao.SaveNewUser(user)
 	if err != nil {
