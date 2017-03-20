@@ -1,7 +1,6 @@
 package manager
 
 import (
-	"OnlineTestGo/daos/daoimpl"
 	"OnlineTestGo/models"
 	"OnlineTestGo/tos"
 	"OnlineTestGo/utility"
@@ -14,12 +13,13 @@ import (
 func AuthenticateUser(user models.User) tos.Tokento {
 
 	var tokenTo tos.Tokento
+	//if user==
 	utility.GetLogger()
 	log.Println("calling Login manager")
-	token := GenerateToken()
-	tokenDao := daoimpl.TokenImpl{}
+	//token := GenerateToken()
+	//tokenDao := daoimpl.TokenImpl{}
 
-	vsdd := tokenDao.GetToken(token, uid)
+	//tokenTo = tokenDao.GetToken(token, uid)
 
 	//copy values fron user and generate token method to tokento and return it
 	return tokenTo

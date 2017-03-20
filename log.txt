@@ -176,3 +176,18 @@ TRACE: 2017/03/18 21:29:36 debug.go:45: [GIN-debug] POST   /addquestions        
 TRACE: 2017/03/18 21:29:36 debug.go:45: [GIN-debug] Listening and serving HTTP on :8082
 06
 >>>>>>> 18705118fb062920bb265ed2a6de83022e614ba3
+TRACE: 2017/03/20 12:06:53 debug.go:45: [GIN-debug] [WARNING] Running in "debug" mode. Switch to "release" mode in production.
+ - using env:	export GIN_MODE=release
+ - using code:	gin.SetMode(gin.ReleaseMode)
+
+TRACE: 2017/03/20 12:06:53 debug.go:45: [GIN-debug] POST   /registerUser             --> OnlineTestGo/webservice.RegisterUser (3 handlers)
+TRACE: 2017/03/20 12:06:53 debug.go:45: [GIN-debug] POST   /userAnswer               --> OnlineTestGo/webservice.AnswerList (3 handlers)
+TRACE: 2017/03/20 12:06:53 debug.go:45: [GIN-debug] GET    /questions                --> OnlineTestGo/webservice.QuestionList (3 handlers)
+TRACE: 2017/03/20 12:06:53 debug.go:45: [GIN-debug] POST   /addquestions             --> OnlineTestGo/webservice.AddQuestions (3 handlers)
+TRACE: 2017/03/20 12:06:53 debug.go:45: [GIN-debug] GET    /testService              --> OnlineTestGo/webservice.TestService (3 handlers)
+TRACE: 2017/03/20 12:06:53 debug.go:45: [GIN-debug] GET    /admin                    --> OnlineTestGo/webservice.Admin (3 handlers)
+TRACE: 2017/03/20 12:06:53 debug.go:45: [GIN-debug] POST   /mocklogin                --> OnlineTestGo/webservice.Mocklogin (3 handlers)
+TRACE: 2017/03/20 12:06:53 debug.go:45: [GIN-debug] GET    /mocklogout               --> OnlineTestGo/webservice.Mocklogout (3 handlers)
+TRACE: 2017/03/20 12:06:53 debug.go:45: [GIN-debug] GET    /logout                   --> OnlineTestGo/webservice.Logout (3 handlers)
+TRACE: 2017/03/20 12:06:53 debug.go:45: [GIN-debug] Listening and serving HTTP on :8082
+TRACE: 2017/03/20 12:06:53 debug.go:45: [GIN-debug] [ERROR] listen tcp :8082: bind: Only one usage of each socket address (protocol/network address/port) is normally permitted.

@@ -8,6 +8,7 @@ import (
 
 //tokenDao interface to be implemented by tokenimpl
 type TokenDao interface {
+	Savetoken(token string, uid int64)
 	GetToken(token string, uid int64)
 	AunthenticateToken(tokenEncodeString string) (string, time.Time)
 	ModifyLastAccessTime(currentime time.Time, tokenEncodeString string) error
