@@ -15,7 +15,7 @@ var userDao interfaces.UserDao
 func Register(user models.User) int64 {
 	utility.GetLogger()
 	log.Println("calling register manager")
-	userDao = daoimpl.UserImpl{}
+	userDao := daoimpl.UserImpl{}
 	id, err := userDao.CheckUser(user)
 
 	if id != 0 {
