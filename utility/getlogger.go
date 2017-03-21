@@ -1,6 +1,5 @@
 package utility
 
-/*
 import (
 	"log"
 
@@ -17,4 +16,3 @@ func GetLogger() {
 	})
 	return
 }
-*/

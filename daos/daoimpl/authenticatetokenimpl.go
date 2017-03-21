@@ -13,9 +13,9 @@ type TokenImpl struct{}
 
 //GetIdfromType returns the id from Type table for input value
 func (dao TokenImpl) ModifyLastAccessTime(currentime time.Time, tokenEncodeString string) error {
-	db := connection()
+	db, conn := connectaws()
 	defer db.Close()
-
+	defer conn.Close()
 	utility.GetLogger()
 	log.Println("In modifyfunction")
 	query := "update  token set lastaccesstime=? where token=? "
@@ -43,7 +43,9 @@ func (dao TokenImpl) AunthenticateToken(tokenEncodeString string) (string, time.
 	//var token string
 	//var lastaccesstime time.Time
 	utility.GetLogger()
-	db := connection()
+	db, conn := connectaws()
+	defer db.Close()
+	defer conn.Close()
 	token := ""
 	lastaccesstime := ""
 	log.Println("in AunthenticateToken function")
@@ -64,8 +66,9 @@ func (dao TokenImpl) AunthenticateToken(tokenEncodeString string) (string, time.
 	return token, timeStamp1
 }
 func (dao TokenImpl) DeleteToken(deletetoken string) bool {
-	db := connection()
+	db, conn := connectaws()
 	defer db.Close()
+	defer conn.Close()
 	//var token models.Token
 	utility.GetLogger()
 	log.Println("calling DeleteToken function")

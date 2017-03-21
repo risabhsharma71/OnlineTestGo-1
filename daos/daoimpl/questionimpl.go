@@ -15,8 +15,9 @@ func (dao QuestionImpl) FetchQuestionsByType(testtype string) []models.Question 
 	//	utility.GetLogger()
 	query := "SELECT A.id, A.question, B.choices FROM rpqbmysql.questions as A right join rpqbmysql.Options as B on A.id = B.qid where type = ?"
 
-	db := connection()
+	db, conn := connectaws()
 	defer db.Close()
+	defer conn.Close()
 
 	rows, err := db.Query(query, testtype)
 
@@ -74,8 +75,9 @@ func (dao QuestionImpl) FetchQuestionsByType(testtype string) []models.Question 
 
 func (dao QuestionImpl) GetAnswerById(ID int64) string {
 	//	utility.GetLogger()
-	db := connection()
+	db, conn := connectaws()
 	defer db.Close()
+	defer conn.Close()
 	answer := ""
 	err := db.QueryRow("select answers from rpqbmysql.Options where answers != '0' && qid=?", ID).Scan(&answer)
 
@@ -93,8 +95,9 @@ func (dao QuestionImpl) GetAnswerById(ID int64) string {
 }
 
 func addOption(id int64, options string, answer string) error {
-	db := connection()
+	db, conn := connectaws()
 	defer db.Close()
+	defer conn.Close()
 
 	//	utility.GetLogger()
 	log.Println("calling addoption function")
@@ -121,8 +124,9 @@ func addOption(id int64, options string, answer string) error {
 }
 
 func (dao QuestionImpl) AddQuestion(question models.Question) (int64, error) {
-	db := connection()
+	db, conn := connectaws()
 	defer db.Close()
+	defer conn.Close()
 
 	//	utility.GetLogger()
 	log.Println("calling addquestion function")

@@ -12,9 +12,9 @@ type UserImpl struct{}
 func (dao UserImpl) SaveNewUser(user models.User) (int64, error) {
 
 	query := "insert into registration(fname, lname, phone, email,password) values(?,?,?,?,?)"
-	db := connection()
+	db, conn := connectaws()
 	defer db.Close()
-
+	defer conn.Close()
 	stmt, err := db.Prepare(query)
 
 	if err != nil {
@@ -44,7 +44,9 @@ func (dao UserImpl) CheckUser(user models.User) (int64, error) {
 	var id int64
 	phone := user.Phone
 	query := "select phone from registration where phone = ?"
-	db := connection()
+	db, conn := connectaws()
+	defer db.Close()
+	defer conn.Close()
 
 	rows, err := db.Query(query, phone)
 	if err != nil {
@@ -72,8 +74,9 @@ func (dao UserImpl) AuthenticateUser(user models.User) models.User {
 
 	log.Println("Executing query..")
 	query := "select id, fname, lname, phone, usertype from registration where email=? and password = ?"
-	db := connection()
+	db, conn := connectaws()
 	defer db.Close()
+	defer conn.Close()
 
 	rows, err := db.Query(query, user.Email, user.Password)
 

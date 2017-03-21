@@ -1,13 +1,17 @@
 package daoimpl
 
 import (
-	"fmt"
 	"database/sql"
-	"log"
+	"fmt"
+	"net"
+	"os"
 
-	_ "github.com/go-sql-driver/mysql"
+	"github.com/go-sql-driver/mysql"
+	"golang.org/x/crypto/ssh"
+	"golang.org/x/crypto/ssh/agent"
 )
 
+/*
 func connection() *sql.DB {
 	db, err := sql.Open("mysql",
 		"umashankar:Rpqb123@tcp(db4free.net:3306)/rpqbmysql")
@@ -17,7 +21,7 @@ func connection() *sql.DB {
 
 	return db
 }
-
+*/
 type ViaSSHDialer struct {
 	client *ssh.Client
 }
@@ -26,7 +30,7 @@ func (self *ViaSSHDialer) Dial(addr string) (net.Conn, error) {
 	return self.client.Dial("tcp", addr)
 }
 
-func connectaws() *sql.DB {
+func connectaws() (*sql.DB, *ssh.Client) {
 
 	sshHost := "ec2-54-218-55-72.us-west-2.compute.amazonaws.com" // SSH Server Hostname/IP
 	sshPort := 22                                                 // SSH Port
@@ -65,7 +69,7 @@ func connectaws() *sql.DB {
 
 	// Connect to the SSH Server
 	if sshcon, err := ssh.Dial("tcp", fmt.Sprintf("%s:%d", sshHost, sshPort), sshConfig); err == nil {
-		defer sshcon.Close()
+		//	defer sshcon.Close()
 
 		// Now we register the ViaSSHDialer with the ssh connection as a parameter
 		mysql.RegisterDial("mysql+tcp", (&ViaSSHDialer{sshcon}).Dial)
@@ -74,15 +78,15 @@ func connectaws() *sql.DB {
 		if db, err := sql.Open("mysql", fmt.Sprintf("%s:%s@mysql+tcp(%s)/%s", dbUser, dbPass, dbHost, dbName)); err == nil {
 
 			fmt.Printf("Successfully connected to the db\n")
-			return db
+			return db, sshcon
 			db.Close()
 
 		} else {
 
 			fmt.Printf("Failed to connect to the db: %s\n", err.Error())
 		}
-		return nil
+		return nil, nil
 	}
-	return nil
+	return nil, nil
 
 }

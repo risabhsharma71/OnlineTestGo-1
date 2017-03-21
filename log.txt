@@ -1959,3 +1959,244 @@ TRACE: 2017/03/21 09:42:39 aunthenticate.go:38:  0001-01-01 00:00:00 +0000 UTC
 >>>>>>> 4a89b0d9b07c31b88debbb2b33a3bdd69a907690
 >>>>>>> 332019f49b651335537543b2acdb1504f471980c
 >>>>>>> 04a60f8fa27a4ae5d87172e7440c035b48ada607
+TRACE: 2017/03/21 15:18:29 QuestionList.go:16: 
+TRACE: 2017/03/21 15:18:29 QuestionList.go:17: uigsdoiaf
+TRACE: 2017/03/21 15:18:29 aunthenticate.go:22: 2014-12-29 06:00:00 +0000 SGT
+TRACE: 2017/03/21 15:18:29 aunthenticate.go:24: 6 0 0
+TRACE: 2017/03/21 15:18:29 aunthenticate.go:32: uigsdoiaf
+TRACE: 2017/03/21 15:18:29 aunthenticate.go:36: calling  daoimpl
+TRACE: 2017/03/21 15:18:29 authenticatetokenimpl.go:49: in AunthenticateToken function
+TRACE: 2017/03/21 15:19:06 QuestionList.go:16: 
+TRACE: 2017/03/21 15:19:06 QuestionList.go:17: uigsdoiaf
+TRACE: 2017/03/21 15:19:06 aunthenticate.go:22: 2014-12-29 06:00:00 +0000 SGT
+TRACE: 2017/03/21 15:19:06 aunthenticate.go:24: 6 0 0
+TRACE: 2017/03/21 15:19:06 aunthenticate.go:32: uigsdoiaf
+TRACE: 2017/03/21 15:19:06 aunthenticate.go:36: calling  daoimpl
+TRACE: 2017/03/21 15:19:06 authenticatetokenimpl.go:49: in AunthenticateToken function
+TRACE: 2017/03/21 15:19:24 authenticatetokenimpl.go:58: Type is uigsdoiaf
+TRACE: 2017/03/21 15:19:24 authenticatetokenimpl.go:60: 2017-03-21 12:36:43
+TRACE: 2017/03/21 15:19:24 authenticatetokenimpl.go:63: 2017-03-21 12:36:43 +0000 UTC
+TRACE: 2017/03/21 15:19:24 aunthenticate.go:38: uigsdoiaf 2017-03-21 12:36:43 +0000 UTC
+TRACE: 2017/03/21 15:19:24 aunthenticate.go:44: 2017-03-21 15:19:24
+TRACE: 2017/03/21 15:19:24 aunthenticate.go:51: 2017-03-21 15:19:24 +0000 UTC
+TRACE: 2017/03/21 15:19:24 authenticatetokenimpl.go:58: Type is uigsdoiaf
+TRACE: 2017/03/21 15:19:24 authenticatetokenimpl.go:60: 2017-03-21 12:36:43
+TRACE: 2017/03/21 15:19:24 authenticatetokenimpl.go:63: 2017-03-21 12:36:43 +0000 UTC
+TRACE: 2017/03/21 15:19:24 aunthenticate.go:38: uigsdoiaf 2017-03-21 12:36:43 +0000 UTC
+TRACE: 2017/03/21 15:19:24 aunthenticate.go:44: 2017-03-21 15:19:24
+TRACE: 2017/03/21 15:19:24 aunthenticate.go:51: 2017-03-21 15:19:24 +0000 UTC
+TRACE: 2017/03/21 15:19:24 aunthenticate.go:53: 2.711388888888889
+TRACE: 2017/03/21 15:19:24 aunthenticate.go:58: calling modifyfunction
+TRACE: 2017/03/21 15:19:24 authenticatetokenimpl.go:20: In modifyfunction
+TRACE: 2017/03/21 15:19:24 authenticatetokenimpl.go:22: after query execution
+TRACE: 2017/03/21 15:19:24 aunthenticate.go:53: 2.711388888888889
+TRACE: 2017/03/21 15:19:24 aunthenticate.go:58: calling modifyfunction
+TRACE: 2017/03/21 15:19:24 authenticatetokenimpl.go:20: In modifyfunction
+TRACE: 2017/03/21 15:19:24 authenticatetokenimpl.go:22: after query execution
+TRACE: 2017/03/21 15:19:53 QuestionList.go:16: 
+TRACE: 2017/03/21 15:19:53 QuestionList.go:17: uigsdoiaf
+TRACE: 2017/03/21 15:19:53 aunthenticate.go:22: 2014-12-29 06:00:00 +0000 SGT
+TRACE: 2017/03/21 15:19:53 aunthenticate.go:24: 6 0 0
+TRACE: 2017/03/21 15:19:53 aunthenticate.go:32: uigsdoiaf
+TRACE: 2017/03/21 15:19:53 aunthenticate.go:36: calling  daoimpl
+TRACE: 2017/03/21 15:19:53 authenticatetokenimpl.go:49: in AunthenticateToken function
+TRACE: 2017/03/21 15:20:26 authenticatetokenimpl.go:31: reached to modifyexecution
+TRACE: 2017/03/21 15:20:26 authenticatetokenimpl.go:33: {0xc042330150 0xc04232e0e0}
+TRACE: 2017/03/21 15:20:26 authenticatetokenimpl.go:38: 0 <nil>
+TRACE: 2017/03/21 15:20:26 aunthenticate.go:60: 2017-03-21 15:19:24 +0000 UTC
+TRACE: 2017/03/21 15:20:26 FetchQuestion.go:15: calling Question manager
+TRACE: 2017/03/21 15:20:27 authenticatetokenimpl.go:58: Type is uigsdoiaf
+TRACE: 2017/03/21 15:20:27 authenticatetokenimpl.go:60: 2017-03-21 15:19:24
+TRACE: 2017/03/21 15:20:27 authenticatetokenimpl.go:63: 2017-03-21 15:19:24 +0000 UTC
+TRACE: 2017/03/21 15:20:27 aunthenticate.go:38: uigsdoiaf 2017-03-21 15:19:24 +0000 UTC
+TRACE: 2017/03/21 15:20:27 aunthenticate.go:44: 2017-03-21 15:20:27
+TRACE: 2017/03/21 15:20:27 aunthenticate.go:51: 2017-03-21 15:20:27 +0000 UTC
+TRACE: 2017/03/21 15:20:27 aunthenticate.go:53: 0.0175
+TRACE: 2017/03/21 15:20:27 aunthenticate.go:58: calling modifyfunction
+TRACE: 2017/03/21 15:20:27 authenticatetokenimpl.go:20: In modifyfunction
+TRACE: 2017/03/21 15:20:27 authenticatetokenimpl.go:22: after query execution
+TRACE: 2017/03/21 15:20:27 authenticatetokenimpl.go:31: reached to modifyexecution
+TRACE: 2017/03/21 15:20:27 authenticatetokenimpl.go:33: {0xc042312150 0xc0422f25d0}
+TRACE: 2017/03/21 15:20:27 authenticatetokenimpl.go:38: 0 <nil>
+TRACE: 2017/03/21 15:20:27 aunthenticate.go:60: 2017-03-21 15:19:24 +0000 UTC
+TRACE: 2017/03/21 15:20:27 FetchQuestion.go:15: calling Question manager
+TRACE: 2017/03/21 15:20:27 authenticatetokenimpl.go:31: reached to modifyexecution
+TRACE: 2017/03/21 15:20:28 questionimpl.go:39: totalquestions: []
+TRACE: 2017/03/21 15:20:28 questionimpl.go:39: totalquestions: []
+TRACE: 2017/03/21 15:20:28 authenticatetokenimpl.go:33: {0xc0421beee0 0xc0422f2660}
+TRACE: 2017/03/21 15:20:28 authenticatetokenimpl.go:38: 0 <nil>
+TRACE: 2017/03/21 15:20:28 aunthenticate.go:60: 2017-03-21 15:20:27 +0000 UTC
+TRACE: 2017/03/21 15:20:28 FetchQuestion.go:15: calling Question manager
+TRACE: 2017/03/21 15:20:29 questionimpl.go:39: totalquestions: []
+TRACE: 2017/03/21 15:21:20 QuestionList.go:16: 
+TRACE: 2017/03/21 15:21:20 QuestionList.go:17: uigsdoiaf
+TRACE: 2017/03/21 15:21:20 aunthenticate.go:22: 2014-12-29 06:00:00 +0000 SGT
+TRACE: 2017/03/21 15:21:20 aunthenticate.go:24: 6 0 0
+TRACE: 2017/03/21 15:21:20 aunthenticate.go:32: uigsdoiaf
+TRACE: 2017/03/21 15:21:20 aunthenticate.go:36: calling  daoimpl
+TRACE: 2017/03/21 15:21:20 authenticatetokenimpl.go:49: in AunthenticateToken function
+TRACE: 2017/03/21 15:21:37 authenticatetokenimpl.go:58: Type is uigsdoiaf
+TRACE: 2017/03/21 15:21:37 authenticatetokenimpl.go:60: 2017-03-21 15:20:27
+TRACE: 2017/03/21 15:21:37 authenticatetokenimpl.go:63: 2017-03-21 15:20:27 +0000 UTC
+TRACE: 2017/03/21 15:21:37 aunthenticate.go:38: uigsdoiaf 2017-03-21 15:20:27 +0000 UTC
+TRACE: 2017/03/21 15:21:37 aunthenticate.go:44: 2017-03-21 15:21:37
+TRACE: 2017/03/21 15:21:37 aunthenticate.go:51: 2017-03-21 15:21:37 +0000 UTC
+TRACE: 2017/03/21 15:21:37 aunthenticate.go:53: 0.019444444444444445
+TRACE: 2017/03/21 15:21:37 aunthenticate.go:58: calling modifyfunction
+TRACE: 2017/03/21 15:21:37 authenticatetokenimpl.go:20: In modifyfunction
+TRACE: 2017/03/21 15:21:37 authenticatetokenimpl.go:22: after query execution
+TRACE: 2017/03/21 15:21:38 authenticatetokenimpl.go:31: reached to modifyexecution
+TRACE: 2017/03/21 15:21:38 authenticatetokenimpl.go:33: {0xc0421282a0 0xc0420042d0}
+TRACE: 2017/03/21 15:21:38 authenticatetokenimpl.go:38: 0 <nil>
+TRACE: 2017/03/21 15:21:38 aunthenticate.go:60: 2017-03-21 15:21:37 +0000 UTC
+TRACE: 2017/03/21 15:21:38 FetchQuestion.go:15: calling Question manager
+TRACE: 2017/03/21 15:21:54 questionimpl.go:39: totalquestions: []
+TRACE: 2017/03/21 15:23:14 QuestionList.go:16: java
+TRACE: 2017/03/21 15:23:14 QuestionList.go:17: uigsdoiaf
+TRACE: 2017/03/21 15:23:14 aunthenticate.go:22: 2014-12-29 06:00:00 +0000 SGT
+TRACE: 2017/03/21 15:23:14 aunthenticate.go:24: 6 0 0
+TRACE: 2017/03/21 15:23:14 aunthenticate.go:32: uigsdoiaf
+TRACE: 2017/03/21 15:23:14 aunthenticate.go:36: calling  daoimpl
+TRACE: 2017/03/21 15:23:14 authenticatetokenimpl.go:49: in AunthenticateToken function
+TRACE: 2017/03/21 15:23:20 authenticatetokenimpl.go:58: Type is uigsdoiaf
+TRACE: 2017/03/21 15:23:20 authenticatetokenimpl.go:60: 2017-03-21 15:21:37
+TRACE: 2017/03/21 15:23:20 authenticatetokenimpl.go:63: 2017-03-21 15:21:37 +0000 UTC
+TRACE: 2017/03/21 15:23:20 aunthenticate.go:38: uigsdoiaf 2017-03-21 15:21:37 +0000 UTC
+TRACE: 2017/03/21 15:23:20 aunthenticate.go:44: 2017-03-21 15:23:20
+TRACE: 2017/03/21 15:23:20 aunthenticate.go:51: 2017-03-21 15:23:20 +0000 UTC
+TRACE: 2017/03/21 15:23:20 aunthenticate.go:53: 0.02861111111111111
+TRACE: 2017/03/21 15:23:20 aunthenticate.go:58: calling modifyfunction
+TRACE: 2017/03/21 15:23:20 authenticatetokenimpl.go:20: In modifyfunction
+TRACE: 2017/03/21 15:23:20 authenticatetokenimpl.go:22: after query execution
+TRACE: 2017/03/21 15:23:37 authenticatetokenimpl.go:31: reached to modifyexecution
+TRACE: 2017/03/21 15:23:38 authenticatetokenimpl.go:33: {0xc042148310 0xc042136a40}
+TRACE: 2017/03/21 15:23:38 authenticatetokenimpl.go:38: 0 <nil>
+TRACE: 2017/03/21 15:23:38 aunthenticate.go:60: 2017-03-21 15:23:20 +0000 UTC
+TRACE: 2017/03/21 15:23:38 FetchQuestion.go:15: calling Question manager
+TRACE: 2017/03/21 15:23:39 questionimpl.go:39: totalquestions: [{1 which of these handles the exception when no catch is used? default handler} {1 which of these handles the exception when no catch is used? finally} {1 which of these handles the exception when no catch is used? throw handler} {1 which of these handles the exception when no catch is used? java runtime system} {2 which of these methods are used to implement runable interface? stop()} {2 which of these methods are used to implement runable interface? start()} {2 which of these methods are used to implement runable interface? runThread()} {2 which of these methods are used to implement runable interface? stopThread()} {7 which keyword is used by method to refer to object that invoked it? import} {7 which keyword is used by method to refer to object that invoked it? catch} {7 which keyword is used by method to refer to object that invoked it? abstract} {7 which keyword is used by method to refer to object that invoked it? this} {29 which of these access specifier can be used for an interface? public} {29 which of these access specifier can be used for an interface? protected} {29 which of these access specifier can be used for an interface? private} {29 which of these access specifier can be used for an interface? all of the mentioned} {30 which of these access specifier can be used for an interface? public} {30 which of these access specifier can be used for an interface? protected} {30 which of these access specifier can be used for an interface? private} {30 which of these access specifier can be used for an interface? all of the mentioned} {31 which of these access specifier can be used for an interface? public} {31 which of these access specifier can be used for an interface? protected} {31 which of these access specifier can be used for an interface? private} {31 which of these access specifier can be used for an interface? all of the mentioned} {32 which of these access specifier can be used for an interface? public} {32 which of these access specifier can be used for an interface? protected} {32 which of these access specifier can be used for an interface? private} {32 which of these access specifier can be used for an interface? all of the mentioned}]
+TRACE: 2017/03/21 15:34:39 debug.go:45: [GIN-debug] [WARNING] Headers were already written. Wanted to override status code 200 with 500
+TRACE: 2017/03/21 15:46:31 QuestionList.go:16: 
+TRACE: 2017/03/21 15:46:31 QuestionList.go:17: 
+TRACE: 2017/03/21 15:46:31 aunthenticate.go:22: 2014-12-29 06:00:00 +0000 SGT
+TRACE: 2017/03/21 15:46:31 aunthenticate.go:24: 6 0 0
+TRACE: 2017/03/21 15:46:31 aunthenticate.go:32: 
+TRACE: 2017/03/21 15:46:31 aunthenticate.go:36: calling  daoimpl
+TRACE: 2017/03/21 15:46:33 authenticatetokenimpl.go:51: in AunthenticateToken function
+TRACE: 2017/03/21 15:46:36 authenticatetokenimpl.go:56: No uid with that token.
+TRACE: 2017/03/21 15:46:36 authenticatetokenimpl.go:62: 
+TRACE: 2017/03/21 15:46:36 authenticatetokenimpl.go:65: 0001-01-01 00:00:00 +0000 UTC
+TRACE: 2017/03/21 15:46:36 aunthenticate.go:38:  0001-01-01 00:00:00 +0000 UTC
+TRACE: 2017/03/21 15:47:54 logoutimpl.go:22: 
+TRACE: 2017/03/21 15:47:54 logoutimpl.go:32: 0
+TRACE: 2017/03/21 15:48:58 Login.go:16: entering login manager...
+TRACE: 2017/03/21 15:48:58 userimpl.go:73: entering AuthenticateUser Impl
+TRACE: 2017/03/21 15:48:58 userimpl.go:75: Executing query..
+TRACE: 2017/03/21 15:49:31 Login.go:16: entering login manager...
+TRACE: 2017/03/21 15:49:31 userimpl.go:73: entering AuthenticateUser Impl
+TRACE: 2017/03/21 15:49:31 userimpl.go:75: Executing query..
+TRACE: 2017/03/21 15:51:06 Login.go:16: entering login manager...
+TRACE: 2017/03/21 15:51:06 userimpl.go:73: entering AuthenticateUser Impl
+TRACE: 2017/03/21 15:51:06 userimpl.go:75: Executing query..
+TRACE: 2017/03/21 15:52:55 Login.go:16: entering login manager...
+TRACE: 2017/03/21 15:52:56 userimpl.go:73: entering AuthenticateUser Impl
+TRACE: 2017/03/21 15:52:56 userimpl.go:75: Executing query..
+TRACE: 2017/03/21 15:54:37 Login.go:16: entering login manager...
+TRACE: 2017/03/21 15:54:37 userimpl.go:73: entering AuthenticateUser Impl
+TRACE: 2017/03/21 15:54:37 userimpl.go:75: Executing query..
+TRACE: 2017/03/21 15:57:02 Login.go:16: entering login manager...
+TRACE: 2017/03/21 15:57:02 userimpl.go:73: entering AuthenticateUser Impl
+TRACE: 2017/03/21 15:57:02 userimpl.go:75: Executing query..
+TRACE: 2017/03/21 15:57:35 Login.go:16: entering login manager...
+TRACE: 2017/03/21 15:57:35 userimpl.go:73: entering AuthenticateUser Impl
+TRACE: 2017/03/21 15:57:35 userimpl.go:75: Executing query..
+TRACE: 2017/03/21 15:58:24 Login.go:16: entering login manager...
+TRACE: 2017/03/21 15:58:24 userimpl.go:73: entering AuthenticateUser Impl
+TRACE: 2017/03/21 15:58:24 userimpl.go:75: Executing query..
+TRACE: 2017/03/21 15:59:26 Login.go:16: entering login manager...
+TRACE: 2017/03/21 15:59:26 userimpl.go:73: entering AuthenticateUser Impl
+TRACE: 2017/03/21 15:59:26 userimpl.go:75: Executing query..
+TRACE: 2017/03/21 16:00:11 userimpl.go:98: Response user Obj :  {0    r.s@r.com 123 }
+TRACE: 2017/03/21 16:00:11 userimpl.go:98: Response user Obj :  {0    test@t.com 123 }
+TRACE: 2017/03/21 16:00:11 userimpl.go:98: Response user Obj :  {0    r.s@r.com 123 }
+TRACE: 2017/03/21 16:00:11 userimpl.go:98: Response user Obj :  {0    r.s@r.com 123 }
+TRACE: 2017/03/21 16:00:11 userimpl.go:98: Response user Obj :  {0    test@t.com 123 }
+TRACE: 2017/03/21 16:00:11 userimpl.go:98: Response user Obj :  {0    r.s@r.com 123 }
+TRACE: 2017/03/21 16:00:11 userimpl.go:98: Response user Obj :  {0    r.s@r.com 123 }
+TRACE: 2017/03/21 16:00:11 userimpl.go:98: Response user Obj :  {0    test@t.com 123 }
+TRACE: 2017/03/21 16:00:11 userimpl.go:98: Response user Obj :  {0    test@t.com 123 }
+TRACE: 2017/03/21 16:00:16 Login.go:37: Error 1146: Table 'onlinetestdb.Token' doesn't exist
+TRACE: 2017/03/21 16:00:16 Login.go:48: {1 Sweta kDaCbGiRvncjyxMeUTIi admin}
+TRACE: 2017/03/21 16:00:17 Login.go:37: Error 1146: Table 'onlinetestdb.Token' doesn't exist
+TRACE: 2017/03/21 16:00:17 Login.go:48: {1 Sweta lVuXxDdfaJkKlJbryumF admin}
+TRACE: 2017/03/21 16:00:17 Login.go:37: Error 1146: Table 'onlinetestdb.Token' doesn't exist
+TRACE: 2017/03/21 16:00:17 Login.go:48: {1 Sweta rFruMdyufesgTaASqKrh admin}
+TRACE: 2017/03/21 16:00:17 Login.go:37: Error 1146: Table 'onlinetestdb.Token' doesn't exist
+TRACE: 2017/03/21 16:00:17 Login.go:48: {1 Sweta hKWNcbMDYBaeREsLiSCX admin}
+TRACE: 2017/03/21 16:00:43 Login.go:16: entering login manager...
+TRACE: 2017/03/21 16:00:43 userimpl.go:73: entering AuthenticateUser Impl
+TRACE: 2017/03/21 16:00:43 userimpl.go:75: Executing query..
+TRACE: 2017/03/21 16:00:47 userimpl.go:98: Response user Obj :  {0    test@t.com 123 }
+TRACE: 2017/03/21 16:00:51 Login.go:37: Error 1146: Table 'onlinetestdb.Token' doesn't exist
+TRACE: 2017/03/21 16:00:51 Login.go:48: {1 Sweta pmitSNDkjjNjcszoFtdB admin}
+TRACE: 2017/03/21 16:04:22 Login.go:16: entering login manager...
+TRACE: 2017/03/21 16:04:22 userimpl.go:73: entering AuthenticateUser Impl
+TRACE: 2017/03/21 16:04:22 userimpl.go:75: Executing query..
+TRACE: 2017/03/21 16:04:26 userimpl.go:98: Response user Obj :  {0    test@t.com 123 }
+TRACE: 2017/03/21 16:04:30 Login.go:37: Error 1146: Table 'onlinetestdb.Token' doesn't exist
+TRACE: 2017/03/21 16:04:30 Login.go:48: {1 Sweta MUSrYmvwtnteGTnqHLEN admin}
+TRACE: 2017/03/21 16:04:44 logoutimpl.go:22: pmitSNDkjjNjcszoFtdB
+TRACE: 2017/03/21 16:04:44 logoutimpl.go:32: 0
+TRACE: 2017/03/21 16:09:17 QuestionList.go:16: java
+TRACE: 2017/03/21 16:09:17 QuestionList.go:17: uigsdoiaf
+TRACE: 2017/03/21 16:09:17 aunthenticate.go:22: 2014-12-29 06:00:00 +0000 SGT
+TRACE: 2017/03/21 16:09:17 aunthenticate.go:24: 6 0 0
+TRACE: 2017/03/21 16:09:17 aunthenticate.go:32: uigsdoiaf
+TRACE: 2017/03/21 16:09:17 aunthenticate.go:36: calling  daoimpl
+TRACE: 2017/03/21 16:09:19 authenticatetokenimpl.go:51: in AunthenticateToken function
+TRACE: 2017/03/21 16:09:22 authenticatetokenimpl.go:56: No uid with that token.
+TRACE: 2017/03/21 16:09:22 authenticatetokenimpl.go:62: 
+TRACE: 2017/03/21 16:09:22 authenticatetokenimpl.go:65: 0001-01-01 00:00:00 +0000 UTC
+TRACE: 2017/03/21 16:09:22 aunthenticate.go:38:  0001-01-01 00:00:00 +0000 UTC
+TRACE: 2017/03/21 16:09:51 Login.go:16: entering login manager...
+TRACE: 2017/03/21 16:09:51 userimpl.go:73: entering AuthenticateUser Impl
+TRACE: 2017/03/21 16:09:51 userimpl.go:75: Executing query..
+TRACE: 2017/03/21 16:09:55 userimpl.go:98: Response user Obj :  {0    test@t.com 123 }
+TRACE: 2017/03/21 16:09:57 loginimpl.go:15: token inserted
+TRACE: 2017/03/21 16:09:57 loginimpl.go:16: {0 1 oypeCjserkHcmqrQQoVG 2017-03-21 16:09:55.4776218 +0530 IST}
+TRACE: 2017/03/21 16:09:59 Login.go:37: Error 1146: Table 'onlinetestdb.Token' doesn't exist
+TRACE: 2017/03/21 16:09:59 Login.go:48: {1 Sweta oypeCjserkHcmqrQQoVG admin}
+TRACE: 2017/03/21 16:11:35 Login.go:16: entering login manager...
+TRACE: 2017/03/21 16:11:35 userimpl.go:73: entering AuthenticateUser Impl
+TRACE: 2017/03/21 16:11:35 userimpl.go:75: Executing query..
+TRACE: 2017/03/21 16:11:39 userimpl.go:98: Response user Obj :  {0    test@t.com 123 }
+TRACE: 2017/03/21 16:11:44 Login.go:37: Error 1146: Table 'onlinetestdb.Token' doesn't exist
+TRACE: 2017/03/21 16:11:44 Login.go:48: {1 Sweta SajDCbBbukNpzAoEMHJn admin}
+TRACE: 2017/03/21 16:21:52 Login.go:16: entering login manager...
+TRACE: 2017/03/21 16:21:52 userimpl.go:73: entering AuthenticateUser Impl
+TRACE: 2017/03/21 16:21:52 userimpl.go:75: Executing query..
+TRACE: 2017/03/21 16:21:58 userimpl.go:98: Response user Obj :  {0    test@t.com 123 }
+TRACE: 2017/03/21 16:22:02 Login.go:48: {0   }
+TRACE: 2017/03/21 16:22:09 Login.go:16: entering login manager...
+TRACE: 2017/03/21 16:22:09 userimpl.go:73: entering AuthenticateUser Impl
+TRACE: 2017/03/21 16:22:09 userimpl.go:75: Executing query..
+TRACE: 2017/03/21 16:22:14 userimpl.go:98: Response user Obj :  {0    test@t.com 123 }
+TRACE: 2017/03/21 16:22:19 Login.go:48: {0   }
+TRACE: 2017/03/21 16:28:51 Login.go:16: entering login manager...
+TRACE: 2017/03/21 16:28:51 userimpl.go:73: entering AuthenticateUser Impl
+TRACE: 2017/03/21 16:28:51 userimpl.go:75: Executing query..
+TRACE: 2017/03/21 16:28:55 userimpl.go:98: Response user Obj :  {0    test@t.com 123 }
+TRACE: 2017/03/21 16:28:59 Login.go:48: {0   }
+TRACE: 2017/03/21 16:30:31 Login.go:16: entering login manager...
+TRACE: 2017/03/21 16:30:31 userimpl.go:73: entering AuthenticateUser Impl
+TRACE: 2017/03/21 16:30:31 userimpl.go:75: Executing query..
+TRACE: 2017/03/21 16:30:35 userimpl.go:98: Response user Obj :  {0    test@t.com 123 }
+TRACE: 2017/03/21 16:30:39 Login.go:48: {0   }
+TRACE: 2017/03/21 16:31:22 Login.go:16: entering login manager...
+TRACE: 2017/03/21 16:31:22 userimpl.go:73: entering AuthenticateUser Impl
+TRACE: 2017/03/21 16:31:22 userimpl.go:75: Executing query..
+TRACE: 2017/03/21 16:33:50 Login.go:16: entering login manager...
+TRACE: 2017/03/21 16:33:50 userimpl.go:73: entering AuthenticateUser Impl
+TRACE: 2017/03/21 16:33:50 userimpl.go:75: Executing query..
+TRACE: 2017/03/21 16:33:54 userimpl.go:98: Response user Obj :  {0    test@1.com 123 }
+TRACE: 2017/03/21 16:33:57 Login.go:37: Error 1146: Table 'onlinetestdb.Token' doesn't exist
+TRACE: 2017/03/21 16:33:57 Login.go:48: {2 rakesh VSmRHxscjNZjDngSrTVi user}
