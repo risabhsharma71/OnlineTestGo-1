@@ -85,7 +85,6 @@ func (dao QuestionImpl) GetAnswerById(ID int64) string {
 	utility.GetLogger()
 	log.Println("entering in GetAnswerById() ")
 
-	db := connection()
 	defer db.Close()
 	defer conn.Close()
 	answer := ""

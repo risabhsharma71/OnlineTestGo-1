@@ -2438,3 +2438,10 @@ TRACE: 2017/03/21 16:42:53 FetchQuestion.go:18: calling FetchQuestionsByType()
 TRACE: 2017/03/21 16:42:53 questionimpl.go:17: entering into FetchQuestionsByType()
 TRACE: 2017/03/21 16:42:53 questionimpl.go:18: executing query and Fetching Questions By Type 
 >>>>>>> 1b875ee58b327bd2edf8fcbad534c3eb3e0a7982
+TRACE: 2017/03/21 16:59:54 debug.go:45: [GIN-debug] [WARNING] Running in "debug" mode. Switch to "release" mode in production.
+ - using env:	export GIN_MODE=release
+ - using code:	gin.SetMode(gin.ReleaseMode)
+
+TRACE: 2017/03/21 16:59:54 debug.go:45: [GIN-debug] GET    /testService              --> OnlineTestGo/webservice.TestService (3 handlers)
+TRACE: 2017/03/21 16:59:54 debug.go:45: [GIN-debug] GET    /questions                --> OnlineTestGo/webservice.QuestionList (3 handlers)
+TRACE: 2017/03/21 16:59:54 debug.go:45: [GIN-debug] Listening and serving HTTP on :8085
