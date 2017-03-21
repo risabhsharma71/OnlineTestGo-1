@@ -50,16 +50,16 @@ func AuthenticateToken(token string) bool {
 	}
 	log.Println(timeStamp1)
 	duration := timeStamp1.Sub(lastaccesstime)
-	log.Println(duration)
-	durationinhours := (float64)((duration / (1000 * 60 * 60) % 24))
-	log.Println(durationinhours)
+	log.Println(duration.Hours())
+
+	//log.Println(durationinhours)
 	if tokenEncodeString == tokenfromdb {
 		//currenttime := time.Now().Format(time.RFC850)
 		log.Println("calling modifyfunction")
 		tokenDao.ModifyLastAccessTime(timeStamp1, tokenEncodeString)
 		log.Println(timeStamp1)
 	}
-	if durationinhours > float64(hr) {
+	if duration.Hours() > float64(hr) {
 
 		log.Println("calling delete token function")
 		bool := tokenDao.DeleteToken(tokenEncodeString)

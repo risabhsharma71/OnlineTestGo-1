@@ -1767,3 +1767,113 @@ TRACE: 2017/03/20 20:18:34 debug.go:45: [GIN-debug] Listening and serving HTTP o
 TRACE: 2017/03/20 20:18:39 register.go:17: calling register manager
 TRACE: 2017/03/20 20:18:41 userimpl.go:50: read tcp 192.168.0.8:61461->54.218.55.72:22: use of closed network connection
 >>>>>>> bf457ed1017c64a30df4e6a82766ab44507bbaa9
+TRACE: 2017/03/21 09:35:14 debug.go:45: [GIN-debug] [WARNING] Running in "debug" mode. Switch to "release" mode in production.
+ - using env:	export GIN_MODE=release
+ - using code:	gin.SetMode(gin.ReleaseMode)
+
+TRACE: 2017/03/21 09:35:14 debug.go:45: [GIN-debug] POST   /registerUser             --> OnlineTestGo/webservice.RegisterUser (3 handlers)
+TRACE: 2017/03/21 09:35:14 debug.go:45: [GIN-debug] POST   /userAnswer               --> OnlineTestGo/webservice.AnswerList (3 handlers)
+TRACE: 2017/03/21 09:35:14 debug.go:45: [GIN-debug] GET    /questions                --> OnlineTestGo/webservice.QuestionList (3 handlers)
+TRACE: 2017/03/21 09:35:14 debug.go:45: [GIN-debug] POST   /addquestions             --> OnlineTestGo/webservice.AddQuestions (3 handlers)
+TRACE: 2017/03/21 09:35:14 debug.go:45: [GIN-debug] GET    /testService              --> OnlineTestGo/webservice.TestService (3 handlers)
+TRACE: 2017/03/21 09:35:14 debug.go:45: [GIN-debug] GET    /admin                    --> OnlineTestGo/webservice.Admin (3 handlers)
+TRACE: 2017/03/21 09:35:14 debug.go:45: [GIN-debug] POST   /mocklogin                --> OnlineTestGo/webservice.Mocklogin (3 handlers)
+TRACE: 2017/03/21 09:35:14 debug.go:45: [GIN-debug] GET    /mocklogout               --> OnlineTestGo/webservice.Mocklogout (3 handlers)
+TRACE: 2017/03/21 09:35:14 debug.go:45: [GIN-debug] GET    /logout                   --> OnlineTestGo/webservice.Logout (3 handlers)
+TRACE: 2017/03/21 09:35:14 debug.go:45: [GIN-debug] Listening and serving HTTP on :8083
+TRACE: 2017/03/21 09:36:40 QuestionList.go:16: 
+TRACE: 2017/03/21 09:36:40 QuestionList.go:17: uigsdoiaf7
+TRACE: 2017/03/21 09:36:40 aunthenticate.go:22: 2014-12-29 06:00:00 +0000 SGT
+TRACE: 2017/03/21 09:36:40 aunthenticate.go:24: 6 0 0
+TRACE: 2017/03/21 09:36:40 aunthenticate.go:32: uigsdoiaf7
+TRACE: 2017/03/21 09:36:40 aunthenticate.go:36: calling  daoimpl
+TRACE: 2017/03/21 09:36:40 authenticatetokenimpl.go:49: in AunthenticateToken function
+TRACE: 2017/03/21 09:36:43 authenticatetokenimpl.go:58: Type is uigsdoiaf7
+TRACE: 2017/03/21 09:36:43 authenticatetokenimpl.go:60: 2017-03-20 18:57:20
+TRACE: 2017/03/21 09:36:43 authenticatetokenimpl.go:63: 2017-03-20 18:57:20 +0000 UTC
+TRACE: 2017/03/21 09:36:43 aunthenticate.go:38: uigsdoiaf7 2017-03-20 18:57:20 +0000 UTC
+TRACE: 2017/03/21 09:36:43 aunthenticate.go:44: 2017-03-21 09:36:43
+TRACE: 2017/03/21 09:36:43 aunthenticate.go:51: 2017-03-21 09:36:43 +0000 UTC
+TRACE: 2017/03/21 09:36:43 aunthenticate.go:53: 14h39m23s
+TRACE: 2017/03/21 09:36:43 aunthenticate.go:55: 20
+TRACE: 2017/03/21 09:36:43 aunthenticate.go:58: calling modifyfunction
+TRACE: 2017/03/21 09:36:43 authenticatetokenimpl.go:20: In modifyfunction
+TRACE: 2017/03/21 09:36:43 authenticatetokenimpl.go:22: after query execution
+TRACE: 2017/03/21 09:36:44 authenticatetokenimpl.go:31: reached to modifyexecution
+TRACE: 2017/03/21 09:36:45 authenticatetokenimpl.go:33: {0xc0420320e0 0xc042004380}
+TRACE: 2017/03/21 09:36:45 authenticatetokenimpl.go:38: 0 <nil>
+TRACE: 2017/03/21 09:36:45 aunthenticate.go:60: 2017-03-21 09:36:43 +0000 UTC
+TRACE: 2017/03/21 09:36:45 aunthenticate.go:64: calling delete token function
+TRACE: 2017/03/21 09:36:45 authenticatetokenimpl.go:71: calling DeleteToken function
+TRACE: 2017/03/21 09:36:45 authenticatetokenimpl.go:73: after query execution
+TRACE: 2017/03/21 09:37:05 authenticatetokenimpl.go:82: reached to execution
+TRACE: 2017/03/21 09:37:06 authenticatetokenimpl.go:84: {0xc0421fe070 0xc0421fc080}
+TRACE: 2017/03/21 09:37:06 aunthenticate.go:66: true
+TRACE: 2017/03/21 09:37:06 FetchQuestion.go:16: calling Question manager
+TRACE: 2017/03/21 09:37:15 QuestionList.go:16: 
+TRACE: 2017/03/21 09:37:15 QuestionList.go:17: uigsdoiaf7
+TRACE: 2017/03/21 09:37:15 aunthenticate.go:22: 2014-12-29 06:00:00 +0000 SGT
+TRACE: 2017/03/21 09:37:15 aunthenticate.go:24: 6 0 0
+TRACE: 2017/03/21 09:37:15 aunthenticate.go:32: uigsdoiaf7
+TRACE: 2017/03/21 09:37:15 aunthenticate.go:36: calling  daoimpl
+TRACE: 2017/03/21 09:37:15 authenticatetokenimpl.go:49: in AunthenticateToken function
+TRACE: 2017/03/21 09:37:20 questionimpl.go:40: totalquestions: []
+TRACE: 2017/03/21 09:37:20 authenticatetokenimpl.go:54: No uid with that token.
+TRACE: 2017/03/21 09:37:20 authenticatetokenimpl.go:60: 
+TRACE: 2017/03/21 09:37:20 authenticatetokenimpl.go:63: 0001-01-01 00:00:00 +0000 UTC
+TRACE: 2017/03/21 09:37:20 aunthenticate.go:38:  0001-01-01 00:00:00 +0000 UTC
+TRACE: 2017/03/21 09:42:03 debug.go:45: [GIN-debug] [WARNING] Running in "debug" mode. Switch to "release" mode in production.
+ - using env:	export GIN_MODE=release
+ - using code:	gin.SetMode(gin.ReleaseMode)
+
+TRACE: 2017/03/21 09:42:03 debug.go:45: [GIN-debug] POST   /registerUser             --> OnlineTestGo/webservice.RegisterUser (3 handlers)
+TRACE: 2017/03/21 09:42:03 debug.go:45: [GIN-debug] POST   /userAnswer               --> OnlineTestGo/webservice.AnswerList (3 handlers)
+TRACE: 2017/03/21 09:42:03 debug.go:45: [GIN-debug] GET    /questions                --> OnlineTestGo/webservice.QuestionList (3 handlers)
+TRACE: 2017/03/21 09:42:03 debug.go:45: [GIN-debug] POST   /addquestions             --> OnlineTestGo/webservice.AddQuestions (3 handlers)
+TRACE: 2017/03/21 09:42:03 debug.go:45: [GIN-debug] GET    /testService              --> OnlineTestGo/webservice.TestService (3 handlers)
+TRACE: 2017/03/21 09:42:03 debug.go:45: [GIN-debug] GET    /admin                    --> OnlineTestGo/webservice.Admin (3 handlers)
+TRACE: 2017/03/21 09:42:03 debug.go:45: [GIN-debug] POST   /mocklogin                --> OnlineTestGo/webservice.Mocklogin (3 handlers)
+TRACE: 2017/03/21 09:42:03 debug.go:45: [GIN-debug] GET    /mocklogout               --> OnlineTestGo/webservice.Mocklogout (3 handlers)
+TRACE: 2017/03/21 09:42:03 debug.go:45: [GIN-debug] GET    /logout                   --> OnlineTestGo/webservice.Logout (3 handlers)
+TRACE: 2017/03/21 09:42:03 debug.go:45: [GIN-debug] Listening and serving HTTP on :8083
+TRACE: 2017/03/21 09:42:20 QuestionList.go:16: 
+TRACE: 2017/03/21 09:42:20 QuestionList.go:17: uigsdoiaf
+TRACE: 2017/03/21 09:42:20 aunthenticate.go:22: 2014-12-29 06:00:00 +0000 SGT
+TRACE: 2017/03/21 09:42:20 aunthenticate.go:24: 6 0 0
+TRACE: 2017/03/21 09:42:20 aunthenticate.go:32: uigsdoiaf
+TRACE: 2017/03/21 09:42:20 aunthenticate.go:36: calling  daoimpl
+TRACE: 2017/03/21 09:42:20 authenticatetokenimpl.go:49: in AunthenticateToken function
+TRACE: 2017/03/21 09:42:21 authenticatetokenimpl.go:58: Type is uigsdoiaf
+TRACE: 2017/03/21 09:42:21 authenticatetokenimpl.go:60: 2017-03-20 18:57:20
+TRACE: 2017/03/21 09:42:21 authenticatetokenimpl.go:63: 2017-03-20 18:57:20 +0000 UTC
+TRACE: 2017/03/21 09:42:21 aunthenticate.go:38: uigsdoiaf 2017-03-20 18:57:20 +0000 UTC
+TRACE: 2017/03/21 09:42:21 aunthenticate.go:44: 2017-03-21 09:42:21
+TRACE: 2017/03/21 09:42:21 aunthenticate.go:51: 2017-03-21 09:42:21 +0000 UTC
+TRACE: 2017/03/21 09:42:21 aunthenticate.go:53: 14.750277777777779
+TRACE: 2017/03/21 09:42:21 aunthenticate.go:55: 21
+TRACE: 2017/03/21 09:42:21 aunthenticate.go:58: calling modifyfunction
+TRACE: 2017/03/21 09:42:21 authenticatetokenimpl.go:20: In modifyfunction
+TRACE: 2017/03/21 09:42:21 authenticatetokenimpl.go:22: after query execution
+TRACE: 2017/03/21 09:42:21 authenticatetokenimpl.go:31: reached to modifyexecution
+TRACE: 2017/03/21 09:42:22 authenticatetokenimpl.go:33: {0xc0420322a0 0xc042004580}
+TRACE: 2017/03/21 09:42:22 authenticatetokenimpl.go:38: 0 <nil>
+TRACE: 2017/03/21 09:42:22 aunthenticate.go:60: 2017-03-21 09:42:21 +0000 UTC
+TRACE: 2017/03/21 09:42:22 aunthenticate.go:64: calling delete token function
+TRACE: 2017/03/21 09:42:22 authenticatetokenimpl.go:71: calling DeleteToken function
+TRACE: 2017/03/21 09:42:22 authenticatetokenimpl.go:73: after query execution
+TRACE: 2017/03/21 09:42:22 authenticatetokenimpl.go:82: reached to execution
+TRACE: 2017/03/21 09:42:23 authenticatetokenimpl.go:84: {0xc0420323f0 0xc0420046c0}
+TRACE: 2017/03/21 09:42:23 aunthenticate.go:66: true
+TRACE: 2017/03/21 09:42:23 FetchQuestion.go:16: calling Question manager
+TRACE: 2017/03/21 09:42:23 questionimpl.go:40: totalquestions: []
+TRACE: 2017/03/21 09:42:38 QuestionList.go:16: 
+TRACE: 2017/03/21 09:42:38 QuestionList.go:17: uigsdoiaf
+TRACE: 2017/03/21 09:42:38 aunthenticate.go:22: 2014-12-29 06:00:00 +0000 SGT
+TRACE: 2017/03/21 09:42:38 aunthenticate.go:24: 6 0 0
+TRACE: 2017/03/21 09:42:38 aunthenticate.go:32: uigsdoiaf
+TRACE: 2017/03/21 09:42:38 aunthenticate.go:36: calling  daoimpl
+TRACE: 2017/03/21 09:42:38 authenticatetokenimpl.go:49: in AunthenticateToken function
+TRACE: 2017/03/21 09:42:39 authenticatetokenimpl.go:54: No uid with that token.
+TRACE: 2017/03/21 09:42:39 authenticatetokenimpl.go:60: 
+TRACE: 2017/03/21 09:42:39 authenticatetokenimpl.go:63: 0001-01-01 00:00:00 +0000 UTC
+TRACE: 2017/03/21 09:42:39 aunthenticate.go:38:  0001-01-01 00:00:00 +0000 UTC
