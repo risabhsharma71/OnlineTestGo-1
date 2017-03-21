@@ -26,6 +26,7 @@ func Register(user models.User) int64 {
 		}
 	}
 
+	user.UserType = "user"
 	log.Println("calling userDao.SaveNewUser() function")
 	insertedid, err := userDao.SaveNewUser(user)
 	if err != nil {
