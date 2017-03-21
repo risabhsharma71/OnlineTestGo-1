@@ -11,8 +11,12 @@ import (
 var questionDao interfaces.QuestionDao
 
 func CalculateScore(answerList []models.Answer) int {
+
 	utility.GetLogger()
 	log.Println("entering manager.CalculateScore()")
+
+	log.Println("calling Answer manager")
+
 	questionDao := daoimpl.QuestionImpl{}
 	answerDao := daoimpl.AnswerImpl{}
 

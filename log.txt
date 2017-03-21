@@ -1809,6 +1809,40 @@ TRACE: 2017/03/20 20:18:34 debug.go:45: [GIN-debug] GET    /logout              
 TRACE: 2017/03/20 20:18:34 debug.go:45: [GIN-debug] Listening and serving HTTP on :8083
 TRACE: 2017/03/20 20:18:39 register.go:17: calling register manager
 TRACE: 2017/03/20 20:18:41 userimpl.go:50: read tcp 192.168.0.8:61461->54.218.55.72:22: use of closed network connection
+<<<<<<< HEAD
+TRACE: 2017/03/21 10:19:17 debug.go:45: [GIN-debug] [WARNING] Running in "debug" mode. Switch to "release" mode in production.
+ - using env:	export GIN_MODE=release
+ - using code:	gin.SetMode(gin.ReleaseMode)
+
+TRACE: 2017/03/21 10:19:17 debug.go:45: [GIN-debug] POST   /registerUser             --> OnlineTestGo/webservice.RegisterUser (3 handlers)
+TRACE: 2017/03/21 10:19:17 debug.go:45: [GIN-debug] POST   /userAnswer               --> OnlineTestGo/webservice.AnswerList (3 handlers)
+TRACE: 2017/03/21 10:19:17 debug.go:45: [GIN-debug] GET    /questions                --> OnlineTestGo/webservice.QuestionList (3 handlers)
+TRACE: 2017/03/21 10:19:17 debug.go:45: [GIN-debug] POST   /addquestions             --> OnlineTestGo/webservice.AddQuestions (3 handlers)
+TRACE: 2017/03/21 10:19:17 debug.go:45: [GIN-debug] GET    /testService              --> OnlineTestGo/webservice.TestService (3 handlers)
+TRACE: 2017/03/21 10:19:17 debug.go:45: [GIN-debug] GET    /admin                    --> OnlineTestGo/webservice.Admin (3 handlers)
+TRACE: 2017/03/21 10:19:17 debug.go:45: [GIN-debug] POST   /mocklogin                --> OnlineTestGo/webservice.Mocklogin (3 handlers)
+TRACE: 2017/03/21 10:19:17 debug.go:45: [GIN-debug] GET    /mocklogout               --> OnlineTestGo/webservice.Mocklogout (3 handlers)
+TRACE: 2017/03/21 10:19:17 debug.go:45: [GIN-debug] GET    /logout                   --> OnlineTestGo/webservice.Logout (3 handlers)
+TRACE: 2017/03/21 10:19:17 debug.go:45: [GIN-debug] Listening and serving HTTP on :8083
+TRACE: 2017/03/21 10:20:53 register.go:17: calling register manager
+TRACE: 2017/03/21 10:20:55 userimpl.go:50: read tcp 192.168.0.8:54543->54.218.55.72:22: use of closed network connection
+TRACE: 2017/03/21 10:24:37 debug.go:45: [GIN-debug] [WARNING] Running in "debug" mode. Switch to "release" mode in production.
+ - using env:	export GIN_MODE=release
+ - using code:	gin.SetMode(gin.ReleaseMode)
+
+TRACE: 2017/03/21 10:24:37 debug.go:45: [GIN-debug] POST   /registerUser             --> OnlineTestGo/webservice.RegisterUser (3 handlers)
+TRACE: 2017/03/21 10:24:37 debug.go:45: [GIN-debug] POST   /userAnswer               --> OnlineTestGo/webservice.AnswerList (3 handlers)
+TRACE: 2017/03/21 10:24:37 debug.go:45: [GIN-debug] GET    /questions                --> OnlineTestGo/webservice.QuestionList (3 handlers)
+TRACE: 2017/03/21 10:24:37 debug.go:45: [GIN-debug] POST   /addquestions             --> OnlineTestGo/webservice.AddQuestions (3 handlers)
+TRACE: 2017/03/21 10:24:37 debug.go:45: [GIN-debug] GET    /testService              --> OnlineTestGo/webservice.TestService (3 handlers)
+TRACE: 2017/03/21 10:24:37 debug.go:45: [GIN-debug] GET    /admin                    --> OnlineTestGo/webservice.Admin (3 handlers)
+TRACE: 2017/03/21 10:24:37 debug.go:45: [GIN-debug] POST   /mocklogin                --> OnlineTestGo/webservice.Mocklogin (3 handlers)
+TRACE: 2017/03/21 10:24:37 debug.go:45: [GIN-debug] GET    /mocklogout               --> OnlineTestGo/webservice.Mocklogout (3 handlers)
+TRACE: 2017/03/21 10:24:37 debug.go:45: [GIN-debug] GET    /logout                   --> OnlineTestGo/webservice.Logout (3 handlers)
+TRACE: 2017/03/21 10:24:37 debug.go:45: [GIN-debug] Listening and serving HTTP on :8083
+TRACE: 2017/03/21 10:24:40 register.go:17: calling register manager
+TRACE: 2017/03/21 10:24:42 userimpl.go:50: read tcp 192.168.0.8:54861->54.218.55.72:22: use of closed network connection
+=======
 >>>>>>> bf457ed1017c64a30df4e6a82766ab44507bbaa9
 <<<<<<< HEAD
 TRACE: 2017/03/21 09:35:14 debug.go:45: [GIN-debug] [WARNING] Running in "debug" mode. Switch to "release" mode in production.
@@ -1924,3 +1958,4 @@ TRACE: 2017/03/21 09:42:39 aunthenticate.go:38:  0001-01-01 00:00:00 +0000 UTC
 =======
 >>>>>>> 4a89b0d9b07c31b88debbb2b33a3bdd69a907690
 >>>>>>> 332019f49b651335537543b2acdb1504f471980c
+>>>>>>> 04a60f8fa27a4ae5d87172e7440c035b48ada607

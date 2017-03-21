@@ -1,7 +1,6 @@
 package main
 
 import (
-	"OnlineTestGo/utility"
 	"OnlineTestGo/webservice"
 
 	"fmt"
@@ -13,7 +12,7 @@ import (
 )
 
 func main() {
-	utility.GetLogger()
+	//	utility.GetLogger()
 	tracelog.Start(tracelog.LevelTrace)
 	tracelog.Trace("main", "main", " Trace")
 	tracelog.Info("main", "main", " Info")

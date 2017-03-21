@@ -4,16 +4,18 @@ import (
 	"OnlineTestGo/daos/daoimpl"
 	"OnlineTestGo/daos/interfaces"
 	"OnlineTestGo/models"
-	"log"
-
 	"OnlineTestGo/utility"
+	"log"
 )
 
 var userDao interfaces.UserDao
 
 func Register(user models.User) int64 {
+
 	utility.GetLogger()
 	log.Println("entering in  manager.Register() function")
+
+	log.Println("calling register manager")
 	userDao := daoimpl.UserImpl{}
 	log.Println("calling userDao.CheckUser function")
 	id, err := userDao.CheckUser(user)

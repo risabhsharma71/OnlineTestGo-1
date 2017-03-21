@@ -15,6 +15,8 @@ func Logout(c *gin.Context) {
 	token := c.Request.Header.Get("Authorization")
 	log.Println("calling manager.DeleteTokenLogin()")
 	message := manager.DeleteToken(token)
+
+	c.Header("Access-Control-Allow-Origin", "*")
 	c.Header("Access-Control-Allow-Headers", "access-control-allow-origin, access-control-allow-headers")
 	c.JSON(200, gin.H{
 		"status":  "sucess",

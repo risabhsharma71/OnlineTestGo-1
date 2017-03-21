@@ -12,9 +12,11 @@ type QuestionImpl struct{}
 func (dao QuestionImpl) FetchQuestionsByType(testtype string) []models.Question {
 	var totalquestions []models.TotalQuestion
 	var questionList []models.Question
+
 	utility.GetLogger()
 	log.Println("entering into FetchQuestionsByType()")
 	log.Println("executing query and Fetching Questions By Type ")
+
 	query := "SELECT A.id, A.question, B.choices FROM rpqbmysql.questions as A right join rpqbmysql.Options as B on A.id = B.qid where type = ?"
 
 	db := connection()
@@ -73,12 +75,14 @@ func (dao QuestionImpl) FetchQuestionsByType(testtype string) []models.Question 
 }
 
 func (dao QuestionImpl) GetAnswerById(ID int64) string {
+
 	utility.GetLogger()
-	log.Println("entering GetAnswerById() ")
+	log.Println("entering in GetAnswerById() ")
+
 	db := connection()
 	defer db.Close()
 	answer := ""
-	log.Println("executing query")
+	log.Println("executing query and fetching answers ")
 	err := db.QueryRow("select answers from rpqbmysql.Options where answers != '0' && qid=?", ID).Scan(&answer)
 
 	switch {
@@ -101,6 +105,9 @@ func addOption(id int64, options string, answer string) error {
 	utility.GetLogger()
 	log.Println("entering into addoption function")
 	log.Println("executing query and storing options to corresponding questions into db")
+
+	log.Println("calling addoption function")
+
 	query := "INSERT INTO Options (qid,choices,answers) VALUES(?,?,?)"
 
 	stmt, err := db.Prepare(query)
@@ -110,6 +117,8 @@ func addOption(id int64, options string, answer string) error {
 	}
 
 	defer stmt.Close()
+
+	log.Println("reached to execution")
 
 	res, err := stmt.Exec(id, options, answer)
 	log.Println(res)
@@ -129,6 +138,9 @@ func (dao QuestionImpl) AddQuestion(question models.Question) (int64, error) {
 	utility.GetLogger()
 	log.Println("entering in AddQuestion() function")
 	log.Println("executing query and storing questions into database")
+
+	log.Println("calling addquestion function")
+
 	query := "INSERT INTO questions (question,type) VALUES (?, ?)"
 
 	stmt, err := db.Prepare(query)
@@ -151,6 +163,9 @@ func (dao QuestionImpl) AddQuestion(question models.Question) (int64, error) {
 	Options := question.Options
 
 	log.Println("calling addoption function")
+
+	log.Println("options", Options)
+
 	for i := 0; i < len(Options); i++ {
 
 		addOption(id, Options[i], question.UserAnswer)

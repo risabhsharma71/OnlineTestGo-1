@@ -13,9 +13,10 @@ import (
 func AddQuestion(question models.Question) int64 {
 	utility.GetLogger()
 	log.Println("entering into manager.AddQuestion")
-	questionDao := daoimpl.QuestionImpl{}
 
+	questionDao := daoimpl.QuestionImpl{}
 	log.Println("calling questionDao.AddQuestion()")
+
 	insertedid, err := questionDao.AddQuestion(question)
 	if err != nil {
 		log.Println("error occured", err)
