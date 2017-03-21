@@ -10,7 +10,9 @@ import (
 type UserImpl struct{}
 
 func (dao UserImpl) SaveNewUser(user models.User) (int64, error) {
-
+	utility.GetLogger()
+	log.Println("entering in SaveNewUser() function")
+	log.Println("executing query and storing registration details")
 	query := "insert into registration(fname, lname, phone, email,password) values(?,?,?,?,?)"
 	db := connection()
 	defer db.Close()
@@ -40,9 +42,11 @@ func (dao UserImpl) SaveNewUser(user models.User) (int64, error) {
 }
 
 func (dao UserImpl) CheckUser(user models.User) (int64, error) {
-
+	utility.GetLogger()
+	log.Println("entering in userDao.CheckUser()...")
 	var id int64
 	phone := user.Phone
+	log.Println("executing query and checking user exists")
 	query := "select phone from registration where phone = ?"
 	db := connection()
 
@@ -68,9 +72,9 @@ func (dao UserImpl) AuthenticateUser(user models.User) models.User {
 
 	utility.GetLogger()
 
-	log.Println("entering AuthenticateUser Impl")
+	log.Println("entering in AuthenticateUser()")
 
-	log.Println("Executing query..")
+	log.Println("Executing query and authenticating user exist")
 	query := "select id, fname, lname, phone, usertype from registration where email=? and password = ?"
 	db := connection()
 	defer db.Close()

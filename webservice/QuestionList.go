@@ -1,44 +1,44 @@
 package webservice
 
 import (
+	"OnlineTestGo/filter"
 	"OnlineTestGo/manager"
-        "OnlineTestGo/filter"
-	"github.com/gin-gonic/gin"
+	"OnlineTestGo/utility"
 	"log"
-	   "OnlineTestGo/utility"
+
+	"github.com/gin-gonic/gin"
 )
 
 func QuestionList(c *gin.Context) {
-	//recieving query param "testtype"
+
 	utility.GetLogger()
+	log.Println("entering into manager.QuestionList()")
 	testtype := c.Query("testtype")
-token := c.Request.Header.Get("Authorization")
-    log.Println(testtype)
+	token := c.Request.Header.Get("Authorization")
+	log.Println(testtype)
 	log.Println(token)
-	 bool:= filter.AuthenticateToken(token)
-	//utility.GetToken(token)
-    if bool==true{
-	Qlist := manager.FetchQuestion(testtype)
-	c.Header("Access-Control-Allow-Origin", "*")
-	c.Header("Access-Control-Allow-Headers", "access-control-allow-origin, access-control-allow-headers")
+	log.Println("calling filter.AuntheticateToken()")
+	bool := filter.AuthenticateToken(token)
+	
+	if bool == true {
+		log.Println("calling manager.FetchQuestion()")
+		Qlist := manager.FetchQuestion(testtype)
+		c.Header("Access-Control-Allow-Origin", "*")
+		c.Header("Access-Control-Allow-Headers", "access-control-allow-origin, access-control-allow-headers")
 
-	c.JSON(200, gin.H{
-		"status":  "success",
-		"message": Qlist,
-	})
+		c.JSON(200, gin.H{
+			"status":  "success",
+			"message": Qlist,
+		})
 
-}else{
+	} else {
 
-c.Header("Access-Control-Allow-Origin", "*")
-	c.Header("Access-Control-Allow-Headers", "access-control-allow-origin, access-control-allow-headers")
-	c.JSON(401, gin.H{
-		"status":  "failure",
-		"message": "you dont have permission to acces",
-	})
+		c.Header("Access-Control-Allow-Origin", "*")
+		c.Header("Access-Control-Allow-Headers", "access-control-allow-origin, access-control-allow-headers")
+		c.JSON(401, gin.H{
+			"status":  "failure",
+			"message": "you dont have permission to acces",
+		})
 
-
-
-
-
-}
+	}
 }

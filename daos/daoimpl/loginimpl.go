@@ -2,6 +2,7 @@ package daoimpl
 
 import (
 	"OnlineTestGo/models"
+	"OnlineTestGo/utility"
 	"fmt"
 	"log"
 	"time"
@@ -10,6 +11,9 @@ import (
 type LoginImpl struct{}
 
 func (dao LoginImpl) SaveToken(token models.Token) (int64, error) {
+	utility.GetLogger()
+	log.Println("exntering in SaveToken() function")
+	log.Println("executing query and storing token in database for the user ")
 	query := "insert  into Token(uid,token,lastaccesstime) values (?,?,?)"
 	db := connection()
 	defer db.Close()
