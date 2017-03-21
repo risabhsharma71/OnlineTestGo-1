@@ -7,17 +7,21 @@ import (
 
 	"OnlineTestGo/manager"
 
+	"OnlineTestGo/utility"
+
 	"github.com/gin-gonic/gin"
 
 	"OnlineTestGo/models"
 )
 
 func AnswerList(c *gin.Context) {
+	utility.GetLogger()
 
-	//Answer list recieves a list of answers
+	log.Println("entering webservice.AnswerLIst()")
 	var answer []models.Answer
 	c.BindJSON(&answer)
 	log.Println(answer)
+	log.Println("calling manager.CalculateScore()")
 	score := manager.CalculateScore(answer)
 
 	fmt.Println("answerlist", score)

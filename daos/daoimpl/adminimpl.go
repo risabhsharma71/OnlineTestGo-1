@@ -2,13 +2,20 @@ package daoimpl
 
 import (
 	"OnlineTestGo/models"
+	"OnlineTestGo/utility"
 	"log"
 )
 
 type AdminImpl struct{}
 
 func (dao AdminImpl) FetchData() []models.Admin {
+
 	var datas []models.Admin
+
+	utility.GetLogger()
+	log.Println("entering FetchData()")
+
+	log.Println("executing query and Fetching data from db ")
 
 	query := "select c.uid,a.fname,a.lname,b.type,c.score from rpqbmysql.registration a,rpqbmysql.questions b,rpqbmysql.answers c where b.id=c.uid"
 
@@ -33,7 +40,6 @@ func (dao AdminImpl) FetchData() []models.Admin {
 		datas = append(datas, data)
 
 	}
-	//log.Println("data:",data)
 
 	return datas
 }

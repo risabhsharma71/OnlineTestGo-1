@@ -1,13 +1,18 @@
 package daoimpl
 
 import (
+	"OnlineTestGo/utility"
+
 	"log"
 )
 
 type LogoutImpl struct{}
 
 func (dao LogoutImpl) DeleteToken(token string) string {
+	utility.GetLogger()
+	log.Println("exntering in DeleteToken() function")
 	deltoken := "notfoud"
+	log.Println("executing query and deleting token from database ")
 	query := "DELETE FROM token WHERE token=?"
 
 	db, conn := connectaws()

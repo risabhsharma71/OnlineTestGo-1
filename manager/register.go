@@ -4,17 +4,20 @@ import (
 	"OnlineTestGo/daos/daoimpl"
 	"OnlineTestGo/daos/interfaces"
 	"OnlineTestGo/models"
+	"OnlineTestGo/utility"
 	"log"
-	//"OnlineTestGo/utility"
 )
 
 var userDao interfaces.UserDao
 
-//Register manager takes care of business logic like calling daos
 func Register(user models.User) int64 {
-	//	utility.GetLogger()
+
+	utility.GetLogger()
+	log.Println("entering in  manager.Register() function")
+
 	log.Println("calling register manager")
 	userDao := daoimpl.UserImpl{}
+	log.Println("calling userDao.CheckUser function")
 	id, err := userDao.CheckUser(user)
 	{
 		if id != 0 {
@@ -22,7 +25,8 @@ func Register(user models.User) int64 {
 			log.Println(id)
 		}
 	}
-	//insert user info first
+
+	log.Println("calling userDao.SaveNewUser() function")
 	insertedid, err := userDao.SaveNewUser(user)
 	if err != nil {
 		log.Println("error occured", err)

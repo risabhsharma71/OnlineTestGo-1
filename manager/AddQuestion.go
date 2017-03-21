@@ -2,17 +2,20 @@ package manager
 
 import (
 	"OnlineTestGo/daos/daoimpl"
-	//"OnlineTestGo/daos/interfaces"
+
 	"OnlineTestGo/models"
-	//"fmt"
+
 	"log"
-	//  "OnlineTestGo/utility"
+
+	"OnlineTestGo/utility"
 )
 
 func AddQuestion(question models.Question) int64 {
-	// utility.GetLogger()
-	log.Println("calling register manager")
+	utility.GetLogger()
+	log.Println("entering into manager.AddQuestion")
+
 	questionDao := daoimpl.QuestionImpl{}
+	log.Println("calling questionDao.AddQuestion()")
 
 	insertedid, err := questionDao.AddQuestion(question)
 	if err != nil {
