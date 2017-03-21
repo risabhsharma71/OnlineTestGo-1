@@ -19,7 +19,7 @@ func QuestionList(c *gin.Context) {
 	log.Println(token)
 	log.Println("calling filter.AuntheticateToken()")
 	bool := filter.AuthenticateToken(token)
-	
+
 	if bool == true {
 		log.Println("calling manager.FetchQuestion()")
 		Qlist := manager.FetchQuestion(testtype)

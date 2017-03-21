@@ -70,9 +70,11 @@ func (dao QuestionImpl) FetchQuestionsByType(testtype string) []models.Question 
 
 	}
 	questionList[n].Options = options
+	for i := 0; i < len(questionList); i++ {
+		questionList[i].Qno = i + 1
 
+	}
 	return questionList
-
 }
 
 func (dao QuestionImpl) GetAnswerById(ID int64) string {
