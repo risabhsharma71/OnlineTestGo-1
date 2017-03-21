@@ -2445,3 +2445,10 @@ TRACE: 2017/03/21 16:59:54 debug.go:45: [GIN-debug] [WARNING] Running in "debug"
 TRACE: 2017/03/21 16:59:54 debug.go:45: [GIN-debug] GET    /testService              --> OnlineTestGo/webservice.TestService (3 handlers)
 TRACE: 2017/03/21 16:59:54 debug.go:45: [GIN-debug] GET    /questions                --> OnlineTestGo/webservice.QuestionList (3 handlers)
 TRACE: 2017/03/21 16:59:54 debug.go:45: [GIN-debug] Listening and serving HTTP on :8085
+TRACE: 2017/03/21 17:04:53 debug.go:45: [GIN-debug] [WARNING] Running in "debug" mode. Switch to "release" mode in production.
+ - using env:	export GIN_MODE=release
+ - using code:	gin.SetMode(gin.ReleaseMode)
+
+TRACE: 2017/03/21 17:04:53 debug.go:45: [GIN-debug] GET    /testService              --> OnlineTestGo/webservice.TestService (3 handlers)
+TRACE: 2017/03/21 17:04:53 debug.go:45: [GIN-debug] GET    /questions                --> OnlineTestGo/webservice.QuestionList (3 handlers)
+TRACE: 2017/03/21 17:04:53 debug.go:45: [GIN-debug] Listening and serving HTTP on :8085
