@@ -2,13 +2,10 @@ package manager
 
 import (
 	"OnlineTestGo/daos/daoimpl"
-	"OnlineTestGo/daos/interfaces"
 	"OnlineTestGo/models"
 	"OnlineTestGo/utility"
 	"log"
 )
-
-var questionDao1 interfaces.QuestionDao
 
 func FetchQuestion(testtype string) []models.Question {
 

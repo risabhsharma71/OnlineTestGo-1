@@ -1,11 +1,10 @@
 package daoimpl
 
 import (
+	"OnlineTestGo/utility"
 	"database/sql"
 	"log"
 	"time"
-	//  "OnlineTestGo/models"
-	"OnlineTestGo/utility"
 )
 
 type TokenImpl struct{}
