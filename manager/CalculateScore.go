@@ -4,14 +4,14 @@ import (
 	"OnlineTestGo/daos/daoimpl"
 	"OnlineTestGo/daos/interfaces"
 	"OnlineTestGo/models"
-	"OnlineTestGo/utility"
+	//	"OnlineTestGo/utility"
 	"log"
 )
 
 var questionDao interfaces.QuestionDao
 
 func CalculateScore(answerList []models.Answer) int {
-	utility.GetLogger()
+	//	utility.GetLogger()
 	log.Println("calling Answer manager")
 	questionDao := daoimpl.QuestionImpl{}
 	answerDao := daoimpl.AnswerImpl{}

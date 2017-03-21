@@ -5,14 +5,13 @@ import (
 	"OnlineTestGo/daos/interfaces"
 	"OnlineTestGo/models"
 	"log"
-
-	"OnlineTestGo/utility"
+	//	"OnlineTestGo/utility"
 )
 
 var questionDao1 interfaces.QuestionDao
 
 func FetchQuestion(testtype string) []models.Question {
-	utility.GetLogger()
+	//	utility.GetLogger()
 	log.Println("calling Question manager")
 	questionDao1 := daoimpl.QuestionImpl{}
 	return questionDao1.FetchQuestionsByType(testtype)

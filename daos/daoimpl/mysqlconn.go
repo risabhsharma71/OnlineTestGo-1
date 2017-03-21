@@ -1,7 +1,7 @@
 package daoimpl
 
 import (
-	"OnlineTestGo/utility"
+	//"fmt"
 	"database/sql"
 	"fmt"
 	"log"
@@ -13,6 +13,16 @@ import (
 	"golang.org/x/crypto/ssh/agent"
 )
 
+func connection() *sql.DB {
+	db, err := sql.Open("mysql",
+		"umashankar:Rpqb123@tcp(db4free.net:3306)/rpqbmysql")
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	return db
+}
+
 type ViaSSHDialer struct {
 	client *ssh.Client
 }
@@ -22,7 +32,7 @@ func (self *ViaSSHDialer) Dial(addr string) (net.Conn, error) {
 }
 
 func connectaws() *sql.DB {
-	utility.GetLogger()
+
 	sshHost := "ec2-54-218-55-72.us-west-2.compute.amazonaws.com" // SSH Server Hostname/IP
 	sshPort := 22                                                 // SSH Port
 	sshUser := "risabh"                                           // SSH Username
@@ -69,17 +79,14 @@ func connectaws() *sql.DB {
 		if db, err := sql.Open("mysql", fmt.Sprintf("%s:%s@mysql+tcp(%s)/%s", dbUser, dbPass, dbHost, dbName)); err == nil {
 
 			fmt.Printf("Successfully connected to the db\n")
-
 			return db
+			db.Close()
 
 		} else {
 
 			fmt.Printf("Failed to connect to the db: %s\n", err.Error())
 		}
-		log.Println(nil, "1st")
 		return nil
-
 	}
-	log.Println(nil, "2nd")
 	return nil
 }

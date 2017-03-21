@@ -3,7 +3,6 @@ package manager
 import (
 	"OnlineTestGo/models"
 	"OnlineTestGo/tos"
-	"OnlineTestGo/utility"
 	"fmt"
 	"log"
 	"math/rand"
@@ -14,7 +13,7 @@ func AuthenticateUser(user models.User) tos.Tokento {
 
 	var tokenTo tos.Tokento
 	//if user==
-	utility.GetLogger()
+	//	utility.GetLogger()
 	log.Println("calling Login manager")
 	//token := GenerateToken()
 	//tokenDao := daoimpl.TokenImpl{}
