@@ -1,16 +1,11 @@
 package daoimpl
 
 import (
-	//"fmt"
-	"database/sql"
 	"fmt"
+	"database/sql"
 	"log"
-	"net"
-	"os"
 
-	"github.com/go-sql-driver/mysql"
-	"golang.org/x/crypto/ssh"
-	"golang.org/x/crypto/ssh/agent"
+	_ "github.com/go-sql-driver/mysql"
 )
 
 func connection() *sql.DB {
@@ -89,4 +84,5 @@ func connectaws() *sql.DB {
 		return nil
 	}
 	return nil
+
 }

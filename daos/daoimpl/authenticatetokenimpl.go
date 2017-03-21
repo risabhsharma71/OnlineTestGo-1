@@ -1,11 +1,11 @@
 package daoimpl
 
 import (
-	"OnlineTestGo/models"
 	"database/sql"
 	"log"
 	"time"
-	//"OnlineTestGo/utility"
+	//  "OnlineTestGo/models"
+	"OnlineTestGo/utility"
 )
 
 //TypeImpl is a implementation for type interface
@@ -16,8 +16,8 @@ func (dao TokenImpl) ModifyLastAccessTime(currentime time.Time, tokenEncodeStrin
 	db := connection()
 	defer db.Close()
 
-	//	utility.GetLogger()
-	log.Println("calling  function")
+	utility.GetLogger()
+	log.Println("In modifyfunction")
 	query := "update  token set lastaccesstime=? where token=? "
 	log.Println("after query execution")
 
@@ -28,7 +28,7 @@ func (dao TokenImpl) ModifyLastAccessTime(currentime time.Time, tokenEncodeStrin
 	}
 
 	defer stmt.Close()
-	log.Println("reached to execution")
+	log.Println("reached to modifyexecution")
 	res, err := stmt.Exec(currentime, tokenEncodeString)
 	log.Println(res)
 	val, err := res.LastInsertId()
@@ -42,9 +42,12 @@ func (dao TokenImpl) ModifyLastAccessTime(currentime time.Time, tokenEncodeStrin
 func (dao TokenImpl) AunthenticateToken(tokenEncodeString string) (string, time.Time) {
 	//var token string
 	//var lastaccesstime time.Time
+	utility.GetLogger()
 	db := connection()
-	var token models.Token
-	err := db.QueryRow("select token,lastaccesstime from token where token=?", tokenEncodeString).Scan(&token.Token, &token.LastAccessTime)
+	token := ""
+	lastaccesstime := ""
+	log.Println("in AunthenticateToken function")
+	err := db.QueryRow("select token,lastaccesstime from token where token=?", tokenEncodeString).Scan(&token, &lastaccesstime)
 
 	switch {
 	case err == sql.ErrNoRows:
@@ -54,17 +57,18 @@ func (dao TokenImpl) AunthenticateToken(tokenEncodeString string) (string, time.
 	default:
 		log.Printf("Type is %v\n", token)
 	}
-
-	tokens := token.Token
-	lastaccesstime := token.LastAccessTime
-	return tokens, lastaccesstime
+	log.Println(lastaccesstime)
+	const layOut1 = "2006-01-02 15:04:05"
+	timeStamp1, err := time.Parse(layOut1, lastaccesstime)
+	log.Println(timeStamp1)
+	return token, timeStamp1
 }
-func (dao TokenImpl) DeleteToken(deletetoken string) error {
+func (dao TokenImpl) DeleteToken(deletetoken string) bool {
 	db := connection()
 	defer db.Close()
 	//var token models.Token
-	//	utility.GetLogger()
-	log.Println("calling  function")
+	utility.GetLogger()
+	log.Println("calling DeleteToken function")
 	query := "delete  from token where token=?"
 	log.Println("after query execution")
 
@@ -78,11 +82,11 @@ func (dao TokenImpl) DeleteToken(deletetoken string) error {
 	log.Println("reached to execution")
 	res, err := stmt.Exec(deletetoken)
 	log.Println(res)
-	val, err := res.LastInsertId()
+	//val, err := res.LastInsertId()
 	if err != nil {
-		return err
+		log.Println(err)
 	}
-	log.Println(val, err)
-	return nil
+	//log.Println(val)
+	return true
 
 }
