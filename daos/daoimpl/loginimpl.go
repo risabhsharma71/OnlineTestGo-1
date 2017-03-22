@@ -12,12 +12,12 @@ type LoginImpl struct{}
 
 func (dao LoginImpl) SaveToken(token models.Token) (int64, error) {
 	utility.GetLogger()
-	log.Println("exntering in SaveToken() function")
+	log.Println("exntering in SaveToken() function", token)
 	log.Println("executing query and storing token in database for the user ")
-	query := "insert  into Token(uid,token,lastaccesstime) values (?,?,?)"
+	query := "insert into token(uid,token,lastaccesstime) values (?,?,?)"
 	db, conn := connectaws()
-	fmt.Println("token inserted")
-	fmt.Println(token)
+	log.Println("token inserted")
+	log.Println(token)
 
 	defer db.Close()
 	defer conn.Close()
@@ -35,6 +35,7 @@ func (dao LoginImpl) SaveToken(token models.Token) (int64, error) {
 	}
 
 	id, err := res.LastInsertId()
+	log.Println("last inserted id:", id)
 	if err != nil {
 		log.Println("Exec err:", err.Error())
 	}

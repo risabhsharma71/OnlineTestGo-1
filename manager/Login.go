@@ -38,7 +38,7 @@ func Login(user models.User) tos.Tokento {
 		}
 
 		//copy the valuuse to tokenObj if insertion intoken table is successful
-		if id == 0 {
+		if id != 0 {
 			tokenObj.Token = token
 			tokenObj.Fname = userObj.Fname
 			tokenObj.Uid = userObj.ID

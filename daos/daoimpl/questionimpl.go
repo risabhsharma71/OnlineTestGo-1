@@ -17,14 +17,14 @@ func (dao QuestionImpl) FetchQuestionsByType(testtype string) []models.Question 
 	log.Println("entering into FetchQuestionsByType()")
 	log.Println("executing query and Fetching Questions By Type ")
 
-	query := "SELECT A.id, A.question, B.choices FROM rpqbmysql.questions as A right join rpqbmysql.Options as B on A.id = B.qid where type = ?"
+	query := "SELECT A.id, A.question, B.choices FROM onlinetestdb.questions as A right join onlinetestdb.Options as B on A.id = B.qid where type = ?"
 
 	db, conn := connectaws()
 	defer db.Close()
 	defer conn.Close()
-
+	log.Println(db)
 	rows, err := db.Query(query, testtype)
-
+	log.Println(rows)
 	if err != nil {
 		log.Fatal(err)
 	}

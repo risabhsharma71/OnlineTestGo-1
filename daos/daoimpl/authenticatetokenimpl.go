@@ -44,13 +44,15 @@ func (dao TokenImpl) AunthenticateToken(tokenEncodeString string) (string, time.
 	defer conn.Close()
 	token := ""
 	lastaccesstime := ""
+	log.Println(tokenEncodeString)
 	log.Println("entering in AunthenticateToken() function")
 	log.Println("executing query fetching and returning token,lastaccesstime")
 	err := db.QueryRow("select token,lastaccesstime from token where token=?", tokenEncodeString).Scan(&token, &lastaccesstime)
-
+	log.Println(token)
 	switch {
 	case err == sql.ErrNoRows:
 		log.Printf("No uid with that token.")
+
 	case err != nil:
 		log.Fatal(err)
 	default:
