@@ -89,7 +89,7 @@ func (dao QuestionImpl) GetAnswerById(ID int64) string {
 	defer conn.Close()
 	answer := ""
 	log.Println("executing query and fetching answers ")
-	err := db.QueryRow("select answers from rpqbmysql.Options where answers != '0' && qid=?", ID).Scan(&answer)
+	err := db.QueryRow("select answers from onlinetestdb.Options where answers != '0' && qid=?", ID).Scan(&answer)
 
 	switch {
 	case err == sql.ErrNoRows:
