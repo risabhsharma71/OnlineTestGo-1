@@ -2194,3 +2194,23 @@ TRACE: 2017/03/21 16:42:53 FetchQuestion.go:15: calling Question manager
 TRACE: 2017/03/21 16:42:53 FetchQuestion.go:18: calling FetchQuestionsByType()
 TRACE: 2017/03/21 16:42:53 questionimpl.go:17: entering into FetchQuestionsByType()
 TRACE: 2017/03/21 16:42:53 questionimpl.go:18: executing query and Fetching Questions By Type 
+TRACE: 2017/03/22 20:51:13 debug.go:45: [GIN-debug] [WARNING] Running in "debug" mode. Switch to "release" mode in production.
+ - using env:	export GIN_MODE=release
+ - using code:	gin.SetMode(gin.ReleaseMode)
+
+TRACE: 2017/03/22 20:51:13 debug.go:45: [GIN-debug] GET    /testService              --> OnlineTestGo/webservice.TestService (3 handlers)
+TRACE: 2017/03/22 20:51:13 debug.go:45: [GIN-debug] POST   /registerUser             --> OnlineTestGo/webservice.RegisterUser (3 handlers)
+TRACE: 2017/03/22 20:51:13 debug.go:45: [GIN-debug] POST   /login                    --> OnlineTestGo/webservice.Login (3 handlers)
+TRACE: 2017/03/22 20:51:13 debug.go:45: [GIN-debug] GET    /questions                --> OnlineTestGo/webservice.QuestionList (3 handlers)
+TRACE: 2017/03/22 20:51:13 debug.go:45: [GIN-debug] POST   /userAnswer               --> OnlineTestGo/webservice.AnswerList (3 handlers)
+TRACE: 2017/03/22 20:51:13 debug.go:45: [GIN-debug] GET    /admin                    --> OnlineTestGo/webservice.Admin (3 handlers)
+TRACE: 2017/03/22 20:51:13 debug.go:45: [GIN-debug] POST   /addquestions             --> OnlineTestGo/webservice.AddQuestions (3 handlers)
+TRACE: 2017/03/22 20:51:13 debug.go:45: [GIN-debug] GET    /logout                   --> OnlineTestGo/webservice.Logout (3 handlers)
+TRACE: 2017/03/22 20:51:13 debug.go:45: [GIN-debug] Listening and serving HTTP on :8083
+TRACE: 2017/03/22 20:53:54 RegisterUser.go:14: entering in webservice.RegisterUser
+TRACE: 2017/03/22 20:53:54 RegisterUser.go:18: calling manager.Register function
+TRACE: 2017/03/22 20:53:54 register.go:16: entering in  manager.Register() function
+TRACE: 2017/03/22 20:53:54 register.go:18: calling register manager
+TRACE: 2017/03/22 20:53:54 register.go:20: calling userDao.CheckUser function
+TRACE: 2017/03/22 20:53:54 userimpl.go:46: entering in userDao.CheckUser()...
+TRACE: 2017/03/22 20:53:54 userimpl.go:49: executing query and checking user exists
