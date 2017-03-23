@@ -1924,3 +1924,82 @@ TRACE: 2017/03/21 09:42:39 aunthenticate.go:38:  0001-01-01 00:00:00 +0000 UTC
 =======
 >>>>>>> 4a89b0d9b07c31b88debbb2b33a3bdd69a907690
 >>>>>>> 332019f49b651335537543b2acdb1504f471980c
+TRACE: 2017/03/21 15:14:29 debug.go:45: [GIN-debug] [WARNING] Running in "debug" mode. Switch to "release" mode in production.
+ - using env:	export GIN_MODE=release
+ - using code:	gin.SetMode(gin.ReleaseMode)
+
+TRACE: 2017/03/21 15:14:29 debug.go:45: [GIN-debug] POST   /registerUser             --> OnlineTestGo/webservice.RegisterUser (3 handlers)
+TRACE: 2017/03/21 15:14:29 debug.go:45: [GIN-debug] POST   /userAnswer               --> OnlineTestGo/webservice.AnswerList (3 handlers)
+TRACE: 2017/03/21 15:14:29 debug.go:45: [GIN-debug] GET    /questions                --> OnlineTestGo/webservice.QuestionList (3 handlers)
+TRACE: 2017/03/21 15:14:29 debug.go:45: [GIN-debug] POST   /addquestions             --> OnlineTestGo/webservice.AddQuestions (3 handlers)
+TRACE: 2017/03/21 15:14:29 debug.go:45: [GIN-debug] GET    /testService              --> OnlineTestGo/webservice.TestService (3 handlers)
+TRACE: 2017/03/21 15:14:29 debug.go:45: [GIN-debug] GET    /admin                    --> OnlineTestGo/webservice.Admin (3 handlers)
+TRACE: 2017/03/21 15:14:29 debug.go:45: [GIN-debug] POST   /mocklogin                --> OnlineTestGo/webservice.Mocklogin (3 handlers)
+TRACE: 2017/03/21 15:14:29 debug.go:45: [GIN-debug] GET    /mocklogout               --> OnlineTestGo/webservice.Mocklogout (3 handlers)
+TRACE: 2017/03/21 15:14:29 debug.go:45: [GIN-debug] POST   /login                    --> OnlineTestGo/webservice.Login (3 handlers)
+TRACE: 2017/03/21 15:14:29 debug.go:45: [GIN-debug] GET    /logout                   --> OnlineTestGo/webservice.Logout (3 handlers)
+TRACE: 2017/03/21 15:14:29 debug.go:45: [GIN-debug] Listening and serving HTTP on :8083
+TRACE: 2017/03/21 15:14:29 debug.go:45: [GIN-debug] [ERROR] listen tcp :8083: bind: Only one usage of each socket address (protocol/network address/port) is normally permitted.
+TRACE: 2017/03/23 18:59:34 debug.go:45: [GIN-debug] [WARNING] Running in "debug" mode. Switch to "release" mode in production.
+ - using env:	export GIN_MODE=release
+ - using code:	gin.SetMode(gin.ReleaseMode)
+
+TRACE: 2017/03/23 18:59:34 debug.go:45: [GIN-debug] POST   /registerUser             --> OnlineTestGo/webservice.RegisterUser (3 handlers)
+TRACE: 2017/03/23 18:59:34 debug.go:45: [GIN-debug] POST   /userAnswer               --> OnlineTestGo/webservice.AnswerList (3 handlers)
+TRACE: 2017/03/23 18:59:34 debug.go:45: [GIN-debug] GET    /questions                --> OnlineTestGo/webservice.QuestionList (3 handlers)
+TRACE: 2017/03/23 18:59:34 debug.go:45: [GIN-debug] POST   /addquestions             --> OnlineTestGo/webservice.AddQuestions (3 handlers)
+TRACE: 2017/03/23 18:59:34 debug.go:45: [GIN-debug] GET    /testService              --> OnlineTestGo/webservice.TestService (3 handlers)
+TRACE: 2017/03/23 18:59:34 debug.go:45: [GIN-debug] GET    /admin                    --> OnlineTestGo/webservice.Admin (3 handlers)
+TRACE: 2017/03/23 18:59:34 debug.go:45: [GIN-debug] POST   /mocklogin                --> OnlineTestGo/webservice.Mocklogin (3 handlers)
+TRACE: 2017/03/23 18:59:34 debug.go:45: [GIN-debug] GET    /mocklogout               --> OnlineTestGo/webservice.Mocklogout (3 handlers)
+TRACE: 2017/03/23 18:59:34 debug.go:45: [GIN-debug] POST   /login                    --> OnlineTestGo/webservice.Login (3 handlers)
+TRACE: 2017/03/23 18:59:34 debug.go:45: [GIN-debug] GET    /logout                   --> OnlineTestGo/webservice.Logout (3 handlers)
+TRACE: 2017/03/23 18:59:34 debug.go:45: [GIN-debug] Listening and serving HTTP on :8083
+TRACE: 2017/03/23 18:59:54 QuestionList.go:17: java
+TRACE: 2017/03/23 18:59:54 QuestionList.go:18: 
+TRACE: 2017/03/23 18:59:54 aunthenticate.go:22: 2014-12-29 06:00:00 +0000 SGT
+TRACE: 2017/03/23 18:59:54 aunthenticate.go:24: 6 0 0
+TRACE: 2017/03/23 18:59:54 aunthenticate.go:32: 
+TRACE: 2017/03/23 18:59:54 aunthenticate.go:36: calling  daoimpl
+TRACE: 2017/03/23 18:59:54 authenticatetokenimpl.go:49: in AunthenticateToken function
+TRACE: 2017/03/23 19:00:18 authenticatetokenimpl.go:54: No uid with that token.
+TRACE: 2017/03/23 19:00:18 authenticatetokenimpl.go:60: 
+TRACE: 2017/03/23 19:00:18 authenticatetokenimpl.go:63: 0001-01-01 00:00:00 +0000 UTC
+TRACE: 2017/03/23 19:00:18 aunthenticate.go:38:  0001-01-01 00:00:00 +0000 UTC
+TRACE: 2017/03/23 19:02:12 debug.go:45: [GIN-debug] [WARNING] Running in "debug" mode. Switch to "release" mode in production.
+ - using env:	export GIN_MODE=release
+ - using code:	gin.SetMode(gin.ReleaseMode)
+
+TRACE: 2017/03/23 19:02:12 debug.go:45: [GIN-debug] POST   /registerUser             --> OnlineTestGo/webservice.RegisterUser (3 handlers)
+TRACE: 2017/03/23 19:02:12 debug.go:45: [GIN-debug] POST   /userAnswer               --> OnlineTestGo/webservice.AnswerList (3 handlers)
+TRACE: 2017/03/23 19:02:12 debug.go:45: [GIN-debug] GET    /questions                --> OnlineTestGo/webservice.QuestionList (3 handlers)
+TRACE: 2017/03/23 19:02:12 debug.go:45: [GIN-debug] POST   /addquestions             --> OnlineTestGo/webservice.AddQuestions (3 handlers)
+TRACE: 2017/03/23 19:02:12 debug.go:45: [GIN-debug] GET    /testService              --> OnlineTestGo/webservice.TestService (3 handlers)
+TRACE: 2017/03/23 19:02:12 debug.go:45: [GIN-debug] GET    /admin                    --> OnlineTestGo/webservice.Admin (3 handlers)
+TRACE: 2017/03/23 19:02:12 debug.go:45: [GIN-debug] POST   /mocklogin                --> OnlineTestGo/webservice.Mocklogin (3 handlers)
+TRACE: 2017/03/23 19:02:12 debug.go:45: [GIN-debug] GET    /mocklogout               --> OnlineTestGo/webservice.Mocklogout (3 handlers)
+TRACE: 2017/03/23 19:02:12 debug.go:45: [GIN-debug] POST   /login                    --> OnlineTestGo/webservice.Login (3 handlers)
+TRACE: 2017/03/23 19:02:12 debug.go:45: [GIN-debug] GET    /logout                   --> OnlineTestGo/webservice.Logout (3 handlers)
+TRACE: 2017/03/23 19:02:12 debug.go:45: [GIN-debug] Listening and serving HTTP on :8083
+TRACE: 2017/03/23 19:02:14 QuestionList.go:17: java
+TRACE: 2017/03/23 19:02:14 QuestionList.go:18: ZURryxSOzVMSAFboiwix
+TRACE: 2017/03/23 19:02:14 aunthenticate.go:22: 2014-12-29 06:00:00 +0000 SGT
+TRACE: 2017/03/23 19:02:14 aunthenticate.go:24: 6 0 0
+TRACE: 2017/03/23 19:02:14 aunthenticate.go:32: ZURryxSOzVMSAFboiwix
+TRACE: 2017/03/23 19:02:14 aunthenticate.go:36: calling  daoimpl
+TRACE: 2017/03/23 19:02:14 authenticatetokenimpl.go:49: in AunthenticateToken function
+TRACE: 2017/03/23 19:02:47 QuestionList.go:17: java
+TRACE: 2017/03/23 19:02:47 QuestionList.go:18: ZURryxSOzVMSAFboiwix
+TRACE: 2017/03/23 19:02:47 aunthenticate.go:22: 2014-12-29 06:00:00 +0000 SGT
+TRACE: 2017/03/23 19:02:47 aunthenticate.go:24: 6 0 0
+TRACE: 2017/03/23 19:02:47 aunthenticate.go:32: ZURryxSOzVMSAFboiwix
+TRACE: 2017/03/23 19:02:47 aunthenticate.go:36: calling  daoimpl
+TRACE: 2017/03/23 19:02:47 authenticatetokenimpl.go:49: in AunthenticateToken function
+TRACE: 2017/03/23 19:03:04 authenticatetokenimpl.go:54: No uid with that token.
+TRACE: 2017/03/23 19:03:04 authenticatetokenimpl.go:60: 
+TRACE: 2017/03/23 19:03:04 authenticatetokenimpl.go:63: 0001-01-01 00:00:00 +0000 UTC
+TRACE: 2017/03/23 19:03:04 aunthenticate.go:38:  0001-01-01 00:00:00 +0000 UTC
+TRACE: 2017/03/23 19:03:04 authenticatetokenimpl.go:54: No uid with that token.
+TRACE: 2017/03/23 19:03:04 authenticatetokenimpl.go:60: 
+TRACE: 2017/03/23 19:03:04 authenticatetokenimpl.go:63: 0001-01-01 00:00:00 +0000 UTC
+TRACE: 2017/03/23 19:03:04 aunthenticate.go:38:  0001-01-01 00:00:00 +0000 UTC
