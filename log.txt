@@ -3676,3 +3676,412 @@ TRACE: 2017/03/22 11:18:02 authenticatetokenimpl.go:48: entering in Aunthenticat
 TRACE: 2017/03/22 11:18:02 authenticatetokenimpl.go:49: executing query fetching and returning token,lastaccesstime
 TRACE: 2017/03/22 11:18:04 authenticatetokenimpl.go:51: 
 TRACE: 2017/03/22 11:18:04 authenticatetokenimpl.go:54: No uid with that token.
+TRACE: 2017/03/23 14:11:21 debug.go:45: [GIN-debug] [WARNING] Running in "debug" mode. Switch to "release" mode in production.
+ - using env:	export GIN_MODE=release
+ - using code:	gin.SetMode(gin.ReleaseMode)
+
+TRACE: 2017/03/23 14:11:21 debug.go:45: [GIN-debug] GET    /testService              --> OnlineTestGo/webservice.TestService (3 handlers)
+TRACE: 2017/03/23 14:11:21 debug.go:45: [GIN-debug] POST   /registerUser             --> OnlineTestGo/webservice.RegisterUser (3 handlers)
+TRACE: 2017/03/23 14:11:21 debug.go:45: [GIN-debug] POST   /login                    --> OnlineTestGo/webservice.Login (3 handlers)
+TRACE: 2017/03/23 14:11:21 debug.go:45: [GIN-debug] GET    /questions                --> OnlineTestGo/webservice.QuestionList (3 handlers)
+TRACE: 2017/03/23 14:11:21 debug.go:45: [GIN-debug] POST   /userAnswer               --> OnlineTestGo/webservice.AnswerList (3 handlers)
+TRACE: 2017/03/23 14:11:21 debug.go:45: [GIN-debug] GET    /admin                    --> OnlineTestGo/webservice.Admin (3 handlers)
+TRACE: 2017/03/23 14:11:21 debug.go:45: [GIN-debug] POST   /addquestions             --> OnlineTestGo/webservice.AddQuestions (3 handlers)
+TRACE: 2017/03/23 14:11:21 debug.go:45: [GIN-debug] GET    /logout                   --> OnlineTestGo/webservice.Logout (3 handlers)
+TRACE: 2017/03/23 14:11:21 debug.go:45: [GIN-debug] Listening and serving HTTP on :8085
+TRACE: 2017/03/23 14:13:07 RegisterUser.go:14: entering in webservice.RegisterUser
+TRACE: 2017/03/23 14:13:07 RegisterUser.go:18: calling manager.Register function
+TRACE: 2017/03/23 14:13:07 register.go:16: entering in  manager.Register() function
+TRACE: 2017/03/23 14:13:07 register.go:18: calling register manager
+TRACE: 2017/03/23 14:13:07 register.go:20: calling userDao.CheckUser function
+TRACE: 2017/03/23 14:13:07 userimpl.go:46: entering in userDao.CheckUser()...
+TRACE: 2017/03/23 14:13:07 userimpl.go:49: executing query and checking user exists
+TRACE: 2017/03/23 14:13:11 register.go:30: calling userDao.SaveNewUser() function
+TRACE: 2017/03/23 14:13:11 userimpl.go:14: entering in SaveNewUser() function
+TRACE: 2017/03/23 14:13:11 userimpl.go:15: executing query and storing registration details
+TRACE: 2017/03/23 14:13:16 register.go:35: 163
+TRACE: 2017/03/23 14:13:16 debug.go:45: [GIN-debug] [WARNING] Headers were already written. Wanted to override status code 400 with 200
+TRACE: 2017/03/23 14:15:30 RegisterUser.go:14: entering in webservice.RegisterUser
+TRACE: 2017/03/23 14:15:30 RegisterUser.go:18: calling manager.Register function
+TRACE: 2017/03/23 14:15:30 register.go:16: entering in  manager.Register() function
+TRACE: 2017/03/23 14:15:30 register.go:18: calling register manager
+TRACE: 2017/03/23 14:15:30 register.go:20: calling userDao.CheckUser function
+TRACE: 2017/03/23 14:15:30 userimpl.go:46: entering in userDao.CheckUser()...
+TRACE: 2017/03/23 14:15:30 userimpl.go:49: executing query and checking user exists
+TRACE: 2017/03/23 14:15:34 register.go:30: calling userDao.SaveNewUser() function
+TRACE: 2017/03/23 14:15:34 userimpl.go:14: entering in SaveNewUser() function
+TRACE: 2017/03/23 14:15:34 userimpl.go:15: executing query and storing registration details
+TRACE: 2017/03/23 14:15:38 register.go:35: 164
+TRACE: 2017/03/23 14:15:38 debug.go:45: [GIN-debug] [WARNING] Headers were already written. Wanted to override status code 400 with 200
+TRACE: 2017/03/23 14:17:29 RegisterUser.go:14: entering in webservice.RegisterUser
+TRACE: 2017/03/23 14:17:29 RegisterUser.go:18: calling manager.Register function
+TRACE: 2017/03/23 14:17:29 register.go:16: entering in  manager.Register() function
+TRACE: 2017/03/23 14:17:29 register.go:18: calling register manager
+TRACE: 2017/03/23 14:17:29 register.go:20: calling userDao.CheckUser function
+TRACE: 2017/03/23 14:17:29 userimpl.go:46: entering in userDao.CheckUser()...
+TRACE: 2017/03/23 14:17:29 userimpl.go:49: executing query and checking user exists
+TRACE: 2017/03/23 14:20:00 RegisterUser.go:14: entering in webservice.RegisterUser
+TRACE: 2017/03/23 14:20:00 RegisterUser.go:18: calling manager.Register function
+TRACE: 2017/03/23 14:20:00 register.go:16: entering in  manager.Register() function
+TRACE: 2017/03/23 14:20:00 register.go:18: calling register manager
+TRACE: 2017/03/23 14:20:00 register.go:20: calling userDao.CheckUser function
+TRACE: 2017/03/23 14:20:00 userimpl.go:46: entering in userDao.CheckUser()...
+TRACE: 2017/03/23 14:20:00 userimpl.go:49: executing query and checking user exists
+TRACE: 2017/03/23 14:20:04 register.go:30: calling userDao.SaveNewUser() function
+TRACE: 2017/03/23 14:20:04 userimpl.go:14: entering in SaveNewUser() function
+TRACE: 2017/03/23 14:20:04 userimpl.go:15: executing query and storing registration details
+TRACE: 2017/03/23 14:20:09 register.go:35: 165
+TRACE: 2017/03/23 14:22:06 RegisterUser.go:14: entering in webservice.RegisterUser
+TRACE: 2017/03/23 14:22:06 RegisterUser.go:18: calling manager.Register function
+TRACE: 2017/03/23 14:22:06 register.go:16: entering in  manager.Register() function
+TRACE: 2017/03/23 14:22:06 register.go:18: calling register manager
+TRACE: 2017/03/23 14:22:06 register.go:20: calling userDao.CheckUser function
+TRACE: 2017/03/23 14:22:06 userimpl.go:46: entering in userDao.CheckUser()...
+TRACE: 2017/03/23 14:22:06 userimpl.go:49: executing query and checking user exists
+TRACE: 2017/03/23 14:22:10 register.go:30: calling userDao.SaveNewUser() function
+TRACE: 2017/03/23 14:22:10 userimpl.go:14: entering in SaveNewUser() function
+TRACE: 2017/03/23 14:22:10 userimpl.go:15: executing query and storing registration details
+TRACE: 2017/03/23 14:22:15 register.go:35: 166
+TRACE: 2017/03/23 14:22:15 debug.go:45: [GIN-debug] [WARNING] Headers were already written. Wanted to override status code 400 with 200
+TRACE: 2017/03/23 15:30:25 RegisterUser.go:14: entering in webservice.RegisterUser
+TRACE: 2017/03/23 15:30:25 RegisterUser.go:18: calling manager.Register function
+TRACE: 2017/03/23 15:30:25 register.go:16: entering in  manager.Register() function
+TRACE: 2017/03/23 15:30:25 register.go:18: calling register manager
+TRACE: 2017/03/23 15:30:25 register.go:20: calling userDao.CheckUser function
+TRACE: 2017/03/23 15:30:25 userimpl.go:46: entering in userDao.CheckUser()...
+TRACE: 2017/03/23 15:30:25 userimpl.go:49: executing query and checking user exists
+TRACE: 2017/03/23 15:30:31 register.go:30: calling userDao.SaveNewUser() function
+TRACE: 2017/03/23 15:30:31 userimpl.go:14: entering in SaveNewUser() function
+TRACE: 2017/03/23 15:30:31 userimpl.go:15: executing query and storing registration details
+TRACE: 2017/03/23 15:30:36 register.go:35: 172
+TRACE: 2017/03/23 15:30:36 debug.go:45: [GIN-debug] [WARNING] Headers were already written. Wanted to override status code 400 with 200
+TRACE: 2017/03/23 15:32:25 debug.go:45: [GIN-debug] [WARNING] Running in "debug" mode. Switch to "release" mode in production.
+ - using env:	export GIN_MODE=release
+ - using code:	gin.SetMode(gin.ReleaseMode)
+
+TRACE: 2017/03/23 15:32:25 debug.go:45: [GIN-debug] GET    /testService              --> OnlineTestGo/webservice.TestService (3 handlers)
+TRACE: 2017/03/23 15:32:25 debug.go:45: [GIN-debug] POST   /registerUser             --> OnlineTestGo/webservice.RegisterUser (3 handlers)
+TRACE: 2017/03/23 15:32:25 debug.go:45: [GIN-debug] POST   /login                    --> OnlineTestGo/webservice.Login (3 handlers)
+TRACE: 2017/03/23 15:32:25 debug.go:45: [GIN-debug] GET    /questions                --> OnlineTestGo/webservice.QuestionList (3 handlers)
+TRACE: 2017/03/23 15:32:25 debug.go:45: [GIN-debug] POST   /userAnswer               --> OnlineTestGo/webservice.AnswerList (3 handlers)
+TRACE: 2017/03/23 15:32:25 debug.go:45: [GIN-debug] GET    /admin                    --> OnlineTestGo/webservice.Admin (3 handlers)
+TRACE: 2017/03/23 15:32:25 debug.go:45: [GIN-debug] POST   /addquestions             --> OnlineTestGo/webservice.AddQuestions (3 handlers)
+TRACE: 2017/03/23 15:32:25 debug.go:45: [GIN-debug] GET    /logout                   --> OnlineTestGo/webservice.Logout (3 handlers)
+TRACE: 2017/03/23 15:32:25 debug.go:45: [GIN-debug] Listening and serving HTTP on :8085
+TRACE: 2017/03/23 15:32:27 RegisterUser.go:14: entering in webservice.RegisterUser
+TRACE: 2017/03/23 15:32:27 RegisterUser.go:18: calling manager.Register function
+TRACE: 2017/03/23 15:32:27 register.go:16: entering in  manager.Register() function
+TRACE: 2017/03/23 15:32:27 register.go:18: calling register manager
+TRACE: 2017/03/23 15:32:27 register.go:20: calling userDao.CheckUser function
+TRACE: 2017/03/23 15:32:27 userimpl.go:46: entering in userDao.CheckUser()...
+TRACE: 2017/03/23 15:32:27 userimpl.go:49: executing query and checking user exists
+TRACE: 2017/03/23 15:32:42 RegisterUser.go:14: entering in webservice.RegisterUser
+TRACE: 2017/03/23 15:32:42 RegisterUser.go:18: calling manager.Register function
+TRACE: 2017/03/23 15:32:42 register.go:16: entering in  manager.Register() function
+TRACE: 2017/03/23 15:32:42 register.go:18: calling register manager
+TRACE: 2017/03/23 15:32:42 register.go:20: calling userDao.CheckUser function
+TRACE: 2017/03/23 15:32:42 userimpl.go:46: entering in userDao.CheckUser()...
+TRACE: 2017/03/23 15:32:42 userimpl.go:49: executing query and checking user exists
+TRACE: 2017/03/23 15:32:47 register.go:30: calling userDao.SaveNewUser() function
+TRACE: 2017/03/23 15:32:47 userimpl.go:14: entering in SaveNewUser() function
+TRACE: 2017/03/23 15:32:47 userimpl.go:15: executing query and storing registration details
+TRACE: 2017/03/23 15:32:48 debug.go:45: [GIN-debug] [WARNING] Headers were already written. Wanted to override status code 400 with 500
+TRACE: 2017/03/23 15:32:51 register.go:35: 173
+TRACE: 2017/03/23 15:34:02 RegisterUser.go:14: entering in webservice.RegisterUser
+TRACE: 2017/03/23 15:34:02 RegisterUser.go:18: calling manager.Register function
+TRACE: 2017/03/23 15:34:02 register.go:16: entering in  manager.Register() function
+TRACE: 2017/03/23 15:34:02 register.go:18: calling register manager
+TRACE: 2017/03/23 15:34:02 register.go:20: calling userDao.CheckUser function
+TRACE: 2017/03/23 15:34:02 userimpl.go:46: entering in userDao.CheckUser()...
+TRACE: 2017/03/23 15:34:02 userimpl.go:49: executing query and checking user exists
+TRACE: 2017/03/23 15:34:07 register.go:30: calling userDao.SaveNewUser() function
+TRACE: 2017/03/23 15:34:07 userimpl.go:14: entering in SaveNewUser() function
+TRACE: 2017/03/23 15:34:07 userimpl.go:15: executing query and storing registration details
+TRACE: 2017/03/23 15:34:11 register.go:35: 174
+TRACE: 2017/03/23 16:08:33 debug.go:45: [GIN-debug] [WARNING] Running in "debug" mode. Switch to "release" mode in production.
+ - using env:	export GIN_MODE=release
+ - using code:	gin.SetMode(gin.ReleaseMode)
+
+TRACE: 2017/03/23 16:08:33 debug.go:45: [GIN-debug] GET    /testService              --> OnlineTestGo/webservice.TestService (3 handlers)
+TRACE: 2017/03/23 16:08:33 debug.go:45: [GIN-debug] POST   /registerUser             --> OnlineTestGo/webservice.RegisterUser (3 handlers)
+TRACE: 2017/03/23 16:08:33 debug.go:45: [GIN-debug] POST   /login                    --> OnlineTestGo/webservice.Login (3 handlers)
+TRACE: 2017/03/23 16:08:33 debug.go:45: [GIN-debug] GET    /questions                --> OnlineTestGo/webservice.QuestionList (3 handlers)
+TRACE: 2017/03/23 16:08:33 debug.go:45: [GIN-debug] POST   /userAnswer               --> OnlineTestGo/webservice.AnswerList (3 handlers)
+TRACE: 2017/03/23 16:08:33 debug.go:45: [GIN-debug] GET    /admin                    --> OnlineTestGo/webservice.Admin (3 handlers)
+TRACE: 2017/03/23 16:08:33 debug.go:45: [GIN-debug] POST   /addquestions             --> OnlineTestGo/webservice.AddQuestions (3 handlers)
+TRACE: 2017/03/23 16:08:33 debug.go:45: [GIN-debug] GET    /logout                   --> OnlineTestGo/webservice.Logout (3 handlers)
+TRACE: 2017/03/23 16:08:33 debug.go:45: [GIN-debug] Listening and serving HTTP on :8085
+TRACE: 2017/03/23 16:10:31 RegisterUser.go:14: entering in webservice.RegisterUser
+TRACE: 2017/03/23 16:10:31 RegisterUser.go:18: calling manager.Register function
+TRACE: 2017/03/23 16:10:31 register.go:16: entering in  manager.Register() function
+TRACE: 2017/03/23 16:10:31 register.go:18: calling register manager
+TRACE: 2017/03/23 16:10:31 register.go:20: calling userDao.CheckUser function
+TRACE: 2017/03/23 16:10:31 userimpl.go:48: entering in userDao.CheckUser()...
+TRACE: 2017/03/23 16:10:31 userimpl.go:51: executing query and checking user exists
+TRACE: 2017/03/23 16:10:36 register.go:30: calling userDao.SaveNewUser() function
+TRACE: 2017/03/23 16:10:36 userimpl.go:16: entering in SaveNewUser() function
+TRACE: 2017/03/23 16:10:36 userimpl.go:17: executing query and storing registration details
+TRACE: 2017/03/23 16:10:41 register.go:35: 175
+TRACE: 2017/03/23 16:11:52 Login.go:14: entering webservice.Login()
+TRACE: 2017/03/23 16:11:52 Login.go:19: calling manager.Login()
+TRACE: 2017/03/23 16:11:52 Login.go:16: entering manager.login
+TRACE: 2017/03/23 16:11:52 Login.go:23: calling userDao.AuthenticateUser()
+TRACE: 2017/03/23 16:11:52 userimpl.go:79: entering in AuthenticateUser()
+TRACE: 2017/03/23 16:11:52 userimpl.go:81: Executing query and authenticating user exist
+TRACE: 2017/03/23 16:11:57 userimpl.go:104: Response user Obj :  {0    rpqb@rpqb.com 123 }
+TRACE: 2017/03/23 16:11:57 Login.go:27: generates token if user exist by calling GenerateToken()  
+TRACE: 2017/03/23 16:11:57 Login.go:34: calling tokenDao.SaveToken()
+TRACE: 2017/03/23 16:11:57 loginimpl.go:15: exntering in SaveToken() function {0 175 NljoQDkhOJGTcpTxccFy 2017-03-23 16:11:57.5862917 +0530 IST}
+TRACE: 2017/03/23 16:11:57 loginimpl.go:16: executing query and storing token in database for the user 
+TRACE: 2017/03/23 16:11:59 loginimpl.go:19: token inserted
+TRACE: 2017/03/23 16:11:59 loginimpl.go:20: {0 175 NljoQDkhOJGTcpTxccFy 2017-03-23 16:11:57.5862917 +0530 IST}
+TRACE: 2017/03/23 16:12:02 loginimpl.go:38: last inserted id: 1
+TRACE: 2017/03/23 16:12:02 Login.go:48: {175 llam NljoQDkhOJGTcpTxccFy user}
+TRACE: 2017/03/23 16:33:57 Login.go:14: entering webservice.Login()
+TRACE: 2017/03/23 16:33:57 Login.go:19: calling manager.Login()
+TRACE: 2017/03/23 16:33:57 Login.go:16: entering manager.login
+TRACE: 2017/03/23 16:33:57 Login.go:23: calling userDao.AuthenticateUser()
+TRACE: 2017/03/23 16:33:57 userimpl.go:79: entering in AuthenticateUser()
+TRACE: 2017/03/23 16:33:57 userimpl.go:81: Executing query and authenticating user exist
+TRACE: 2017/03/23 16:34:01 userimpl.go:104: Response user Obj :  {0    rpqb@rpqb.com 123 }
+TRACE: 2017/03/23 16:34:01 Login.go:27: generates token if user exist by calling GenerateToken()  
+TRACE: 2017/03/23 16:34:01 Login.go:34: calling tokenDao.SaveToken()
+TRACE: 2017/03/23 16:34:01 loginimpl.go:15: exntering in SaveToken() function {0 175 rPUcsuKpKOgAtMmziAkm 2017-03-23 16:34:01.8081549 +0530 IST}
+TRACE: 2017/03/23 16:34:01 loginimpl.go:16: executing query and storing token in database for the user 
+TRACE: 2017/03/23 16:34:03 loginimpl.go:19: token inserted
+TRACE: 2017/03/23 16:34:03 loginimpl.go:20: {0 175 rPUcsuKpKOgAtMmziAkm 2017-03-23 16:34:01.8081549 +0530 IST}
+TRACE: 2017/03/23 16:34:05 loginimpl.go:38: last inserted id: 2
+TRACE: 2017/03/23 16:34:05 Login.go:48: {175 llam rPUcsuKpKOgAtMmziAkm user}
+TRACE: 2017/03/23 16:34:28 Login.go:14: entering webservice.Login()
+TRACE: 2017/03/23 16:34:28 Login.go:19: calling manager.Login()
+TRACE: 2017/03/23 16:34:28 Login.go:16: entering manager.login
+TRACE: 2017/03/23 16:34:28 Login.go:23: calling userDao.AuthenticateUser()
+TRACE: 2017/03/23 16:34:28 userimpl.go:79: entering in AuthenticateUser()
+TRACE: 2017/03/23 16:34:28 userimpl.go:81: Executing query and authenticating user exist
+TRACE: 2017/03/23 16:34:32 userimpl.go:104: Response user Obj :  {0    rpqb@rpqb.com 123 }
+TRACE: 2017/03/23 16:34:32 Login.go:27: generates token if user exist by calling GenerateToken()  
+TRACE: 2017/03/23 16:34:32 Login.go:34: calling tokenDao.SaveToken()
+TRACE: 2017/03/23 16:34:32 loginimpl.go:15: exntering in SaveToken() function {0 175 JkuHBdFcYeKnIsxNAJyJ 2017-03-23 16:34:32.3353543 +0530 IST}
+TRACE: 2017/03/23 16:34:32 loginimpl.go:16: executing query and storing token in database for the user 
+TRACE: 2017/03/23 16:34:34 loginimpl.go:19: token inserted
+TRACE: 2017/03/23 16:34:34 loginimpl.go:20: {0 175 JkuHBdFcYeKnIsxNAJyJ 2017-03-23 16:34:32.3353543 +0530 IST}
+TRACE: 2017/03/23 16:34:36 loginimpl.go:38: last inserted id: 3
+TRACE: 2017/03/23 16:34:36 Login.go:48: {175 llam JkuHBdFcYeKnIsxNAJyJ user}
+TRACE: 2017/03/23 17:14:56 Login.go:14: entering webservice.Login()
+TRACE: 2017/03/23 17:14:56 Login.go:19: calling manager.Login()
+TRACE: 2017/03/23 17:14:56 Login.go:16: entering manager.login
+TRACE: 2017/03/23 17:14:56 Login.go:23: calling userDao.AuthenticateUser()
+TRACE: 2017/03/23 17:14:56 userimpl.go:79: entering in AuthenticateUser()
+TRACE: 2017/03/23 17:14:56 userimpl.go:81: Executing query and authenticating user exist
+TRACE: 2017/03/23 17:15:01 userimpl.go:104: Response user Obj :  {0    rpqb@rpqb.com 123 }
+TRACE: 2017/03/23 17:15:01 Login.go:27: generates token if user exist by calling GenerateToken()  
+TRACE: 2017/03/23 17:15:01 Login.go:34: calling tokenDao.SaveToken()
+TRACE: 2017/03/23 17:15:01 loginimpl.go:15: exntering in SaveToken() function {0 175 eaStojTTUghAMOicXIXM 2017-03-23 17:15:01.6499185 +0530 IST}
+TRACE: 2017/03/23 17:15:01 loginimpl.go:16: executing query and storing token in database for the user 
+TRACE: 2017/03/23 17:15:04 loginimpl.go:19: token inserted
+TRACE: 2017/03/23 17:15:04 loginimpl.go:20: {0 175 eaStojTTUghAMOicXIXM 2017-03-23 17:15:01.6499185 +0530 IST}
+TRACE: 2017/03/23 17:15:07 loginimpl.go:38: last inserted id: 5
+TRACE: 2017/03/23 17:15:07 Login.go:48: {175 llam eaStojTTUghAMOicXIXM user}
+TRACE: 2017/03/23 17:15:10 Login.go:14: entering webservice.Login()
+TRACE: 2017/03/23 17:15:10 Login.go:19: calling manager.Login()
+TRACE: 2017/03/23 17:15:10 Login.go:16: entering manager.login
+TRACE: 2017/03/23 17:15:10 Login.go:23: calling userDao.AuthenticateUser()
+TRACE: 2017/03/23 17:15:10 userimpl.go:79: entering in AuthenticateUser()
+TRACE: 2017/03/23 17:15:10 userimpl.go:81: Executing query and authenticating user exist
+TRACE: 2017/03/23 17:15:15 userimpl.go:104: Response user Obj :  {0    rpqb@rpqb.com 123 }
+TRACE: 2017/03/23 17:15:15 Login.go:27: generates token if user exist by calling GenerateToken()  
+TRACE: 2017/03/23 17:15:15 Login.go:34: calling tokenDao.SaveToken()
+TRACE: 2017/03/23 17:15:15 loginimpl.go:15: exntering in SaveToken() function {0 175 EzGZPyPSsUrCAICwVVAF 2017-03-23 17:15:15.5154161 +0530 IST}
+TRACE: 2017/03/23 17:15:15 loginimpl.go:16: executing query and storing token in database for the user 
+TRACE: 2017/03/23 17:15:18 loginimpl.go:19: token inserted
+TRACE: 2017/03/23 17:15:18 loginimpl.go:20: {0 175 EzGZPyPSsUrCAICwVVAF 2017-03-23 17:15:15.5154161 +0530 IST}
+TRACE: 2017/03/23 17:15:21 loginimpl.go:38: last inserted id: 6
+TRACE: 2017/03/23 17:15:21 Login.go:48: {175 llam EzGZPyPSsUrCAICwVVAF user}
+TRACE: 2017/03/23 17:15:57 Login.go:14: entering webservice.Login()
+TRACE: 2017/03/23 17:15:57 Login.go:19: calling manager.Login()
+TRACE: 2017/03/23 17:15:57 Login.go:16: entering manager.login
+TRACE: 2017/03/23 17:15:57 Login.go:23: calling userDao.AuthenticateUser()
+TRACE: 2017/03/23 17:15:57 userimpl.go:79: entering in AuthenticateUser()
+TRACE: 2017/03/23 17:15:57 userimpl.go:81: Executing query and authenticating user exist
+TRACE: 2017/03/23 17:16:03 userimpl.go:104: Response user Obj :  {0    rpqb@rpqb.com 123 }
+TRACE: 2017/03/23 17:16:03 Login.go:27: generates token if user exist by calling GenerateToken()  
+TRACE: 2017/03/23 17:16:03 Login.go:34: calling tokenDao.SaveToken()
+TRACE: 2017/03/23 17:16:03 loginimpl.go:15: exntering in SaveToken() function {0 175 tulwbrMLeGEkSCSSYwcC 2017-03-23 17:16:03.1965232 +0530 IST}
+TRACE: 2017/03/23 17:16:03 loginimpl.go:16: executing query and storing token in database for the user 
+TRACE: 2017/03/23 17:16:06 loginimpl.go:19: token inserted
+TRACE: 2017/03/23 17:16:06 loginimpl.go:20: {0 175 tulwbrMLeGEkSCSSYwcC 2017-03-23 17:16:03.1965232 +0530 IST}
+TRACE: 2017/03/23 17:16:09 loginimpl.go:38: last inserted id: 7
+TRACE: 2017/03/23 17:16:09 Login.go:48: {175 llam tulwbrMLeGEkSCSSYwcC user}
+TRACE: 2017/03/23 17:47:03 debug.go:45: [GIN-debug] [WARNING] Running in "debug" mode. Switch to "release" mode in production.
+ - using env:	export GIN_MODE=release
+ - using code:	gin.SetMode(gin.ReleaseMode)
+
+TRACE: 2017/03/23 17:47:03 debug.go:45: [GIN-debug] GET    /testService              --> OnlineTestGo/webservice.TestService (3 handlers)
+TRACE: 2017/03/23 17:47:03 debug.go:45: [GIN-debug] POST   /registerUser             --> OnlineTestGo/webservice.RegisterUser (3 handlers)
+TRACE: 2017/03/23 17:47:03 debug.go:45: [GIN-debug] POST   /login                    --> OnlineTestGo/webservice.Login (3 handlers)
+TRACE: 2017/03/23 17:47:03 debug.go:45: [GIN-debug] GET    /questions                --> OnlineTestGo/webservice.QuestionList (3 handlers)
+TRACE: 2017/03/23 17:47:03 debug.go:45: [GIN-debug] POST   /userAnswer               --> OnlineTestGo/webservice.AnswerList (3 handlers)
+TRACE: 2017/03/23 17:47:03 debug.go:45: [GIN-debug] GET    /admin                    --> OnlineTestGo/webservice.Admin (3 handlers)
+TRACE: 2017/03/23 17:47:03 debug.go:45: [GIN-debug] POST   /addquestions             --> OnlineTestGo/webservice.AddQuestions (3 handlers)
+TRACE: 2017/03/23 17:47:03 debug.go:45: [GIN-debug] GET    /logout                   --> OnlineTestGo/webservice.Logout (3 handlers)
+TRACE: 2017/03/23 17:47:03 debug.go:45: [GIN-debug] Listening and serving HTTP on :8085
+TRACE: 2017/03/23 17:47:46 Login.go:14: entering webservice.Login()
+TRACE: 2017/03/23 17:47:46 Login.go:19: calling manager.Login()
+TRACE: 2017/03/23 17:47:46 Login.go:16: entering manager.login
+TRACE: 2017/03/23 17:47:46 Login.go:23: calling userDao.AuthenticateUser()
+TRACE: 2017/03/23 17:47:46 userimpl.go:79: entering in AuthenticateUser()
+TRACE: 2017/03/23 17:47:46 userimpl.go:81: Executing query and authenticating user exist
+TRACE: 2017/03/23 17:47:50 userimpl.go:104: Response user Obj :  {0    rpqb@rpqb.com 123 }
+TRACE: 2017/03/23 17:47:50 Login.go:27: generates token if user exist by calling GenerateToken()  
+TRACE: 2017/03/23 17:47:50 Login.go:34: calling tokenDao.SaveToken()
+TRACE: 2017/03/23 17:47:50 loginimpl.go:15: exntering in SaveToken() function {0 175 cEOGZePSidDCrxZajLtb 2017-03-23 17:47:50.9399173 +0530 IST}
+TRACE: 2017/03/23 17:47:50 loginimpl.go:16: executing query and storing token in database for the user 
+TRACE: 2017/03/23 17:47:53 loginimpl.go:19: token inserted
+TRACE: 2017/03/23 17:47:53 loginimpl.go:20: {0 175 cEOGZePSidDCrxZajLtb 2017-03-23 17:47:50.9399173 +0530 IST}
+TRACE: 2017/03/23 17:47:55 loginimpl.go:38: last inserted id: 8
+TRACE: 2017/03/23 17:47:57 loginimpl.go:51: entering In DeleteDuplicateUid()
+TRACE: 2017/03/23 17:47:57 loginimpl.go:52: executing query updating deleting duplicate uid
+TRACE: 2017/03/23 17:47:58 loginimpl.go:58: Error 1064: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '? = e2.uid AND e1.id > e2.id' at line 1
+TRACE: 2017/03/23 17:48:34 Login.go:14: entering webservice.Login()
+TRACE: 2017/03/23 17:48:34 Login.go:19: calling manager.Login()
+TRACE: 2017/03/23 17:48:34 Login.go:16: entering manager.login
+TRACE: 2017/03/23 17:48:34 Login.go:23: calling userDao.AuthenticateUser()
+TRACE: 2017/03/23 17:48:34 userimpl.go:79: entering in AuthenticateUser()
+TRACE: 2017/03/23 17:48:34 userimpl.go:81: Executing query and authenticating user exist
+TRACE: 2017/03/23 17:48:38 userimpl.go:104: Response user Obj :  {0    rpqb@rpqb.com 123 }
+TRACE: 2017/03/23 17:48:38 Login.go:27: generates token if user exist by calling GenerateToken()  
+TRACE: 2017/03/23 17:48:38 Login.go:34: calling tokenDao.SaveToken()
+TRACE: 2017/03/23 17:48:38 loginimpl.go:15: exntering in SaveToken() function {0 175 JhbbGWyjFmoYmQqRxvef 2017-03-23 17:48:38.5274577 +0530 IST}
+TRACE: 2017/03/23 17:48:38 loginimpl.go:16: executing query and storing token in database for the user 
+TRACE: 2017/03/23 17:48:40 loginimpl.go:19: token inserted
+TRACE: 2017/03/23 17:48:40 loginimpl.go:20: {0 175 JhbbGWyjFmoYmQqRxvef 2017-03-23 17:48:38.5274577 +0530 IST}
+TRACE: 2017/03/23 17:48:42 loginimpl.go:38: last inserted id: 9
+TRACE: 2017/03/23 17:48:44 loginimpl.go:51: entering In DeleteDuplicateUid()
+TRACE: 2017/03/23 17:48:44 loginimpl.go:52: executing query updating deleting duplicate uid
+TRACE: 2017/03/23 17:48:46 loginimpl.go:58: Error 1064: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '? = e2.uid AND e1.id > e2.id' at line 1
+TRACE: 2017/03/23 17:53:55 debug.go:45: [GIN-debug] [WARNING] Running in "debug" mode. Switch to "release" mode in production.
+ - using env:	export GIN_MODE=release
+ - using code:	gin.SetMode(gin.ReleaseMode)
+
+TRACE: 2017/03/23 17:53:55 debug.go:45: [GIN-debug] GET    /testService              --> OnlineTestGo/webservice.TestService (3 handlers)
+TRACE: 2017/03/23 17:53:55 debug.go:45: [GIN-debug] POST   /registerUser             --> OnlineTestGo/webservice.RegisterUser (3 handlers)
+TRACE: 2017/03/23 17:53:55 debug.go:45: [GIN-debug] POST   /login                    --> OnlineTestGo/webservice.Login (3 handlers)
+TRACE: 2017/03/23 17:53:55 debug.go:45: [GIN-debug] GET    /questions                --> OnlineTestGo/webservice.QuestionList (3 handlers)
+TRACE: 2017/03/23 17:53:55 debug.go:45: [GIN-debug] POST   /userAnswer               --> OnlineTestGo/webservice.AnswerList (3 handlers)
+TRACE: 2017/03/23 17:53:55 debug.go:45: [GIN-debug] GET    /admin                    --> OnlineTestGo/webservice.Admin (3 handlers)
+TRACE: 2017/03/23 17:53:55 debug.go:45: [GIN-debug] POST   /addquestions             --> OnlineTestGo/webservice.AddQuestions (3 handlers)
+TRACE: 2017/03/23 17:53:55 debug.go:45: [GIN-debug] GET    /logout                   --> OnlineTestGo/webservice.Logout (3 handlers)
+TRACE: 2017/03/23 17:53:55 debug.go:45: [GIN-debug] Listening and serving HTTP on :8085
+TRACE: 2017/03/23 17:54:00 Login.go:14: entering webservice.Login()
+TRACE: 2017/03/23 17:54:00 Login.go:19: calling manager.Login()
+TRACE: 2017/03/23 17:54:00 Login.go:16: entering manager.login
+TRACE: 2017/03/23 17:54:00 Login.go:23: calling userDao.AuthenticateUser()
+TRACE: 2017/03/23 17:54:00 userimpl.go:79: entering in AuthenticateUser()
+TRACE: 2017/03/23 17:54:00 userimpl.go:81: Executing query and authenticating user exist
+TRACE: 2017/03/23 17:54:04 userimpl.go:104: Response user Obj :  {0    rpqb@rpqb.com 123 }
+TRACE: 2017/03/23 17:54:04 Login.go:27: generates token if user exist by calling GenerateToken()  
+TRACE: 2017/03/23 17:54:04 Login.go:34: calling tokenDao.SaveToken()
+TRACE: 2017/03/23 17:54:04 loginimpl.go:15: exntering in SaveToken() function {0 175 TFQYEFETtMXuAlYcHjlZ 2017-03-23 17:54:04.7958199 +0530 IST}
+TRACE: 2017/03/23 17:54:04 loginimpl.go:16: executing query and storing token in database for the user 
+TRACE: 2017/03/23 17:54:06 loginimpl.go:19: token inserted
+TRACE: 2017/03/23 17:54:06 loginimpl.go:20: {0 175 TFQYEFETtMXuAlYcHjlZ 2017-03-23 17:54:04.7958199 +0530 IST}
+TRACE: 2017/03/23 17:54:08 loginimpl.go:38: last inserted id: 10
+TRACE: 2017/03/23 17:54:10 loginimpl.go:51: entering In DeleteDuplicateUid()
+TRACE: 2017/03/23 17:54:10 loginimpl.go:52: executing query updating deleting duplicate uid
+TRACE: 2017/03/23 17:54:12 loginimpl.go:58: Error 1064: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '? AND e1.id > e2.id' at line 1
+TRACE: 2017/03/23 18:48:11 debug.go:45: [GIN-debug] [WARNING] Running in "debug" mode. Switch to "release" mode in production.
+ - using env:	export GIN_MODE=release
+ - using code:	gin.SetMode(gin.ReleaseMode)
+
+TRACE: 2017/03/23 18:48:11 debug.go:45: [GIN-debug] GET    /testService              --> OnlineTestGo/webservice.TestService (3 handlers)
+TRACE: 2017/03/23 18:48:11 debug.go:45: [GIN-debug] POST   /registerUser             --> OnlineTestGo/webservice.RegisterUser (3 handlers)
+TRACE: 2017/03/23 18:48:11 debug.go:45: [GIN-debug] POST   /login                    --> OnlineTestGo/webservice.Login (3 handlers)
+TRACE: 2017/03/23 18:48:11 debug.go:45: [GIN-debug] GET    /questions                --> OnlineTestGo/webservice.QuestionList (3 handlers)
+TRACE: 2017/03/23 18:48:11 debug.go:45: [GIN-debug] POST   /userAnswer               --> OnlineTestGo/webservice.AnswerList (3 handlers)
+TRACE: 2017/03/23 18:48:11 debug.go:45: [GIN-debug] GET    /admin                    --> OnlineTestGo/webservice.Admin (3 handlers)
+TRACE: 2017/03/23 18:48:11 debug.go:45: [GIN-debug] POST   /addquestions             --> OnlineTestGo/webservice.AddQuestions (3 handlers)
+TRACE: 2017/03/23 18:48:11 debug.go:45: [GIN-debug] GET    /logout                   --> OnlineTestGo/webservice.Logout (3 handlers)
+TRACE: 2017/03/23 18:48:11 debug.go:45: [GIN-debug] Listening and serving HTTP on :8085
+TRACE: 2017/03/23 18:48:15 Login.go:14: entering webservice.Login()
+TRACE: 2017/03/23 18:48:16 Login.go:19: calling manager.Login()
+TRACE: 2017/03/23 18:48:16 Login.go:16: entering manager.login
+TRACE: 2017/03/23 18:48:16 Login.go:23: calling userDao.AuthenticateUser()
+TRACE: 2017/03/23 18:48:16 userimpl.go:79: entering in AuthenticateUser()
+TRACE: 2017/03/23 18:48:16 userimpl.go:81: Executing query and authenticating user exist
+TRACE: 2017/03/23 18:48:23 userimpl.go:104: Response user Obj :  {0    rpqb@rpqb.com 123 }
+TRACE: 2017/03/23 18:48:23 Login.go:27: generates token if user exist by calling GenerateToken()  
+TRACE: 2017/03/23 18:48:23 Login.go:34: calling tokenDao.DeleteDuplicateUid()
+TRACE: 2017/03/23 18:48:25 loginimpl.go:51: entering In DeleteDuplicateUid()
+TRACE: 2017/03/23 18:48:25 loginimpl.go:52: executing query updating deleting duplicate uid
+TRACE: 2017/03/23 18:48:29 loginimpl.go:58: Error 1146: Table 'onlinetestdb.TOKEN' doesn't exist
+TRACE: 2017/03/23 18:50:22 debug.go:45: [GIN-debug] [WARNING] Running in "debug" mode. Switch to "release" mode in production.
+ - using env:	export GIN_MODE=release
+ - using code:	gin.SetMode(gin.ReleaseMode)
+
+TRACE: 2017/03/23 18:50:22 debug.go:45: [GIN-debug] GET    /testService              --> OnlineTestGo/webservice.TestService (3 handlers)
+TRACE: 2017/03/23 18:50:22 debug.go:45: [GIN-debug] POST   /registerUser             --> OnlineTestGo/webservice.RegisterUser (3 handlers)
+TRACE: 2017/03/23 18:50:22 debug.go:45: [GIN-debug] POST   /login                    --> OnlineTestGo/webservice.Login (3 handlers)
+TRACE: 2017/03/23 18:50:22 debug.go:45: [GIN-debug] GET    /questions                --> OnlineTestGo/webservice.QuestionList (3 handlers)
+TRACE: 2017/03/23 18:50:22 debug.go:45: [GIN-debug] POST   /userAnswer               --> OnlineTestGo/webservice.AnswerList (3 handlers)
+TRACE: 2017/03/23 18:50:22 debug.go:45: [GIN-debug] GET    /admin                    --> OnlineTestGo/webservice.Admin (3 handlers)
+TRACE: 2017/03/23 18:50:22 debug.go:45: [GIN-debug] POST   /addquestions             --> OnlineTestGo/webservice.AddQuestions (3 handlers)
+TRACE: 2017/03/23 18:50:22 debug.go:45: [GIN-debug] GET    /logout                   --> OnlineTestGo/webservice.Logout (3 handlers)
+TRACE: 2017/03/23 18:50:22 debug.go:45: [GIN-debug] Listening and serving HTTP on :8085
+TRACE: 2017/03/23 18:50:24 Login.go:14: entering webservice.Login()
+TRACE: 2017/03/23 18:50:24 Login.go:19: calling manager.Login()
+TRACE: 2017/03/23 18:50:24 Login.go:16: entering manager.login
+TRACE: 2017/03/23 18:50:24 Login.go:23: calling userDao.AuthenticateUser()
+TRACE: 2017/03/23 18:50:24 userimpl.go:79: entering in AuthenticateUser()
+TRACE: 2017/03/23 18:50:24 userimpl.go:81: Executing query and authenticating user exist
+TRACE: 2017/03/23 18:50:29 userimpl.go:104: Response user Obj :  {0    rpqb@rpqb.com 123 }
+TRACE: 2017/03/23 18:50:29 Login.go:27: generates token if user exist by calling GenerateToken()  
+TRACE: 2017/03/23 18:50:29 Login.go:34: calling tokenDao.DeleteDuplicateUid()
+TRACE: 2017/03/23 18:50:32 loginimpl.go:51: entering In DeleteDuplicateUid()
+TRACE: 2017/03/23 18:50:32 loginimpl.go:52: executing query.....
+TRACE: 2017/03/23 18:50:36 loginimpl.go:64: {0xc0421de460 0xc0422d8320}
+TRACE: 2017/03/23 18:50:36 loginimpl.go:69: 0 <nil>
+TRACE: 2017/03/23 18:50:36 Login.go:36: calling tokenDao.SaveToken()
+TRACE: 2017/03/23 18:50:36 loginimpl.go:15: exntering in SaveToken() function {0 175 UALJpRVJXXYIHCxMFipH 2017-03-23 18:50:29.9472006 +0530 IST}
+TRACE: 2017/03/23 18:50:36 loginimpl.go:16: executing query and storing token in database for the user 
+TRACE: 2017/03/23 18:50:57 loginimpl.go:19: token inserted
+TRACE: 2017/03/23 18:50:57 loginimpl.go:20: {0 175 UALJpRVJXXYIHCxMFipH 2017-03-23 18:50:29.9472006 +0530 IST}
+TRACE: 2017/03/23 18:51:00 Login.go:14: entering webservice.Login()
+TRACE: 2017/03/23 18:51:00 Login.go:19: calling manager.Login()
+TRACE: 2017/03/23 18:51:00 Login.go:16: entering manager.login
+TRACE: 2017/03/23 18:51:00 Login.go:23: calling userDao.AuthenticateUser()
+TRACE: 2017/03/23 18:51:00 userimpl.go:79: entering in AuthenticateUser()
+TRACE: 2017/03/23 18:51:00 userimpl.go:81: Executing query and authenticating user exist
+TRACE: 2017/03/23 18:51:06 userimpl.go:104: Response user Obj :  {0    rpqb@rpqb.com 123 }
+TRACE: 2017/03/23 18:51:06 Login.go:27: generates token if user exist by calling GenerateToken()  
+TRACE: 2017/03/23 18:51:06 Login.go:34: calling tokenDao.DeleteDuplicateUid()
+TRACE: 2017/03/23 18:51:09 loginimpl.go:51: entering In DeleteDuplicateUid()
+TRACE: 2017/03/23 18:51:09 loginimpl.go:52: executing query.....
+TRACE: 2017/03/23 18:51:12 loginimpl.go:64: {0xc0421480e0 0xc042106170}
+TRACE: 2017/03/23 18:51:12 loginimpl.go:69: 0 <nil>
+TRACE: 2017/03/23 18:51:12 Login.go:36: calling tokenDao.SaveToken()
+TRACE: 2017/03/23 18:51:12 loginimpl.go:15: exntering in SaveToken() function {0 175 BoGibDmzssGhhdllEDES 2017-03-23 18:51:06.8374079 +0530 IST}
+TRACE: 2017/03/23 18:51:12 loginimpl.go:16: executing query and storing token in database for the user 
+TRACE: 2017/03/23 18:51:15 loginimpl.go:19: token inserted
+TRACE: 2017/03/23 18:51:15 loginimpl.go:20: {0 175 BoGibDmzssGhhdllEDES 2017-03-23 18:51:06.8374079 +0530 IST}
+TRACE: 2017/03/23 18:51:18 loginimpl.go:38: last inserted id: 11
+TRACE: 2017/03/23 18:51:18 Login.go:51: {175 llam BoGibDmzssGhhdllEDES user}
+TRACE: 2017/03/23 18:51:49 Login.go:14: entering webservice.Login()
+TRACE: 2017/03/23 18:51:49 Login.go:19: calling manager.Login()
+TRACE: 2017/03/23 18:51:49 Login.go:16: entering manager.login
+TRACE: 2017/03/23 18:51:49 Login.go:23: calling userDao.AuthenticateUser()
+TRACE: 2017/03/23 18:51:49 userimpl.go:79: entering in AuthenticateUser()
+TRACE: 2017/03/23 18:51:49 userimpl.go:81: Executing query and authenticating user exist
+TRACE: 2017/03/23 18:51:56 userimpl.go:104: Response user Obj :  {0    rpqb@rpqb.com 123 }
+TRACE: 2017/03/23 18:51:56 Login.go:27: generates token if user exist by calling GenerateToken()  
+TRACE: 2017/03/23 18:51:56 Login.go:34: calling tokenDao.DeleteDuplicateUid()
+TRACE: 2017/03/23 18:51:59 loginimpl.go:51: entering In DeleteDuplicateUid()
+TRACE: 2017/03/23 18:51:59 loginimpl.go:52: executing query.....
+TRACE: 2017/03/23 18:52:02 loginimpl.go:64: {0xc042148bd0 0xc042045e70}
+TRACE: 2017/03/23 18:52:02 loginimpl.go:69: 0 <nil>
+TRACE: 2017/03/23 18:52:02 Login.go:36: calling tokenDao.SaveToken()
+TRACE: 2017/03/23 18:52:02 loginimpl.go:15: exntering in SaveToken() function {0 175 iOmrMnJtQfFgDOZxCvMg 2017-03-23 18:51:56.837236 +0530 IST}
+TRACE: 2017/03/23 18:52:02 loginimpl.go:16: executing query and storing token in database for the user 
+TRACE: 2017/03/23 18:52:05 loginimpl.go:19: token inserted
+TRACE: 2017/03/23 18:52:05 loginimpl.go:20: {0 175 iOmrMnJtQfFgDOZxCvMg 2017-03-23 18:51:56.837236 +0530 IST}
+TRACE: 2017/03/23 18:52:09 loginimpl.go:38: last inserted id: 12
+TRACE: 2017/03/23 18:52:09 Login.go:51: {175 llam iOmrMnJtQfFgDOZxCvMg user}

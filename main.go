@@ -8,7 +8,6 @@ import (
 	"os"
 
 	"github.com/gin-gonic/gin"
-
 	"github.com/goinggo/tracelog"
 )
 

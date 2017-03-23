@@ -10,10 +10,12 @@ import (
 type UserImpl struct{}
 
 func (dao UserImpl) SaveNewUser(user models.User) (int64, error) {
+
 	utility.GetLogger()
+
 	log.Println("entering in SaveNewUser() function")
 	log.Println("executing query and storing registration details")
-	query := "insert into registration(fname, lname, phone, email,password) values(?,?,?,?,?)"
+	query := "insert into registration(fname, lname, phone, email,password,usertype) values(?,?,?,?,?,?)"
 	db, conn := connectaws()
 	defer db.Close()
 	defer conn.Close()
@@ -25,7 +27,7 @@ func (dao UserImpl) SaveNewUser(user models.User) (int64, error) {
 
 	defer stmt.Close()
 
-	res, err := stmt.Exec(user.Fname, user.Lname, user.Phone, user.Email, user.Password)
+	res, err := stmt.Exec(user.Fname, user.Lname, user.Phone, user.Email, user.Password, user.UserType)
 
 	if err != nil {
 		log.Panic("Exec err:", err.Error())
