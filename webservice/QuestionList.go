@@ -10,15 +10,18 @@ import (
 )
 
 func QuestionList(c *gin.Context) {
-	//recieving query param "testtype"
+
 	utility.GetLogger()
+	log.Println("entering into manager.QuestionList()")
 	testtype := c.Query("testtype")
 	token := c.Request.Header.Get("Authorization")
 	log.Println(testtype)
 	log.Println(token)
+	log.Println("calling filter.AuntheticateToken()")
 	bool := filter.AuthenticateToken(token)
-	//utility.GetToken(token)
+
 	if bool == true {
+		log.Println("calling manager.FetchQuestion()")
 		Qlist := manager.FetchQuestion(testtype)
 		c.Header("Access-Control-Allow-Origin", "*")
 		c.Header("Access-Control-Allow-Headers", "access-control-allow-origin, access-control-allow-headers")

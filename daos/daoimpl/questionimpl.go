@@ -9,18 +9,22 @@ import (
 
 type QuestionImpl struct{}
 
-// FetchQuestionsByType fetchs the questions from DB by merging quesion and options table
 func (dao QuestionImpl) FetchQuestionsByType(testtype string) []models.Question {
 	var totalquestions []models.TotalQuestion
 	var questionList []models.Question
+
 	utility.GetLogger()
+	log.Println("entering into FetchQuestionsByType()")
+	log.Println("executing query and Fetching Questions By Type ")
+
 	query := "SELECT A.id, A.question, B.choices FROM onlinetestdb.questions as A right join onlinetestdb.Options as B on A.id = B.qid where type = ?"
 
-	db := connection()
+	db, conn := connectaws()
 	defer db.Close()
-
+	defer conn.Close()
+	log.Println(db)
 	rows, err := db.Query(query, testtype)
-
+	log.Println(rows)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -36,8 +40,6 @@ func (dao QuestionImpl) FetchQuestionsByType(testtype string) []models.Question 
 		totalquestions = append(totalquestions, totalquestion)
 
 	}
-
-	log.Println("totalquestions:", totalquestions)
 
 	intitialID := 0
 	var options []string
@@ -68,16 +70,25 @@ func (dao QuestionImpl) FetchQuestionsByType(testtype string) []models.Question 
 
 	}
 	questionList[n].Options = options
+	for i := 0; i < len(questionList); i++ {
+		questionList[i].Qno = i + 1
 
+	}
 	return questionList
-
 }
 
 func (dao QuestionImpl) GetAnswerById(ID int64) string {
+
+	//	utility.GetLogger()
+	db, conn := connectaws()
+
 	utility.GetLogger()
-	db := connection()
+	log.Println("entering in GetAnswerById() ")
+
 	defer db.Close()
+	defer conn.Close()
 	answer := ""
+	log.Println("executing query and fetching answers ")
 	err := db.QueryRow("select answers from onlinetestdb.Options where answers != '0' && qid=?", ID).Scan(&answer)
 
 	switch {
@@ -94,13 +105,17 @@ func (dao QuestionImpl) GetAnswerById(ID int64) string {
 }
 
 func addOption(id int64, options string, answer string) error {
-	db := connection()
+	db, conn := connectaws()
 	defer db.Close()
+	defer conn.Close()
 
 	utility.GetLogger()
+	log.Println("entering into addoption function")
+	log.Println("executing query and storing options to corresponding questions into db")
+
 	log.Println("calling addoption function")
+
 	query := "INSERT INTO Options (qid,choices,answers) VALUES(?,?,?)"
-	log.Println("after query execution")
 
 	stmt, err := db.Prepare(query)
 
@@ -109,7 +124,9 @@ func addOption(id int64, options string, answer string) error {
 	}
 
 	defer stmt.Close()
+
 	log.Println("reached to execution")
+
 	res, err := stmt.Exec(id, options, answer)
 	log.Println(res)
 	val, err := res.LastInsertId()
@@ -122,11 +139,16 @@ func addOption(id int64, options string, answer string) error {
 }
 
 func (dao QuestionImpl) AddQuestion(question models.Question) (int64, error) {
-	db := connection()
+	db, conn := connectaws()
 	defer db.Close()
+	defer conn.Close()
 
 	utility.GetLogger()
+	log.Println("entering in AddQuestion() function")
+	log.Println("executing query and storing questions into database")
+
 	log.Println("calling addquestion function")
+
 	query := "INSERT INTO questions (question,type) VALUES (?, ?)"
 
 	stmt, err := db.Prepare(query)
@@ -145,10 +167,15 @@ func (dao QuestionImpl) AddQuestion(question models.Question) (int64, error) {
 		log.Println("Exec err:", err.Error())
 	}
 	log.Println(id)
-	//return id, err
+
 	Options := question.Options
+
+	log.Println("calling addoption function")
+
 	log.Println("options", Options)
+
 	for i := 0; i < len(Options); i++ {
+
 		addOption(id, Options[i], question.UserAnswer)
 	}
 

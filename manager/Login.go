@@ -13,32 +13,32 @@ import (
 
 func Login(user models.User) tos.Tokento {
 	utility.GetLogger()
-	log.Println("entering login manager...")
+	log.Println("entering manager.login")
 	var tokenObj tos.Tokento
 	var tokenModel models.Token
 
-	//check user esxists or not
 	userDao := daoimpl.UserImpl{}
 	tokenDao := daoimpl.LoginImpl{}
-
+	log.Println("calling userDao.AuthenticateUser()")
 	userObj := userDao.AuthenticateUser(user)
 
 	if userObj.ID != 0 {
-		//genereate a token for the user and save it in DB
+		log.Println("generates token if user exist by calling GenerateToken()  ")
 		token := GenerateToken()
 
-		//insert token to table
 		tokenModel.LastAccessTime = time.Now()
 		tokenModel.Token = token
 		tokenModel.Uid = userObj.ID
+		log.Println("calling tokenDao.DeleteDuplicateUid()")
+		tokenDao.DeleteDuplicateUid(tokenModel)
+		log.Println("calling tokenDao.SaveToken()")
 
 		id, err := tokenDao.SaveToken(tokenModel)
 		if err != nil {
 			log.Println(err)
 		}
 
-		//copy the valuuse to tokenObj if insertion intoken table is successful
-		if id == 0 {
+		if id != 0 {
 			tokenObj.Token = token
 			tokenObj.Fname = userObj.Fname
 			tokenObj.Uid = userObj.ID
@@ -49,7 +49,6 @@ func Login(user models.User) tos.Tokento {
 
 	}
 
-	//return the tokenObj back
 	return tokenObj
 
 }
