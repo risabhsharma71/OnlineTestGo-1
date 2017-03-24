@@ -69,7 +69,6 @@ func (dao TokenImpl) DeleteToken(deletetoken string) bool {
 	defer db.Close()
 
 	defer conn.Close()
-	//var token models.Token
 
 	utility.GetLogger()
 	log.Println("entering DeleteToken() function")

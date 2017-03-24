@@ -2,15 +2,17 @@ package daoimpl
 
 import (
 	"OnlineTestGo/models"
+	"OnlineTestGo/tos"
 	"OnlineTestGo/utility"
 	"log"
 )
 
 type AdminImpl struct{}
 
-func (dao AdminImpl) FetchData() []models.Admin {
+func (dao AdminImpl) FetchData() []tos.Admin {
 
 	var datas []models.Admin
+	var admindata []tos.Admin
 
 	utility.GetLogger()
 	log.Println("entering FetchData()")
@@ -41,5 +43,40 @@ func (dao AdminImpl) FetchData() []models.Admin {
 
 	}
 
-	return datas
+	intitialUid := 0
+	var testtype []string
+	var score []int
+	var admin tos.Admin
+	for _, dataRow := range datas {
+
+		if intitialUid != dataRow.Uid {
+			admin.Uid = dataRow.Uid
+			admin.Fname = dataRow.Fname
+			admin.Lname = dataRow.Lname
+			admindata = append(admindata, admin)
+			intitialUid = dataRow.Uid
+		}
+
+	}
+
+	n := 0
+	intitialUid = datas[0].Uid
+	for i := 0; i < len(datas); i++ {
+
+		if intitialUid != datas[i].Uid {
+			admindata[n].Type = testtype
+			admindata[n].Score = score
+			n++
+			testtype = make([]string, 0)
+			score = make([]int, 0)
+			intitialUid = datas[i].Uid
+		}
+
+		testtype = append(testtype, datas[i].Type)
+		admindata[n].Type = testtype
+		score = append(score, datas[i].Score)
+		admindata[n].Score = score
+
+	}
+	return admindata
 }

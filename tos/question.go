@@ -1,6 +1,6 @@
 package tos
 
-//Question indicates the question table
+
 type Question struct {
 	ID            int      `json:"id"`
 	Qno           int      `json:"qno"`

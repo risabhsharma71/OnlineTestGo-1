@@ -5,10 +5,8 @@ import (
 	"log"
 )
 
-//TypeImpl is a implementation for type interface
 type TypeImpl struct{}
 
-//GetIdfromType returns the id from Type table for input value
 func (dao TypeImpl) GetIdfromType(s string) int64 {
 	var id int64
 	db, conn := connectaws()

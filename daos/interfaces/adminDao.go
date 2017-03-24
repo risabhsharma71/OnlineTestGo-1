@@ -1,8 +1,7 @@
 package interfaces
 
-import "OnlineTestGo/models"
+import "OnlineTestGo/tos"
 
-//adminDao interface to be implemented adminimpl
 type AdminDao interface {
-	Fetchdata() ([]models.Admin)
+	Fetchdata() []tos.Admin
 }

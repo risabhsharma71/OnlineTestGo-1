@@ -6,6 +6,8 @@ import (
 	"OnlineTestGo/utility"
 	"database/sql"
 	"log"
+	"math/rand"
+	"time"
 )
 
 type QuestionImpl struct{}
@@ -68,8 +70,10 @@ func (dao QuestionImpl) FetchQuestionsByType(testtype string) []tos.Question {
 		}
 
 		options = append(options, totalquestions[i].Choices)
+		shuffle(options)
 
 	}
+
 	questionList[n].Options = options
 	for i := 0; i < len(questionList); i++ {
 		questionList[i].Qno = i + 1
@@ -80,7 +84,6 @@ func (dao QuestionImpl) FetchQuestionsByType(testtype string) []tos.Question {
 
 func (dao QuestionImpl) GetAnswerById(ID int64) string {
 
-	//	utility.GetLogger()
 	db, conn := connectaws()
 
 	utility.GetLogger()
@@ -181,4 +184,12 @@ func (dao QuestionImpl) AddQuestion(question models.Question) (int64, error) {
 	}
 
 	return id, err
+}
+func shuffle(arr []string) {
+	t := time.Now()
+	rand.Seed(int64(t.Nanosecond()))
+	for i := len(arr) - 1; i > 0; i-- {
+		j := rand.Intn(i)
+		arr[i], arr[j] = arr[j], arr[i]
+	}
 }

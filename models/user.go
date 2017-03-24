@@ -1,6 +1,5 @@
 package models
 
-//User indicates the person model
 type User struct {
 	ID    int    `json:"id"`
 	Fname string `json:"fname"`

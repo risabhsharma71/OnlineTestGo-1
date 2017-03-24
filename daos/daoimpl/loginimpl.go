@@ -72,8 +72,36 @@ func (dao LoginImpl) ModifyToken(token string, uid int) error {
 
 }
 
+func (dao LoginImpl) DeleteDuplicateUid(token models.Token) error {
+	db, conn := connectaws()
+	defer db.Close()
+	defer conn.Close()
+	utility.GetLogger()
+	log.Println("entering In DeleteDuplicateUid()")
+	log.Println("executing query.....")
+	query := "DELETE FROM token WHERE uid=?"
+
+	stmt, err := db.Prepare(query)
+
+	if err != nil {
+		log.Println(err)
+	}
+
+	defer stmt.Close()
+
+	res, err := stmt.Exec(token.Uid)
+	log.Println(res)
+	val, err := res.LastInsertId()
+	if err != nil {
+		return err
+	}
+	log.Println(val, err)
+	return nil
+
+}
 func (dao LoginImpl) GetToken(uid int64, fname string, token string, lastaccestime time.Time) (int64, error) {
 	query := "select  uid, token, lastaccesstime from token where  id= ?"
+
 	db, conn := connectaws()
 	defer db.Close()
 	defer conn.Close()

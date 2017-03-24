@@ -5,7 +5,6 @@ import (
 	"time"
 )
 
-//tokenDao interface to be implemented by tokenimpl
 type TokenDao interface {
 	Savetoken(token string, uid int64)
 	ModifyToken(token string, uid int) error

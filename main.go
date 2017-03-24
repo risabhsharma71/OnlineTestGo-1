@@ -8,7 +8,6 @@ import (
 	"os"
 
 	"github.com/gin-gonic/gin"
-
 	"github.com/goinggo/tracelog"
 )
 
@@ -32,7 +31,7 @@ func main() {
 	router.POST("/addquestions", webservice.AddQuestions)
 
 	router.GET("/logout", webservice.Logout)
-	router.GET("/mockadmin", webservice.MockAdmin)
+	//router.GET("/mockadmin", webservice.MockAdmin)
 
 	router.Run(GetPort())
 

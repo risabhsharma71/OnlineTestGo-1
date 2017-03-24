@@ -1,6 +1,6 @@
 package tos
 
-type Admin struct {
+type Admin1 struct {
 	Uid         int64  `json:"uid"`
 	Fname       string `json:"fname"`
 	Lname       string `json:"lname"`

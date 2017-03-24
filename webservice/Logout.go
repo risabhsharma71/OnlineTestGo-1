@@ -12,7 +12,7 @@ import (
 func Logout(c *gin.Context) {
 	utility.GetLogger()
 	log.Println("entering webservice.Logout()")
-	token := c.Request.Header.Get("Authorization")
+	token := c.Query("Authorization")
 	log.Println("calling manager.DeleteTokenLogin()")
 	message := manager.DeleteToken(token)
 

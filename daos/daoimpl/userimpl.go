@@ -10,7 +10,9 @@ import (
 type UserImpl struct{}
 
 func (dao UserImpl) SaveNewUser(user models.User) (int64, error) {
+
 	utility.GetLogger()
+
 	log.Println("entering in SaveNewUser() function")
 	log.Println("executing query and storing registration details")
 	query := "insert into registration(fname, lname, phone, email,password,usertype) values(?,?,?,?,?,?)"

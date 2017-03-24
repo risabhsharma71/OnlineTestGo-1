@@ -9,7 +9,7 @@ import (
 
 func Mocklogin(c *gin.Context) {
 
-	var user models.User // request obj
+	var user models.User
 	var token tos.Tokento
 	c.BindJSON(&user)
 
