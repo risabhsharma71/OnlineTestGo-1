@@ -14,7 +14,7 @@ func AddQuestions(c *gin.Context) {
 	utility.GetLogger()
 
 	log.Println("entering in webservice.AddQuestions()")
-	token := c.Request.Header.Get("Authorization")
+	token := c.Query("Authorization")
 	log.Println("calling filter.AuntheticateToken()")
 	bool := filter.AuthenticateToken(token)
 	log.Println(bool)
