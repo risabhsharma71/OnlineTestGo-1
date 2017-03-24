@@ -14,7 +14,7 @@ func QuestionList(c *gin.Context) {
 	utility.GetLogger()
 	log.Println("entering into manager.QuestionList()")
 	testtype := c.Query("testtype")
-	token := c.Request.Header.Get("Authorization")
+	token := c.Query("Authorization")
 	log.Println(testtype)
 	log.Println(token)
 	log.Println("calling filter.AuntheticateToken()")
