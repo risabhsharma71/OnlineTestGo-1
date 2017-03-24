@@ -2,12 +2,12 @@ package manager
 
 import (
 	"OnlineTestGo/daos/daoimpl"
-	"OnlineTestGo/models"
+	"OnlineTestGo/tos"
 	"OnlineTestGo/utility"
 	"log"
 )
 
-func FetchQuestion(testtype string) []models.Question {
+func FetchQuestion(testtype string) []tos.Question {
 
 	utility.GetLogger()
 	log.Println("entering into manager.FetchQuestion")

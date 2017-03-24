@@ -11,8 +11,9 @@ type TypeImpl struct{}
 //GetIdfromType returns the id from Type table for input value
 func (dao TypeImpl) GetIdfromType(s string) int64 {
 	var id int64
-	db := connection()
-
+	db, conn := connectaws()
+	defer db.Close()
+	defer conn.Close()
 	err := db.QueryRow("select id from type where value=?", s).Scan(&id)
 
 	switch {

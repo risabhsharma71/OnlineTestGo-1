@@ -2,6 +2,7 @@ package daoimpl
 
 import (
 	"OnlineTestGo/models"
+	"OnlineTestGo/tos"
 	"OnlineTestGo/utility"
 	"database/sql"
 	"log"
@@ -9,21 +10,22 @@ import (
 
 type QuestionImpl struct{}
 
-func (dao QuestionImpl) FetchQuestionsByType(testtype string) []models.Question {
+func (dao QuestionImpl) FetchQuestionsByType(testtype string) []tos.Question {
 	var totalquestions []models.TotalQuestion
-	var questionList []models.Question
+	var questionList []tos.Question
 
 	utility.GetLogger()
 	log.Println("entering into FetchQuestionsByType()")
 	log.Println("executing query and Fetching Questions By Type ")
 
-	query := "SELECT A.id, A.question, B.choices FROM rpqbmysql.questions as A right join rpqbmysql.Options as B on A.id = B.qid where type = ?"
+	query := "SELECT A.id, A.question, B.choices FROM onlinetestdb.questions as A right join onlinetestdb.Options as B on A.id = B.qid where type = ?"
 
-	db := connection()
+	db, conn := connectaws()
 	defer db.Close()
-
+	defer conn.Close()
+	log.Println(db)
 	rows, err := db.Query(query, testtype)
-
+	log.Println(rows)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -42,7 +44,7 @@ func (dao QuestionImpl) FetchQuestionsByType(testtype string) []models.Question 
 
 	intitialID := 0
 	var options []string
-	var question models.Question
+	var question tos.Question
 	for _, questionRow := range totalquestions {
 
 		if intitialID != questionRow.ID {
@@ -78,14 +80,17 @@ func (dao QuestionImpl) FetchQuestionsByType(testtype string) []models.Question 
 
 func (dao QuestionImpl) GetAnswerById(ID int64) string {
 
+	//	utility.GetLogger()
+	db, conn := connectaws()
+
 	utility.GetLogger()
 	log.Println("entering in GetAnswerById() ")
 
-	db := connection()
 	defer db.Close()
+	defer conn.Close()
 	answer := ""
 	log.Println("executing query and fetching answers ")
-	err := db.QueryRow("select answers from rpqbmysql.Options where answers != '0' && qid=?", ID).Scan(&answer)
+	err := db.QueryRow("select answers from onlinetestdb.Options where answers != '0' && qid=?", ID).Scan(&answer)
 
 	switch {
 	case err == sql.ErrNoRows:
@@ -101,8 +106,9 @@ func (dao QuestionImpl) GetAnswerById(ID int64) string {
 }
 
 func addOption(id int64, options string, answer string) error {
-	db := connection()
+	db, conn := connectaws()
 	defer db.Close()
+	defer conn.Close()
 
 	utility.GetLogger()
 	log.Println("entering into addoption function")
@@ -134,8 +140,9 @@ func addOption(id int64, options string, answer string) error {
 }
 
 func (dao QuestionImpl) AddQuestion(question models.Question) (int64, error) {
-	db := connection()
+	db, conn := connectaws()
 	defer db.Close()
+	defer conn.Close()
 
 	utility.GetLogger()
 	log.Println("entering in AddQuestion() function")
@@ -170,7 +177,7 @@ func (dao QuestionImpl) AddQuestion(question models.Question) (int64, error) {
 
 	for i := 0; i < len(Options); i++ {
 
-		addOption(id, Options[i], question.UserAnswer)
+		addOption(id, Options[i], question.CorrectAnswer)
 	}
 
 	return id, err

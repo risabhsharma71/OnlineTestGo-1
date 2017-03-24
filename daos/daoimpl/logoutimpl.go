@@ -15,9 +15,9 @@ func (dao LogoutImpl) DeleteToken(token string) string {
 	log.Println("executing query and deleting token from database ")
 	query := "DELETE FROM token WHERE token=?"
 
-	db := connection()
+	db, conn := connectaws()
 	defer db.Close()
-
+	defer conn.Close()
 	stmt, err := db.Prepare(query)
 	if err != nil {
 		return deltoken

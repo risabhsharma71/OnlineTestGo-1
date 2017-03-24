@@ -36,9 +36,13 @@ func Login(user models.User) tos.Tokento {
 		if err != nil {
 			log.Println(err)
 		}
+		uid := tokenModel.Uid
+		if uid == id {
+			tokenDao.ModifyToken(token, uid)
 
+		}
 		//copy the valuuse to tokenObj if insertion intoken table is successful
-		if id == 0 {
+		if id != 0 {
 			tokenObj.Token = token
 			tokenObj.Fname = userObj.Fname
 			tokenObj.Uid = userObj.ID

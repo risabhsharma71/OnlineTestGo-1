@@ -10,14 +10,18 @@ import (
 
 type LoginImpl struct{}
 
-func (dao LoginImpl) SaveToken(token models.Token) (int64, error) {
+func (dao LoginImpl) SaveToken(token models.Token) (int, error) {
 	utility.GetLogger()
-	log.Println("exntering in SaveToken() function")
+	uid := token.Uid
+	log.Println("exntering in SaveToken() function", token)
 	log.Println("executing query and storing token in database for the user ")
-	query := "insert  into Token(uid,token,lastaccesstime) values (?,?,?)"
-	db := connection()
-	defer db.Close()
+	query := "insert into token(uid,token,lastaccesstime) values (?,?,?)"
+	db, conn := connectaws()
+	log.Println("token inserted")
+	log.Println(token)
 
+	defer db.Close()
+	defer conn.Close()
 	stmt, err := db.Prepare(query)
 	if err != nil {
 		return 0, err
@@ -26,22 +30,54 @@ func (dao LoginImpl) SaveToken(token models.Token) (int64, error) {
 	defer stmt.Close()
 
 	res, err := stmt.Exec(token.Uid, token.Token, token.LastAccessTime)
-
+	log.Println(res)
 	if err != nil {
 		log.Panic("Exec err:", err.Error())
 	}
 
-	id, err := res.LastInsertId()
+	/*id, err := res.LastInsertId()
+	  log.Println("last inserted id:", id)
+	  if err != nil {
+	      log.Println("Exec err:", err.Error())
+	  }*/
+
+	return uid, err
+}
+
+func (dao LoginImpl) ModifyToken(token string, uid int) error {
+	db, conn := connectaws()
+	defer db.Close()
+	defer conn.Close()
+	utility.GetLogger()
+	log.Println("entering In ModifyToken()")
+	log.Println("executing query updating currenttoken to newtoken")
+	query := "update  token set token=? where uid=? "
+
+	stmt, err := db.Prepare(query)
+
 	if err != nil {
-		log.Println("Exec err:", err.Error())
+		log.Println(err)
 	}
 
-	return id, err
+	defer stmt.Close()
+
+	res, err := stmt.Exec(token, uid)
+	log.Println(res)
+	val, err := res.LastInsertId()
+	if err != nil {
+		return err
+	}
+	log.Println(val, err)
+	return nil
+
 }
 
 func (dao LoginImpl) GetToken(uid int64, fname string, token string, lastaccestime time.Time) (int64, error) {
 	query := "select  uid, token, lastaccesstime from token where  id= ?"
-	db := connection()
+	db, conn := connectaws()
+	defer db.Close()
+	defer conn.Close()
+
 	rows, err := db.Query(query, token)
 	if err != nil {
 		log.Fatal(err)

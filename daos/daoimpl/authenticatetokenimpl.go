@@ -10,9 +10,9 @@ import (
 type TokenImpl struct{}
 
 func (dao TokenImpl) ModifyLastAccessTime(currentime time.Time, tokenEncodeString string) error {
-	db := connection()
+	db, conn := connectaws()
 	defer db.Close()
-
+	defer conn.Close()
 	utility.GetLogger()
 	log.Println("entering In ModifyLastAccessTime()")
 	log.Println("executing query updating lastaccesstime to currentime")
@@ -39,16 +39,20 @@ func (dao TokenImpl) ModifyLastAccessTime(currentime time.Time, tokenEncodeStrin
 func (dao TokenImpl) AunthenticateToken(tokenEncodeString string) (string, time.Time) {
 
 	utility.GetLogger()
-	db := connection()
+	db, conn := connectaws()
+	defer db.Close()
+	defer conn.Close()
 	token := ""
 	lastaccesstime := ""
+	log.Println(tokenEncodeString)
 	log.Println("entering in AunthenticateToken() function")
 	log.Println("executing query fetching and returning token,lastaccesstime")
 	err := db.QueryRow("select token,lastaccesstime from token where token=?", tokenEncodeString).Scan(&token, &lastaccesstime)
-
+	log.Println(token)
 	switch {
 	case err == sql.ErrNoRows:
 		log.Printf("No uid with that token.")
+
 	case err != nil:
 		log.Fatal(err)
 	default:
@@ -61,8 +65,11 @@ func (dao TokenImpl) AunthenticateToken(tokenEncodeString string) (string, time.
 	return token, timeStamp1
 }
 func (dao TokenImpl) DeleteToken(deletetoken string) bool {
-	db := connection()
+	db, conn := connectaws()
 	defer db.Close()
+
+	defer conn.Close()
+	//var token models.Token
 
 	utility.GetLogger()
 	log.Println("entering DeleteToken() function")

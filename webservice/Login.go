@@ -17,13 +17,13 @@ func Login(c *gin.Context) {
 
 	c.BindJSON(&user)
 	log.Println("calling manager.Login()")
-
+	log.Println(user)
 	message := manager.Login(user)
 
 	c.Header("Access-Control-Allow-Origin", "*")
 	c.Header("Access-Control-Allow-Headers", "access-control-allow-origin, access-control-allow-headers")
 	c.JSON(200, gin.H{
-		"status":  "sucess",
+		"status":  "success",
 		"message": message,
 	})
 }
