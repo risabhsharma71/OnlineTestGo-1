@@ -11,9 +11,9 @@ func (dao AnswerImpl) SaveAnswer(answer models.Answer) (int64, error) {
 
 	query := "insert into Answers(uid,q_type,score) values (?,?,?)"
 
-	db, conn := connectaws()
+	db := connection()
 	defer db.Close()
-	defer conn.Close()
+	//defer conn.Close()
 
 	stmt, err := db.Prepare(query)
 	if err != nil {

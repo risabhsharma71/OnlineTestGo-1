@@ -3,6 +3,7 @@ package daoimpl
 import (
 	"database/sql"
 	"fmt"
+	"log"
 	"net"
 	"os"
 
@@ -78,4 +79,14 @@ func connectaws() (*sql.DB, *ssh.Client) {
 	}
 	return nil, nil
 
+}
+
+func connection() *sql.DB {
+	db, err := sql.Open("mysql",
+		"onlinetestuser:Rpqb_123@tcp(127.0.0.1:3306)/onlinetestdb")
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	return db
 }

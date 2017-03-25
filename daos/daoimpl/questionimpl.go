@@ -87,13 +87,13 @@ func (dao QuestionImpl) FetchQuestionsByType(testtype string) []tos.Question {
 
 func (dao QuestionImpl) GetAnswerById(ID int64) string {
 
-	db, conn := connectaws()
+	db := connection()
 
 	utility.GetLogger()
 	log.Println("entering in GetAnswerById() ")
 
 	defer db.Close()
-	defer conn.Close()
+	//defer conn.Close()
 	answer := ""
 	log.Println("executing query and fetching answers ")
 	err := db.QueryRow("select answers from onlinetestdb.Options where answers != '0' && qid=?", ID).Scan(&answer)
