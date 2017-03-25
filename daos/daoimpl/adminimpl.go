@@ -17,7 +17,7 @@ func (dao AdminImpl) FetchData() []models.Admin {
 
 	log.Println("executing query and Fetching data from db ")
 
-	query := "select c.uid,a.fname,a.lname,b.type,c.score from rpqbmysql.registration a,rpqbmysql.questions b,rpqbmysql.answers c where b.id=c.uid"
+	query := " select a.uid,r.fname,r.lname,a.testtype,a.score from onlinetestdb.answers a, onlinetestdb.registration r where r.id=a.uid"
 
 	db, conn := connectaws()
 	defer db.Close()

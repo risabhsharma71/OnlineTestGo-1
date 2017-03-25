@@ -180,7 +180,7 @@ func (dao QuestionImpl) AddQuestion(question models.Question) (int64, error) {
 
 	for i := 0; i < len(Options); i++ {
 
-		addOption(id, Options[i], question.UserAnswer)
+		addOption(id, Options[i], question.CorrectAnswer)
 	}
 
 	return id, err
