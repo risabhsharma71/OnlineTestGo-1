@@ -12,7 +12,7 @@ func GetLogger() {
 		Filename:   "log.txt",
 		MaxSize:    500, // megabytes
 		MaxBackups: 3,
-		MaxAge:     30, //days
+		MaxAge:     1, //days
 	})
 	return
 }

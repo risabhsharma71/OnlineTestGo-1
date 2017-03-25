@@ -2,6 +2,7 @@ package daoimpl
 
 import (
 	"OnlineTestGo/models"
+	"OnlineTestGo/tos"
 	"OnlineTestGo/utility"
 	"fmt"
 	"log"
@@ -9,47 +10,48 @@ import (
 
 type UserImpl struct{}
 
-func (dao UserImpl) SaveNewUser(user models.User) (int64, error) {
+func (dao UserImpl) SaveNewUser(user models.User) (tos.Userto, error) {
 
 	utility.GetLogger()
 
 	log.Println("entering in SaveNewUser() function")
+	var newuser tos.Userto
+
 	log.Println("executing query and storing registration details")
 	query := "insert into registration(fname, lname, phone, email,password,usertype) values(?,?,?,?,?,?)"
 	db, conn := connectaws()
 	defer db.Close()
 	defer conn.Close()
 	stmt, err := db.Prepare(query)
-
-	if err != nil {
-		return 0, err
-	}
+	log.Println(err)
 
 	defer stmt.Close()
 
 	res, err := stmt.Exec(user.Fname, user.Lname, user.Phone, user.Email, user.Password, user.UserType)
-
+	//var usertos tos.User
+	newuser.Message = " registration sussecful"
 	if err != nil {
 		log.Panic("Exec err:", err.Error())
 	}
 
 	id, err := res.LastInsertId()
-
+	newuser.ID = id
+	//newuser = append(newuser, usertos)
 	fmt.Printf("%T", id)
 	if err != nil {
 		log.Println("Exec err:", err.Error())
 	}
 
-	return id, err
+	return newuser, err
 }
 
-func (dao UserImpl) CheckUser(user models.User) (int64, error) {
+func (dao UserImpl) CheckUser(user models.User) (tos.Userto, error) {
 	utility.GetLogger()
 	log.Println("entering in userDao.CheckUser()...")
-	var phoneno int64
+	//var existuser []tos.User
 	phone := user.Phone
 	log.Println("executing query and checking user exists")
-	query := "select phone from registration where phone = ?"
+	query := "select id from registration where phone = ?"
 	db, conn := connectaws()
 	defer db.Close()
 	defer conn.Close()
@@ -59,17 +61,20 @@ func (dao UserImpl) CheckUser(user models.User) (int64, error) {
 		log.Fatal(err)
 		defer rows.Close()
 	}
-
+	var usertos tos.Userto
+	usertos.Message = "you are an existing user please check the credentials"
 	for rows.Next() {
 
-		err := rows.Scan(&phoneno)
+		err := rows.Scan(&usertos.ID)
 		if err != nil {
 			fmt.Println(err)
 		}
-		log.Println(phoneno)
+		fmt.Println(usertos)
+		//existuser = append(existuser, usertos)
 	}
 
-	return phoneno, err
+	//var usertos tos.User
+	return usertos, err
 }
 
 func (dao UserImpl) AuthenticateUser(user models.User) models.User {

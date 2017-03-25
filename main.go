@@ -42,7 +42,7 @@ func GetPort() string {
 
 	if port == "" {
 		port = "7082"
-		port = "8086"
+		port = "8087"
 		fmt.Println("INFO: No PORT environment variable detected, defaulting to " + port)
 	}
 	return ":" + port
