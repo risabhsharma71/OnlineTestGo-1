@@ -46,7 +46,7 @@ func (dao UserImpl) SaveNewUser(user models.User) (int64, error) {
 func (dao UserImpl) CheckUser(user models.User) (int64, error) {
 	utility.GetLogger()
 	log.Println("entering in userDao.CheckUser()...")
-	var id int64
+	var phoneno int64
 	phone := user.Phone
 	log.Println("executing query and checking user exists")
 	query := "select phone from registration where phone = ?"
@@ -62,14 +62,14 @@ func (dao UserImpl) CheckUser(user models.User) (int64, error) {
 
 	for rows.Next() {
 
-		err := rows.Scan(&id)
+		err := rows.Scan(&phoneno)
 		if err != nil {
 			fmt.Println(err)
 		}
-		fmt.Println(id)
+		log.Println(phoneno)
 	}
 
-	return id, err
+	return phoneno, err
 }
 
 func (dao UserImpl) AuthenticateUser(user models.User) models.User {
