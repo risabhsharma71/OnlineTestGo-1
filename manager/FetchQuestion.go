@@ -2,14 +2,14 @@ package manager
 
 import (
 	"OnlineTestGo/daos/daoimpl"
-	"OnlineTestGo/models"
+	"OnlineTestGo/tos"
 	"OnlineTestGo/utility"
 	"log"
 	"math/rand"
 	"time"
 )
 
-func FetchQuestion(testtype string) []models.Question {
+func FetchQuestion(testtype string) []tos.Question {
 
 	utility.GetLogger()
 	log.Println("entering into manager.FetchQuestion")
@@ -25,7 +25,7 @@ func FetchQuestion(testtype string) []models.Question {
 	return questionlist
 
 }
-func shuffle(arr []models.Question) {
+func shuffle(arr []tos.Question) {
 	t := time.Now()
 	rand.Seed(int64(t.Nanosecond())) // no shuffling without this line
 

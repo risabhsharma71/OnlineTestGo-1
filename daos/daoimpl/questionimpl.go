@@ -2,6 +2,7 @@ package daoimpl
 
 import (
 	"OnlineTestGo/models"
+	"OnlineTestGo/tos"
 	"OnlineTestGo/utility"
 	"database/sql"
 	"log"
@@ -11,9 +12,9 @@ import (
 
 type QuestionImpl struct{}
 
-func (dao QuestionImpl) FetchQuestionsByType(testtype string) []models.Question {
+func (dao QuestionImpl) FetchQuestionsByType(testtype string) []tos.Question {
 	var totalquestions []models.TotalQuestion
-	var questionList []models.Question
+	var questionList []tos.Question
 
 	utility.GetLogger()
 	log.Println("entering into FetchQuestionsByType()")
@@ -45,7 +46,7 @@ func (dao QuestionImpl) FetchQuestionsByType(testtype string) []models.Question 
 
 	intitialID := 0
 	var options []string
-	var question models.Question
+	var question tos.Question
 	for _, questionRow := range totalquestions {
 
 		if intitialID != questionRow.ID {
@@ -83,7 +84,6 @@ func (dao QuestionImpl) FetchQuestionsByType(testtype string) []models.Question 
 
 func (dao QuestionImpl) GetAnswerById(ID int64) string {
 
-	//	utility.GetLogger()
 	db, conn := connectaws()
 
 	utility.GetLogger()
@@ -187,8 +187,7 @@ func (dao QuestionImpl) AddQuestion(question models.Question) (int64, error) {
 }
 func shuffle(arr []string) {
 	t := time.Now()
-	rand.Seed(int64(t.Nanosecond())) // no shuffling without this line
-
+	rand.Seed(int64(t.Nanosecond()))
 	for i := len(arr) - 1; i > 0; i-- {
 		j := rand.Intn(i)
 		arr[i], arr[j] = arr[j], arr[i]

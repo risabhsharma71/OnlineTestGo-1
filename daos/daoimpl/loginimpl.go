@@ -10,8 +10,9 @@ import (
 
 type LoginImpl struct{}
 
-func (dao LoginImpl) SaveToken(token models.Token) (int64, error) {
+func (dao LoginImpl) SaveToken(token models.Token) (int, error) {
 	utility.GetLogger()
+	uid := token.Uid
 	log.Println("exntering in SaveToken() function", token)
 	log.Println("executing query and storing token in database for the user ")
 	query := "insert into token(uid,token,lastaccesstime) values (?,?,?)"
@@ -29,18 +30,46 @@ func (dao LoginImpl) SaveToken(token models.Token) (int64, error) {
 	defer stmt.Close()
 
 	res, err := stmt.Exec(token.Uid, token.Token, token.LastAccessTime)
-
+	log.Println(res)
 	if err != nil {
 		log.Panic("Exec err:", err.Error())
 	}
 
-	id, err := res.LastInsertId()
-	log.Println("last inserted id:", id)
+	/*id, err := res.LastInsertId()
+	  log.Println("last inserted id:", id)
+	  if err != nil {
+	      log.Println("Exec err:", err.Error())
+	  }*/
+
+	return uid, err
+}
+
+func (dao LoginImpl) ModifyToken(token string, uid int) error {
+	db, conn := connectaws()
+	defer db.Close()
+	defer conn.Close()
+	utility.GetLogger()
+	log.Println("entering In ModifyToken()")
+	log.Println("executing query updating currenttoken to newtoken")
+	query := "update  token set token=? where uid=? "
+
+	stmt, err := db.Prepare(query)
+
 	if err != nil {
-		log.Println("Exec err:", err.Error())
+		log.Println(err)
 	}
 
-	return id, err
+	defer stmt.Close()
+
+	res, err := stmt.Exec(token, uid)
+	log.Println(res)
+	val, err := res.LastInsertId()
+	if err != nil {
+		return err
+	}
+	log.Println(val, err)
+	return nil
+
 }
 
 func (dao LoginImpl) DeleteDuplicateUid(token models.Token) error {

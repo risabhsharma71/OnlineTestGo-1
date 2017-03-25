@@ -101,7 +101,7 @@ func (dao UserImpl) AuthenticateUser(user models.User) models.User {
 		fmt.Println(newuser)
 	}
 
-	log.Println("Response user Obj : ", user)
+	log.Println("Response user Obj : ", newuser)
 
 	return newuser
 }

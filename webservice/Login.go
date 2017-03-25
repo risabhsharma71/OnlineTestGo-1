@@ -17,7 +17,7 @@ func Login(c *gin.Context) {
 
 	c.BindJSON(&user)
 	log.Println("calling manager.Login()")
-
+	log.Println(user)
 	message := manager.Login(user)
 
 	c.Header("Access-Control-Allow-Origin", "*")

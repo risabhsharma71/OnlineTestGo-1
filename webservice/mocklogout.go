@@ -17,7 +17,6 @@ func Mocklogout(c *gin.Context) {
 
 	message = "sucess"
 
-	//function should be calling this manager class
 	c.Header("Access-Control-Allow-Origin", "*")
 	c.Header("Access-Control-Allow-Headers", "access-control-allow-origin, access-control-allow-headers")
 	c.JSON(200, gin.H{
