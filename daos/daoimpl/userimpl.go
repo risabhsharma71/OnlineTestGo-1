@@ -62,7 +62,7 @@ func (dao UserImpl) CheckUser(user models.User) (tos.Userto, error) {
 		defer rows.Close()
 	}
 	var usertos tos.Userto
-	usertos.Message = "you are an existing user please check the credentials"
+	usertos.Message = "you are an existing user  check the existing credentials"
 	for rows.Next() {
 
 		err := rows.Scan(&usertos.ID)
