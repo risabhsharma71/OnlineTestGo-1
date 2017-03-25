@@ -5359,3 +5359,144 @@ TRACE: 2017/03/24 16:09:41 debug.go:45: [GIN-debug] GET    /admin               
 TRACE: 2017/03/24 16:09:41 debug.go:45: [GIN-debug] POST   /addquestions             --> OnlineTestGo/webservice.AddQuestions (3 handlers)
 TRACE: 2017/03/24 16:09:41 debug.go:45: [GIN-debug] GET    /logout                   --> OnlineTestGo/webservice.Logout (3 handlers)
 TRACE: 2017/03/24 16:09:41 debug.go:45: [GIN-debug] Listening and serving HTTP on :8086
+TRACE: 2017/03/24 16:17:59 debug.go:45: [GIN-debug] [WARNING] Running in "debug" mode. Switch to "release" mode in production.
+ - using env:	export GIN_MODE=release
+ - using code:	gin.SetMode(gin.ReleaseMode)
+
+TRACE: 2017/03/24 16:17:59 debug.go:45: [GIN-debug] GET    /testService              --> OnlineTestGo/webservice.TestService (3 handlers)
+TRACE: 2017/03/24 16:17:59 debug.go:45: [GIN-debug] POST   /registerUser             --> OnlineTestGo/webservice.RegisterUser (3 handlers)
+TRACE: 2017/03/24 16:17:59 debug.go:45: [GIN-debug] POST   /login                    --> OnlineTestGo/webservice.Login (3 handlers)
+TRACE: 2017/03/24 16:17:59 debug.go:45: [GIN-debug] GET    /questions                --> OnlineTestGo/webservice.QuestionList (3 handlers)
+TRACE: 2017/03/24 16:17:59 debug.go:45: [GIN-debug] POST   /userAnswer               --> OnlineTestGo/webservice.AnswerList (3 handlers)
+TRACE: 2017/03/24 16:17:59 debug.go:45: [GIN-debug] GET    /admin                    --> OnlineTestGo/webservice.Admin (3 handlers)
+TRACE: 2017/03/24 16:17:59 debug.go:45: [GIN-debug] POST   /addquestions             --> OnlineTestGo/webservice.AddQuestions (3 handlers)
+TRACE: 2017/03/24 16:17:59 debug.go:45: [GIN-debug] GET    /logout                   --> OnlineTestGo/webservice.Logout (3 handlers)
+TRACE: 2017/03/24 16:17:59 debug.go:45: [GIN-debug] Listening and serving HTTP on :8086
+TRACE: 2017/03/24 16:18:12 Admin.go:13: entering webservice.Admin()
+TRACE: 2017/03/24 16:18:12 Admin.go:14: calling manager.FetchData()
+TRACE: 2017/03/24 16:18:12 FetchData.go:12: entering manager.FetchData()
+TRACE: 2017/03/24 16:18:12 FetchData.go:14: calling adminDao.FetchData()
+TRACE: 2017/03/24 16:18:12 adminimpl.go:18: entering FetchData()
+TRACE: 2017/03/24 16:18:12 adminimpl.go:20: executing query and Fetching data from db 
+TRACE: 2017/03/24 16:25:41 QuestionList.go:15: entering into manager.QuestionList()
+TRACE: 2017/03/24 16:25:41 QuestionList.go:18: java
+TRACE: 2017/03/24 16:25:41 QuestionList.go:19: saiZIEgBmZqqXBxvlPNF
+TRACE: 2017/03/24 16:25:41 QuestionList.go:20: calling filter.AuntheticateToken()
+TRACE: 2017/03/24 16:25:41 aunthenticate.go:13: entering into AuthenticateToken()
+TRACE: 2017/03/24 16:25:41 aunthenticate.go:24: 6 0 0
+TRACE: 2017/03/24 16:25:41 aunthenticate.go:34: calling  daoimpl tokenDao.AunthenticateToken()
+TRACE: 2017/03/24 16:25:43 authenticatetokenimpl.go:47: saiZIEgBmZqqXBxvlPNF
+TRACE: 2017/03/24 16:25:43 authenticatetokenimpl.go:48: entering in AunthenticateToken() function
+TRACE: 2017/03/24 16:25:43 authenticatetokenimpl.go:49: executing query fetching and returning token,lastaccesstime
+TRACE: 2017/03/24 16:25:45 authenticatetokenimpl.go:51: saiZIEgBmZqqXBxvlPNF
+TRACE: 2017/03/24 16:25:45 authenticatetokenimpl.go:59: Type is saiZIEgBmZqqXBxvlPNF
+TRACE: 2017/03/24 16:25:45 aunthenticate.go:42: 2017-03-24 16:25:45
+TRACE: 2017/03/24 16:25:45 aunthenticate.go:54: calling ModifyLastAccessTime()
+TRACE: 2017/03/24 16:25:47 authenticatetokenimpl.go:17: entering In ModifyLastAccessTime()
+TRACE: 2017/03/24 16:25:47 authenticatetokenimpl.go:18: executing query updating lastaccesstime to currentime
+TRACE: 2017/03/24 16:25:48 authenticatetokenimpl.go:30: {0xc0422b27e0 0xc04229d2d0}
+TRACE: 2017/03/24 16:25:48 authenticatetokenimpl.go:35: 0 <nil>
+TRACE: 2017/03/24 16:25:48 QuestionList.go:24: calling manager.FetchQuestion()
+TRACE: 2017/03/24 16:25:48 FetchQuestion.go:15: entering into manager.FetchQuestion
+TRACE: 2017/03/24 16:25:49 FetchQuestion.go:17: calling Question manager
+TRACE: 2017/03/24 16:25:49 FetchQuestion.go:21: calling FetchQuestionsByType()
+TRACE: 2017/03/24 16:25:49 questionimpl.go:20: entering into FetchQuestionsByType()
+TRACE: 2017/03/24 16:25:49 questionimpl.go:21: executing query and Fetching Questions By Type 
+TRACE: 2017/03/24 16:25:51 questionimpl.go:28: &{0xae3660 onlinetestuser:Rpqb_123@mysql+tcp(127.0.0.1:3306)/onlinetestdb 0 {0 0} [] [] 0 0xc04203baa0 false map[] map[] 0 0 0 <nil>}
+TRACE: 2017/03/24 16:25:52 questionimpl.go:30: &{0xc042032700 0x7032b0 0xc04231a0e0 false [] <nil> 0xc04200ade0}
+TRACE: 2017/03/25 09:34:45 debug.go:45: [GIN-debug] [WARNING] Running in "debug" mode. Switch to "release" mode in production.
+ - using env:	export GIN_MODE=release
+ - using code:	gin.SetMode(gin.ReleaseMode)
+
+TRACE: 2017/03/25 09:34:45 debug.go:45: [GIN-debug] GET    /testService              --> OnlineTestGo/webservice.TestService (3 handlers)
+TRACE: 2017/03/25 09:34:45 debug.go:45: [GIN-debug] POST   /registerUser             --> OnlineTestGo/webservice.RegisterUser (3 handlers)
+TRACE: 2017/03/25 09:34:45 debug.go:45: [GIN-debug] POST   /login                    --> OnlineTestGo/webservice.Login (3 handlers)
+TRACE: 2017/03/25 09:34:45 debug.go:45: [GIN-debug] GET    /questions                --> OnlineTestGo/webservice.QuestionList (3 handlers)
+TRACE: 2017/03/25 09:34:45 debug.go:45: [GIN-debug] POST   /userAnswer               --> OnlineTestGo/webservice.AnswerList (3 handlers)
+TRACE: 2017/03/25 09:34:45 debug.go:45: [GIN-debug] GET    /admin                    --> OnlineTestGo/webservice.Admin (3 handlers)
+TRACE: 2017/03/25 09:34:45 debug.go:45: [GIN-debug] POST   /addquestions             --> OnlineTestGo/webservice.AddQuestions (3 handlers)
+TRACE: 2017/03/25 09:34:45 debug.go:45: [GIN-debug] GET    /logout                   --> OnlineTestGo/webservice.Logout (3 handlers)
+TRACE: 2017/03/25 09:34:45 debug.go:45: [GIN-debug] Listening and serving HTTP on :8086
+TRACE: 2017/03/25 09:35:30 QuestionList.go:15: entering into manager.QuestionList()
+TRACE: 2017/03/25 09:35:30 QuestionList.go:18: java
+TRACE: 2017/03/25 09:35:30 QuestionList.go:19: saiZIEgBmZqqXBxvlPNF
+TRACE: 2017/03/25 09:35:30 QuestionList.go:20: calling filter.AuntheticateToken()
+TRACE: 2017/03/25 09:35:30 aunthenticate.go:13: entering into AuthenticateToken()
+TRACE: 2017/03/25 09:35:30 aunthenticate.go:24: 6 0 0
+TRACE: 2017/03/25 09:35:30 aunthenticate.go:34: calling  daoimpl tokenDao.AunthenticateToken()
+TRACE: 2017/03/25 09:35:32 authenticatetokenimpl.go:47: saiZIEgBmZqqXBxvlPNF
+TRACE: 2017/03/25 09:35:32 authenticatetokenimpl.go:48: entering in AunthenticateToken() function
+TRACE: 2017/03/25 09:35:32 authenticatetokenimpl.go:49: executing query fetching and returning token,lastaccesstime
+TRACE: 2017/03/25 09:35:35 authenticatetokenimpl.go:51: 
+TRACE: 2017/03/25 09:35:35 authenticatetokenimpl.go:54: No uid with that token.
+TRACE: 2017/03/25 09:37:26 QuestionList.go:15: entering into manager.QuestionList()
+TRACE: 2017/03/25 09:37:26 QuestionList.go:18: java
+TRACE: 2017/03/25 09:37:26 QuestionList.go:19: CnymbwEAtYxZADPciiQf
+TRACE: 2017/03/25 09:37:26 QuestionList.go:20: calling filter.AuntheticateToken()
+TRACE: 2017/03/25 09:37:26 aunthenticate.go:13: entering into AuthenticateToken()
+TRACE: 2017/03/25 09:37:26 aunthenticate.go:24: 6 0 0
+TRACE: 2017/03/25 09:37:26 aunthenticate.go:34: calling  daoimpl tokenDao.AunthenticateToken()
+TRACE: 2017/03/25 09:37:28 authenticatetokenimpl.go:47: CnymbwEAtYxZADPciiQf
+TRACE: 2017/03/25 09:37:28 authenticatetokenimpl.go:48: entering in AunthenticateToken() function
+TRACE: 2017/03/25 09:37:28 authenticatetokenimpl.go:49: executing query fetching and returning token,lastaccesstime
+TRACE: 2017/03/25 09:37:30 authenticatetokenimpl.go:51: CnymbwEAtYxZADPciiQf
+TRACE: 2017/03/25 09:37:30 authenticatetokenimpl.go:59: Type is CnymbwEAtYxZADPciiQf
+TRACE: 2017/03/25 09:37:30 aunthenticate.go:42: 2017-03-25 09:37:30
+TRACE: 2017/03/25 09:37:30 aunthenticate.go:54: calling ModifyLastAccessTime()
+TRACE: 2017/03/25 09:37:32 authenticatetokenimpl.go:17: entering In ModifyLastAccessTime()
+TRACE: 2017/03/25 09:37:32 authenticatetokenimpl.go:18: executing query updating lastaccesstime to currentime
+TRACE: 2017/03/25 09:37:34 authenticatetokenimpl.go:30: {0xc0420322a0 0xc042004a40}
+TRACE: 2017/03/25 09:37:34 authenticatetokenimpl.go:35: 0 <nil>
+TRACE: 2017/03/25 09:37:34 QuestionList.go:24: calling manager.FetchQuestion()
+TRACE: 2017/03/25 09:37:34 FetchQuestion.go:13: entering into manager.FetchQuestion
+TRACE: 2017/03/25 09:37:34 FetchQuestion.go:15: calling Question manager
+TRACE: 2017/03/25 09:37:34 FetchQuestion.go:19: calling FetchQuestionsByType()
+TRACE: 2017/03/25 09:37:34 questionimpl.go:20: entering into FetchQuestionsByType()
+TRACE: 2017/03/25 09:37:34 questionimpl.go:21: executing query and Fetching Questions By Type 
+TRACE: 2017/03/25 09:37:36 questionimpl.go:28: &{0xae3660 onlinetestuser:Rpqb_123@mysql+tcp(127.0.0.1:3306)/onlinetestdb 0 {0 0} [] [] 0 0xc0421d56e0 false map[] map[] 0 0 0 <nil>}
+TRACE: 2017/03/25 09:37:39 questionimpl.go:30: &{0xc04230e1c0 0x7032a0 0xc04230c280 false [] <nil> 0xc042312150}
+TRACE: 2017/03/25 09:38:07 QuestionList.go:15: entering into manager.QuestionList()
+TRACE: 2017/03/25 09:38:07 QuestionList.go:18: java
+TRACE: 2017/03/25 09:38:07 QuestionList.go:19: CnymbwEAtYxZADPciiQf
+TRACE: 2017/03/25 09:38:07 QuestionList.go:20: calling filter.AuntheticateToken()
+TRACE: 2017/03/25 09:38:07 aunthenticate.go:13: entering into AuthenticateToken()
+TRACE: 2017/03/25 09:38:07 aunthenticate.go:24: 6 0 0
+TRACE: 2017/03/25 09:38:07 aunthenticate.go:34: calling  daoimpl tokenDao.AunthenticateToken()
+TRACE: 2017/03/25 09:38:09 authenticatetokenimpl.go:47: CnymbwEAtYxZADPciiQf
+TRACE: 2017/03/25 09:38:09 authenticatetokenimpl.go:48: entering in AunthenticateToken() function
+TRACE: 2017/03/25 09:38:09 authenticatetokenimpl.go:49: executing query fetching and returning token,lastaccesstime
+TRACE: 2017/03/25 09:38:11 authenticatetokenimpl.go:51: CnymbwEAtYxZADPciiQf
+TRACE: 2017/03/25 09:38:11 authenticatetokenimpl.go:59: Type is CnymbwEAtYxZADPciiQf
+TRACE: 2017/03/25 09:38:11 aunthenticate.go:42: 2017-03-25 09:38:11
+TRACE: 2017/03/25 09:38:11 aunthenticate.go:54: calling ModifyLastAccessTime()
+TRACE: 2017/03/25 09:38:14 authenticatetokenimpl.go:17: entering In ModifyLastAccessTime()
+TRACE: 2017/03/25 09:38:14 authenticatetokenimpl.go:18: executing query updating lastaccesstime to currentime
+TRACE: 2017/03/25 09:38:16 authenticatetokenimpl.go:30: {0xc0420327e0 0xc04230b690}
+TRACE: 2017/03/25 09:38:16 authenticatetokenimpl.go:35: 0 <nil>
+TRACE: 2017/03/25 09:38:16 QuestionList.go:24: calling manager.FetchQuestion()
+TRACE: 2017/03/25 09:38:16 FetchQuestion.go:13: entering into manager.FetchQuestion
+TRACE: 2017/03/25 09:38:16 FetchQuestion.go:15: calling Question manager
+TRACE: 2017/03/25 09:38:16 FetchQuestion.go:19: calling FetchQuestionsByType()
+TRACE: 2017/03/25 09:38:16 questionimpl.go:20: entering into FetchQuestionsByType()
+TRACE: 2017/03/25 09:38:16 questionimpl.go:21: executing query and Fetching Questions By Type 
+TRACE: 2017/03/25 09:38:18 questionimpl.go:28: &{0xae3660 onlinetestuser:Rpqb_123@mysql+tcp(127.0.0.1:3306)/onlinetestdb 0 {0 0} [] [] 0 0xc0421d5b00 false map[] map[] 0 0 0 <nil>}
+TRACE: 2017/03/25 09:38:20 questionimpl.go:30: &{0xc0422aaa80 0x7032a0 0xc042396e60 false [] <nil> 0xc0422a1320}
+TRACE: 2017/03/25 09:44:26 debug.go:45: [GIN-debug] [WARNING] Running in "debug" mode. Switch to "release" mode in production.
+ - using env:	export GIN_MODE=release
+ - using code:	gin.SetMode(gin.ReleaseMode)
+
+TRACE: 2017/03/25 09:44:26 debug.go:45: [GIN-debug] GET    /testService              --> OnlineTestGo/webservice.TestService (3 handlers)
+TRACE: 2017/03/25 09:44:26 debug.go:45: [GIN-debug] POST   /registerUser             --> OnlineTestGo/webservice.RegisterUser (3 handlers)
+TRACE: 2017/03/25 09:44:26 debug.go:45: [GIN-debug] POST   /login                    --> OnlineTestGo/webservice.Login (3 handlers)
+TRACE: 2017/03/25 09:44:26 debug.go:45: [GIN-debug] GET    /questions                --> OnlineTestGo/webservice.QuestionList (3 handlers)
+TRACE: 2017/03/25 09:44:26 debug.go:45: [GIN-debug] POST   /userAnswer               --> OnlineTestGo/webservice.AnswerList (3 handlers)
+TRACE: 2017/03/25 09:44:26 debug.go:45: [GIN-debug] GET    /admin                    --> OnlineTestGo/webservice.Admin (3 handlers)
+TRACE: 2017/03/25 09:44:26 debug.go:45: [GIN-debug] POST   /addquestions             --> OnlineTestGo/webservice.AddQuestions (3 handlers)
+TRACE: 2017/03/25 09:44:26 debug.go:45: [GIN-debug] GET    /logout                   --> OnlineTestGo/webservice.Logout (3 handlers)
+TRACE: 2017/03/25 09:44:26 debug.go:45: [GIN-debug] Listening and serving HTTP on :8086
+TRACE: 2017/03/25 09:44:50 Admin.go:13: entering webservice.Admin()
+TRACE: 2017/03/25 09:44:50 Admin.go:14: calling manager.FetchData()
+TRACE: 2017/03/25 09:44:50 FetchData.go:12: entering manager.FetchData()
+TRACE: 2017/03/25 09:44:50 FetchData.go:14: calling adminDao.FetchData()
+TRACE: 2017/03/25 09:44:50 adminimpl.go:18: entering FetchData()
+TRACE: 2017/03/25 09:44:50 adminimpl.go:20: executing query and Fetching data from db 

@@ -19,7 +19,7 @@ func (dao AdminImpl) FetchData() []tos.Admin {
 
 	log.Println("executing query and Fetching data from db ")
 
-	query := "select c.uid,a.fname,a.lname,b.type,c.score from onlinetestdb.registration a,onlinetestdb.questions b,onlinetestdb.answers c where b.id=c.uid"
+	query := "select a.uid,r.fname,r.lname,a.testtype,a.score from onlinetestdb.answers a, onlinetestdb.registration r where r.id=a.uid"
 
 	db, conn := connectaws()
 	defer db.Close()
@@ -33,7 +33,7 @@ func (dao AdminImpl) FetchData() []tos.Admin {
 
 	for rows.Next() {
 		var data models.Admin
-		err = rows.Scan(&data.Uid, &data.Fname, &data.Lname, &data.Type, &data.Score)
+		err = rows.Scan(&data.Uid, &data.Fname, &data.Lname, &data.Testtype, &data.Score)
 
 		if err != nil {
 			log.Fatal(err)
@@ -72,7 +72,7 @@ func (dao AdminImpl) FetchData() []tos.Admin {
 			intitialUid = datas[i].Uid
 		}
 
-		testtype = append(testtype, datas[i].Type)
+		testtype = append(testtype, datas[i].Testtype)
 		admindata[n].Type = testtype
 		score = append(score, datas[i].Score)
 		admindata[n].Score = score
