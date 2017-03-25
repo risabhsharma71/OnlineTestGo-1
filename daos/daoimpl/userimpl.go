@@ -29,7 +29,7 @@ func (dao UserImpl) SaveNewUser(user models.User) (tos.Userto, error) {
 
 	res, err := stmt.Exec(user.Fname, user.Lname, user.Phone, user.Email, user.Password, user.UserType)
 	//var usertos tos.User
-	newuser.Message = " registration sussecful"
+	newuser.Message = " registration successful"
 	if err != nil {
 		log.Panic("Exec err:", err.Error())
 	}
