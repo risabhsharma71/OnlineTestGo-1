@@ -6800,3 +6800,495 @@ TRACE: 2017/03/25 09:44:50 adminimpl.go:20: executing query and Fetching data fr
 =======
 >>>>>>> 2e422538593bff52f96acf4ed222201fb3083150
 >>>>>>> 9893dc5e68a51f72340c62d43bd73a702de27282
+TRACE: 2017/03/25 11:49:21 debug.go:45: [GIN-debug] [WARNING] Running in "debug" mode. Switch to "release" mode in production.
+ - using env:	export GIN_MODE=release
+ - using code:	gin.SetMode(gin.ReleaseMode)
+
+TRACE: 2017/03/25 11:49:21 debug.go:45: [GIN-debug] GET    /testService              --> OnlineTestGo/webservice.TestService (3 handlers)
+TRACE: 2017/03/25 11:49:21 debug.go:45: [GIN-debug] POST   /registerUser             --> OnlineTestGo/webservice.RegisterUser (3 handlers)
+TRACE: 2017/03/25 11:49:21 debug.go:45: [GIN-debug] POST   /login                    --> OnlineTestGo/webservice.Login (3 handlers)
+TRACE: 2017/03/25 11:49:21 debug.go:45: [GIN-debug] GET    /questions                --> OnlineTestGo/webservice.QuestionList (3 handlers)
+TRACE: 2017/03/25 11:49:21 debug.go:45: [GIN-debug] POST   /userAnswer               --> OnlineTestGo/webservice.AnswerList (3 handlers)
+TRACE: 2017/03/25 11:49:21 debug.go:45: [GIN-debug] GET    /admin                    --> OnlineTestGo/webservice.Admin (3 handlers)
+TRACE: 2017/03/25 11:49:21 debug.go:45: [GIN-debug] POST   /addquestions             --> OnlineTestGo/webservice.AddQuestions (3 handlers)
+TRACE: 2017/03/25 11:49:21 debug.go:45: [GIN-debug] GET    /logout                   --> OnlineTestGo/webservice.Logout (3 handlers)
+TRACE: 2017/03/25 11:49:21 debug.go:45: [GIN-debug] Listening and serving HTTP on :8086
+TRACE: 2017/03/25 11:49:49 Login.go:14: entering webservice.Login()
+TRACE: 2017/03/25 11:49:49 Login.go:19: calling manager.Login()
+TRACE: 2017/03/25 11:49:49 Login.go:20: {0    rakesh.bharati@rapidqube.com A@A12 }
+TRACE: 2017/03/25 11:49:49 Login.go:16: entering manager.login
+TRACE: 2017/03/25 11:49:49 Login.go:22: calling userDao.AuthenticateUser()
+TRACE: 2017/03/25 11:49:49 userimpl.go:79: entering in AuthenticateUser()
+TRACE: 2017/03/25 11:49:49 userimpl.go:81: Executing query and authenticating user exist
+TRACE: 2017/03/25 11:49:53 userimpl.go:104: Response user Obj :  {179 Rakesh Bhartti 9804608459   user}
+TRACE: 2017/03/25 11:49:53 Login.go:26: generates token if user exist by calling GenerateToken()  
+TRACE: 2017/03/25 11:49:53 Login.go:32: calling tokenDao.DeleteDuplicateUid()
+TRACE: 2017/03/25 11:49:55 loginimpl.go:80: entering In DeleteDuplicateUid()
+TRACE: 2017/03/25 11:49:55 loginimpl.go:81: executing query.....
+TRACE: 2017/03/25 11:49:57 loginimpl.go:93: {0xc0422a6310 0xc0420041e0}
+TRACE: 2017/03/25 11:49:57 loginimpl.go:98: 0 <nil>
+TRACE: 2017/03/25 11:49:57 Login.go:34: calling tokenDao.SaveToken()
+TRACE: 2017/03/25 11:49:57 loginimpl.go:16: exntering in SaveToken() function {0 179 FhTZYIEcZvMvBcHNkEmD 2017-03-25 11:49:53.5135789 +0530 IST}
+TRACE: 2017/03/25 11:49:57 loginimpl.go:17: executing query and storing token in database for the user 
+TRACE: 2017/03/25 11:50:00 loginimpl.go:20: token inserted
+TRACE: 2017/03/25 11:50:00 loginimpl.go:21: {0 179 FhTZYIEcZvMvBcHNkEmD 2017-03-25 11:49:53.5135789 +0530 IST}
+TRACE: 2017/03/25 11:50:02 loginimpl.go:33: {0xc0420324d0 0xc042004a00}
+TRACE: 2017/03/25 11:50:02 Login.go:48: {179 Rakesh FhTZYIEcZvMvBcHNkEmD user}
+TRACE: 2017/03/25 11:50:09 QuestionList.go:15: entering into manager.QuestionList()
+TRACE: 2017/03/25 11:50:09 QuestionList.go:18: java
+TRACE: 2017/03/25 11:50:09 QuestionList.go:19: FhTZYIEcZvMvBcHNkEmD
+TRACE: 2017/03/25 11:50:09 QuestionList.go:20: calling filter.AuntheticateToken()
+TRACE: 2017/03/25 11:50:09 aunthenticate.go:13: entering into AuthenticateToken()
+TRACE: 2017/03/25 11:50:09 aunthenticate.go:24: 6 0 0
+TRACE: 2017/03/25 11:50:09 aunthenticate.go:34: calling  daoimpl tokenDao.AunthenticateToken()
+TRACE: 2017/03/25 11:50:11 authenticatetokenimpl.go:47: FhTZYIEcZvMvBcHNkEmD
+TRACE: 2017/03/25 11:50:11 authenticatetokenimpl.go:48: entering in AunthenticateToken() function
+TRACE: 2017/03/25 11:50:11 authenticatetokenimpl.go:49: executing query fetching and returning token,lastaccesstime
+TRACE: 2017/03/25 11:50:14 authenticatetokenimpl.go:51: FhTZYIEcZvMvBcHNkEmD
+TRACE: 2017/03/25 11:50:14 authenticatetokenimpl.go:59: Type is FhTZYIEcZvMvBcHNkEmD
+TRACE: 2017/03/25 11:50:14 aunthenticate.go:42: 2017-03-25 11:50:14
+TRACE: 2017/03/25 11:50:14 aunthenticate.go:54: calling ModifyLastAccessTime()
+TRACE: 2017/03/25 11:50:16 authenticatetokenimpl.go:17: entering In ModifyLastAccessTime()
+TRACE: 2017/03/25 11:50:16 authenticatetokenimpl.go:18: executing query updating lastaccesstime to currentime
+TRACE: 2017/03/25 11:50:18 authenticatetokenimpl.go:30: {0xc0422ce460 0xc042005bd0}
+TRACE: 2017/03/25 11:50:18 authenticatetokenimpl.go:35: 0 <nil>
+TRACE: 2017/03/25 11:50:18 QuestionList.go:24: calling manager.FetchQuestion()
+TRACE: 2017/03/25 11:50:18 FetchQuestion.go:13: entering into manager.FetchQuestion
+TRACE: 2017/03/25 11:50:18 FetchQuestion.go:15: calling Question manager
+TRACE: 2017/03/25 11:50:18 FetchQuestion.go:19: calling FetchQuestionsByType()
+TRACE: 2017/03/25 11:50:18 questionimpl.go:20: entering into FetchQuestionsByType()
+TRACE: 2017/03/25 11:50:18 questionimpl.go:21: executing query and Fetching Questions By Type 
+TRACE: 2017/03/25 11:50:20 questionimpl.go:28: &{0xae3660 onlinetestuser:Rpqb_123@mysql+tcp(127.0.0.1:3306)/onlinetestdb 0 {0 0} [] [] 0 0xc0421e5860 false map[] map[] 0 0 0 <nil>}
+TRACE: 2017/03/25 11:50:23 questionimpl.go:30: &{0xc0421beee0 0x718740 0xc04235c280 false [] <nil> 0xc042145920}
+TRACE: 2017/03/25 11:50:41 AnswerList.go:20: entering webservice.AnswerLIst()
+TRACE: 2017/03/25 11:50:41 AnswerList.go:23: [{0 14 Suspend() method} {0 19 instantiation} {0 28 } {0 18 None of above} {0 22 } {0 21 double} {0 24 } {0 15 } {0 11 } {0 12 w.q} {0 32 } {0 17 } {0 29 fflush()} {0 33 } {0 35 } {0 16 } {0 13 it is syntax} {0 30 } {0 20 } {0 23 } {0 27 0 to 32767} {0 25 } {0 34 for(; ;)} {0 26 } {0 31 }]
+TRACE: 2017/03/25 11:50:41 AnswerList.go:24: calling manager.CalculateScore()
+TRACE: 2017/03/25 11:50:41 CalculateScore.go:20: 263409560461970212832400
+TRACE: 2017/03/25 11:50:41 CalculateScore.go:21: entering manager.CalculateScore()
+TRACE: 2017/03/25 11:50:41 CalculateScore.go:23: calling Answer manager
+TRACE: 2017/03/25 11:50:41 CalculateScore.go:30: answerList [{0 14 Suspend() method} {0 19 instantiation} {0 28 } {0 18 None of above} {0 22 } {0 21 double} {0 24 } {0 15 } {0 11 } {0 12 w.q} {0 32 } {0 17 } {0 29 fflush()} {0 33 } {0 35 } {0 16 } {0 13 it is syntax} {0 30 } {0 20 } {0 23 } {0 27 0 to 32767} {0 25 } {0 34 for(; ;)} {0 26 } {0 31 }]
+TRACE: 2017/03/25 11:50:41 CalculateScore.go:33: calling questionDao.GetAnswerById() and Fetching the right answer...
+TRACE: 2017/03/25 11:50:44 questionimpl.go:93: entering in GetAnswerById() 
+TRACE: 2017/03/25 11:50:44 questionimpl.go:98: executing query and fetching answers 
+TRACE: 2017/03/25 11:50:47 questionimpl.go:107: Type is resume() method
+TRACE: 2017/03/25 11:50:47 questionimpl.go:110: correct Answer fir ID 14 resume() method
+TRACE: 2017/03/25 11:50:47 CalculateScore.go:36: actual vs correct Suspend() method resume() method
+TRACE: 2017/03/25 11:50:47 CalculateScore.go:33: calling questionDao.GetAnswerById() and Fetching the right answer...
+TRACE: 2017/03/25 11:50:49 questionimpl.go:93: entering in GetAnswerById() 
+TRACE: 2017/03/25 11:50:49 questionimpl.go:98: executing query and fetching answers 
+TRACE: 2017/03/25 11:50:52 questionimpl.go:107: Type is autoboxing
+TRACE: 2017/03/25 11:50:52 questionimpl.go:110: correct Answer fir ID 19 autoboxing
+TRACE: 2017/03/25 11:50:52 CalculateScore.go:36: actual vs correct instantiation autoboxing
+TRACE: 2017/03/25 11:50:52 CalculateScore.go:33: calling questionDao.GetAnswerById() and Fetching the right answer...
+TRACE: 2017/03/25 11:50:55 questionimpl.go:93: entering in GetAnswerById() 
+TRACE: 2017/03/25 11:50:55 questionimpl.go:98: executing query and fetching answers 
+TRACE: 2017/03/25 11:50:58 questionimpl.go:107: Type is Serialization
+TRACE: 2017/03/25 11:50:58 questionimpl.go:110: correct Answer fir ID 28 Serialization
+TRACE: 2017/03/25 11:50:58 CalculateScore.go:36: actual vs correct  Serialization
+TRACE: 2017/03/25 11:50:58 CalculateScore.go:33: calling questionDao.GetAnswerById() and Fetching the right answer...
+TRACE: 2017/03/25 11:51:01 questionimpl.go:93: entering in GetAnswerById() 
+TRACE: 2017/03/25 11:51:01 questionimpl.go:98: executing query and fetching answers 
+TRACE: 2017/03/25 11:51:05 questionimpl.go:107: Type is java.util.Date
+TRACE: 2017/03/25 11:51:05 questionimpl.go:110: correct Answer fir ID 18 java.util.Date
+TRACE: 2017/03/25 11:51:05 CalculateScore.go:36: actual vs correct None of above java.util.Date
+TRACE: 2017/03/25 11:51:05 CalculateScore.go:33: calling questionDao.GetAnswerById() and Fetching the right answer...
+TRACE: 2017/03/25 11:51:07 questionimpl.go:93: entering in GetAnswerById() 
+TRACE: 2017/03/25 11:51:07 questionimpl.go:98: executing query and fetching answers 
+TRACE: 2017/03/25 11:51:10 questionimpl.go:107: Type is Queue
+TRACE: 2017/03/25 11:51:10 questionimpl.go:110: correct Answer fir ID 22 Queue
+TRACE: 2017/03/25 11:51:10 CalculateScore.go:36: actual vs correct  Queue
+TRACE: 2017/03/25 11:51:10 CalculateScore.go:33: calling questionDao.GetAnswerById() and Fetching the right answer...
+TRACE: 2017/03/25 11:51:13 questionimpl.go:93: entering in GetAnswerById() 
+TRACE: 2017/03/25 11:51:13 questionimpl.go:98: executing query and fetching answers 
+TRACE: 2017/03/25 11:51:18 questionimpl.go:107: Type is string
+TRACE: 2017/03/25 11:51:18 questionimpl.go:110: correct Answer fir ID 21 string
+TRACE: 2017/03/25 11:51:18 CalculateScore.go:36: actual vs correct double string
+TRACE: 2017/03/25 11:51:18 CalculateScore.go:33: calling questionDao.GetAnswerById() and Fetching the right answer...
+TRACE: 2017/03/25 11:51:22 questionimpl.go:93: entering in GetAnswerById() 
+TRACE: 2017/03/25 11:51:22 questionimpl.go:98: executing query and fetching answers 
+TRACE: 2017/03/25 11:51:25 questionimpl.go:107: Type is transient
+TRACE: 2017/03/25 11:51:25 questionimpl.go:110: correct Answer fir ID 24 transient
+TRACE: 2017/03/25 11:51:25 CalculateScore.go:36: actual vs correct  transient
+TRACE: 2017/03/25 11:51:25 CalculateScore.go:33: calling questionDao.GetAnswerById() and Fetching the right answer...
+TRACE: 2017/03/25 11:51:27 questionimpl.go:93: entering in GetAnswerById() 
+TRACE: 2017/03/25 11:51:27 questionimpl.go:98: executing query and fetching answers 
+TRACE: 2017/03/25 11:51:30 questionimpl.go:107: Type is java.util.TreeMap
+TRACE: 2017/03/25 11:51:30 questionimpl.go:110: correct Answer fir ID 15 java.util.TreeMap
+TRACE: 2017/03/25 11:51:30 CalculateScore.go:36: actual vs correct  java.util.TreeMap
+TRACE: 2017/03/25 11:51:30 CalculateScore.go:33: calling questionDao.GetAnswerById() and Fetching the right answer...
+TRACE: 2017/03/25 11:51:32 questionimpl.go:93: entering in GetAnswerById() 
+TRACE: 2017/03/25 11:51:32 questionimpl.go:98: executing query and fetching answers 
+TRACE: 2017/03/25 11:51:35 questionimpl.go:107: Type is Final class
+TRACE: 2017/03/25 11:51:35 questionimpl.go:110: correct Answer fir ID 11 Final class
+TRACE: 2017/03/25 11:51:35 CalculateScore.go:36: actual vs correct  Final class
+TRACE: 2017/03/25 11:51:35 CalculateScore.go:33: calling questionDao.GetAnswerById() and Fetching the right answer...
+TRACE: 2017/03/25 11:51:38 questionimpl.go:93: entering in GetAnswerById() 
+TRACE: 2017/03/25 11:51:38 questionimpl.go:98: executing query and fetching answers 
+TRACE: 2017/03/25 11:51:41 questionimpl.go:107: Type is No
+TRACE: 2017/03/25 11:51:41 questionimpl.go:110: correct Answer fir ID 12 No
+TRACE: 2017/03/25 11:51:41 CalculateScore.go:36: actual vs correct w.q No
+TRACE: 2017/03/25 11:51:41 CalculateScore.go:33: calling questionDao.GetAnswerById() and Fetching the right answer...
+TRACE: 2017/03/25 11:51:44 questionimpl.go:93: entering in GetAnswerById() 
+TRACE: 2017/03/25 11:51:44 questionimpl.go:98: executing query and fetching answers 
+TRACE: 2017/03/25 11:51:47 questionimpl.go:107: Type is All of the mentioned
+TRACE: 2017/03/25 11:51:47 questionimpl.go:110: correct Answer fir ID 32 All of the mentioned
+TRACE: 2017/03/25 11:51:47 CalculateScore.go:36: actual vs correct  All of the mentioned
+TRACE: 2017/03/25 11:51:47 CalculateScore.go:33: calling questionDao.GetAnswerById() and Fetching the right answer...
+TRACE: 2017/03/25 11:51:50 questionimpl.go:93: entering in GetAnswerById() 
+TRACE: 2017/03/25 11:51:50 questionimpl.go:98: executing query and fetching answers 
+TRACE: 2017/03/25 11:51:53 questionimpl.go:107: Type is Multithreaded
+TRACE: 2017/03/25 11:51:53 questionimpl.go:110: correct Answer fir ID 17 Multithreaded
+TRACE: 2017/03/25 11:51:53 CalculateScore.go:36: actual vs correct  Multithreaded
+TRACE: 2017/03/25 11:51:53 CalculateScore.go:33: calling questionDao.GetAnswerById() and Fetching the right answer...
+TRACE: 2017/03/25 11:51:56 questionimpl.go:93: entering in GetAnswerById() 
+TRACE: 2017/03/25 11:51:56 questionimpl.go:98: executing query and fetching answers 
+TRACE: 2017/03/25 11:51:59 questionimpl.go:107: Type is flush()
+TRACE: 2017/03/25 11:51:59 questionimpl.go:110: correct Answer fir ID 29 flush()
+TRACE: 2017/03/25 11:51:59 CalculateScore.go:36: actual vs correct fflush() flush()
+TRACE: 2017/03/25 11:51:59 CalculateScore.go:33: calling questionDao.GetAnswerById() and Fetching the right answer...
+TRACE: 2017/03/25 11:52:02 questionimpl.go:93: entering in GetAnswerById() 
+TRACE: 2017/03/25 11:52:02 questionimpl.go:98: executing query and fetching answers 
+TRACE: 2017/03/25 11:52:05 questionimpl.go:107: Type is switch, if
+TRACE: 2017/03/25 11:52:05 questionimpl.go:110: correct Answer fir ID 33 switch, if
+TRACE: 2017/03/25 11:52:05 CalculateScore.go:36: actual vs correct  switch, if
+TRACE: 2017/03/25 11:52:05 CalculateScore.go:33: calling questionDao.GetAnswerById() and Fetching the right answer...
+TRACE: 2017/03/25 11:52:08 questionimpl.go:93: entering in GetAnswerById() 
+TRACE: 2017/03/25 11:52:08 questionimpl.go:98: executing query and fetching answers 
+TRACE: 2017/03/25 11:52:11 questionimpl.go:107: Type is final
+TRACE: 2017/03/25 11:52:11 questionimpl.go:110: correct Answer fir ID 35 final
+TRACE: 2017/03/25 11:52:11 CalculateScore.go:36: actual vs correct  final
+TRACE: 2017/03/25 11:52:11 CalculateScore.go:33: calling questionDao.GetAnswerById() and Fetching the right answer...
+TRACE: 2017/03/25 11:52:14 questionimpl.go:93: entering in GetAnswerById() 
+TRACE: 2017/03/25 11:52:14 questionimpl.go:98: executing query and fetching answers 
+TRACE: 2017/03/25 11:52:18 questionimpl.go:107: Type is getConnection()
+TRACE: 2017/03/25 11:52:18 questionimpl.go:110: correct Answer fir ID 16 getConnection()
+TRACE: 2017/03/25 11:52:18 CalculateScore.go:36: actual vs correct  getConnection()
+TRACE: 2017/03/25 11:52:18 CalculateScore.go:33: calling questionDao.GetAnswerById() and Fetching the right answer...
+TRACE: 2017/03/25 11:52:21 questionimpl.go:93: entering in GetAnswerById() 
+TRACE: 2017/03/25 11:52:21 questionimpl.go:98: executing query and fetching answers 
+TRACE: 2017/03/25 11:52:24 questionimpl.go:107: Type is Can store multiple values
+TRACE: 2017/03/25 11:52:24 questionimpl.go:110: correct Answer fir ID 13 Can store multiple values
+TRACE: 2017/03/25 11:52:24 CalculateScore.go:36: actual vs correct it is syntax Can store multiple values
+TRACE: 2017/03/25 11:52:24 CalculateScore.go:33: calling questionDao.GetAnswerById() and Fetching the right answer...
+TRACE: 2017/03/25 11:52:26 questionimpl.go:93: entering in GetAnswerById() 
+TRACE: 2017/03/25 11:52:26 questionimpl.go:98: executing query and fetching answers 
+TRACE: 2017/03/25 11:52:28 questionimpl.go:107: Type is max(Comparator comp)
+TRACE: 2017/03/25 11:52:28 questionimpl.go:110: correct Answer fir ID 30 max(Comparator comp)
+TRACE: 2017/03/25 11:52:28 CalculateScore.go:36: actual vs correct  max(Comparator comp)
+TRACE: 2017/03/25 11:52:28 CalculateScore.go:33: calling questionDao.GetAnswerById() and Fetching the right answer...
+TRACE: 2017/03/25 11:52:31 questionimpl.go:93: entering in GetAnswerById() 
+TRACE: 2017/03/25 11:52:31 questionimpl.go:98: executing query and fetching answers 
+TRACE: 2017/03/25 11:52:33 questionimpl.go:107: Type is Constructor
+TRACE: 2017/03/25 11:52:33 questionimpl.go:110: correct Answer fir ID 20 Constructor
+TRACE: 2017/03/25 11:52:33 CalculateScore.go:36: actual vs correct  Constructor
+TRACE: 2017/03/25 11:52:33 CalculateScore.go:33: calling questionDao.GetAnswerById() and Fetching the right answer...
+TRACE: 2017/03/25 11:52:35 questionimpl.go:93: entering in GetAnswerById() 
+TRACE: 2017/03/25 11:52:35 questionimpl.go:98: executing query and fetching answers 
+TRACE: 2017/03/25 11:52:37 questionimpl.go:107: Type is PrintStream class
+TRACE: 2017/03/25 11:52:37 questionimpl.go:110: correct Answer fir ID 23 PrintStream class
+TRACE: 2017/03/25 11:52:37 CalculateScore.go:36: actual vs correct  PrintStream class
+TRACE: 2017/03/25 11:52:37 CalculateScore.go:33: calling questionDao.GetAnswerById() and Fetching the right answer...
+TRACE: 2017/03/25 11:52:39 questionimpl.go:93: entering in GetAnswerById() 
+TRACE: 2017/03/25 11:52:39 questionimpl.go:98: executing query and fetching answers 
+TRACE: 2017/03/25 11:52:42 questionimpl.go:107: Type is 0 to 65535
+TRACE: 2017/03/25 11:52:42 questionimpl.go:110: correct Answer fir ID 27 0 to 65535
+TRACE: 2017/03/25 11:52:42 CalculateScore.go:36: actual vs correct 0 to 32767 0 to 65535
+TRACE: 2017/03/25 11:52:42 CalculateScore.go:33: calling questionDao.GetAnswerById() and Fetching the right answer...
+TRACE: 2017/03/25 11:52:44 questionimpl.go:93: entering in GetAnswerById() 
+TRACE: 2017/03/25 11:52:44 questionimpl.go:98: executing query and fetching answers 
+TRACE: 2017/03/25 11:52:46 questionimpl.go:107: Type is Interface
+TRACE: 2017/03/25 11:52:46 questionimpl.go:110: correct Answer fir ID 25 Interface
+TRACE: 2017/03/25 11:52:46 CalculateScore.go:36: actual vs correct  Interface
+TRACE: 2017/03/25 11:52:46 CalculateScore.go:33: calling questionDao.GetAnswerById() and Fetching the right answer...
+TRACE: 2017/03/25 11:52:49 questionimpl.go:93: entering in GetAnswerById() 
+TRACE: 2017/03/25 11:52:49 questionimpl.go:98: executing query and fetching answers 
+TRACE: 2017/03/25 11:52:51 questionimpl.go:107: Type is All of the above
+TRACE: 2017/03/25 11:52:51 questionimpl.go:110: correct Answer fir ID 34 All of the above
+TRACE: 2017/03/25 11:52:51 CalculateScore.go:36: actual vs correct for(; ;) All of the above
+TRACE: 2017/03/25 11:52:51 CalculateScore.go:33: calling questionDao.GetAnswerById() and Fetching the right answer...
+TRACE: 2017/03/25 11:52:54 questionimpl.go:93: entering in GetAnswerById() 
+TRACE: 2017/03/25 11:52:54 questionimpl.go:98: executing query and fetching answers 
+TRACE: 2017/03/25 11:52:56 questionimpl.go:107: Type is 100
+TRACE: 2017/03/25 11:52:56 questionimpl.go:110: correct Answer fir ID 26 100
+TRACE: 2017/03/25 11:52:56 CalculateScore.go:36: actual vs correct  100
+TRACE: 2017/03/25 11:52:56 CalculateScore.go:33: calling questionDao.GetAnswerById() and Fetching the right answer...
+TRACE: 2017/03/25 11:52:58 questionimpl.go:93: entering in GetAnswerById() 
+TRACE: 2017/03/25 11:52:58 questionimpl.go:98: executing query and fetching answers 
+TRACE: 2017/03/25 11:53:01 questionimpl.go:107: Type is shuffle()
+TRACE: 2017/03/25 11:53:01 questionimpl.go:110: correct Answer fir ID 31 shuffle()
+TRACE: 2017/03/25 11:53:01 CalculateScore.go:36: actual vs correct  shuffle()
+TRACE: 2017/03/25 11:53:01 CalculateScore.go:46: Binomial took %s 2m19.4931391s
+TRACE: 2017/03/25 12:10:12 debug.go:45: [GIN-debug] [WARNING] Running in "debug" mode. Switch to "release" mode in production.
+ - using env:	export GIN_MODE=release
+ - using code:	gin.SetMode(gin.ReleaseMode)
+
+TRACE: 2017/03/25 12:10:12 debug.go:45: [GIN-debug] GET    /testService              --> OnlineTestGo/webservice.TestService (3 handlers)
+TRACE: 2017/03/25 12:10:12 debug.go:45: [GIN-debug] POST   /registerUser             --> OnlineTestGo/webservice.RegisterUser (3 handlers)
+TRACE: 2017/03/25 12:10:12 debug.go:45: [GIN-debug] POST   /login                    --> OnlineTestGo/webservice.Login (3 handlers)
+TRACE: 2017/03/25 12:10:12 debug.go:45: [GIN-debug] GET    /questions                --> OnlineTestGo/webservice.QuestionList (3 handlers)
+TRACE: 2017/03/25 12:10:12 debug.go:45: [GIN-debug] POST   /userAnswer               --> OnlineTestGo/webservice.AnswerList (3 handlers)
+TRACE: 2017/03/25 12:10:12 debug.go:45: [GIN-debug] GET    /admin                    --> OnlineTestGo/webservice.Admin (3 handlers)
+TRACE: 2017/03/25 12:10:12 debug.go:45: [GIN-debug] POST   /addquestions             --> OnlineTestGo/webservice.AddQuestions (3 handlers)
+TRACE: 2017/03/25 12:10:12 debug.go:45: [GIN-debug] GET    /logout                   --> OnlineTestGo/webservice.Logout (3 handlers)
+TRACE: 2017/03/25 12:10:12 debug.go:45: [GIN-debug] Listening and serving HTTP on :8086
+TRACE: 2017/03/25 12:10:32 Login.go:14: entering webservice.Login()
+TRACE: 2017/03/25 12:10:32 Login.go:19: calling manager.Login()
+TRACE: 2017/03/25 12:10:32 Login.go:20: {0    rakesh.bharati@rapidqube.com A@a12 }
+TRACE: 2017/03/25 12:10:32 Login.go:16: entering manager.login
+TRACE: 2017/03/25 12:10:32 Login.go:22: calling userDao.AuthenticateUser()
+TRACE: 2017/03/25 12:10:32 userimpl.go:79: entering in AuthenticateUser()
+TRACE: 2017/03/25 12:10:32 userimpl.go:81: Executing query and authenticating user exist
+TRACE: 2017/03/25 12:10:46 userimpl.go:104: Response user Obj :  {179 Rakesh Bhartti 9804608459   user}
+TRACE: 2017/03/25 12:10:46 Login.go:26: generates token if user exist by calling GenerateToken()  
+TRACE: 2017/03/25 12:10:46 Login.go:32: calling tokenDao.DeleteDuplicateUid()
+TRACE: 2017/03/25 12:10:51 loginimpl.go:80: entering In DeleteDuplicateUid()
+TRACE: 2017/03/25 12:10:51 loginimpl.go:81: executing query.....
+TRACE: 2017/03/25 12:10:53 loginimpl.go:93: {0xc0422d02a0 0xc0422a0380}
+TRACE: 2017/03/25 12:10:53 loginimpl.go:98: 0 <nil>
+TRACE: 2017/03/25 12:10:53 Login.go:34: calling tokenDao.SaveToken()
+TRACE: 2017/03/25 12:10:53 loginimpl.go:16: exntering in SaveToken() function {0 179 EGBggQzpMkBBVKZyKBxb 2017-03-25 12:10:46.6832332 +0530 IST}
+TRACE: 2017/03/25 12:10:53 loginimpl.go:17: executing query and storing token in database for the user 
+TRACE: 2017/03/25 12:10:56 loginimpl.go:20: token inserted
+TRACE: 2017/03/25 12:10:56 loginimpl.go:21: {0 179 EGBggQzpMkBBVKZyKBxb 2017-03-25 12:10:46.6832332 +0530 IST}
+TRACE: 2017/03/25 12:10:59 loginimpl.go:33: {0xc0422c4380 0xc0422a0620}
+TRACE: 2017/03/25 12:10:59 Login.go:48: {179 Rakesh EGBggQzpMkBBVKZyKBxb user}
+TRACE: 2017/03/25 12:11:11 QuestionList.go:15: entering into manager.QuestionList()
+TRACE: 2017/03/25 12:11:11 QuestionList.go:18: java
+TRACE: 2017/03/25 12:11:11 QuestionList.go:19: EGBggQzpMkBBVKZyKBxb
+TRACE: 2017/03/25 12:11:11 QuestionList.go:20: calling filter.AuntheticateToken()
+TRACE: 2017/03/25 12:11:11 aunthenticate.go:13: entering into AuthenticateToken()
+TRACE: 2017/03/25 12:11:11 aunthenticate.go:24: 6 0 0
+TRACE: 2017/03/25 12:11:11 aunthenticate.go:34: calling  daoimpl tokenDao.AunthenticateToken()
+TRACE: 2017/03/25 12:11:14 authenticatetokenimpl.go:47: EGBggQzpMkBBVKZyKBxb
+TRACE: 2017/03/25 12:11:14 authenticatetokenimpl.go:48: entering in AunthenticateToken() function
+TRACE: 2017/03/25 12:11:14 authenticatetokenimpl.go:49: executing query fetching and returning token,lastaccesstime
+TRACE: 2017/03/25 12:11:17 authenticatetokenimpl.go:51: EGBggQzpMkBBVKZyKBxb
+TRACE: 2017/03/25 12:11:17 authenticatetokenimpl.go:59: Type is EGBggQzpMkBBVKZyKBxb
+TRACE: 2017/03/25 12:11:17 aunthenticate.go:42: 2017-03-25 12:11:17
+TRACE: 2017/03/25 12:11:17 aunthenticate.go:54: calling ModifyLastAccessTime()
+TRACE: 2017/03/25 12:11:21 authenticatetokenimpl.go:17: entering In ModifyLastAccessTime()
+TRACE: 2017/03/25 12:11:21 authenticatetokenimpl.go:18: executing query updating lastaccesstime to currentime
+TRACE: 2017/03/25 12:11:25 authenticatetokenimpl.go:30: {0xc0422c47e0 0xc0422b0f30}
+TRACE: 2017/03/25 12:11:25 authenticatetokenimpl.go:35: 0 <nil>
+TRACE: 2017/03/25 12:11:25 QuestionList.go:24: calling manager.FetchQuestion()
+TRACE: 2017/03/25 12:11:25 FetchQuestion.go:13: entering into manager.FetchQuestion
+TRACE: 2017/03/25 12:11:25 FetchQuestion.go:15: calling Question manager
+TRACE: 2017/03/25 12:11:25 FetchQuestion.go:19: calling FetchQuestionsByType()
+TRACE: 2017/03/25 12:11:25 questionimpl.go:20: entering into FetchQuestionsByType()
+TRACE: 2017/03/25 12:11:25 questionimpl.go:21: executing query and Fetching Questions By Type 
+TRACE: 2017/03/25 12:11:28 questionimpl.go:28: &{0xae4660 onlinetestuser:Rpqb_123@mysql+tcp(127.0.0.1:3306)/onlinetestdb 0 {0 0} [] [] 0 0xc04233c300 false map[] map[] 0 0 0 <nil>}
+TRACE: 2017/03/25 12:11:31 questionimpl.go:30: &{0xc0422d0770 0x718b20 0xc042356980 false [] <nil> 0xc0422a6bd0}
+TRACE: 2017/03/25 12:12:05 AnswerList.go:20: entering webservice.AnswerLIst()
+TRACE: 2017/03/25 12:12:05 AnswerList.go:23: [{0 16 prepareCall()} {0 20 Variable} {0 28 File Filtering} {0 29 flush()} {0 23 } {0 34 for(i=0; ; i++)} {0 13 none of above} {0 32 } {0 27 -(215) to (215) – 1} {0 30 } {0 35 super} {0 33 continue, if} {0 12 } {0 22 Maps} {0 11 None of above} {0 21 } {0 17 } {0 15 } {0 24 strictfp} {0 26 100} {0 25 Method} {0 14 Suspend() method} {0 31 randomize()} {0 19 autoboxing} {0 18 None of above}]
+TRACE: 2017/03/25 12:12:05 AnswerList.go:24: calling manager.CalculateScore()
+TRACE: 2017/03/25 12:12:05 CalculateScore.go:20: 263409560461970212832400
+TRACE: 2017/03/25 12:12:05 CalculateScore.go:21: entering manager.CalculateScore()
+TRACE: 2017/03/25 12:12:05 CalculateScore.go:23: calling Answer manager
+TRACE: 2017/03/25 12:12:05 CalculateScore.go:30: answerList [{0 16 prepareCall()} {0 20 Variable} {0 28 File Filtering} {0 29 flush()} {0 23 } {0 34 for(i=0; ; i++)} {0 13 none of above} {0 32 } {0 27 -(215) to (215) – 1} {0 30 } {0 35 super} {0 33 continue, if} {0 12 } {0 22 Maps} {0 11 None of above} {0 21 } {0 17 } {0 15 } {0 24 strictfp} {0 26 100} {0 25 Method} {0 14 Suspend() method} {0 31 randomize()} {0 19 autoboxing} {0 18 None of above}]
+TRACE: 2017/03/25 12:12:05 CalculateScore.go:33: calling questionDao.GetAnswerById() and Fetching the right answer...
+TRACE: 2017/03/25 12:12:05 CalculateScore.go:36: 263409560461970212832400
+TRACE: 2017/03/25 12:12:07 questionimpl.go:93: entering in GetAnswerById() 
+TRACE: 2017/03/25 12:12:07 questionimpl.go:98: executing query and fetching answers 
+TRACE: 2017/03/25 12:12:10 questionimpl.go:107: Type is getConnection()
+TRACE: 2017/03/25 12:12:10 questionimpl.go:110: correct Answer fir ID 16 getConnection()
+TRACE: 2017/03/25 12:12:10 CalculateScore.go:39: Binomial took %s 4.4927437s
+TRACE: 2017/03/25 12:12:10 CalculateScore.go:41: actual vs correct prepareCall() getConnection()
+TRACE: 2017/03/25 12:12:10 CalculateScore.go:33: calling questionDao.GetAnswerById() and Fetching the right answer...
+TRACE: 2017/03/25 12:12:10 CalculateScore.go:36: 263409560461970212832400
+TRACE: 2017/03/25 12:12:12 questionimpl.go:93: entering in GetAnswerById() 
+TRACE: 2017/03/25 12:12:12 questionimpl.go:98: executing query and fetching answers 
+TRACE: 2017/03/25 12:12:15 questionimpl.go:107: Type is Constructor
+TRACE: 2017/03/25 12:12:15 questionimpl.go:110: correct Answer fir ID 20 Constructor
+TRACE: 2017/03/25 12:12:15 CalculateScore.go:39: Binomial took %s 5.074667s
+TRACE: 2017/03/25 12:12:15 CalculateScore.go:41: actual vs correct Variable Constructor
+TRACE: 2017/03/25 12:12:15 CalculateScore.go:33: calling questionDao.GetAnswerById() and Fetching the right answer...
+TRACE: 2017/03/25 12:12:15 CalculateScore.go:36: 263409560461970212832400
+TRACE: 2017/03/25 12:12:17 questionimpl.go:93: entering in GetAnswerById() 
+TRACE: 2017/03/25 12:12:17 questionimpl.go:98: executing query and fetching answers 
+TRACE: 2017/03/25 12:12:19 questionimpl.go:107: Type is Serialization
+TRACE: 2017/03/25 12:12:19 questionimpl.go:110: correct Answer fir ID 28 Serialization
+TRACE: 2017/03/25 12:12:19 CalculateScore.go:39: Binomial took %s 4.2643292s
+TRACE: 2017/03/25 12:12:19 CalculateScore.go:41: actual vs correct File Filtering Serialization
+TRACE: 2017/03/25 12:12:19 CalculateScore.go:33: calling questionDao.GetAnswerById() and Fetching the right answer...
+TRACE: 2017/03/25 12:12:19 CalculateScore.go:36: 263409560461970212832400
+TRACE: 2017/03/25 12:12:21 questionimpl.go:93: entering in GetAnswerById() 
+TRACE: 2017/03/25 12:12:21 questionimpl.go:98: executing query and fetching answers 
+TRACE: 2017/03/25 12:12:23 questionimpl.go:107: Type is flush()
+TRACE: 2017/03/25 12:12:23 questionimpl.go:110: correct Answer fir ID 29 flush()
+TRACE: 2017/03/25 12:12:23 CalculateScore.go:39: Binomial took %s 4.2281148s
+TRACE: 2017/03/25 12:12:23 CalculateScore.go:41: actual vs correct flush() flush()
+TRACE: 2017/03/25 12:12:23 CalculateScore.go:47: 263409560461970212832400
+TRACE: 2017/03/25 12:12:27 CalculateScore.go:50: Binomial took %s 3.9555621s
+TRACE: 2017/03/25 12:12:27 CalculateScore.go:33: calling questionDao.GetAnswerById() and Fetching the right answer...
+TRACE: 2017/03/25 12:12:27 CalculateScore.go:36: 263409560461970212832400
+TRACE: 2017/03/25 12:12:29 questionimpl.go:93: entering in GetAnswerById() 
+TRACE: 2017/03/25 12:12:29 questionimpl.go:98: executing query and fetching answers 
+TRACE: 2017/03/25 12:12:31 questionimpl.go:107: Type is PrintStream class
+TRACE: 2017/03/25 12:12:31 questionimpl.go:110: correct Answer fir ID 23 PrintStream class
+TRACE: 2017/03/25 12:12:31 CalculateScore.go:39: Binomial took %s 4.2182087s
+TRACE: 2017/03/25 12:12:31 CalculateScore.go:41: actual vs correct  PrintStream class
+TRACE: 2017/03/25 12:12:31 CalculateScore.go:33: calling questionDao.GetAnswerById() and Fetching the right answer...
+TRACE: 2017/03/25 12:12:31 CalculateScore.go:36: 263409560461970212832400
+TRACE: 2017/03/25 12:12:33 questionimpl.go:93: entering in GetAnswerById() 
+TRACE: 2017/03/25 12:12:33 questionimpl.go:98: executing query and fetching answers 
+TRACE: 2017/03/25 12:12:36 questionimpl.go:107: Type is All of the above
+TRACE: 2017/03/25 12:12:36 questionimpl.go:110: correct Answer fir ID 34 All of the above
+TRACE: 2017/03/25 12:12:36 CalculateScore.go:39: Binomial took %s 4.3980042s
+TRACE: 2017/03/25 12:12:36 CalculateScore.go:41: actual vs correct for(i=0; ; i++) All of the above
+TRACE: 2017/03/25 12:12:36 CalculateScore.go:33: calling questionDao.GetAnswerById() and Fetching the right answer...
+TRACE: 2017/03/25 12:12:36 CalculateScore.go:36: 263409560461970212832400
+TRACE: 2017/03/25 12:12:38 questionimpl.go:93: entering in GetAnswerById() 
+TRACE: 2017/03/25 12:12:38 questionimpl.go:98: executing query and fetching answers 
+TRACE: 2017/03/25 12:12:40 questionimpl.go:107: Type is Can store multiple values
+TRACE: 2017/03/25 12:12:40 questionimpl.go:110: correct Answer fir ID 13 Can store multiple values
+TRACE: 2017/03/25 12:12:40 CalculateScore.go:39: Binomial took %s 4.3207274s
+TRACE: 2017/03/25 12:12:40 CalculateScore.go:41: actual vs correct none of above Can store multiple values
+TRACE: 2017/03/25 12:12:40 CalculateScore.go:33: calling questionDao.GetAnswerById() and Fetching the right answer...
+TRACE: 2017/03/25 12:12:40 CalculateScore.go:36: 263409560461970212832400
+TRACE: 2017/03/25 12:12:42 questionimpl.go:93: entering in GetAnswerById() 
+TRACE: 2017/03/25 12:12:42 questionimpl.go:98: executing query and fetching answers 
+TRACE: 2017/03/25 12:12:45 questionimpl.go:107: Type is All of the mentioned
+TRACE: 2017/03/25 12:12:45 questionimpl.go:110: correct Answer fir ID 32 All of the mentioned
+TRACE: 2017/03/25 12:12:45 CalculateScore.go:39: Binomial took %s 4.5047721s
+TRACE: 2017/03/25 12:12:45 CalculateScore.go:41: actual vs correct  All of the mentioned
+TRACE: 2017/03/25 12:12:45 CalculateScore.go:33: calling questionDao.GetAnswerById() and Fetching the right answer...
+TRACE: 2017/03/25 12:12:45 CalculateScore.go:36: 263409560461970212832400
+TRACE: 2017/03/25 12:12:47 questionimpl.go:93: entering in GetAnswerById() 
+TRACE: 2017/03/25 12:12:47 questionimpl.go:98: executing query and fetching answers 
+TRACE: 2017/03/25 12:12:49 questionimpl.go:107: Type is 0 to 65535
+TRACE: 2017/03/25 12:12:49 questionimpl.go:110: correct Answer fir ID 27 0 to 65535
+TRACE: 2017/03/25 12:12:49 CalculateScore.go:39: Binomial took %s 4.3309379s
+TRACE: 2017/03/25 12:12:49 CalculateScore.go:41: actual vs correct -(215) to (215) – 1 0 to 65535
+TRACE: 2017/03/25 12:12:49 CalculateScore.go:33: calling questionDao.GetAnswerById() and Fetching the right answer...
+TRACE: 2017/03/25 12:12:49 CalculateScore.go:36: 263409560461970212832400
+TRACE: 2017/03/25 12:12:51 questionimpl.go:93: entering in GetAnswerById() 
+TRACE: 2017/03/25 12:12:51 questionimpl.go:98: executing query and fetching answers 
+TRACE: 2017/03/25 12:12:53 questionimpl.go:107: Type is max(Comparator comp)
+TRACE: 2017/03/25 12:12:53 questionimpl.go:110: correct Answer fir ID 30 max(Comparator comp)
+TRACE: 2017/03/25 12:12:53 CalculateScore.go:39: Binomial took %s 4.0087374s
+TRACE: 2017/03/25 12:12:53 CalculateScore.go:41: actual vs correct  max(Comparator comp)
+TRACE: 2017/03/25 12:12:53 CalculateScore.go:33: calling questionDao.GetAnswerById() and Fetching the right answer...
+TRACE: 2017/03/25 12:12:53 CalculateScore.go:36: 263409560461970212832400
+TRACE: 2017/03/25 12:12:55 questionimpl.go:93: entering in GetAnswerById() 
+TRACE: 2017/03/25 12:12:55 questionimpl.go:98: executing query and fetching answers 
+TRACE: 2017/03/25 12:12:57 questionimpl.go:107: Type is final
+TRACE: 2017/03/25 12:12:57 questionimpl.go:110: correct Answer fir ID 35 final
+TRACE: 2017/03/25 12:12:57 CalculateScore.go:39: Binomial took %s 4.4028971s
+TRACE: 2017/03/25 12:12:57 CalculateScore.go:41: actual vs correct super final
+TRACE: 2017/03/25 12:12:57 CalculateScore.go:33: calling questionDao.GetAnswerById() and Fetching the right answer...
+TRACE: 2017/03/25 12:12:57 CalculateScore.go:36: 263409560461970212832400
+TRACE: 2017/03/25 12:12:59 questionimpl.go:93: entering in GetAnswerById() 
+TRACE: 2017/03/25 12:12:59 questionimpl.go:98: executing query and fetching answers 
+TRACE: 2017/03/25 12:13:01 questionimpl.go:107: Type is switch, if
+TRACE: 2017/03/25 12:13:01 questionimpl.go:110: correct Answer fir ID 33 switch, if
+TRACE: 2017/03/25 12:13:01 CalculateScore.go:39: Binomial took %s 4.1818808s
+TRACE: 2017/03/25 12:13:01 CalculateScore.go:41: actual vs correct continue, if switch, if
+TRACE: 2017/03/25 12:13:01 CalculateScore.go:33: calling questionDao.GetAnswerById() and Fetching the right answer...
+TRACE: 2017/03/25 12:13:01 CalculateScore.go:36: 263409560461970212832400
+TRACE: 2017/03/25 12:13:04 questionimpl.go:93: entering in GetAnswerById() 
+TRACE: 2017/03/25 12:13:04 questionimpl.go:98: executing query and fetching answers 
+TRACE: 2017/03/25 12:13:06 questionimpl.go:107: Type is No
+TRACE: 2017/03/25 12:13:06 questionimpl.go:110: correct Answer fir ID 12 No
+TRACE: 2017/03/25 12:13:06 CalculateScore.go:39: Binomial took %s 4.393029s
+TRACE: 2017/03/25 12:13:06 CalculateScore.go:41: actual vs correct  No
+TRACE: 2017/03/25 12:13:06 CalculateScore.go:33: calling questionDao.GetAnswerById() and Fetching the right answer...
+TRACE: 2017/03/25 12:13:06 CalculateScore.go:36: 263409560461970212832400
+TRACE: 2017/03/25 12:13:08 questionimpl.go:93: entering in GetAnswerById() 
+TRACE: 2017/03/25 12:13:08 questionimpl.go:98: executing query and fetching answers 
+TRACE: 2017/03/25 12:13:10 questionimpl.go:107: Type is Queue
+TRACE: 2017/03/25 12:13:10 questionimpl.go:110: correct Answer fir ID 22 Queue
+TRACE: 2017/03/25 12:13:10 CalculateScore.go:39: Binomial took %s 4.6163004s
+TRACE: 2017/03/25 12:13:10 CalculateScore.go:41: actual vs correct Maps Queue
+TRACE: 2017/03/25 12:13:10 CalculateScore.go:33: calling questionDao.GetAnswerById() and Fetching the right answer...
+TRACE: 2017/03/25 12:13:10 CalculateScore.go:36: 263409560461970212832400
+TRACE: 2017/03/25 12:13:13 questionimpl.go:93: entering in GetAnswerById() 
+TRACE: 2017/03/25 12:13:13 questionimpl.go:98: executing query and fetching answers 
+TRACE: 2017/03/25 12:13:15 questionimpl.go:107: Type is Final class
+TRACE: 2017/03/25 12:13:15 questionimpl.go:110: correct Answer fir ID 11 Final class
+TRACE: 2017/03/25 12:13:15 CalculateScore.go:39: Binomial took %s 4.3675396s
+TRACE: 2017/03/25 12:13:15 CalculateScore.go:41: actual vs correct None of above Final class
+TRACE: 2017/03/25 12:13:15 CalculateScore.go:33: calling questionDao.GetAnswerById() and Fetching the right answer...
+TRACE: 2017/03/25 12:13:15 CalculateScore.go:36: 263409560461970212832400
+TRACE: 2017/03/25 12:13:17 questionimpl.go:93: entering in GetAnswerById() 
+TRACE: 2017/03/25 12:13:17 questionimpl.go:98: executing query and fetching answers 
+TRACE: 2017/03/25 12:13:19 questionimpl.go:107: Type is string
+TRACE: 2017/03/25 12:13:19 questionimpl.go:110: correct Answer fir ID 21 string
+TRACE: 2017/03/25 12:13:19 CalculateScore.go:39: Binomial took %s 4.4560304s
+TRACE: 2017/03/25 12:13:19 CalculateScore.go:41: actual vs correct  string
+TRACE: 2017/03/25 12:13:19 CalculateScore.go:33: calling questionDao.GetAnswerById() and Fetching the right answer...
+TRACE: 2017/03/25 12:13:19 CalculateScore.go:36: 263409560461970212832400
+TRACE: 2017/03/25 12:13:22 questionimpl.go:93: entering in GetAnswerById() 
+TRACE: 2017/03/25 12:13:22 questionimpl.go:98: executing query and fetching answers 
+TRACE: 2017/03/25 12:13:24 questionimpl.go:107: Type is Multithreaded
+TRACE: 2017/03/25 12:13:24 questionimpl.go:110: correct Answer fir ID 17 Multithreaded
+TRACE: 2017/03/25 12:13:24 CalculateScore.go:39: Binomial took %s 4.5390907s
+TRACE: 2017/03/25 12:13:24 CalculateScore.go:41: actual vs correct  Multithreaded
+TRACE: 2017/03/25 12:13:24 CalculateScore.go:33: calling questionDao.GetAnswerById() and Fetching the right answer...
+TRACE: 2017/03/25 12:13:24 CalculateScore.go:36: 263409560461970212832400
+TRACE: 2017/03/25 12:13:26 questionimpl.go:93: entering in GetAnswerById() 
+TRACE: 2017/03/25 12:13:26 questionimpl.go:98: executing query and fetching answers 
+TRACE: 2017/03/25 12:13:28 questionimpl.go:107: Type is java.util.TreeMap
+TRACE: 2017/03/25 12:13:28 questionimpl.go:110: correct Answer fir ID 15 java.util.TreeMap
+TRACE: 2017/03/25 12:13:28 CalculateScore.go:39: Binomial took %s 4.2363338s
+TRACE: 2017/03/25 12:13:28 CalculateScore.go:41: actual vs correct  java.util.TreeMap
+TRACE: 2017/03/25 12:13:28 CalculateScore.go:33: calling questionDao.GetAnswerById() and Fetching the right answer...
+TRACE: 2017/03/25 12:13:28 CalculateScore.go:36: 263409560461970212832400
+TRACE: 2017/03/25 12:13:30 questionimpl.go:93: entering in GetAnswerById() 
+TRACE: 2017/03/25 12:13:30 questionimpl.go:98: executing query and fetching answers 
+TRACE: 2017/03/25 12:13:32 questionimpl.go:107: Type is transient
+TRACE: 2017/03/25 12:13:32 questionimpl.go:110: correct Answer fir ID 24 transient
+TRACE: 2017/03/25 12:13:32 CalculateScore.go:39: Binomial took %s 4.2854347s
+TRACE: 2017/03/25 12:13:32 CalculateScore.go:41: actual vs correct strictfp transient
+TRACE: 2017/03/25 12:13:32 CalculateScore.go:33: calling questionDao.GetAnswerById() and Fetching the right answer...
+TRACE: 2017/03/25 12:13:32 CalculateScore.go:36: 263409560461970212832400
+TRACE: 2017/03/25 12:13:34 questionimpl.go:93: entering in GetAnswerById() 
+TRACE: 2017/03/25 12:13:34 questionimpl.go:98: executing query and fetching answers 
+TRACE: 2017/03/25 12:13:37 questionimpl.go:107: Type is 100
+TRACE: 2017/03/25 12:13:37 questionimpl.go:110: correct Answer fir ID 26 100
+TRACE: 2017/03/25 12:13:37 CalculateScore.go:39: Binomial took %s 4.2958558s
+TRACE: 2017/03/25 12:13:37 CalculateScore.go:41: actual vs correct 100 100
+TRACE: 2017/03/25 12:13:37 CalculateScore.go:47: 263409560461970212832400
+TRACE: 2017/03/25 12:13:41 CalculateScore.go:50: Binomial took %s 4.0187048s
+TRACE: 2017/03/25 12:13:41 CalculateScore.go:33: calling questionDao.GetAnswerById() and Fetching the right answer...
+TRACE: 2017/03/25 12:13:41 CalculateScore.go:36: 263409560461970212832400
+TRACE: 2017/03/25 12:13:43 questionimpl.go:93: entering in GetAnswerById() 
+TRACE: 2017/03/25 12:13:43 questionimpl.go:98: executing query and fetching answers 
+TRACE: 2017/03/25 12:13:45 questionimpl.go:107: Type is Interface
+TRACE: 2017/03/25 12:13:45 questionimpl.go:110: correct Answer fir ID 25 Interface
+TRACE: 2017/03/25 12:13:45 CalculateScore.go:39: Binomial took %s 4.3038627s
+TRACE: 2017/03/25 12:13:45 CalculateScore.go:41: actual vs correct Method Interface
+TRACE: 2017/03/25 12:13:45 CalculateScore.go:33: calling questionDao.GetAnswerById() and Fetching the right answer...
+TRACE: 2017/03/25 12:13:45 CalculateScore.go:36: 263409560461970212832400
+TRACE: 2017/03/25 12:13:47 questionimpl.go:93: entering in GetAnswerById() 
+TRACE: 2017/03/25 12:13:47 questionimpl.go:98: executing query and fetching answers 
+TRACE: 2017/03/25 12:13:49 questionimpl.go:107: Type is resume() method
+TRACE: 2017/03/25 12:13:49 questionimpl.go:110: correct Answer fir ID 14 resume() method
+TRACE: 2017/03/25 12:13:49 CalculateScore.go:39: Binomial took %s 4.1913588s
+TRACE: 2017/03/25 12:13:49 CalculateScore.go:41: actual vs correct Suspend() method resume() method
+TRACE: 2017/03/25 12:13:49 CalculateScore.go:33: calling questionDao.GetAnswerById() and Fetching the right answer...
+TRACE: 2017/03/25 12:13:49 CalculateScore.go:36: 263409560461970212832400
+TRACE: 2017/03/25 12:13:51 questionimpl.go:93: entering in GetAnswerById() 
+TRACE: 2017/03/25 12:13:51 questionimpl.go:98: executing query and fetching answers 
+TRACE: 2017/03/25 12:13:53 questionimpl.go:107: Type is shuffle()
+TRACE: 2017/03/25 12:13:53 questionimpl.go:110: correct Answer fir ID 31 shuffle()
+TRACE: 2017/03/25 12:13:53 CalculateScore.go:39: Binomial took %s 4.276556s
+TRACE: 2017/03/25 12:13:53 CalculateScore.go:41: actual vs correct randomize() shuffle()
+TRACE: 2017/03/25 12:13:53 CalculateScore.go:33: calling questionDao.GetAnswerById() and Fetching the right answer...
+TRACE: 2017/03/25 12:13:53 CalculateScore.go:36: 263409560461970212832400
+TRACE: 2017/03/25 12:13:56 questionimpl.go:93: entering in GetAnswerById() 
+TRACE: 2017/03/25 12:13:56 questionimpl.go:98: executing query and fetching answers 
+TRACE: 2017/03/25 12:13:58 questionimpl.go:107: Type is autoboxing
+TRACE: 2017/03/25 12:13:58 questionimpl.go:110: correct Answer fir ID 19 autoboxing
+TRACE: 2017/03/25 12:13:58 CalculateScore.go:39: Binomial took %s 4.6843641s
+TRACE: 2017/03/25 12:13:58 CalculateScore.go:41: actual vs correct autoboxing autoboxing
+TRACE: 2017/03/25 12:13:58 CalculateScore.go:47: 263409560461970212832400
+TRACE: 2017/03/25 12:14:02 CalculateScore.go:50: Binomial took %s 4.2978409s
+TRACE: 2017/03/25 12:14:02 CalculateScore.go:33: calling questionDao.GetAnswerById() and Fetching the right answer...
+TRACE: 2017/03/25 12:14:02 CalculateScore.go:36: 263409560461970212832400
+TRACE: 2017/03/25 12:14:04 questionimpl.go:93: entering in GetAnswerById() 
+TRACE: 2017/03/25 12:14:04 questionimpl.go:98: executing query and fetching answers 
+TRACE: 2017/03/25 12:14:07 questionimpl.go:107: Type is java.util.Date
+TRACE: 2017/03/25 12:14:07 questionimpl.go:110: correct Answer fir ID 18 java.util.Date
+TRACE: 2017/03/25 12:14:07 CalculateScore.go:39: Binomial took %s 4.2422559s
+TRACE: 2017/03/25 12:14:07 CalculateScore.go:41: actual vs correct None of above java.util.Date
+TRACE: 2017/03/25 12:14:07 CalculateScore.go:55: Binomial took %s 2m1.6331362s
